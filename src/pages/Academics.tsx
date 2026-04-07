@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageHeader from "@/components/PageHeader";
+import academicsImg from "@/assets/academics-hero.jpg";
 
 const undergrad = [
   "BS Computer Science", "BS Electrical Engineering", "BS Mechanical Engineering",
@@ -24,52 +25,48 @@ const Academics = () => {
       <Navbar />
       <PageHeader title="Academics" subtitle="Explore our undergraduate, graduate, and doctoral programs." />
 
+      {/* Hero image */}
+      <div className="container-main px-4 sm:px-6 lg:px-8 pt-10">
+        <div className="aspect-[3/1] rounded overflow-hidden">
+          <img src={academicsImg} alt="Academic lecture hall" className="w-full h-full object-cover" width={800} height={512} />
+        </div>
+      </div>
+
       <div className="container-main px-4 sm:px-6 lg:px-8 py-14 space-y-14">
-        {/* Undergraduate */}
         <section>
           <h2 className="text-2xl font-serif text-foreground mb-2">Undergraduate Programs</h2>
           <p className="text-sm text-muted-foreground mb-5">4-year degree programs across all disciplines.</p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
             {undergrad.map((p) => (
-              <div key={p} className="border border-border rounded px-4 py-3 text-sm text-foreground hover:border-primary/30 transition-colors">
-                {p}
-              </div>
+              <div key={p} className="border border-border rounded px-4 py-3 text-sm text-foreground hover:border-primary/30 transition-colors">{p}</div>
             ))}
           </div>
         </section>
 
-        {/* Graduate */}
         <section>
           <h2 className="text-2xl font-serif text-foreground mb-2">Graduate Programs</h2>
           <p className="text-sm text-muted-foreground mb-5">Master's and MPhil programs for advanced study.</p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
             {graduate.map((p) => (
-              <div key={p} className="border border-border rounded px-4 py-3 text-sm text-foreground hover:border-primary/30 transition-colors">
-                {p}
-              </div>
+              <div key={p} className="border border-border rounded px-4 py-3 text-sm text-foreground hover:border-primary/30 transition-colors">{p}</div>
             ))}
           </div>
         </section>
 
-        {/* Doctoral */}
         <section>
           <h2 className="text-2xl font-serif text-foreground mb-2">Doctoral Programs</h2>
           <p className="text-sm text-muted-foreground mb-5">PhD programs for research scholars.</p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
             {doctoral.map((p) => (
-              <div key={p} className="border border-border rounded px-4 py-3 text-sm text-foreground hover:border-primary/30 transition-colors">
-                {p}
-              </div>
+              <div key={p} className="border border-border rounded px-4 py-3 text-sm text-foreground hover:border-primary/30 transition-colors">{p}</div>
             ))}
           </div>
         </section>
 
-        {/* Admission Info */}
         <section className="border border-border rounded p-6 bg-muted/30">
           <h2 className="text-xl font-serif text-foreground mb-2">Admissions</h2>
           <p className="text-sm text-muted-foreground mb-3">
-            Applications for Fall 2025 are now open. Eligibility criteria vary by program.
-            Contact the admissions office for details.
+            Applications for Fall 2025 are now open. Eligibility criteria vary by program. Contact the admissions office for details.
           </p>
           <p className="text-sm text-muted-foreground">
             <strong className="text-foreground">Deadline:</strong> May 31, 2025 &nbsp;|&nbsp;
