@@ -1,12 +1,21 @@
 import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { Menu, X, GraduationCap } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
-const navItems = ["Home", "About", "Events", "Admissions", "Contact"];
+const navItems = [
+  { label: "Home", path: "/" },
+  { label: "About", path: "/about" },
+  { label: "Institutions", path: "/institutions" },
+  { label: "Academics", path: "/academics" },
+  { label: "Research & Innovation", path: "/research" },
+  { label: "Campus Life", path: "/campus-life" },
+];
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -14,80 +23,69 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  useEffect(() => {
+    setMobileOpen(false);
+  }, [location.pathname]);
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-primary shadow-lg"
-          : "bg-primary/90 backdrop-blur-sm"
+        scrolled ? "bg-primary shadow-lg" : "bg-primary"
       }`}
     >
-      <div className="container-main flex items-center justify-between h-16 md:h-20 px-4 sm:px-6 lg:px-8">
-        {/* Logo */}
-        <a href="#" className="flex items-center gap-2 text-primary-foreground">
-          <GraduationCap className="h-8 w-8" />
-          <div className="leading-tight">
-            <span className="font-serif text-lg md:text-xl tracking-wide">
-              Prestige University
-            </span>
-          </div>
-        </a>
+      <div className="container-main flex items-center justify-between h-16 px-4 sm:px-6 lg:px-8">
+        <Link to="/" className="flex items-center gap-2 text-primary-foreground">
+          <GraduationCap className="h-7 w-7" />
+          <span className="font-serif text-lg">Prestige University</span>
+        </Link>
 
-        {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-1">
+        <nav className="hidden lg:flex items-center gap-1">
           {navItems.map((item) => (
-            <a
-              key={item}
-              href={`#${item.toLowerCase()}`}
-              className="px-4 py-2 text-sm font-medium text-primary-foreground/80 hover:text-primary-foreground transition-colors rounded-md hover:bg-primary-foreground/10"
+            <Link
+              key={item.path}
+              to={item.path}
+              className={`px-3 py-2 text-sm font-medium rounded transition-colors ${
+                location.pathname === item.path
+                  ? "text-primary-foreground bg-primary-foreground/15"
+                  : "text-primary-foreground/75 hover:text-primary-foreground hover:bg-primary-foreground/10"
+              }`}
             >
-              {item}
-            </a>
+              {item.label}
+            </Link>
           ))}
-          <a
-            href="#admissions"
-            className="ml-2 px-5 py-2 text-sm font-semibold bg-accent text-accent-foreground rounded-md hover:brightness-110 transition-all"
-          >
-            Apply Now
-          </a>
         </nav>
 
-        {/* Mobile toggle */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden text-primary-foreground p-2"
+          className="lg:hidden text-primary-foreground p-2"
           aria-label="Toggle menu"
         >
           {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
       </div>
 
-      {/* Mobile menu */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.nav
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            className="md:hidden bg-primary overflow-hidden"
+            className="lg:hidden bg-primary overflow-hidden border-t border-primary-foreground/10"
           >
             <div className="px-4 pb-4 space-y-1">
               {navItems.map((item) => (
-                <a
-                  key={item}
-                  href={`#${item.toLowerCase()}`}
-                  onClick={() => setMobileOpen(false)}
-                  className="block px-4 py-3 text-primary-foreground/80 hover:text-primary-foreground hover:bg-primary-foreground/10 rounded-md transition-colors"
+                <Link
+                  key={item.path}
+                  to={item.path}
+                  className={`block px-4 py-3 rounded text-sm transition-colors ${
+                    location.pathname === item.path
+                      ? "text-primary-foreground bg-primary-foreground/15"
+                      : "text-primary-foreground/75 hover:text-primary-foreground hover:bg-primary-foreground/10"
+                  }`}
                 >
-                  {item}
-                </a>
+                  {item.label}
+                </Link>
               ))}
-              <a
-                href="#admissions"
-                className="block px-4 py-3 text-center font-semibold bg-accent text-accent-foreground rounded-md mt-2"
-              >
-                Apply Now
-              </a>
             </div>
           </motion.nav>
         )}
