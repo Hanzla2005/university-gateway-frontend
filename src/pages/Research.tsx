@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageHeader from "@/components/PageHeader";
 import { Lightbulb, BookOpen, Users, FlaskConical } from "lucide-react";
+import researchImg from "@/assets/research-hero.jpg";
 
 const centers = [
   { name: "Center for Artificial Intelligence", focus: "Machine learning, NLP, computer vision, and robotics." },
@@ -23,8 +24,14 @@ const Research = () => {
       <Navbar />
       <PageHeader title="Research & Innovation" subtitle="Driving discovery and real-world impact across disciplines." />
 
+      {/* Hero image */}
+      <div className="container-main px-4 sm:px-6 lg:px-8 pt-10">
+        <div className="aspect-[3/1] rounded overflow-hidden">
+          <img src={researchImg} alt="Research facility" className="w-full h-full object-cover" width={800} height={512} />
+        </div>
+      </div>
+
       <div className="container-main px-4 sm:px-6 lg:px-8 py-14 space-y-14">
-        {/* Stats */}
         <section>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {highlights.map((h) => (
@@ -37,7 +44,6 @@ const Research = () => {
           </div>
         </section>
 
-        {/* Overview */}
         <section className="max-w-3xl">
           <h2 className="text-2xl font-serif text-foreground mb-4">Research at Prestige</h2>
           <p className="text-muted-foreground leading-relaxed mb-3">
@@ -48,7 +54,6 @@ const Research = () => {
           </p>
         </section>
 
-        {/* Research Centers */}
         <section>
           <h2 className="text-2xl font-serif text-foreground mb-6">Research Centers</h2>
           <div className="grid md:grid-cols-2 gap-4">
@@ -61,12 +66,10 @@ const Research = () => {
           </div>
         </section>
 
-        {/* Funding */}
         <section className="border border-border rounded p-6 bg-muted/30">
           <h2 className="text-xl font-serif text-foreground mb-2">Funding & Grants</h2>
           <p className="text-sm text-muted-foreground">
-            In 2024, our faculty secured over $45 million in external research funding from national and international agencies.
-            Graduate students can apply for internal research grants through the Office of Research.
+            In 2024, our faculty secured over $45 million in external research funding from national and international agencies. Graduate students can apply for internal research grants through the Office of Research.
           </p>
         </section>
       </div>
