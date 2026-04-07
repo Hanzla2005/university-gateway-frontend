@@ -1,16 +1,29 @@
 import { useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, Calendar, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowRight, Calendar, ChevronLeft, ChevronRight, Users, BookOpen, Globe, Award, MapPin, GraduationCap } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { announcements } from "@/data/announcements";
+import { institutions } from "@/data/institutions";
+import campusAerial from "@/assets/campus-aerial.jpg";
+import campusStudents from "@/assets/campus-students.jpg";
+import campusLife from "@/assets/campus-life.jpg";
+import graduationImg from "@/assets/graduation.jpg";
+
+const stats = [
+  { icon: Users, value: "7,900+", label: "Students" },
+  { icon: BookOpen, value: "58+", label: "Programs" },
+  { icon: Globe, value: "15+", label: "Partner Universities" },
+  { icon: Award, value: "450+", label: "Faculty Members" },
+];
 
 const quickLinks = [
   { label: "About the University", path: "/about", desc: "Our history, mission, and leadership." },
-  { label: "Institutions & Faculties", path: "/institutions", desc: "Explore our schools and departments." },
+  { label: "Institutions & Faculties", path: "/institutions", desc: "Explore our eight faculties and departments." },
   { label: "Academic Programs", path: "/academics", desc: "Undergraduate, graduate, and doctoral programs." },
-  { label: "Research & Innovation", path: "/research", desc: "Advancing knowledge across disciplines." },
+  { label: "Research & Innovation", path: "/research", desc: "Advancing knowledge in mountain sciences and beyond." },
   { label: "Campus Life", path: "/campus-life", desc: "Student activities, housing, and facilities." },
+  { label: "Announcements", path: "/announcements", desc: "Latest news, notices, and updates." },
 ];
 
 const Index = () => {
@@ -31,7 +44,7 @@ const Index = () => {
       <Navbar />
 
       {/* Hero Slider */}
-      <section className="relative h-[80vh] overflow-hidden">
+      <section className="relative h-[85vh] overflow-hidden">
         {announcements.map((item, i) => (
           <div
             key={item.id}
@@ -84,30 +97,143 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Stats Bar */}
+      <section className="bg-primary border-t border-primary-foreground/10">
+        <div className="container-main px-4 sm:px-6 lg:px-8 py-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {stats.map((s) => (
+              <div key={s.label} className="text-center">
+                <s.icon className="h-6 w-6 text-accent mx-auto mb-2" />
+                <p className="text-2xl font-serif text-primary-foreground">{s.value}</p>
+                <p className="text-sm text-primary-foreground/60">{s.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Welcome Section */}
+      <section className="container-main px-4 sm:px-6 lg:px-8 py-16">
+        <div className="grid lg:grid-cols-2 gap-10 items-center">
+          <div>
+            <h2 className="text-3xl font-serif text-foreground mb-4">Welcome to Kohsar University Murree</h2>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              Nestled in the scenic hills of Murree, Kohsar University is a premier institution of higher education committed to academic excellence, research innovation, and community service. Our motto — <strong className="text-foreground">"Serve to Solve"</strong> — drives everything we do.
+            </p>
+            <p className="text-muted-foreground leading-relaxed mb-6">
+              With eight faculties, 58+ academic programs, and a vibrant campus life surrounded by the natural beauty of the Murree hills, we offer a unique learning environment that inspires creativity and critical thinking.
+            </p>
+            <Link
+              to="/about"
+              className="inline-flex items-center gap-2 text-primary font-medium hover:underline"
+            >
+              Learn more about us <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+          <div className="aspect-[4/3] rounded overflow-hidden">
+            <img src={campusAerial} alt="Kohsar University campus aerial view" className="w-full h-full object-cover" width={1920} height={1080} />
+          </div>
+        </div>
+      </section>
+
       {/* Latest Announcements */}
+      <section className="bg-muted/50">
+        <div className="container-main px-4 sm:px-6 lg:px-8 py-14">
+          <div className="flex items-center justify-between mb-6">
+            <h2 className="text-2xl font-serif text-foreground">Latest Announcements</h2>
+            <Link to="/announcements" className="text-sm text-primary hover:underline">View All →</Link>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {announcements.slice(0, 3).map((item) => (
+              <Link
+                key={item.id}
+                to={`/announcements/${item.id}`}
+                className="group block border border-border bg-card rounded overflow-hidden hover:border-primary/30 transition-colors"
+              >
+                <div className="aspect-[16/10] overflow-hidden">
+                  <img src={item.image} alt={item.title} loading="lazy" width={800} height={512} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                </div>
+                <div className="p-4">
+                  <span className="text-xs font-medium text-accent">{item.tag}</span>
+                  <h3 className="font-serif text-base text-foreground mt-1 mb-2 group-hover:text-primary transition-colors">{item.title}</h3>
+                  <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
+                    <Calendar className="h-3.5 w-3.5" /> {item.date}
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Institutions */}
       <section className="container-main px-4 sm:px-6 lg:px-8 py-14">
         <div className="flex items-center justify-between mb-6">
-          <h2 className="text-2xl font-serif text-foreground">Latest Announcements</h2>
-          <Link to="/announcements" className="text-sm text-primary hover:underline">View All →</Link>
+          <h2 className="text-2xl font-serif text-foreground">Our Faculties</h2>
+          <Link to="/institutions" className="text-sm text-primary hover:underline">View All →</Link>
         </div>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {announcements.slice(0, 3).map((item) => (
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {institutions.slice(0, 4).map((inst) => (
             <Link
-              key={item.id}
-              to={`/announcements/${item.id}`}
-              className="group block border border-border rounded overflow-hidden hover:border-primary/30 transition-colors"
+              key={inst.id}
+              to={`/institutions/${inst.id}`}
+              className="group border border-border rounded overflow-hidden hover:border-primary/30 transition-colors"
             >
-              <div className="aspect-[16/10] overflow-hidden">
-                <img src={item.image} alt={item.title} loading="lazy" width={800} height={512} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+              <div className="aspect-[3/2] overflow-hidden">
+                <img src={inst.image} alt={inst.name} loading="lazy" width={800} height={512} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
               </div>
               <div className="p-4">
-                <span className="text-xs font-medium text-accent">{item.tag}</span>
-                <h3 className="font-serif text-base text-foreground mt-1 mb-2 group-hover:text-primary transition-colors">{item.title}</h3>
-                <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
-                  <Calendar className="h-3.5 w-3.5" /> {item.date}
+                <div className="w-8 h-8 rounded bg-secondary flex items-center justify-center mb-2">
+                  <inst.icon className="h-4 w-4 text-primary" />
                 </div>
+                <h3 className="font-serif text-sm text-foreground group-hover:text-primary transition-colors">{inst.name}</h3>
+                <p className="text-xs text-muted-foreground mt-1">{inst.students} Students · {inst.programs} Programs</p>
               </div>
             </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* Campus Gallery */}
+      <section className="bg-muted/50">
+        <div className="container-main px-4 sm:px-6 lg:px-8 py-14">
+          <h2 className="text-2xl font-serif text-foreground mb-6">Campus Life</h2>
+          <div className="grid md:grid-cols-3 gap-4">
+            <div className="aspect-[4/3] rounded overflow-hidden">
+              <img src={campusStudents} alt="Students on campus" loading="lazy" width={1280} height={720} className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
+            </div>
+            <div className="aspect-[4/3] rounded overflow-hidden">
+              <img src={campusLife} alt="Campus life" loading="lazy" width={1280} height={720} className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
+            </div>
+            <div className="aspect-[4/3] rounded overflow-hidden">
+              <img src={graduationImg} alt="Graduation ceremony" loading="lazy" width={1280} height={720} className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
+            </div>
+          </div>
+          <div className="text-center mt-6">
+            <Link to="/campus-life" className="inline-flex items-center gap-2 text-primary font-medium hover:underline">
+              Explore Campus Life <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Kohsar */}
+      <section className="container-main px-4 sm:px-6 lg:px-8 py-14">
+        <h2 className="text-2xl font-serif text-foreground mb-6 text-center">Why Kohsar University?</h2>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-4xl mx-auto">
+          {[
+            { icon: MapPin, title: "Scenic Mountain Campus", desc: "Study in the breathtaking hills of Murree with clean air and serene surroundings." },
+            { icon: GraduationCap, title: "HEC Recognized", desc: "All programs are recognized by the Higher Education Commission of Pakistan." },
+            { icon: Globe, title: "International Partnerships", desc: "Exchange programs with universities in Turkey, China, Malaysia, and beyond." },
+            { icon: Award, title: "Research Excellence", desc: "Active research centers in mountain ecology, AI, and sustainable development." },
+            { icon: Users, title: "Small Class Sizes", desc: "Personalized attention with a favorable student-to-faculty ratio." },
+            { icon: BookOpen, title: "Modern Facilities", desc: "State-of-the-art labs, digital library, and high-speed campus-wide WiFi." },
+          ].map((item) => (
+            <div key={item.title} className="border border-border rounded p-5 hover:border-primary/30 transition-colors">
+              <item.icon className="h-5 w-5 text-primary mb-3" />
+              <h3 className="font-serif text-base text-foreground mb-1">{item.title}</h3>
+              <p className="text-sm text-muted-foreground">{item.desc}</p>
+            </div>
           ))}
         </div>
       </section>
