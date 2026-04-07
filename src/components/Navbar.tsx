@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, GraduationCap } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
+import logo from "@/assets/logo.png";
 
 const navItems = [
   { label: "Home", path: "/" },
@@ -10,6 +11,7 @@ const navItems = [
   { label: "Academics", path: "/academics" },
   { label: "Research & Innovation", path: "/research" },
   { label: "Campus Life", path: "/campus-life" },
+  { label: "Announcements", path: "/announcements" },
 ];
 
 const Navbar = () => {
@@ -35,8 +37,8 @@ const Navbar = () => {
     >
       <div className="container-main flex items-center justify-between h-16 px-4 sm:px-6 lg:px-8">
         <Link to="/" className="flex items-center gap-2 text-primary-foreground">
-          <GraduationCap className="h-7 w-7" />
-          <span className="font-serif text-lg">Prestige University</span>
+          <img src={logo} alt="Kohsar University Murree" className="h-10 w-10 rounded-full bg-white p-0.5" />
+          <span className="font-serif text-lg">Kohsar University Murree</span>
         </Link>
 
         <nav className="hidden lg:flex items-center gap-1">

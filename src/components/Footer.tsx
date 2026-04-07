@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { GraduationCap, Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Youtube } from "lucide-react";
+import { Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Youtube } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const footerLinks = [
   { label: "About", path: "/about" },
@@ -7,6 +8,7 @@ const footerLinks = [
   { label: "Academics", path: "/academics" },
   { label: "Research & Innovation", path: "/research" },
   { label: "Campus Life", path: "/campus-life" },
+  { label: "Announcements", path: "/announcements" },
 ];
 
 const Footer = () => {
@@ -16,11 +18,11 @@ const Footer = () => {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-10">
           <div>
             <div className="flex items-center gap-2 text-primary-foreground mb-3">
-              <GraduationCap className="h-6 w-6" />
-              <span className="font-serif text-lg">Prestige University</span>
+              <img src={logo} alt="Kohsar University Murree" className="h-10 w-10 rounded-full bg-white p-0.5" />
+              <span className="font-serif text-lg">Kohsar University Murree</span>
             </div>
             <p className="text-sm leading-relaxed">
-              Shaping the future through education, research, and innovation since 1965.
+              Serve to Solve — Empowering minds in the heart of the mountains since 2017.
             </p>
           </div>
 
@@ -51,22 +53,22 @@ const Footer = () => {
             <ul className="space-y-2.5 text-sm">
               <li className="flex items-start gap-2">
                 <MapPin className="h-4 w-4 mt-0.5 shrink-0" />
-                University Avenue, Academic City, 54000
+                Murree Hills, Rawalpindi District, Punjab, Pakistan
               </li>
               <li className="flex items-center gap-2">
                 <Phone className="h-4 w-4 shrink-0" />
-                +92 (51) 123-4567
+                +92 (51) 923-4567
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="h-4 w-4 shrink-0" />
-                info@prestige.edu
+                info@kohsar.edu.pk
               </li>
             </ul>
           </div>
         </div>
 
         <div className="border-t border-primary-foreground/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs">© {new Date().getFullYear()} Prestige University. All rights reserved.</p>
+          <p className="text-xs">© {new Date().getFullYear()} Kohsar University Murree. All rights reserved.</p>
           <div className="flex items-center gap-2">
             {[Facebook, Twitter, Linkedin, Youtube].map((Icon, i) => (
               <a key={i} href="#" className="w-8 h-8 rounded-full border border-primary-foreground/20 flex items-center justify-center hover:bg-primary-foreground/10 transition-all">
