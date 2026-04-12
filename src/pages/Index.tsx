@@ -9,19 +9,28 @@ import campusAerial from "@/assets/campus-aerial.jpg";
 import campusStudents from "@/assets/campus-students.jpg";
 import campusLife from "@/assets/campus-life.jpg";
 import graduationImg from "@/assets/graduation.jpg";
+import hero1 from "@/assets/home/hero.png";
+import hero2 from "@/assets/home/hero1.png";
+import hero3 from "@/assets/home/hero3.png";
+import hero4 from "@/assets/home/hero4.png";
+import chancellorImg from "@/assets/home/chancellor.png";
+import vcImg from "@/assets/home/vc.png";
+import stemImg from "@/assets/home/stem.png";
+import honeyProductionImg from "@/assets/home/honeyProduction.png";
+
+const heroImages = [hero1, hero2, hero3, hero4];
 
 const stats = [
-  { icon: Users, value: "7,900+", label: "Students" },
-  { icon: BookOpen, value: "58+", label: "Programs" },
-  { icon: Globe, value: "15+", label: "Partner Universities" },
-  { icon: Award, value: "450+", label: "Faculty Members" },
+  { icon: BookOpen, value: "3", label: "Faculties" },
+  { icon: Users, value: "1,350", label: "Students" },
+  { icon: Award, value: "51", label: "Teaching Faculty" },
+  { icon: Globe, value: "4", label: "Campuses" },
 ];
 
 const quickLinks = [
   { label: "About the University", path: "/about", desc: "Our history, mission, and leadership." },
   { label: "Institutions & Faculties", path: "/institutions", desc: "Explore our eight faculties and departments." },
   { label: "Academic Programs", path: "/academics", desc: "Undergraduate, graduate, and doctoral programs." },
-  { label: "Research & Innovation", path: "/research", desc: "Advancing knowledge in mountain sciences and beyond." },
   { label: "Campus Life", path: "/campus-life", desc: "Student activities, housing, and facilities." },
   { label: "Announcements", path: "/announcements", desc: "Latest news, notices, and updates." },
 ];
@@ -29,8 +38,8 @@ const quickLinks = [
 const Index = () => {
   const [current, setCurrent] = useState(0);
 
-  const next = useCallback(() => setCurrent((c) => (c + 1) % announcements.length), []);
-  const prev = useCallback(() => setCurrent((c) => (c - 1 + announcements.length) % announcements.length), []);
+  const next = useCallback(() => setCurrent((c) => (c + 1) % heroImages.length), []);
+  const prev = useCallback(() => setCurrent((c) => (c - 1 + heroImages.length) % heroImages.length), []);
 
   useEffect(() => {
     const timer = setInterval(next, 5000);
@@ -45,13 +54,13 @@ const Index = () => {
 
       {/* Hero Slider */}
       <section className="relative h-[85vh] overflow-hidden">
-        {announcements.map((item, i) => (
+        {heroImages.map((image, i) => (
           <div
-            key={item.id}
+            key={i}
             className="absolute inset-0 transition-opacity duration-700"
             style={{ opacity: i === current ? 1 : 0, zIndex: i === current ? 1 : 0 }}
           >
-            <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
+            <img src={image} alt={`Hero slide ${i + 1}`} className="w-full h-full object-cover" />
             <div className="absolute inset-0 bg-primary/70" />
           </div>
         ))}
@@ -82,7 +91,7 @@ const Index = () => {
             <ChevronLeft className="h-5 w-5 text-primary-foreground" />
           </button>
           <div className="flex gap-2">
-            {announcements.map((_, i) => (
+            {heroImages.map((_, i) => (
               <button
                 key={i}
                 onClick={() => setCurrent(i)}
@@ -112,26 +121,67 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Welcome Section */}
+      {/* Kohsar University in One Look */}
       <section className="container-main px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid lg:grid-cols-2 gap-10 items-center">
-          <div>
-            <h2 className="text-3xl font-serif text-foreground mb-4">Welcome to Kohsar University Murree</h2>
-            <p className="text-muted-foreground leading-relaxed mb-4">
-              Nestled in the scenic hills of Murree, Kohsar University is a premier institution of higher education committed to academic excellence, research innovation, and community service. Our motto — <strong className="text-foreground">"Serve to Solve"</strong> — drives everything we do.
-            </p>
-            <p className="text-muted-foreground leading-relaxed mb-6">
-              With eight faculties, 58+ academic programs, and a vibrant campus life surrounded by the natural beauty of the Murree hills, we offer a unique learning environment that inspires creativity and critical thinking.
-            </p>
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-serif text-foreground mb-6 text-center">Kohsar University Murree in one look</h2>
+          <p className="text-foreground leading-relaxed text-justify mb-8">
+            One of the cornerstones of Higher Education Commission's (HEC's) policies is to establish higher education institutions in the field of Applied Sciences. The Government of Pakistan has already heavily invested in training of critical human resource, and it further intends to develop a large pool of high-quality researchers and technicians in various fields of Science, Technology, and Allied Industries. In this connection, Kohsar University Murree (KUM) is an initiative of Government of Punjab to bring improvements in the tourism & hospitality linked economy as well as other interlinked areas to improve the overall health of Community, Environment, and Ecosystem. This is scheduled to be achieved by tightly linking basic research & translational research with entrepreneurial activities to build conducive on campus <span className="font-semibold italic text-primary">Serve to Solve</span>.
+          </p>
+          <div className="flex justify-center gap-3 mb-12">
             <Link
               to="/about"
-              className="inline-flex items-center gap-2 text-primary font-medium hover:underline"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground font-semibold rounded hover:bg-primary/90 transition-all"
             >
-              Learn more about us <ArrowRight className="h-4 w-4" />
+              Explore More <ArrowRight className="h-4 w-4" />
+            </Link>
+            <Link
+              to="/vice-chancellor"
+              className="inline-flex items-center gap-2 px-6 py-3 border border-primary text-black font-semibold rounded hover:bg-primary/10 transition-all"
+            >
+              Vice Chancellor Message <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
-          <div className="aspect-[4/3] rounded overflow-hidden">
-            <img src={campusAerial} alt="Kohsar University campus aerial view" className="w-full h-full object-cover" width={1920} height={1080} />
+        </div>
+
+        {/* Leadership Cards */}
+        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          {/* Chancellor Card */}
+          <div className="border border-border rounded-lg overflow-hidden hover:border-primary/30 transition-all bg-card shadow-sm hover:shadow-md flex flex-col">
+            <div className="p-6">
+              <div className="flex gap-4 mb-4">
+                <div className="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
+                  <img src={chancellorImg} alt="Chancellor" className="w-full h-full object-cover" />
+                </div>
+                <div className="flex-1">
+                  <p className="text-xs font-medium text-accent tracking-widest uppercase mb-2">Chancellor</p>
+                  <h3 className="font-serif text-lg text-foreground">Sardar Saleem Haider Khan</h3>
+                  <p className="text-xs text-muted-foreground mt-1">Leading with vision and commitment</p>
+                </div>
+              </div>
+              <p className="text-sm text-muted-foreground leading-relaxed border-t pt-4">
+                Sardar Saleem Haider Khan brings exceptional leadership and strategic vision to Kohsar University Murree. With a distinguished background in governance and education, he is committed to advancing the university's mission of delivering quality education and fostering innovation. His leadership emphasizes the university's role in developing human capital and contributing to national development.
+              </p>
+            </div>
+          </div>
+
+          {/* Vice Chancellor Card */}
+          <div className="border rounded-lg overflow-hidden bg-card hover:border-primary/30 shadow-sm hover:shadow-md flex flex-col">
+            <div className="p-6">
+              <div className="flex gap-4 mb-4">
+                <div className="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
+                  <img src={vcImg} alt="Vice Chancellor" className="w-full h-full object-cover" />
+                </div>
+                <div className="flex-1">
+                  <p className="text-xs font-medium text-accent tracking-widest uppercase mb-2">Vice Chancellor</p>
+                  <h3 className="font-serif text-lg text-foreground">Prof. Dr. Rafia Mumtaz</h3>
+                  <p className="text-xs text-muted-foreground mt-1">Visionary leader in innovation</p>
+                </div>
+              </div>
+              <p className="text-sm text-muted-foreground leading-relaxed border-t pt-4">
+                Professor Dr. Rafia Mumtaz is a visionary academic leader and distinguished researcher serving as the Vice Chancellor of Kohsar University Murree. She has made pioneering contributions in Internet of Things (IoT), Artificial Intelligence (AI), and embedded systems. Before joining Kohsar University, Dr. Rafia served at the National University of Sciences and Technology (NUST) for over 15 years, earning recognition for outstanding academic leadership and research excellence. Her innovative work addresses critical challenges in healthcare, agriculture, and environmental sustainability through intelligent technology solutions.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -162,6 +212,62 @@ const Index = () => {
                 </div>
               </Link>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* STEM Section */}
+      <section className="bg-muted/50">
+        <div className="container-main px-4 sm:px-6 lg:px-8 py-16">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left - Content */}
+            <div className="space-y-6">
+              <h2 className="text-3xl font-serif text-foreground">STEM</h2>
+              <p className="text-foreground leading-relaxed text-justify">
+                STEM is an educational program developed to prepare primary and secondary students for college, graduate study, and careers in the fields of science, technology, engineering and mathematics (STEM). In addition to subject-specific learning, STEM aims to foster inquiring minds, logical reasoning, and collaboration skills. The goal of STEM programs is to increase the supply of qualified high-tech workers in the Pakistan, bolster innovation, improve the country's competitive position globally and strengthen economic growth. STEM gained importance in the early 2000s following the publication of several reports. STEM emphasized the importance of science and technology jobs in fostering innovation, addressing societal problems and maintaining country's prosperity.
+              </p>
+              <Link
+                to="/academics"
+                className="inline-flex items-center gap-2 text-primary font-medium hover:underline"
+              >
+                View More <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
+
+            {/* Right - Image */}
+            <div className="aspect-[4/3] rounded-lg overflow-hidden shadow-lg">
+              <img src={stemImg} alt="STEM Laboratory and Facilities" className="w-full h-full object-cover" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Agriculture & Honey Production Section */}
+      <section className="container-main px-4 sm:px-6 lg:px-8 py-16">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Left - Image */}
+          <div className="aspect-[4/3] rounded-lg overflow-hidden shadow-lg">
+            <img src={honeyProductionImg} alt="Honey Production Unit and Agriculture" className="w-full h-full object-cover" />
+          </div>
+
+          {/* Right - Content */}
+          <div className="space-y-6">
+            <h2 className="text-3xl font-serif text-foreground">Agriculture</h2>
+            <p className="text-foreground leading-relaxed text-justify">
+              Agriculture is the art and science of cultivating the soil, growing crops, and raising livestock. It includes the preparation of plant and animal products for people to use and their distribution to markets. Agriculture provides most of the world's food and fabric.
+            </p>
+            <div className="space-y-3">
+              <h3 className="font-serif text-lg text-foreground">Major disciplines of Agriculture are</h3>
+              <p className="text-foreground leading-relaxed">
+                Food Science and Technology, Environmental Science, Forestry, Agronomy, Soil Sciences, Plant Breeding and Genetics
+              </p>
+            </div>
+            <Link
+              to="/academics"
+              className="inline-flex items-center gap-2 text-primary font-medium hover:underline"
+            >
+              View More <ArrowRight className="h-4 w-4" />
+            </Link>
           </div>
         </div>
       </section>
@@ -225,7 +331,6 @@ const Index = () => {
             { icon: MapPin, title: "Scenic Mountain Campus", desc: "Study in the breathtaking hills of Murree with clean air and serene surroundings." },
             { icon: GraduationCap, title: "HEC Recognized", desc: "All programs are recognized by the Higher Education Commission of Pakistan." },
             { icon: Globe, title: "International Partnerships", desc: "Exchange programs with universities in Turkey, China, Malaysia, and beyond." },
-            { icon: Award, title: "Research Excellence", desc: "Active research centers in mountain ecology, AI, and sustainable development." },
             { icon: Users, title: "Small Class Sizes", desc: "Personalized attention with a favorable student-to-faculty ratio." },
             { icon: BookOpen, title: "Modern Facilities", desc: "State-of-the-art labs, digital library, and high-speed campus-wide WiFi." },
           ].map((item) => (

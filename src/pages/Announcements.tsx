@@ -16,7 +16,7 @@ const Announcements = () => {
           {announcements.map((a) => (
             <Link
               key={a.id}
-              to={`/announcements/${a.id}`}
+              to={`/announcements/${a.slug}`}
               className="group block border border-border rounded overflow-hidden hover:border-primary/30 transition-colors"
             >
               <div className="aspect-[16/10] overflow-hidden">

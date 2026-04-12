@@ -29,7 +29,7 @@ const About = () => {
               Kohsar University Murree was established in 2017 by the Government of Punjab with the vision of bringing quality higher education to the Murree hills and surrounding regions. Named after the Urdu word for "mountain," Kohsar University embodies the strength, resilience, and natural beauty of its location.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-3">
-              Starting with just three faculties and 200 students, the university has rapidly grown to become a recognized center of academic excellence with eight faculties, 58+ programs, and a student body of over 7,900 from across Pakistan.
+              Starting with just three faculties and 200 students, the university has rapidly grown to become a recognized center of academic excellence with eight faculties, 58+ programs, and a student body of over 1,350 from across Pakistan.
             </p>
             <p className="text-muted-foreground leading-relaxed">
               Our campus, spread across 250 acres of pine-covered hills, provides a peaceful and inspiring environment for learning, research, and personal growth. The motto <strong className="text-foreground">"Serve to Solve"</strong> reflects our commitment to using knowledge for the betterment of society.
@@ -71,7 +71,7 @@ const About = () => {
               { icon: Users, value: "7,900+", label: "Students" },
               { icon: BookOpen, value: "58+", label: "Programs" },
               { icon: Globe, value: "15+", label: "Partner Universities" },
-              { icon: Award, value: "450+", label: "Faculty Members" },
+              { icon: Award, value: "51", label: "Faculty Members" },
               { icon: MapPin, value: "250", label: "Acres Campus" },
               { icon: GraduationCap, value: "8", label: "Faculties" },
               { icon: Target, value: "12", label: "Research Centers" },

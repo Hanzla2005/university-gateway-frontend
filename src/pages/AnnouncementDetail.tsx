@@ -5,8 +5,8 @@ import Footer from "@/components/Footer";
 import { announcements } from "@/data/announcements";
 
 const AnnouncementDetail = () => {
-  const { id } = useParams();
-  const announcement = announcements.find((a) => a.id === id);
+  const { slug } = useParams();
+  const announcement = announcements.find((a) => a.slug === slug);
 
   if (!announcement) {
     return (
@@ -22,29 +22,34 @@ const AnnouncementDetail = () => {
   }
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-background">
       <Navbar />
 
-      <div className="pt-20">
-        <div className="container-main px-4 sm:px-6 lg:px-8 py-10">
-          <Link to="/announcements" className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-primary transition-colors mb-6">
-            <ArrowLeft className="h-4 w-4" /> Back to Announcements
-          </Link>
+      <div className="pt-24 pb-16">
+        <div className="container-main px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto">
+            <Link to="/announcements" className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-primary transition-colors mb-8">
+              <ArrowLeft className="h-4 w-4" /> Back to All Announcements
+            </Link>
 
-          <div className="max-w-3xl">
-            <span className="text-xs font-medium text-accent">{announcement.tag}</span>
-            <h1 className="text-3xl sm:text-4xl font-serif text-foreground mt-2 mb-3">{announcement.title}</h1>
-            <div className="flex items-center gap-1.5 text-sm text-muted-foreground mb-8">
-              <Calendar className="h-4 w-4" /> {announcement.date}
-            </div>
-          </div>
+            <article>
+              <header className="mb-8">
+                <span className="text-sm font-semibold text-accent uppercase tracking-wider">{announcement.tag}</span>
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif text-foreground mt-2 mb-4 leading-tight">{announcement.title}</h1>
+                <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <Calendar className="h-4 w-4" />
+                  <span>{announcement.date}</span>
+                </div>
+              </header>
 
-          <div className="aspect-[2/1] max-w-4xl rounded overflow-hidden mb-8">
-            <img src={announcement.image} alt={announcement.title} className="w-full h-full object-cover" width={800} height={512} />
-          </div>
+              <div className="aspect-video rounded-lg overflow-hidden mb-10 border border-border">
+                <img src={announcement.image} alt={announcement.title} className="w-full h-full object-cover" width={1200} height={675} />
+              </div>
 
-          <div className="max-w-3xl">
-            <p className="text-muted-foreground leading-relaxed">{announcement.content}</p>
+              <div className="prose prose-lg max-w-none text-foreground/90 leading-relaxed">
+                <p>{announcement.content}</p>
+              </div>
+            </article>
           </div>
         </div>
       </div>
