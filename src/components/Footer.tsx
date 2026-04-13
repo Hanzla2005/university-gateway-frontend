@@ -4,11 +4,18 @@ import logo from "@/assets/logo.png";
 
 const footerLinks = [
   { label: "About", path: "/about" },
-  { label: "Institutions", path: "/institutions" },
-  { label: "Academics", path: "/academics" },
-  { label: "Research & Innovation", path: "/research" },
-  { label: "Campus Life", path: "/campus-life" },
+  { label: "Admissions", path: "/online-admissions" },
+  { label: "Faculties", path: "/faculties" },
   { label: "Announcements", path: "/announcements" },
+  { label: "Downloads", path: "/downloads" },
+];
+
+const resourcesLinks = [
+  { label: "Scholarships", path: "/scholarships" },
+  { label: "Jobs", path: "/jobs" },
+  { label: "Policies", path: "/policies" },
+  { label: "Guest House", path: "/guest-house" },
+  { label: "Convocation", path: "https://docs.google.com/forms/d/e/1FAIpQLSdGaBUzTNJIW1xwpp5VfvMMdnFSU0z98oU95DlU26D3xvYv6A/viewform", isExternal: true },
 ];
 
 const Footer = () => {
@@ -40,9 +47,15 @@ const Footer = () => {
           <div>
             <h4 className="font-serif text-primary-foreground text-sm mb-3">Resources</h4>
             <ul className="space-y-2 text-sm">
-              {["Library", "Student Portal", "Faculty Directory", "Career Services", "Alumni Network"].map((l) => (
-                <li key={l}>
-                  <a href="#" className="hover:text-primary-foreground transition-colors">{l}</a>
+              {resourcesLinks.map((l) => (
+                <li key={l.path}>
+                  <Link 
+                    to={l.path} 
+                    target={l.isExternal ? "_blank" : "_self"}
+                    className="hover:text-primary-foreground transition-colors"
+                  >
+                    {l.label}
+                  </Link>
                 </li>
               ))}
             </ul>
