@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, ChevronDown, Users, BookOpen, Globe, Award, MapPin, GraduationCap } from "lucide-react";
-import Navbar from "@/components/Navbar";
+
 import Footer from "@/components/Footer";
 import { institutions } from "@/data/institutions";
 import heroBg from "@/assets/home/bg.png";
@@ -37,7 +37,6 @@ const stats = [
 const Index = () => {
   return (
     <div className="min-h-screen">
-      <Navbar />
 
       {/* Hero - Single full image, navbar overlays on top */}
       <section className="relative h-screen overflow-hidden">
