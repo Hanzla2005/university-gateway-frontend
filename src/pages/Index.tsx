@@ -5,7 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { institutions } from "@/data/institutions";
 import heroBg from "@/assets/home/bg.png";
-import hero4 from "@/assets/home/hero4.png";
+
 import chancellorImg from "@/assets/home/chancellor.png";
 import vcImg from "@/assets/home/vc.png";
 import stemImg from "@/assets/home/stem.png";
@@ -17,7 +17,7 @@ import story4 from "@/assets/stories/story4.jpg";
 import story5 from "@/assets/stories/story5.jpg";
 import story6 from "@/assets/stories/story6.jpg";
 
-const heroImages = [hero1, hero2, hero3, hero4];
+
 
 const topStories = [
   { id: 1, tag: "STUDENT ACHIEVEMENTS", title: "KUM Students Win National Robotics Competition 2025", image: story1, large: true },
