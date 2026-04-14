@@ -242,7 +242,7 @@ const Index = () => {
                   <img src={inst.image} alt={inst.name} loading="lazy" width={800} height={512} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
                 </div>
                 <div className="p-4">
-                  <div className="w-8 h-8 rounded bg-secondary flex items-center justify-center text-primary-foreground text-sm font-semibold absolute -top-4 left-4">
+                  <div className="w-8 h-8 rounded bg-accent flex items-center justify-center text-accent-foreground text-sm font-semibold absolute -top-4 left-4">
                     <MapPin className="w-4 h-4" />
                   </div>
                   <h3 className="font-serif text-lg text-foreground mb-1">{inst.name}</h3>

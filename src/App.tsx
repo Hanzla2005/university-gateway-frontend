@@ -139,6 +139,7 @@ const App = () => (
             <Route path="/campus-life" element={<CampusLife />} />
             <Route path="/announcements" element={<Announcements />} />
             <Route path="/announcements/:slug" element={<AnnouncementDetail />} />
+            <Route path="/merit-lists" element={<MeritLists />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </Layout>

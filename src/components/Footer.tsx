@@ -52,12 +52,12 @@ const Footer = () => {
                 <Link
                   key={link.path + link.label}
                   to={link.path}
-                  className="flex items-center gap-3 text-primary-foreground/70 hover:text-primary-foreground transition-colors group"
+                  className="flex items-center gap-3 text-primary-foreground/70 hover:text-accent transition-colors group"
                 >
-                  <div className="w-10 h-10 rounded-full border border-primary-foreground/20 flex items-center justify-center group-hover:border-primary-foreground/50 transition-colors shrink-0">
-                    <Icon className="h-4 w-4" />
+                  <div className="w-12 h-12 rounded-full border border-primary-foreground/20 flex items-center justify-center group-hover:border-accent transition-colors shrink-0">
+                    <Icon className="h-6 w-6" />
                   </div>
-                  <span className="text-sm font-medium">{link.label}</span>
+                  <span className="text-base font-medium">{link.label}</span>
                 </Link>
               );
             })}
@@ -67,7 +67,7 @@ const Footer = () => {
 
       {/* Important Links Button */}
       <div className="relative flex justify-center -mt-px">
-        <div className="border border-primary-foreground/30 px-6 py-2 text-xs font-semibold tracking-widest text-primary-foreground uppercase">
+        <div className="border border-primary-foreground/30 px-6 py-2 text-sm font-semibold tracking-widest text-primary-foreground uppercase">
           Important Links
         </div>
       </div>
@@ -82,11 +82,11 @@ const Footer = () => {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* In Focus */}
           <div>
-            <h4 className="font-serif text-primary-foreground text-base italic mb-4">In Focus</h4>
+            <h4 className="font-serif text-primary-foreground text-lg italic mb-4">In Focus</h4>
             <ul className="space-y-2.5">
               {inFocusLinks.map((l) => (
                 <li key={l.path + l.label}>
-                  <Link to={l.path} className="text-sm text-primary-foreground/60 hover:text-primary-foreground transition-colors flex items-center gap-1.5">
+                  <Link to={l.path} className="text-base text-primary-foreground/60 hover:text-accent transition-colors flex items-center gap-1.5">
                     <span className="text-primary-foreground/40">›</span> {l.label}
                   </Link>
                 </li>
@@ -96,11 +96,11 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-serif text-primary-foreground text-base italic mb-4">Quick Links</h4>
+            <h4 className="font-serif text-primary-foreground text-lg italic mb-4">Quick Links</h4>
             <ul className="space-y-2.5">
               {quickLinks.map((l) => (
                 <li key={l.path + l.label}>
-                  <Link to={l.path} className="text-sm text-primary-foreground/60 hover:text-primary-foreground transition-colors flex items-center gap-1.5">
+                  <Link to={l.path} className="text-base text-primary-foreground/60 hover:text-accent transition-colors flex items-center gap-1.5">
                     <span className="text-primary-foreground/40">›</span> {l.label}
                   </Link>
                 </li>
@@ -108,72 +108,69 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Contact */}
+          {/* Contact Us */}
           <div>
-            <h4 className="font-serif text-primary-foreground text-base font-bold mb-4">KUM Contact</h4>
-            <div className="space-y-3">
-              <div className="flex items-center gap-2 text-sm text-primary-foreground/70">
-                <Phone className="h-4 w-4 shrink-0" />
-                +92 (51) 923-4567
+            <h4 className="font-serif text-primary-foreground text-lg italic mb-4">Contact Us</h4>
+            <div className="space-y-4">
+              <div className="flex items-start gap-3">
+                <Phone className="h-5 w-5 mt-1 text-accent flex-shrink-0" />
+                <div className="text-base text-primary-foreground/60">
+                  <p>+92-51-9265194</p>
+                  <p>+92-51-9265195</p>
+                </div>
               </div>
-              <h5 className="font-serif text-primary-foreground text-sm font-bold mt-4">Address</h5>
-              <p className="text-sm text-primary-foreground/60 leading-relaxed">
-                Kohsar University Murree (KUM), Near Firhill Hotel, Murree, Punjab, Pakistan
-              </p>
+              <div className="flex items-start gap-3">
+                <MapPin className="h-5 w-5 mt-1 text-accent flex-shrink-0" />
+                <p className="text-base text-primary-foreground/60">
+                  Kohsar University Murree, Kashmir Point, Murree
+                </p>
+              </div>
+              <a
+                href={GOOGLE_MAPS_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-sm text-accent hover:underline"
+              >
+                Get Directions <ExternalLink className="h-4 w-4" />
+              </a>
             </div>
           </div>
 
-          {/* Location Map */}
-          <div>
-            <h4 className="font-serif text-primary-foreground text-base font-bold mb-4">Location Map</h4>
-            <div className="rounded overflow-hidden border border-primary-foreground/10">
+          {/* Map */}
+          <div className="relative">
+            <h4 className="font-serif text-primary-foreground text-lg italic mb-4">Our Location</h4>
+            <div className="aspect-video rounded-md overflow-hidden border-2 border-primary-foreground/10">
               <iframe
                 src={MAPS_EMBED_URL}
                 width="100%"
-                height="160"
+                height="100%"
                 style={{ border: 0 }}
-                allowFullScreen
+                allowFullScreen={false}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Kohsar University Murree Location"
-                className="grayscale hover:grayscale-0 transition-all duration-300"
-              />
+                title="KUM Location"
+              ></iframe>
             </div>
-            <a
-              href={GOOGLE_MAPS_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 text-xs text-primary-foreground/50 hover:text-primary-foreground mt-2 transition-colors"
-            >
-              Open in Maps <ExternalLink className="h-3 w-3" />
-            </a>
           </div>
-        </div>
-      </div>
-
-      {/* Logo centered */}
-      <div className="relative flex justify-center py-6">
-        <div className="flex flex-col items-center gap-2">
-          <img src={logo} alt="Kohsar University Murree" className="h-16 w-16 rounded-full bg-white p-1" />
-          <span className="font-serif text-primary-foreground text-sm tracking-wide">Kohsar University Murree</span>
-          <span className="text-[10px] text-primary-foreground/40 italic tracking-wider">Serve to Solve</span>
         </div>
       </div>
 
       {/* Bottom Bar */}
-      <div className="relative border-t border-primary-foreground/10">
-        <div className="container-main px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <div className="flex items-center gap-4 text-xs text-primary-foreground/50">
-            <Link to="/" className="hover:text-primary-foreground transition-colors">Home</Link>
-            <Link to="/about" className="hover:text-primary-foreground transition-colors">Contact Us</Link>
+      <div className="relative bg-primary-foreground/5">
+        <div className="container-main px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row justify-between items-center gap-4">
+          <div className="flex items-center gap-4">
+            <img src={logo} alt="KUM Logo" className="h-12" />
+            <p className="text-sm text-primary-foreground/60">&copy; {new Date().getFullYear()} Kohsar University Murree. All Rights Reserved.</p>
           </div>
-          <p className="text-xs text-primary-foreground/40">
-            © {new Date().getFullYear()} Kohsar University Murree. All Rights Reserved.
-          </p>
+
           <div className="flex items-center gap-2">
             {[Facebook, Linkedin, Youtube, Instagram].map((Icon, i) => (
-              <a key={i} href="#" className="w-7 h-7 flex items-center justify-center text-primary-foreground/40 hover:text-primary-foreground transition-colors">
-                <Icon className="h-4 w-4" />
+              <a
+                key={i}
+                href="#"
+                className="w-10 h-10 rounded-full bg-primary-foreground/10 text-primary-foreground/70 flex items-center justify-center hover:bg-accent hover:text-accent-foreground transition-colors"
+              >
+                <Icon className="h-6 w-6" />
               </a>
             ))}
           </div>
