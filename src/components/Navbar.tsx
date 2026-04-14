@@ -145,7 +145,7 @@ const Navbar = () => {
   };
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "shadow-lg" : ""}`}>
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "shadow-lg bg-primary" : ""}`}>
       {/* Top utility bar */}
       <div className="bg-primary border-b border-primary-foreground/10">
         <div className="container-main px-4 sm:px-6 lg:px-8 flex items-center justify-between h-12">
