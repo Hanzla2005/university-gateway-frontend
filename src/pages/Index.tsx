@@ -246,7 +246,7 @@ const Index = () => {
                     <MapPin className="w-4 h-4" />
                   </div>
                   <h3 className="font-serif text-lg text-foreground mb-1">{inst.name}</h3>
-                  <p className="text-sm text-muted-foreground">{inst.description}</p>
+                  <p className="text-sm text-muted-foreground">{inst.desc}</p>
                 </div>
               </Link>
             ))}
