@@ -118,6 +118,7 @@ const Navbar = () => {
   const [hoveredDropdown, setHoveredDropdown] = useState<string | null>(null);
   const [hoveredNestedItem, setHoveredNestedItem] = useState<string | null>(null);
   const location = useLocation();
+  const isHomePage = location.pathname === "/";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -130,6 +131,19 @@ const Navbar = () => {
     setOpenSubmenu(null);
     setOpenNestedSubmenu(null);
   }, [location.pathname]);
+
+  const navClasses = isHomePage
+    ? scrolled ? "shadow-lg bg-primary" : ""
+    : "shadow-lg bg-primary";
+
+  const topBarClasses = isHomePage
+    ? scrolled ? "bg-primary" : "bg-transparent"
+    : "bg-primary";
+
+  const mainBarClasses = isHomePage
+    ? scrolled ? "bg-primary/90" : "bg-black/20"
+    : "bg-primary/90";
+
 
   const handleSubmenuPdfClick = (pdfPath: string) => {
     if (pdfPath === "/university-act") window.open(universityActPdf, "_blank");
@@ -145,9 +159,9 @@ const Navbar = () => {
   };
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "shadow-lg bg-primary" : ""}`}>
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${navClasses}`}>
       {/* Top utility bar */}
-      <div className={`border-b border-primary-foreground/10 transition-colors duration-300 ${scrolled ? "bg-primary" : "bg-transparent"}`}>
+      <div className={`border-b border-primary-foreground/10 transition-colors duration-300 ${topBarClasses}`}>
         <div className="container-main px-4 sm:px-6 lg:px-8 flex items-center justify-between h-12">
           <Link to="/" className="flex items-center gap-2.5 text-primary-foreground">
             <img src={logo} alt="Kohsar University Murree" className="h-8 w-8 rounded-full bg-white p-0.5" />
@@ -184,7 +198,7 @@ const Navbar = () => {
       </div>
 
       {/* Main navigation bar */}
-      <div className={`hidden lg:block backdrop-blur-sm transition-colors duration-300 ${scrolled ? "bg-primary/90" : "bg-black/20"}`}>
+      <div className={`hidden lg:block backdrop-blur-sm transition-colors duration-300 ${mainBarClasses}`}>
         <div className="container-main px-4 sm:px-6 lg:px-8">
           <nav className="flex items-center justify-center gap-0">
             {mainNavItems.map((item) => (

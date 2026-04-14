@@ -9,30 +9,7 @@ import chancellorImg from "@/assets/home/chancellor.png";
 import vcImg from "@/assets/home/vc.png";
 import stemImg from "@/assets/home/stem.png";
 import honeyProductionImg from "@/assets/home/honeyProduction.png";
-import story1 from "@/assets/stories/story1.jpg";
-import story2 from "@/assets/stories/story2.jpg";
-import story3 from "@/assets/stories/story3.jpg";
-import story4 from "@/assets/stories/story4.jpg";
-import story5 from "@/assets/stories/story5.jpg";
-import story6 from "@/assets/stories/story6.jpg";
-
-
-
-const topStories = [
-  { id: 1, tag: "STUDENT ACHIEVEMENTS", title: "KUM Students Win National Robotics Competition 2025", image: story1, large: true },
-  { id: 2, tag: "INTERACTIVE SESSION", title: "KUM Hosts Keynote on Pakistan-China Academic Relations", image: story2 },
-  { id: 3, tag: "ACHIEVEMENT", title: "KUM Recognized in HEC Rankings for Excellence in Research", image: story3 },
-  { id: 4, tag: "AWARENESS SESSION", title: "KUM Admissions Office Conducts Awareness Sessions in Rawalpindi", image: story4 },
-  { id: 5, tag: "STUDENT ACHIEVEMENTS", title: "KUM Student Wins 1st Place in National Essay Competition", image: story5 },
-  { id: 6, tag: "INDUSTRY-ACADEMIA COLLABORATION", title: "KUM Supports Youth Entrepreneurship at Pitch Bazar 2025", image: story6 },
-];
-
-const stats = [
-  { icon: BookOpen, value: "3", label: "Faculties" },
-  { icon: Users, value: "1,350", label: "Students" },
-  { icon: Award, value: "51", label: "Teaching Faculty" },
-  { icon: Globe, value: "4", label: "Campuses" },
-];
+import { topStories } from "@/data/stories";
 
 const Index = () => {
   return (
@@ -45,14 +22,24 @@ const Index = () => {
         {/* Welcome banner at bottom */}
         <div className="absolute bottom-0 left-0 right-0 z-10 bg-primary/90 backdrop-blur-sm">
           <div className="container-main px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-center gap-2">
-            <span className="text-primary-foreground font-serif text-lg">Welcome to Kohsar University Murree</span>
+            <button
+              onClick={() => {
+                const storiesSection = document.getElementById("stories");
+                if (storiesSection) {
+                  storiesSection.scrollIntoView({ behavior: "smooth" });
+                }
+              }}
+              className="text-primary-foreground font-serif text-lg"
+            >
+              Welcome to Kohsar University Murree
+            </button>
             <ChevronDown className="h-5 w-5 text-accent animate-bounce" />
           </div>
         </div>
       </section>
 
       {/* Top Stories - NUST style grid */}
-      <section className="bg-muted/50 py-14">
+      <section id="stories" className="bg-muted/50 py-14">
         <div className="container-main px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-serif text-foreground text-center mb-10">Top Stories</h2>
 
@@ -60,7 +47,7 @@ const Index = () => {
           <div className="grid lg:grid-cols-3 gap-4 mb-4">
             {/* Large card */}
             <div className="lg:col-span-1 lg:row-span-1">
-              <Link to="/announcements" className="group block relative aspect-[4/3] overflow-hidden bg-foreground">
+              <Link to="/stories/1" className="group block relative aspect-[4/3] overflow-hidden bg-foreground">
                 <img src={topStories[0].image} alt={topStories[0].title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80" loading="lazy" width={800} height={512} />
                 <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
                   <p className="text-xs font-bold text-accent uppercase tracking-wider mb-1">{topStories[0].tag}</p>
@@ -69,7 +56,7 @@ const Index = () => {
               </Link>
             </div>
             <div>
-              <Link to="/announcements" className="group block relative aspect-[4/3] overflow-hidden bg-foreground">
+              <Link to="/stories/2" className="group block relative aspect-[4/3] overflow-hidden bg-foreground">
                 <img src={topStories[1].image} alt={topStories[1].title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80" loading="lazy" width={800} height={512} />
                 <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
                   <p className="text-xs font-bold text-accent uppercase tracking-wider mb-1">{topStories[1].tag}</p>
@@ -78,7 +65,7 @@ const Index = () => {
               </Link>
             </div>
             <div>
-              <Link to="/announcements" className="group block relative aspect-[4/3] overflow-hidden bg-foreground">
+              <Link to="/stories/3" className="group block relative aspect-[4/3] overflow-hidden bg-foreground">
                 <img src={topStories[2].image} alt={topStories[2].title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80" loading="lazy" width={800} height={512} />
                 <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
                   <p className="text-xs font-bold text-accent uppercase tracking-wider mb-1">{topStories[2].tag}</p>
@@ -91,7 +78,7 @@ const Index = () => {
           {/* Row 2: 3 equal cards */}
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {topStories.slice(3).map((story) => (
-              <Link key={story.id} to="/announcements" className="group block relative aspect-[4/3] overflow-hidden bg-foreground">
+              <Link key={story.id} to={`/stories/${story.id}`} className="group block relative aspect-[4/3] overflow-hidden bg-foreground">
                 <img src={story.image} alt={story.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80" loading="lazy" width={800} height={512} />
                 <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
                   <p className="text-xs font-bold text-accent uppercase tracking-wider mb-1">{story.tag}</p>
@@ -103,11 +90,35 @@ const Index = () => {
 
           <div className="text-center mt-8">
             <Link
-              to="/announcements"
+              to="/stories"
               className="inline-flex items-center gap-2 px-6 py-2.5 bg-accent text-accent-foreground font-semibold rounded hover:brightness-110 transition-all text-sm"
             >
               More Stories
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Vice Chancellor's Message */}
+      <section className="bg-muted/95 py-16">
+        <div className="container-main px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl font-serif text-foreground">Vice Chancellor's Message</h2>
+          </div>
+          <div className="grid md:grid-cols-12 gap-8 items-center max-w-6xl mx-auto">
+            <div className="md:col-span-8">
+              <blockquote className="text-lg text-foreground relative pl-8">
+                <span className="text-6xl text-primary absolute -top-2 left-0 opacity-30 font-serif">“</span>
+                As we embrace the future with a shared vision, our primary focus shall remain on equipping the next generation with world-class knowledge. Simultaneously, we shall emphasise internationalisation, interdisciplinary collaboration and foster cutting-edge research and innovation that align with national growth and collective progress....
+                <span className="text-6xl text-primary absolute -bottom-8 right-4 opacity-30 font-serif">”</span>
+              </blockquote>
+              <Link to="/vice-chancellor" className="text-sm text-primary hover:underline mt-6 inline-block ml-8">View Details</Link>
+            </div>
+            <div className="md:col-span-4 text-center">
+              <img src={vcImg} alt="Rector" className="w-40 h-40 rounded-full object-cover mx-auto mb-4 shadow-lg" />
+              <h3 className="font-serif text-xl text-foreground">Dr. Rafia Mumtaz</h3>
+              <p className="text-sm text-muted-foreground">Vice Chancellor Kohsar</p>
+            </div>
           </div>
         </div>
       </section>
@@ -165,21 +176,6 @@ const Index = () => {
                 Professor Dr. Rafia Mumtaz is a visionary academic leader and distinguished researcher. She has made pioneering contributions in IoT, AI, and embedded systems, earning recognition for outstanding academic leadership and research excellence.
               </p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Stats Bar */}
-      <section className="bg-primary">
-        <div className="container-main px-4 sm:px-6 lg:px-8 py-10">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {stats.map((s) => (
-              <div key={s.label} className="text-center">
-                <s.icon className="h-6 w-6 text-accent mx-auto mb-2" />
-                <p className="text-3xl font-serif text-primary-foreground">{s.value}</p>
-                <p className="text-sm text-primary-foreground/60">{s.label}</p>
-              </div>
-            ))}
           </div>
         </div>
       </section>
@@ -246,35 +242,15 @@ const Index = () => {
                   <img src={inst.image} alt={inst.name} loading="lazy" width={800} height={512} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
                 </div>
                 <div className="p-4">
-                  <div className="w-8 h-8 rounded bg-secondary flex items-center justify-center mb-2">
-                    <inst.icon className="h-4 w-4 text-primary" />
+                  <div className="w-8 h-8 rounded bg-secondary flex items-center justify-center text-primary-foreground text-sm font-semibold absolute -top-4 left-4">
+                    <MapPin className="w-4 h-4" />
                   </div>
-                  <h3 className="font-serif text-sm text-foreground group-hover:text-primary transition-colors">{inst.name}</h3>
-                  <p className="text-xs text-muted-foreground mt-1">{inst.students} Students · {inst.programs} Programs</p>
+                  <h3 className="font-serif text-lg text-foreground mb-1">{inst.name}</h3>
+                  <p className="text-sm text-muted-foreground">{inst.description}</p>
                 </div>
               </Link>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Why Kohsar */}
-      <section className="container-main px-4 sm:px-6 lg:px-8 py-14">
-        <h2 className="text-2xl font-serif text-foreground mb-6 text-center">Why Kohsar University?</h2>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-4xl mx-auto">
-          {[
-            { icon: MapPin, title: "Scenic Mountain Campus", desc: "Study in the breathtaking hills of Murree with clean air and serene surroundings." },
-            { icon: GraduationCap, title: "HEC Recognized", desc: "All programs are recognized by the Higher Education Commission of Pakistan." },
-            { icon: Globe, title: "International Partnerships", desc: "Exchange programs with universities in Turkey, China, Malaysia, and beyond." },
-            { icon: Users, title: "Small Class Sizes", desc: "Personalized attention with a favorable student-to-faculty ratio." },
-            { icon: BookOpen, title: "Modern Facilities", desc: "State-of-the-art labs, digital library, and high-speed campus-wide WiFi." },
-          ].map((item) => (
-            <div key={item.title} className="border border-border rounded p-5 hover:border-primary/30 transition-colors">
-              <item.icon className="h-5 w-5 text-primary mb-3" />
-              <h3 className="font-serif text-base text-foreground mb-1">{item.title}</h3>
-              <p className="text-sm text-muted-foreground">{item.desc}</p>
-            </div>
-          ))}
         </div>
       </section>
 

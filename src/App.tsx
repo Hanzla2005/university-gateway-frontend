@@ -58,6 +58,8 @@ import MeritLists from "./pages/MeritLists";
 import GuestHouse from "./pages/GuestHouse";
 import Downloads from "./pages/Downloads";
 import Layout from "./components/Layout";
+import Stories from "./pages/Stories";
+import StoryDetail from "./pages/StoryDetail";
 
 const queryClient = new QueryClient();
 
@@ -100,18 +102,12 @@ const App = () => (
             <Route path="/achievements" element={<Achievements />} />
             <Route path="/societies" element={<Societies />} />
             <Route path="/hostel" element={<Hostel />} />
-            
-            {/* Scholarships */}
+            <Route path="/stories" element={<Stories />} />
+            <Route path="/stories/:id" element={<StoryDetail />} />
+
+            {/* Other Pages */}
             <Route path="/scholarships" element={<Scholarships />} />
-
-            {/* Admissions */}
-            <Route path="/online-admissions" element={<OnlineAdmissions />} />
-            <Route path="/merit-lists" element={<MeritLists />} />
-            
-            {/* Guest House */}
             <Route path="/guest-house" element={<GuestHouse />} />
-
-            {/* Downloads */}
             <Route path="/downloads" element={<Downloads />} />
 
             {/* Policies */}
