@@ -165,7 +165,7 @@ const Navbar = () => {
         <div className="container-main px-4 sm:px-6 lg:px-8 flex items-center justify-between h-12">
           <Link to="/" className="flex items-center gap-2.5 text-primary-foreground">
             <img src={logo} alt="Kohsar University Murree" className="h-8 w-8 rounded-full bg-white p-0.5" />
-            <span className="font-serif text-base hidden sm:inline">Kohsar University Murree</span>
+            <span className="font-serif text-lg hidden sm:inline">Kohsar University Murree</span>
           </Link>
           <div className="hidden md:flex items-center gap-1">
             {topBarLinks.map((link) => (
@@ -178,7 +178,7 @@ const Navbar = () => {
                     window.open(link.path, "_blank");
                   }
                 }}
-                className="text-xs text-primary-foreground/70 px-2 py-1 transition-colors hover:text-accent"
+                className="text-sm text-primary-foreground/70 px-2 py-1 transition-colors hover:text-accent"
               >
                 {link.label}
               </Link>
@@ -210,7 +210,7 @@ const Navbar = () => {
               >
                 <Link
                   to={item.path}
-                  className={`px-4 py-3.5 text-sm font-medium tracking-wide transition-colors flex items-center gap-1 ${
+                  className={`px-4 py-3.5 text-base font-medium tracking-wide transition-colors flex items-center gap-1 ${
                     location.pathname === item.path
                       ? "text-primary-foreground bg-primary-foreground/15"
                       : "text-primary-foreground/80 hover:bg-primary-foreground/10 hover:text-accent"
@@ -239,7 +239,7 @@ const Navbar = () => {
                             className="w-full text-left px-4 py-2.5 flex items-center gap-3 hover:bg-primary/5 transition-colors group"
                           >
                             <Icon className="h-4 w-4 text-primary flex-shrink-0" />
-                            <span className="text-sm text-foreground group-hover:text-accent transition-colors">{subitem.label}</span>
+                            <span className="text-base text-foreground group-hover:text-accent transition-colors">{subitem.label}</span>
                           </button>
                         ) : (
                           <div
@@ -253,7 +253,7 @@ const Navbar = () => {
                               className="px-4 py-2.5 flex items-center gap-3 hover:bg-primary/5 transition-colors group"
                             >
                               <Icon className="h-4 w-4 text-primary flex-shrink-0" />
-                              <span className="text-sm text-foreground group-hover:text-accent transition-colors flex-1">{subitem.label}</span>
+                              <span className="text-base text-foreground group-hover:text-accent transition-colors flex-1">{subitem.label}</span>
                               {hasNested && <ChevronDown className="h-3.5 w-3.5 text-muted-foreground -rotate-90" />}
                             </Link>
                             
@@ -270,7 +270,7 @@ const Navbar = () => {
                                       <button
                                         key={nestedItem.path}
                                         onClick={() => handleNestedPdfClick(nestedItem.path)}
-                                        className="w-full text-left block px-4 py-2 text-sm text-foreground hover:text-accent hover:bg-primary/5 transition-colors"
+                                        className="w-full text-left block px-4 py-2 text-base text-foreground hover:text-accent hover:bg-primary/5 transition-colors"
                                       >
                                         {nestedItem.label}
                                       </button>
@@ -278,7 +278,7 @@ const Navbar = () => {
                                       <Link
                                         key={nestedItem.path}
                                         to={nestedItem.path}
-                                        className="block px-4 py-2 text-sm text-foreground hover:text-accent hover:bg-primary/5 transition-colors"
+                                        className="block px-4 py-2 text-base text-foreground hover:text-accent hover:bg-primary/5 transition-colors"
                                       >
                                         {nestedItem.label}
                                       </Link>
@@ -322,7 +322,7 @@ const Navbar = () => {
                         window.open(link.path, "_blank");
                       }
                     }}
-                    className="text-xs text-primary-foreground/60 px-2 py-1 transition-colors hover:text-accent"
+                    className="text-sm text-primary-foreground/60 px-2 py-1 transition-colors hover:text-accent"
                   >
                     {link.label}
                   </Link>
@@ -335,7 +335,7 @@ const Navbar = () => {
                     <>
                       <button
                         onClick={() => setOpenSubmenu(openSubmenu === item.path ? null : item.path)}
-                        className={`w-full text-left px-4 py-3 rounded text-sm font-medium tracking-wide transition-colors flex items-center justify-between ${
+                        className={`w-full text-left px-4 py-3 rounded text-base font-medium tracking-wide transition-colors flex items-center justify-between ${
                           location.pathname === item.path
                             ? "text-primary-foreground bg-primary-foreground/15"
                             : "text-primary-foreground/75 hover:bg-primary-foreground/10 hover:text-accent"
@@ -360,7 +360,7 @@ const Navbar = () => {
                                 <button
                                   key={subitem.path}
                                   onClick={() => handleSubmenuPdfClick(subitem.path)}
-                                  className="w-full text-left px-8 py-2.5 text-sm text-primary-foreground/75 hover:bg-primary-foreground/10 transition-colors flex items-center gap-2 hover:text-accent"
+                                  className="w-full text-left px-8 py-2.5 text-base text-primary-foreground/75 hover:bg-primary-foreground/10 transition-colors flex items-center gap-2 hover:text-accent"
                                 >
                                   <Icon className="h-4 w-4" />
                                   {subitem.label}
@@ -369,7 +369,7 @@ const Navbar = () => {
                                 <div key={subitem.path}>
                                   <button
                                     onClick={() => setOpenNestedSubmenu(openNestedSubmenu === subitem.path ? null : subitem.path)}
-                                    className="w-full text-left px-8 py-2.5 text-sm text-primary-foreground/75 hover:bg-primary-foreground/10 transition-colors flex items-center gap-2 justify-between hover:text-accent"
+                                    className="w-full text-left px-8 py-2.5 text-base text-primary-foreground/75 hover:bg-primary-foreground/10 transition-colors flex items-center gap-2 justify-between hover:text-accent"
                                   >
                                     <div className="flex items-center gap-2">
                                       <Icon className="h-4 w-4" />
@@ -391,7 +391,7 @@ const Navbar = () => {
                                             <button
                                               key={nestedItem.path}
                                               onClick={() => handleNestedPdfClick(nestedItem.path)}
-                                              className="w-full text-left block px-8 py-2 text-sm text-primary-foreground/75 hover:text-accent hover:bg-primary-foreground/10 transition-colors"
+                                              className="w-full text-left block px-8 py-2 text-base text-primary-foreground/75 hover:text-accent hover:bg-primary-foreground/10 transition-colors"
                                             >
                                               {nestedItem.label}
                                             </button>
@@ -399,7 +399,7 @@ const Navbar = () => {
                                             <Link
                                               key={nestedItem.path}
                                               to={nestedItem.path}
-                                              className="block px-8 py-2 text-sm text-primary-foreground/75 hover:text-accent hover:bg-primary-foreground/10 transition-colors"
+                                              className="block px-8 py-2 text-base text-primary-foreground/75 hover:text-accent hover:bg-primary-foreground/10 transition-colors"
                                             >
                                               {nestedItem.label}
                                             </Link>
@@ -413,7 +413,7 @@ const Navbar = () => {
                                 <Link
                                   key={subitem.path}
                                   to={subitem.path}
-                                  className="px-8 py-2.5 text-sm text-primary-foreground/75 hover:bg-primary-foreground/10 transition-colors flex items-center gap-2 hover:text-accent"
+                                  className="px-8 py-2.5 text-base text-primary-foreground/75 hover:bg-primary-foreground/10 transition-colors flex items-center gap-2 hover:text-accent"
                                 >
                                   <Icon className="h-4 w-4" />
                                   {subitem.label}
@@ -427,7 +427,7 @@ const Navbar = () => {
                   ) : (
                     <Link
                       to={item.path}
-                      className={`block px-4 py-3 rounded text-sm font-medium tracking-wide transition-colors ${
+                      className={`block px-4 py-3 rounded text-base font-medium tracking-wide transition-colors ${
                         location.pathname === item.path
                           ? "text-primary-foreground bg-primary-foreground/15"
                           : "text-primary-foreground/75 hover:bg-primary-foreground/10 hover:text-accent"
