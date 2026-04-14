@@ -1,13 +1,10 @@
-import { useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, ChevronLeft, ChevronRight, ChevronDown, Users, BookOpen, Globe, Award, MapPin, GraduationCap } from "lucide-react";
-import Navbar from "@/components/Navbar";
+import { ArrowRight, ChevronDown, Users, BookOpen, Globe, Award, MapPin, GraduationCap } from "lucide-react";
+
 import Footer from "@/components/Footer";
 import { institutions } from "@/data/institutions";
-import hero1 from "@/assets/home/hero.png";
-import hero2 from "@/assets/home/hero1.png";
-import hero3 from "@/assets/home/hero3.png";
-import hero4 from "@/assets/home/hero4.png";
+import heroBg from "@/assets/home/bg.png";
+
 import chancellorImg from "@/assets/home/chancellor.png";
 import vcImg from "@/assets/home/vc.png";
 import stemImg from "@/assets/home/stem.png";
@@ -19,7 +16,7 @@ import story4 from "@/assets/stories/story4.jpg";
 import story5 from "@/assets/stories/story5.jpg";
 import story6 from "@/assets/stories/story6.jpg";
 
-const heroImages = [hero1, hero2, hero3, hero4];
+
 
 const topStories = [
   { id: 1, tag: "STUDENT ACHIEVEMENTS", title: "KUM Students Win National Robotics Competition 2025", image: story1, large: true },
@@ -38,51 +35,12 @@ const stats = [
 ];
 
 const Index = () => {
-  const [current, setCurrent] = useState(0);
-
-  const next = useCallback(() => setCurrent((c) => (c + 1) % heroImages.length), []);
-  const prev = useCallback(() => setCurrent((c) => (c - 1 + heroImages.length) % heroImages.length), []);
-
-  useEffect(() => {
-    const timer = setInterval(next, 5000);
-    return () => clearInterval(timer);
-  }, [next]);
-
   return (
     <div className="min-h-screen">
-      <Navbar />
 
-      {/* Hero - Full image, no text, NUST style */}
+      {/* Hero - Single full image, navbar overlays on top */}
       <section className="relative h-screen overflow-hidden">
-        {heroImages.map((image, i) => (
-          <div
-            key={i}
-            className="absolute inset-0 transition-opacity duration-700"
-            style={{ opacity: i === current ? 1 : 0, zIndex: i === current ? 1 : 0 }}
-          >
-            <img src={image} alt={`Campus view ${i + 1}`} className="w-full h-full object-cover" />
-          </div>
-        ))}
-
-        {/* Slider controls at bottom */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex items-center gap-4">
-          <button onClick={prev} className="w-10 h-10 rounded-full bg-primary-foreground/20 hover:bg-primary-foreground/40 flex items-center justify-center transition-colors backdrop-blur-sm" aria-label="Previous">
-            <ChevronLeft className="h-5 w-5 text-primary-foreground" />
-          </button>
-          <div className="flex gap-2">
-            {heroImages.map((_, i) => (
-              <button
-                key={i}
-                onClick={() => setCurrent(i)}
-                className={`w-3 h-3 rounded-full transition-colors ${i === current ? "bg-accent" : "bg-primary-foreground/40"}`}
-                aria-label={`Go to slide ${i + 1}`}
-              />
-            ))}
-          </div>
-          <button onClick={next} className="w-10 h-10 rounded-full bg-primary-foreground/20 hover:bg-primary-foreground/40 flex items-center justify-center transition-colors backdrop-blur-sm" aria-label="Next">
-            <ChevronRight className="h-5 w-5 text-primary-foreground" />
-          </button>
-        </div>
+        <img src={heroBg} alt="Kohsar University Murree Campus" className="w-full h-full object-cover" width={1920} height={1080} />
 
         {/* Welcome banner at bottom */}
         <div className="absolute bottom-0 left-0 right-0 z-10 bg-primary/90 backdrop-blur-sm">
