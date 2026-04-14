@@ -4,9 +4,7 @@ import { ArrowRight, ChevronLeft, ChevronRight, ChevronDown, Users, BookOpen, Gl
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { institutions } from "@/data/institutions";
-import hero1 from "@/assets/home/hero.png";
-import hero2 from "@/assets/home/hero1.png";
-import hero3 from "@/assets/home/hero3.png";
+import heroBg from "@/assets/home/bg.png";
 import hero4 from "@/assets/home/hero4.png";
 import chancellorImg from "@/assets/home/chancellor.png";
 import vcImg from "@/assets/home/vc.png";
