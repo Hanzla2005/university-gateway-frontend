@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
-import { Link } from "react-router-dom";
-import { ArrowRight, ChevronLeft, ChevronRight, ChevronDown, Users, BookOpen, Globe, Award, MapPin, GraduationCap } from "lucide-react";
+import { ArrowRight, ChevronDown, Users, BookOpen, Globe, Award, MapPin, GraduationCap } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { institutions } from "@/data/institutions";
