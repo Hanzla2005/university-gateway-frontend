@@ -1,12 +1,12 @@
 import { Monitor, Cpu, Briefcase, Stethoscope, Scale, FlaskConical, Palette, GraduationCap, type LucideIcon } from "lucide-react";
-import csImg from "@/assets/institutions/computer-science.jpg";
-import engImg from "@/assets/institutions/engineering.jpg";
-import bizImg from "@/assets/institutions/business.jpg";
-import healthImg from "@/assets/institutions/health-sciences.jpg";
-import lawImg from "@/assets/institutions/law.jpg";
-import sciImg from "@/assets/institutions/natural-sciences.jpg";
-import artsImg from "@/assets/institutions/arts.jpg";
-import eduImg from "@/assets/institutions/education.jpg";
+import csImg from "@/assets/departments/computer-science.jpg";
+import engImg from "@/assets/departments/engineering.jpg";
+import bizImg from "@/assets/departments/business.jpg";
+import healthImg from "@/assets/departments/health-sciences.jpg";
+import lawImg from "@/assets/departments/law.jpg";
+import sciImg from "@/assets/departments/natural-sciences.jpg";
+import artsImg from "@/assets/departments/arts.jpg";
+import eduImg from "@/assets/departments/education.jpg";
 
 export interface Institution {
   id: string;

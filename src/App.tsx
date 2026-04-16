@@ -17,6 +17,7 @@ import StudyAtKUM from "./pages/StudyAtKUM";
 import CampusStudentAffairs from "./pages/CampusStudentAffairs";
 import UniversityAct from "./pages/UniversityAct";
 import Faculties from "./pages/Faculties";
+import DepartmentDetail from "./pages/DepartmentDetail";
 import AllFacultyMembers from "./pages/AllFacultyMembers";
 import FacultyAppliedSciences from "./pages/FacultyAppliedSciences";
 import FacultyBiomedical from "./pages/FacultyBiomedical";
@@ -81,6 +82,7 @@ const App = () => (
             
             {/* Faculties Routes */}
             <Route path="/faculties" element={<Faculties />} />
+            <Route path="/departments/:id" element={<DepartmentDetail />} />
             <Route path="/all-faculty-members" element={<AllFacultyMembers />} />
             <Route path="/faculty-applied-sciences" element={<FacultyAppliedSciences />} />
             <Route path="/faculty-biomedical" element={<FacultyBiomedical />} />

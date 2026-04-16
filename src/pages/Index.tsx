@@ -1,10 +1,13 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, ChevronDown, MapPin } from "lucide-react";
-import { motion } from "framer-motion";
+import { ArrowRight, ChevronDown, FlaskConical, HeartPulse, BookOpen } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
 import Footer from "@/components/Footer";
 import AnnouncementsSlider from "@/components/AnnouncementsSlider";
-import { institutions } from "@/data/institutions";
+import { departmentPages } from "@/data/departmentPages";
+import departmentImages from "@/data/departmentImages";
 import heroBg from "@/assets/home/bg.png";
 
 import chancellorImg from "@/assets/home/chancellor.png";
@@ -14,28 +17,30 @@ import honeyProductionImg from "@/assets/home/honeyProduction.png";
 import graduationImg from "@/assets/graduation.jpg";
 import { topStories } from "@/data/stories";
 
-const academicPrograms = [
+const facultyGroups = [
   {
-    title: "UNDERGRADUATE PROGRAMMES",
-    image: stemImg,
-    description: "The Undergraduate education holds key to foundation building and professional development of students. Our diverse UG programmes transform students into knowledgeable and productive individuals.",
-    link: "/academics",
+    key: "applied",
+    name: "Applied Sciences & Computing",
+    icon: FlaskConical,
+    departments: ["computer-science", "mathematics", "statistics", "physics", "bioinformatics"],
   },
   {
-    title: "MASTERS PROGRAMMES",
-    image: honeyProductionImg,
-    description: "Graduate programmes permeate the spirit of enquiry amongst students and advance their knowledge and skills in specialised fields. KUM offers highest number of programmes at the MS level.",
-    link: "/academics",
+    key: "biomedical",
+    name: "Biomedical & Life Sciences",
+    icon: HeartPulse,
+    departments: ["biomedical-engineering", "bioscience", "botany", "mountain-agriculture", "microbiology"],
   },
   {
-    title: "PHD PROGRAMMES",
-    image: graduationImg,
-    description: "In the contemporary world, the economic advantage predominantly hinges upon creation of new knowledge. The doctoral programmes at KUM are thus aimed at producing knowledge that renders fuel to economic growth.",
-    link: "/academics",
+    key: "management",
+    name: "Management, Humanities & Social Sciences",
+    icon: BookOpen,
+    departments: ["art-and-design", "english", "urdu", "psychology", "sociology", "political-science", "tourism-and-hospitality"],
   },
 ];
 
 const Index = () => {
+  const [activeFaculty, setActiveFaculty] = useState(facultyGroups[0].key);
+
   return (
     <div className="min-h-screen">
 
@@ -191,45 +196,6 @@ const Index = () => {
       {/* Announcements Slider */}
       <AnnouncementsSlider />
 
-      {/* Academics Section - NUST Style */}
-      <section className="bg-white py-16">
-        <div className="container-main px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-serif text-foreground text-center mb-12">Academics</h2>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {academicPrograms.map((program, index) => (
-              <motion.div
-                key={program.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.5, delay: index * 0.15 }}
-                className="bg-white"
-              >
-                <div className="aspect-[16/10] overflow-hidden">
-                  <img
-                    src={program.image}
-                    alt={program.title}
-                    className="w-full h-full object-cover"
-                    loading="lazy"
-                  />
-                </div>
-                <div className="pt-5">
-                  <h3 className="text-lg font-bold text-foreground uppercase tracking-wide mb-3">{program.title}</h3>
-                  <p className="text-base text-muted-foreground leading-relaxed mb-5">{program.description}</p>
-                  <Link
-                    to={program.link}
-                    className="inline-block px-5 py-2 bg-accent text-accent-foreground text-sm font-semibold hover:brightness-110 transition-all"
-                  >
-                    View Details
-                  </Link>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* STEM Section */}
       <section className="bg-gray-50 py-16">
         <div className="container-main px-4 sm:px-6 lg:px-8">
@@ -300,32 +266,103 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Our Faculties */}
-      <section className="bg-muted/50 py-14">
+      {/* Our Faculties & Departments - Structural Design */}
+      <section className="bg-[#f0f1f3] py-20 border-y border-gray-200">
         <div className="container-main px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between mb-6">
-            <h2 className="text-3xl font-serif text-foreground">Our Faculties</h2>
-            <Link to="/institutions" className="text-base text-primary hover:underline">View All →</Link>
+          <div className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-800 mb-4">
+              Kohsar Faculties & Departments
+            </h2>
+            <div className="w-20 h-1 bg-primary mx-auto rounded-full" />
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {institutions.slice(0, 4).map((inst) => (
-              <Link
-                key={inst.id}
-                to={`/institutions/${inst.id}`}
-                className="group border border-border rounded overflow-hidden hover:border-primary/30 transition-colors bg-card"
-              >
-                <div className="aspect-[3/2] overflow-hidden">
-                  <img src={inst.image} alt={inst.name} loading="lazy" width={800} height={512} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
-                </div>
-                <div className="p-4">
-                  <div className="w-8 h-8 rounded bg-accent flex items-center justify-center text-accent-foreground text-sm font-semibold absolute -top-4 left-4">
-                    <MapPin className="w-4 h-4" />
-                  </div>
-                  <h3 className="font-serif text-xl text-foreground mb-1">{inst.name}</h3>
-                  <p className="text-base text-muted-foreground">{inst.desc}</p>
-                </div>
-              </Link>
-            ))}
+
+          <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 min-h-[500px]">
+            {/* Left Sidebar - Faculty Selector */}
+            <div className="w-full lg:w-[380px] shrink-0 flex flex-col gap-1 border-r border-gray-300 pr-0 lg:pr-6">
+              {facultyGroups.map((group) => {
+                const isActive = activeFaculty === group.key;
+                const Icon = group.icon;
+                return (
+                  <button
+                    key={group.key}
+                    onClick={() => setActiveFaculty(group.key)}
+                    className={`relative flex items-center gap-4 text-left p-4 pr-6 transition-all duration-300 rounded overflow-hidden ${
+                      isActive 
+                        ? "bg-white shadow-sm border border-gray-200" 
+                        : "hover:bg-gray-200/50 border border-transparent"
+                    }`}
+                  >
+                    {/* Active Indigo Indicator Bar */}
+                    {isActive && (
+                      <motion.div 
+                        layoutId="active-faculty-indicator"
+                        className="absolute left-0 top-0 bottom-0 w-1 bg-primary"
+                        initial={false}
+                        transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                      />
+                    )}
+                    <div className={`p-2.5 rounded-full ${isActive ? "bg-primary/10 text-primary" : "bg-gray-200 text-gray-500"}`}>
+                      <Icon className="h-5 w-5" />
+                    </div>
+                    <span className={`text-[15px] leading-snug font-semibold ${isActive ? "text-primary" : "text-gray-600"}`}>
+                      {group.name}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+
+            {/* Right Content - Department Slider/Cards */}
+            <div className="flex-1 min-w-0 pl-0 lg:pl-4">
+              <AnimatePresence mode="wait">
+                {facultyGroups.map((group) => {
+                  if (activeFaculty !== group.key) return null;
+                  
+                  return (
+                    <motion.div
+                      key={group.key}
+                      initial={{ opacity: 0, x: 20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      exit={{ opacity: 0, x: -20 }}
+                      transition={{ duration: 0.4, ease: "easeInOut" }}
+                      className="h-full"
+                    >
+                      <h3 className="text-xl font-bold text-slate-800 mb-6 flex items-center gap-2">
+                        {group.name} Schools <ArrowRight className="h-5 w-5 text-primary" />
+                      </h3>
+                      
+                      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
+                        {group.departments.map((id, idx) => {
+                          const dept = departmentPages.find((d) => d.id === id);
+                          if (!dept) return null;
+                          const img = departmentImages[dept.id];
+                          
+                          return (
+                            <motion.div
+                              key={dept.id}
+                              initial={{ opacity: 0, scale: 0.95 }}
+                              animate={{ opacity: 1, scale: 1 }}
+                              transition={{ duration: 0.4, delay: idx * 0.08 }}
+                              whileHover={{ scale: 1.02 }}
+                              className="h-full"
+                            >
+                              <Link
+                                to={`/departments/${dept.id}`}
+                                className="flex items-center justify-center p-6 min-h-[110px] h-full bg-white border border-primary/40 hover:border-primary hover:shadow-[0_4px_15px_rgba(0,0,0,0.05)] transition-all duration-300 group"
+                              >
+                                <h4 className="text-[13px] md:text-[14px] font-bold text-primary uppercase tracking-wider leading-relaxed text-center transition-colors">
+                                  {dept.name}
+                                </h4>
+                              </Link>
+                            </motion.div>
+                          );
+                        })}
+                      </div>
+                    </motion.div>
+                  );
+                })}
+              </AnimatePresence>
+            </div>
           </div>
         </div>
       </section>

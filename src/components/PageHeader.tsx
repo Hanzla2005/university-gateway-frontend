@@ -12,12 +12,21 @@ interface PageHeaderProps {
   subtitle?: string;
   children?: ReactNode;
   breadcrumbs?: Breadcrumb[];
+  backgroundImage?: string;
 }
 
-const PageHeader = ({ title, subtitle, children, breadcrumbs }: PageHeaderProps) => {
+const PageHeader = ({ title, subtitle, children, breadcrumbs, backgroundImage }: PageHeaderProps) => {
   return (
-    <header className="bg-primary text-primary-foreground py-10">
-      <div className="container-main">
+    <header className="relative text-primary-foreground py-10 overflow-hidden">
+      {backgroundImage && (
+        <div 
+          className="absolute inset-0 bg-cover bg-center z-0" 
+          style={{ backgroundImage: `url(${backgroundImage})` }} 
+        />
+      )}
+      <div className={`absolute inset-0 z-0 ${backgroundImage ? "bg-primary/85" : "bg-primary"}`} />
+      
+      <div className="container-main relative z-10">
         {breadcrumbs && breadcrumbs.length > 0 && (
           <nav className="flex items-center text-sm text-primary-foreground/70 mb-2">
             {breadcrumbs.map((crumb, index) => (

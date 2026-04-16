@@ -2,7 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { institutions } from "@/data/institutions";
+import { institutions } from "@/data/departments";
 
 const InstitutionDetail = () => {
   const { id } = useParams();
