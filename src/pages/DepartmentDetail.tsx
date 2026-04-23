@@ -111,20 +111,27 @@ const DepartmentDetail = () => {
             )}
 
             {/* ── AIMS & OBJECTIVES ────────────────────────────────── */}
-            {department.aimsAndObjectives && department.aimsAndObjectives.length > 0 && (
+            {(department.aimsAndObjectivesOverview || (department.aimsAndObjectives && department.aimsAndObjectives.length > 0)) && (
               <section>
                 <SectionHeading icon={CheckCircle} title="Aims and Objectives" />
-                <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-6 lg:p-10">
-                  <ul className="grid sm:grid-cols-2 gap-x-10 gap-y-5">
-                    {department.aimsAndObjectives.map((aim, i) => (
-                      <li key={i} className="flex gap-4">
-                        <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary font-bold text-sm mt-0.5">
-                          {i + 1}
-                        </div>
-                        <p className="text-slate-600 leading-relaxed">{aim}</p>
-                      </li>
-                    ))}
-                  </ul>
+                <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-6 lg:p-10 space-y-6">
+                  {department.aimsAndObjectivesOverview && (
+                    <p className="text-slate-600 leading-relaxed text-justify">
+                      {department.aimsAndObjectivesOverview}
+                    </p>
+                  )}
+                  {department.aimsAndObjectives && department.aimsAndObjectives.length > 0 && (
+                    <ul className="grid sm:grid-cols-2 gap-x-10 gap-y-5">
+                      {department.aimsAndObjectives.map((aim, i) => (
+                        <li key={i} className="flex gap-4">
+                          <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary font-bold text-sm mt-0.5">
+                            {i + 1}
+                          </div>
+                          <p className="text-slate-600 leading-relaxed">{aim}</p>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                 </div>
               </section>
             )}
@@ -233,6 +240,79 @@ const DepartmentDetail = () => {
                       </div>
                     )}
 
+                    {program.plos && program.plos.length > 0 && (
+                      <div className="bg-white border border-gray-200 rounded-xl shadow-sm p-6 lg:p-8">
+                        <h4 className="text-lg font-bold text-slate-800 mb-5">Program Learning Objectives (PLOs)</h4>
+                        <ul className="space-y-3">
+                          {program.plos.map((plo, i) => (
+                            <li key={i} className="flex gap-3">
+                              <span className="text-primary font-bold flex-shrink-0 mt-0.5">•</span>
+                              <span className="text-slate-600 leading-relaxed">{plo}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+
+                    {program.slos && program.slos.length > 0 && (
+                      <div className="bg-white border border-gray-200 rounded-xl shadow-sm p-6 lg:p-8">
+                        <h4 className="text-lg font-bold text-slate-800 mb-5">Specific Student Learning Objectives (SLOs)</h4>
+                        <ul className="space-y-3">
+                          {program.slos.map((slo, i) => (
+                            <li key={i} className="flex gap-3">
+                              <span className="text-primary font-bold flex-shrink-0 mt-0.5">•</span>
+                              <span className="text-slate-600 leading-relaxed">{slo}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+
+                    {(program.careersOverview || (program.careers && program.careers.length > 0)) && (
+                      <div className="bg-white border border-gray-200 rounded-xl shadow-sm p-6 lg:p-8">
+                        <h4 className="text-lg font-bold text-slate-800 mb-5">Scope and Careers</h4>
+                        {program.careersOverview && (
+                          <p className="text-slate-600 leading-relaxed text-justify mb-5">{program.careersOverview}</p>
+                        )}
+                        {program.careers && program.careers.length > 0 && (
+                          program.careers.some(c => c.length > 50) ? (
+                            <ul className="space-y-3">
+                              {program.careers.map((career, i) => (
+                                <li key={i} className="flex gap-3">
+                                  <span className="text-primary font-bold flex-shrink-0 mt-0.5">•</span>
+                                  <span className="text-slate-600 leading-relaxed text-justify">{career}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          ) : (
+                            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-3">
+                              {program.careers.map((career, i) => (
+                                <div key={i} className="flex items-center gap-2 bg-primary/5 rounded border border-primary/10 px-3 py-2">
+                                  <span className="text-sm font-medium text-slate-700">{career}</span>
+                                </div>
+                              ))}
+                            </div>
+                          )
+                        )}
+                      </div>
+                    )}
+
+                    {program.mous && program.mous.length > 0 && (
+                      <div className="bg-white border border-gray-200 rounded-xl shadow-sm p-6 lg:p-8">
+                        <h4 className="text-lg font-bold text-slate-800 mb-5">MoUs and Linkages</h4>
+                        <div className="grid sm:grid-cols-2 gap-4">
+                          {program.mous.map((mou, i) => (
+                            <div key={i} className="flex items-center gap-3">
+                              <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+                                <span className="text-primary font-bold text-sm">{i + 1}</span>
+                              </div>
+                              <span className="text-slate-700 font-medium">{mou}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
                     {program.majors && program.majors.length > 0 && (
                       <div className="bg-primary/5 border border-primary/15 rounded-xl p-6 lg:p-8">
                         <h4 className="text-lg font-bold text-slate-800 mb-5">Approved Specialization Areas</h4>
@@ -320,7 +400,7 @@ const DepartmentDetail = () => {
 
                     return (
                       <div key={eventIdx} className="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden">
-                        
+
                         {/* Event Title Bar */}
                         <div className="flex items-center gap-3 px-6 py-4 border-b border-gray-100">
                           <div className="flex items-center gap-2 flex-1 min-w-0">
@@ -384,11 +464,10 @@ const DepartmentDetail = () => {
                                   <button
                                     key={thumbIdx}
                                     onClick={() => setSlide(eventIdx, thumbIdx)}
-                                    className={`flex-shrink-0 w-16 h-12 rounded-lg overflow-hidden border-2 transition-all ${
-                                      thumbIdx === currentSlide
+                                    className={`flex-shrink-0 w-16 h-12 rounded-lg overflow-hidden border-2 transition-all ${thumbIdx === currentSlide
                                         ? 'border-primary shadow-md'
                                         : 'border-gray-200 opacity-60 hover:opacity-100 hover:border-gray-400'
-                                    }`}
+                                      }`}
                                   >
                                     <img
                                       src={img}
@@ -408,11 +487,10 @@ const DepartmentDetail = () => {
                                   <button
                                     key={dotIdx}
                                     onClick={() => setSlide(eventIdx, dotIdx)}
-                                    className={`rounded-full transition-all ${
-                                      dotIdx === currentSlide
+                                    className={`rounded-full transition-all ${dotIdx === currentSlide
                                         ? 'w-5 h-2 bg-primary'
                                         : 'w-2 h-2 bg-gray-300 hover:bg-gray-400'
-                                    }`}
+                                      }`}
                                   />
                                 ))}
                               </div>

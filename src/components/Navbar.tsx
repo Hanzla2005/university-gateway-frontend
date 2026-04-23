@@ -21,8 +21,8 @@ const topBarLinks = [
 ];
 
 const mainNavItems = [
-  { 
-    label: "ABOUT", 
+  {
+    label: "ABOUT",
     path: "/about",
     submenu: [
       { label: "Vice Chancellor Message", path: "/vice-chancellor", icon: Users },
@@ -41,8 +41,8 @@ const mainNavItems = [
       { label: "Merit Lists", path: "/merit-lists", icon: FileStack },
     ]
   },
-  { 
-    label: "FACULTIES", 
+  {
+    label: "FACULTIES",
     path: "/faculties",
     submenu: [
       { label: "All Faculty Members", path: "/all-faculty-members", icon: Users },
@@ -52,12 +52,12 @@ const mainNavItems = [
       { label: "International Affiliate Faculty", path: "/faculty-international", icon: GraduationCap },
     ]
   },
-  { 
-    label: "MANAGEMENT", 
+  {
+    label: "MANAGEMENT",
     path: "/management",
     submenu: [
-      { 
-        label: "Media", 
+      {
+        label: "Media",
         path: "/media",
         icon: FileText,
         nested: [
@@ -74,8 +74,8 @@ const mainNavItems = [
         ]
       },
       { label: "Scholarships", path: "/scholarships", icon: BookOpen },
-      { 
-        label: "Policies", 
+      {
+        label: "Policies",
         path: "/policies",
         icon: FileStack,
         nested: [
@@ -93,8 +93,8 @@ const mainNavItems = [
           { label: "Protection Against Harassment", path: "/policy-protection-harassment" },
         ]
       },
-      { 
-        label: "Jobs", 
+      {
+        label: "Jobs",
         path: "/jobs",
         icon: Briefcase,
         nested: [
@@ -210,11 +210,10 @@ const Navbar = () => {
               >
                 <Link
                   to={item.path}
-                  className={`px-4 py-3.5 text-base font-medium tracking-wide transition-colors flex items-center gap-1 ${
-                    location.pathname === item.path
-                      ? "text-primary-foreground bg-primary-foreground/15"
-                      : "text-primary-foreground/80 hover:bg-primary-foreground/10 hover:text-accent"
-                  }`}
+                  className={`px-4 py-3.5 text-base font-medium tracking-wide transition-colors flex items-center gap-1 ${location.pathname === item.path
+                    ? "text-primary-foreground bg-primary-foreground/15"
+                    : "text-primary-foreground/80 hover:bg-primary-foreground/10 hover:text-accent"
+                    }`}
                 >
                   {item.label}
                   {item.submenu && <ChevronDown className={`h-3.5 w-3.5 transition-transform ${hoveredDropdown === item.path ? "rotate-180" : ""}`} />}
@@ -256,7 +255,7 @@ const Navbar = () => {
                               <span className="text-base text-foreground group-hover:text-accent transition-colors flex-1">{subitem.label}</span>
                               {hasNested && <ChevronDown className="h-3.5 w-3.5 text-muted-foreground -rotate-90" />}
                             </Link>
-                            
+
                             {hasNested && hoveredNestedItem === subitem.path && (
                               <motion.div
                                 initial={{ opacity: 0, x: -10 }}
@@ -335,11 +334,10 @@ const Navbar = () => {
                     <>
                       <button
                         onClick={() => setOpenSubmenu(openSubmenu === item.path ? null : item.path)}
-                        className={`w-full text-left px-4 py-3 rounded text-base font-medium tracking-wide transition-colors flex items-center justify-between ${
-                          location.pathname === item.path
-                            ? "text-primary-foreground bg-primary-foreground/15"
-                            : "text-primary-foreground/75 hover:bg-primary-foreground/10 hover:text-accent"
-                        }`}
+                        className={`w-full text-left px-4 py-3 rounded text-base font-medium tracking-wide transition-colors flex items-center justify-between ${location.pathname === item.path
+                          ? "text-primary-foreground bg-primary-foreground/15"
+                          : "text-primary-foreground/75 hover:bg-primary-foreground/10 hover:text-accent"
+                          }`}
                       >
                         {item.label}
                         <ChevronDown className={`h-4 w-4 transition-transform ${openSubmenu === item.path ? "rotate-180" : ""}`} />
@@ -427,11 +425,10 @@ const Navbar = () => {
                   ) : (
                     <Link
                       to={item.path}
-                      className={`block px-4 py-3 rounded text-base font-medium tracking-wide transition-colors ${
-                        location.pathname === item.path
-                          ? "text-primary-foreground bg-primary-foreground/15"
-                          : "text-primary-foreground/75 hover:bg-primary-foreground/10 hover:text-accent"
-                      }`}
+                      className={`block px-4 py-3 rounded text-base font-medium tracking-wide transition-colors ${location.pathname === item.path
+                        ? "text-primary-foreground bg-primary-foreground/15"
+                        : "text-primary-foreground/75 hover:bg-primary-foreground/10 hover:text-accent"
+                        }`}
                     >
                       {item.label}
                     </Link>

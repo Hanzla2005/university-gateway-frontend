@@ -79,7 +79,7 @@ const App = () => (
             <Route path="/university-act" element={<UniversityAct />} />
             <Route path="/study-at-kum" element={<StudyAtKUM />} />
             <Route path="/campus-student-affairs" element={<CampusStudentAffairs />} />
-            
+
             {/* Faculties Routes */}
             <Route path="/faculties" element={<Faculties />} />
             <Route path="/departments/:id" element={<DepartmentDetail />} />
@@ -88,11 +88,11 @@ const App = () => (
             <Route path="/faculty-biomedical" element={<FacultyBiomedical />} />
             <Route path="/faculty-management" element={<FacultyManagement />} />
             <Route path="/faculty-international" element={<FacultyInternational />} />
-            
+
             {/* Management Routes */}
             <Route path="/management" element={<Management />} />
             <Route path="/university-management" element={<UniversityManagement />} />
-            
+
             {/* Media Routes */}
             <Route path="/media" element={<Media />} />
             <Route path="/gallery" element={<Gallery />} />
@@ -126,14 +126,14 @@ const App = () => (
             <Route path="/policy-sexual-harassment" element={<PolicySexualHarassment />} />
             <Route path="/policy-drug-tobacco" element={<PolicyDrugTobacco />} />
             <Route path="/policy-protection-harassment" element={<PolicyProtectionHarassment />} />
-            
+
             {/* Jobs Routes */}
             <Route path="/jobs" element={<Jobs />} />
             <Route path="/jobs-dpl-2025" element={<JobsDPL2025 />} />
             <Route path="/jobs-visiting-faculty" element={<JobsVisitingFaculty />} />
             <Route path="/jobs-admin-posts" element={<JobsAdminPosts />} />
             <Route path="/jobs-internship" element={<JobsInternship />} />
-            
+
             {/* Other Routes */}
             <Route path="/institutions" element={<Institutions />} />
             <Route path="/institutions/:id" element={<InstitutionDetail />} />
