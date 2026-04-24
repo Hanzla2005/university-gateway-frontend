@@ -101,10 +101,10 @@ export const institutions: Institution[] = [
     dean: "Prof. Dr. Saad Iqbal",
     students: "700",
     programs: 6,
-    desc: "Literature, philosophy, fine arts, Urdu, and cultural studies.",
+    desc: "Literature, philosophy, fine arts, and cultural studies.",
     image: artsImg,
-    overview: "The Faculty of Arts & Humanities nurtures creative thinking and critical analysis through programs in literature, philosophy, fine arts, Urdu, and cultural studies. The scenic campus environment inspires artistic expression across all disciplines.",
-    departments: ["English Literature", "Urdu Literature", "Philosophy", "Fine Arts", "History", "Pakistan Studies"],
+    overview: "The Faculty of Arts & Humanities nurtures creative thinking and critical analysis through programs in literature, philosophy, fine arts, and cultural studies. The scenic campus environment inspires artistic expression across all disciplines.",
+    departments: ["English Literature", "Philosophy", "Fine Arts", "History", "Pakistan Studies"],
   },
   {
     id: "education",

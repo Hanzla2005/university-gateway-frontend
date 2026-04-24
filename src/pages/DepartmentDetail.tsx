@@ -162,7 +162,20 @@ const DepartmentDetail = () => {
                         <h3 className="text-xl font-bold text-slate-800">Mission</h3>
                       </div>
                       <div className="w-12 h-0.5 bg-primary rounded-full" />
-                      <p className="text-slate-600 leading-relaxed text-justify">{department.mission}</p>
+                      {Array.isArray(department.mission) ? (
+                        <ul className="space-y-4">
+                          {department.mission.map((point, i) => (
+                            <li key={i} className="flex gap-4">
+                              <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary font-bold text-sm mt-0.5">
+                                {i + 1}
+                              </div>
+                              <p className="text-slate-600 leading-relaxed text-justify">{point}</p>
+                            </li>
+                          ))}
+                        </ul>
+                      ) : (
+                        <p className="text-slate-600 leading-relaxed text-justify">{department.mission}</p>
+                      )}
                     </div>
                   )}
                 </div>
@@ -217,7 +230,8 @@ const DepartmentDetail = () => {
             {department.programs.length > 0 && (
               <section>
                 <SectionHeading icon={GraduationCap} title="Programs Offered" />
-                {department.programs.map((program) => (
+                <div className="space-y-20">
+                  {department.programs.map((program) => (
                   <div key={program.name} className="space-y-8">
                     <div className="bg-white border border-gray-200 rounded-xl shadow-sm p-6 lg:p-8 border-l-4 border-l-primary">
                       <h3 className="text-xl font-bold text-slate-800 mb-4">{program.name}</h3>
@@ -386,6 +400,7 @@ const DepartmentDetail = () => {
                     )}
                   </div>
                 ))}
+              </div>
               </section>
             )}
 

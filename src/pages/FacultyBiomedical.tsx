@@ -4,7 +4,8 @@ import Footer from "@/components/Footer";
 import { departmentPages } from "@/data/departmentPages";
 
 const departmentsList = [
-  "biomedical-engineering",
+  "medical-laboratory-technology",
+  "biotechnology",
   "bioscience",
   "botany",
   "mountain-agriculture",

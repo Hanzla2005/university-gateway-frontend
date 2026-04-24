@@ -46,9 +46,44 @@ const mainNavItems = [
     path: "/faculties",
     submenu: [
       { label: "All Faculty Members", path: "/all-faculty-members", icon: Users },
-      { label: "Faculty of Applied Sciences and Computing", path: "/faculty-applied-sciences", icon: GraduationCap },
-      { label: "Faculty of Biomedical & Life Sciences", path: "/faculty-biomedical", icon: GraduationCap },
-      { label: "Faculty of Management, Humanities and Social Sciences", path: "/faculty-management", icon: GraduationCap },
+      {
+        label: "Faculty of Applied Sciences and Computing",
+        path: "/faculty-applied-sciences",
+        icon: GraduationCap,
+        nested: [
+          { label: "Computer Science", path: "/departments/computer-science" },
+          { label: "Mathematics", path: "/departments/mathematics" },
+          { label: "Physics", path: "/departments/physics" },
+          { label: "Bioinformatics", path: "/departments/bioinformatics" },
+        ]
+      },
+      {
+        label: "Faculty of Biomedical & Life Sciences",
+        path: "/faculty-biomedical",
+        icon: GraduationCap,
+        nested: [
+          { label: "Medical Laboratory Technology", path: "/departments/medical-laboratory-technology" },
+          { label: "Biotechnology", path: "/departments/biotechnology" },
+          { label: "Bioscience", path: "/departments/bioscience" },
+          { label: "Botany", path: "/departments/botany" },
+          { label: "Mountain Agriculture & Environmental Sciences", path: "/departments/mountain-agriculture" },
+          { label: "Microbiology", path: "/departments/microbiology" },
+          { label: "Forestry", path: "/departments/forestry" },
+        ]
+      },
+      {
+        label: "Faculty of Management, Humanities and Social Sciences",
+        path: "/faculty-management",
+        icon: GraduationCap,
+        nested: [
+          { label: "Art and Design", path: "/departments/art-and-design" },
+          { label: "English", path: "/departments/english" },
+          { label: "Psychology", path: "/departments/psychology" },
+          { label: "Sociology", path: "/departments/sociology" },
+          { label: "Tourism and Hospitality Management", path: "/departments/tourism-and-hospitality" },
+          { label: "Business Administration", path: "/departments/business-administration" },
+        ]
+      },
       { label: "International Affiliate Faculty", path: "/faculty-international", icon: GraduationCap },
     ]
   },

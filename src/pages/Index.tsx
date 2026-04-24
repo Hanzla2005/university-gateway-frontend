@@ -8,7 +8,7 @@ import Footer from "@/components/Footer";
 import AnnouncementsSlider from "@/components/AnnouncementsSlider";
 import { departmentPages } from "@/data/departmentPages";
 import departmentImages from "@/data/departmentImages";
-import heroBg from "@/assets/home/bg.png";
+import heroBg from "@/assets/home/hero-campus.jpg";
 
 import chancellorImg from "@/assets/home/chancellor.png";
 import vcImg from "@/assets/home/vc.png";
@@ -22,19 +22,19 @@ const facultyGroups = [
     key: "applied",
     name: "Applied Sciences & Computing",
     icon: FlaskConical,
-    departments: ["computer-science", "mathematics", "statistics", "physics", "bioinformatics"],
+    departments: ["computer-science", "mathematics", "physics", "bioinformatics"],
   },
   {
     key: "biomedical",
     name: "Biomedical & Life Sciences",
     icon: HeartPulse,
-    departments: ["biomedical-engineering", "bioscience", "botany", "mountain-agriculture", "microbiology", "forestry"],
+    departments: ["medical-laboratory-technology", "biotechnology", "bioscience", "botany", "mountain-agriculture", "microbiology", "forestry"],
   },
   {
     key: "management",
     name: "Management, Humanities & Social Sciences",
     icon: BookOpen,
-    departments: ["art-and-design", "english", "urdu", "psychology", "sociology", "political-science", "tourism-and-hospitality", "business-administration"],
+    departments: ["art-and-design", "english", "psychology", "sociology", "tourism-and-hospitality", "business-administration"],
   },
 ];
 
@@ -286,15 +286,14 @@ const Index = () => {
                   <button
                     key={group.key}
                     onClick={() => setActiveFaculty(group.key)}
-                    className={`relative flex items-center gap-4 text-left p-4 pr-6 transition-all duration-300 rounded overflow-hidden ${
-                      isActive 
-                        ? "bg-white shadow-sm border border-gray-200" 
-                        : "hover:bg-gray-200/50 border border-transparent"
-                    }`}
+                    className={`relative flex items-center gap-4 text-left p-4 pr-6 transition-all duration-300 rounded overflow-hidden ${isActive
+                      ? "bg-white shadow-sm border border-gray-200"
+                      : "hover:bg-gray-200/50 border border-transparent"
+                      }`}
                   >
                     {/* Active Indigo Indicator Bar */}
                     {isActive && (
-                      <motion.div 
+                      <motion.div
                         layoutId="active-faculty-indicator"
                         className="absolute left-0 top-0 bottom-0 w-1 bg-primary"
                         initial={false}
@@ -317,7 +316,7 @@ const Index = () => {
               <AnimatePresence mode="wait">
                 {facultyGroups.map((group) => {
                   if (activeFaculty !== group.key) return null;
-                  
+
                   return (
                     <motion.div
                       key={group.key}
@@ -330,13 +329,13 @@ const Index = () => {
                       <h3 className="text-xl font-bold text-slate-800 mb-6 flex items-center gap-2">
                         {group.name} Schools <ArrowRight className="h-5 w-5 text-primary" />
                       </h3>
-                      
+
                       <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
                         {group.departments.map((id, idx) => {
                           const dept = departmentPages.find((d) => d.id === id);
                           if (!dept) return null;
                           const img = departmentImages[dept.id];
-                          
+
                           return (
                             <motion.div
                               key={dept.id}

@@ -11,7 +11,6 @@ const facultyGroups = [
     departments: [
       "computer-science",
       "mathematics",
-      "statistics",
       "physics",
       "bioinformatics",
     ],
@@ -19,7 +18,8 @@ const facultyGroups = [
   {
     faculty: "Faculty of Biomedical & Life Sciences",
     departments: [
-      "biomedical-engineering",
+      "medical-laboratory-technology",
+      "biotechnology",
       "bioscience",
       "botany",
       "mountain-agriculture",
@@ -32,10 +32,8 @@ const facultyGroups = [
     departments: [
       "art-and-design",
       "english",
-      "urdu",
       "psychology",
       "sociology",
-      "political-science",
       "tourism-and-hospitality",
       "business-administration",
     ],

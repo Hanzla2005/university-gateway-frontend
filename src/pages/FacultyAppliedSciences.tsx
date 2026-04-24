@@ -6,7 +6,6 @@ import { departmentPages } from "@/data/departmentPages";
 const departmentsList = [
   "computer-science",
   "mathematics",
-  "statistics",
   "physics",
   "bioinformatics",
 ];

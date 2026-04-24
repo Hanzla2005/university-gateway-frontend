@@ -127,7 +127,7 @@ export interface DepartmentPage {
   aimsAndObjectives?: string[];
   aimsAndObjectivesOverview?: string;
   vision: string;
-  mission: string;
+  mission: string | string[];
   faculty: FacultyMember[];
   programs: ProgramOffered[];
   facilities?: string[];
@@ -151,9 +151,9 @@ export const departmentPages: DepartmentPage[] = [
       },
     ],
     events: [
-      { 
-        title: "Wall Painting Competition held on 16th June 2022. In collaboration with WPSA.", 
-        images: [artWp1, artWp2, artWp3, artWp4] 
+      {
+        title: "Wall Painting Competition held on 16th June 2022. In collaboration with WPSA.",
+        images: [artWp1, artWp2, artWp3, artWp4]
       },
       {
         title: "Art Studio at Admin block KUM",
@@ -425,13 +425,303 @@ export const departmentPages: DepartmentPage[] = [
     ]
   },
   {
-    id: "biomedical-engineering",
-    name: "Department of Biomedical Engineering",
-    shortName: "Biomedical Engineering",
-    vision: "",
-    mission: "",
+    id: "medical-laboratory-technology",
+    name: "Department of Medical Laboratory Technology",
+    shortName: "MLT",
+    vision: "The vision of the Medical Laboratory Technology (MLT) department at Kohsar University Murree is to achieve excellence and aim milestones to become renowned for its brand at the national and international levels. The department aims to provide a platform for biomedical research and a diagnostic facility for the students, university staff, and local public residing in Murree as well as the upcoming tourists. The department will venture into collaborative and interdisciplinary projects nationally and internationally. The department will be used as a surveillance center for the monitoring of various diseases in the local population of Murree. The department is committed to transferring the updated knowledge and skills required for innovation, upgradation, and development of the modern health care system.",
+    mission: "The program will prepare the graduates to cope with the current challenges occurring in the biomedical fields like clinical diagnostics, public health, forensic technology, therapeutics production, basic and applied biomedical research. The graduates will effectively assist other health professionals in the delivery of quality health services. Students will be equipped with the updated knowledge, skills, and attitudes needed for clinical competence and laboratory-based diagnostics to substitute the conventional methods of diagnosis with modern technologies. The program will produce leaders and entrepreneurs with complementary skills required for the establishment of modern medical laboratories and diagnostic systems.",
+    faculty: [
+      {
+        name: "Dr. Nasar Khan",
+        designation: "Assistant Professor Microbiology",
+      },
+      {
+        name: "Dr. Muhammad Imran Khan",
+        designation: "Lecturer Biomedical Engineering",
+      },
+      {
+        name: "Dr. Shahid Hussain",
+        designation: "Lecturer Biomedical Engineering",
+      }
+    ],
+    programs: [
+      {
+        name: "BS Medical Laboratory Technology (MLT)",
+        description: "A comprehensive 4-year degree program (136 credit hours) designed to produce highly skilled medical laboratory professionals. The program follows the new HEC policy (2020) and includes clinical competence and laboratory-based diagnostics training using modern technologies.",
+        scheme: [
+          {
+            name: "Semester 1",
+            totalCredits: 15,
+            courses: [
+              { title: "Sociology (SOC-101)", credits: "3(3,0)" },
+              { title: "Pakistan Studies (KUM-111)", credits: "2(2,0)" },
+              { title: "Human Anatomy (MLT-101)", credits: "3(2,1)" },
+              { title: "Mathematics – I (MTH-106)", credits: "3(3,0)" },
+              { title: "English – I (ENG-101)", credits: "3(3,0)" },
+              { title: "Medical laboratory orientation (MLT-102)", credits: "(0,1)" }
+            ]
+          },
+          {
+            name: "Semester 2",
+            totalCredits: 17,
+            courses: [
+              { title: "Economics (GEN-103)", credits: "3(3,0)" },
+              { title: "Biostatistics (STA-202)", credits: "3(3,0)" },
+              { title: "Fundamentals of Chemistry (MIC-102)", credits: "3(2,1)" },
+              { title: "English-II (ENG-102)", credits: "3(3,0)" },
+              { title: "Islamic Studies / Ethics (IST-101)", credits: "2(2,0)" },
+              { title: "Human Physiology (MLT-103)", credits: "3(2,1)" }
+            ]
+          },
+          {
+            name: "Semester 3",
+            totalCredits: 18,
+            courses: [
+              { title: "Introduction to Psychology (PSY-101)", credits: "3(3,0)" },
+              { title: "Introduction to ICT (CSC-101)", credits: "3(3,0)" },
+              { title: "Fundamentals of Medical Laboratory Technology (MLT-201)", credits: "3(2,1)" },
+              { title: "Basic Biochemistry (MLT-202)", credits: "3(2,1)" },
+              { title: "General Pathology (MLT-203)", credits: "3(3,0)" },
+              { title: "Cell Biology (BBT-102)", credits: "3(2+1)" }
+            ]
+          },
+          {
+            name: "Semester 4",
+            totalCredits: 18,
+            courses: [
+              { title: "Biosafety and Risk Management (MIC-203)", credits: "3(3,0)" },
+              { title: "Fundamentals of Microbiology (MIC-104)", credits: "3(2,1)" },
+              { title: "Fundamentals of Hematology (MLT-204)", credits: "3(2,1)" },
+              { title: "Basic Immunology (MLT-205)", credits: "3(2,1)" },
+              { title: "Histotechniques (MLT-206)", credits: "3(2,1)" },
+              { title: "Chemical Pathology-I (MLT-207)", credits: "3(2,1)" }
+            ]
+          },
+          {
+            name: "Semester 5",
+            totalCredits: 18,
+            courses: [
+              { title: "Red Blood Cells Disorders (MLT-301)", credits: "3(2,1)" },
+              { title: "Chemical Pathology-II (MLT-302)", credits: "3(2,1)" },
+              { title: "Medical Bacteriology-I (MLT-303)", credits: "3(2,1)" },
+              { title: "Medical Laboratory Instrumentation (MLT-304)", credits: "3(3,0)" },
+              { title: "Medical Virology (MLT-305)", credits: "3(2,1)" },
+              { title: "Introduction to Molecular Biology (BBT-201)", credits: "3(2,1)" }
+            ]
+          },
+          {
+            name: "Semester 6",
+            totalCredits: 18,
+            courses: [
+              { title: "WBC and Platelets Disorders (MLT-306)", credits: "3(2,1)" },
+              { title: "Medical Bacteriology II (MLT-307)", credits: "3(2,1)" },
+              { title: "Clinical Parasitology (MLT-308)", credits: "3(2,1)" },
+              { title: "Clinical Immunology & Serology (MLT-309)", credits: "3(2,1)" },
+              { title: "Research Methodology (MLT-310)", credits: "3(3,0)" },
+              { title: "Bioinformatics - I (BIF-102)", credits: "3(2,1)" }
+            ]
+          },
+          {
+            name: "Semester 7",
+            totalCredits: 16,
+            courses: [
+              { title: "Blood Banking (MLT-401)", credits: "3(2,1)" },
+              { title: "Medical Laboratory Management Skills (MLT-402)", credits: "2(2,0)" },
+              { title: "Clinical Mycology (MLT-403)", credits: "3(2,1)" },
+              { title: "Molecular Diagnostics (MLT-404)", credits: "3(2,1)" },
+              { title: "Biomedical Ethics (MLT-405)", credits: "2(2,0)" },
+              { title: "Research/ Senior Design Project I", credits: "3(0,3)" }
+            ]
+          },
+          {
+            name: "Semester 8",
+            totalCredits: 16,
+            courses: [
+              { title: "Epidemiology and public health (MLT-406)", credits: "3(3,0)" },
+              { title: "Vaccinology (MLT-407)", credits: "3(2,1)" },
+              { title: "Cytology and Cytogenetics (MLT-408)", credits: "3(2,1)" },
+              { title: "Health Informatics (MLT-409)", credits: "3(2,1)" },
+              { title: "Seminar (MLT-410)", credits: "1(1,0)" },
+              { title: "Research/ Senior Design Project II", credits: "3(0,3)" }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: "biotechnology",
+    name: "Department of Biotechnology",
+    shortName: "Biotechnology",
+    overview: "Biotechnology is the use of engineering and biological concepts to the processing of various living creatures' components for human benefit. It is a vast field that entails decoding the human genome, as well as its consequences in comprehending genetic illnesses, family genetics, history, and even life itself. It can be used in many various areas of life, including agriculture, health, industry, food, and ecology. This groundbreaking research is also used in synthetic biology, medication development, vaccine development, and gene therapy. The Department of Biotechnology at Kohsar University Murree is being established due to the field's applicability.\n\nBiotechnology will be offered as a BS and MS degree program by the department. These are learner-centered, employment-oriented programs that promote a collaborative, reflective, and current approach in the subject of Biotechnology. The Department strives to provide high-quality biotechnology education and research by employing skilled and knowledgeable academic members.",
+    vision: "New developments in the field of biotechnology have prompted the scientific community to recognize the need to decipher and interpret the knowledge and information contained within living organisms, as well as to use, exploit, modify, or improve existing biological processes in order to improve the quality of human life, either directly or indirectly. This ambition has prompted Kohsar University Murree to establish the Department of Biotechnology in order to accomplish and investigate various parts of life science through the use of cutting-edge technology. The department wants to broaden the scope of biotechnology in the country and provide students' careers a new dimension.",
+    mission: "The Department of Biotechnology's mission is to provide the finest learning environment for students to cope them with the most up-to-date learning and research trends. The department's goal is to ensure the quality education and research. Students will be encouraged to conduct basic research, develop advanced solutions, and solve real problems. Our objective is to provide a solid foundation for cutting-edge research and to achieve excellence in all aspects of biotechnology.",
+    aimsAndObjectivesOverview: "Biotechnology is the next big thing, with applications in agriculture, vaccine production, the textile, leather, and chemical industries, bioinformatics, health biotechnology, environmental biotechnology, animal biotechnology, and microbial biotechnology. The following are the goals of the BS program given by the department:",
+    aimsAndObjectives: [
+      "To train professional workers, scientists, and researchers who will work at national and international universities, research institutes, and molecular diagnostics laboratories.",
+      "To impart knowledge in Molecular biology, Genetics, Bioinformatics, Biochemistry, Microbiology, and Immunology, as well as other multidisciplinary areas.",
+      "To teach various methods of data exploration, inquiry, and arrangement, as well as their application in real-life situations."
+    ],
     faculty: [],
-    programs: [],
+    programs: [
+      {
+        name: "BS Biotechnology",
+        description: "Duration: 4 Years (8 Semesters)\nCredit Hours: 135\nEligibility: F.Sc or equivalent qualification with relevant subject with at least 45% marks.\n\nBiotechnology is a rapidly growing industry that offers a variety of career options to qualified and experienced individuals. Graduates with a BS in Biotechnology will be able to work in a variety of government and private sector employment.",
+        careersOverview: "Future Opportunities for Biotechnology Graduates:",
+        careers: [
+          "Institutes of Public Health",
+          "Agriculture research centers",
+          "Molecular Biology research organizations",
+          "Biomedical Sciences",
+          "Forensic science organizations",
+          "Environment related agencies, Pest control & plant protection Institutes",
+          "Wildlife conservation & Management organizations",
+          "Pharmaceutical Industry",
+          "Textile Industry",
+          "Cosmetic Industry"
+        ],
+        scheme: [
+          {
+            name: "Semester 1",
+            totalCredits: 17,
+            courses: [
+              { title: "Cell Biology (BTE101)", credits: "3(3-0)" },
+              { title: "Physical chemistry (CHM103)", credits: "3(3-0)" },
+              { title: "Introduction to Information and Communication technologies (CSS101)", credits: "3(2-1)" },
+              { title: "Mathematics-I (MTH106)", credits: "3(3-0)" },
+              { title: "Islamic Studies (IST101)", credits: "2(2-0)" },
+              { title: "English-I (Reading and writing skills) (ENG101)", credits: "3(3-0)" }
+            ]
+          },
+          {
+            name: "Semester 2",
+            totalCredits: 17,
+            courses: [
+              { title: "Introduction to Biochemistry (CHM208)", credits: "3(2-1)" },
+              { title: "Basics of Genetics (BTE102)", credits: "3(3-0)" },
+              { title: "Inorganic chemistry (CHM201)", credits: "3(3-0)" },
+              { title: "English-II (Composition writing) (ENG105)", credits: "3(3-0)" },
+              { title: "Pakistan studies (GEN101)", credits: "2(2-0)" },
+              { title: "Mathematics-II (MTH107)", credits: "3(3-0)" }
+            ]
+          },
+          {
+            name: "Semester 3",
+            totalCredits: 17,
+            courses: [
+              { title: "Introduction to Molecular Biology (BTE201)", credits: "3(2-1)" },
+              { title: "Organic Chemistry (CHM202)", credits: "3(3-0)" },
+              { title: "Biosafety & Bioethics (BTE202)", credits: "2(2-0)" },
+              { title: "English III (Communication and Presentation skills) (ENG202)", credits: "3(3-0)" },
+              { title: "Introduction to Biotechnology (BTE203)", credits: "3(3-0)" },
+              { title: "Introduction to Microbiology (MIC301)", credits: "3(2-1)" }
+            ]
+          },
+          {
+            name: "Semester 4",
+            totalCredits: 15,
+            courses: [
+              { title: "Fundamental of Molecular Biology (BTE204)", credits: "3(2-1)" },
+              { title: "Fundamental of Biochemistry (CHM203)", credits: "3(3-0)" },
+              { title: "Research Methodology in Biotechnology (BTE205)", credits: "3(3-0)" },
+              { title: "Biostatistics (STA202)", credits: "3(3-0)" },
+              { title: "Introduction to Psychology (PSY101)", credits: "3(3-0)" }
+            ]
+          },
+          {
+            name: "Semester 5",
+            totalCredits: 18,
+            courses: [
+              { title: "Immunology (BTE301)", credits: "3(2-1)" },
+              { title: "Plant Physiology (BTE302)", credits: "3(2-1)" },
+              { title: "Methods in molecular Biology (BTE303)", credits: "3(2-1)" },
+              { title: "Microbial Biotechnology (BTE304)", credits: "3(2-1)" },
+              { title: "Enzymology (BTE305)", credits: "3(2-1)" },
+              { title: "Genetic resources & conservation (BTE306)", credits: "3(3-0)" }
+            ]
+          },
+          {
+            name: "Semester 6",
+            totalCredits: 18,
+            courses: [
+              { title: "Agricultural Biotechnology (BTE307)", credits: "3(3-0)" },
+              { title: "Recombinant DNA Technology (BTE308)", credits: "3(2-1)" },
+              { title: "Biosensors (BTE309)", credits: "3(3-0)" },
+              { title: "Food Biotechnology (BTE310)", credits: "3(2-1)" },
+              { title: "Animal Biotechnology (BTE311)", credits: "3(2-1)" },
+              { title: "Bioinformatics I (BIF102)", credits: "3(2-1)" }
+            ]
+          },
+          {
+            name: "Semester 7",
+            totalCredits: 18,
+            courses: [
+              { title: "Pharmaceutical Biotechnology (BTE401)", credits: "3(3-0)" },
+              { title: "Genomics and Proteomics (BTE402)", credits: "3(3-0)" },
+              { title: "Entrepreneurship in Biotechnology (BTE403)", credits: "3(2-1)" },
+              { title: "Environmental Biotechnology (BTE404)", credits: "3(3-0)" },
+              { title: "Principles of Biochemical Engineering (BTE405)", credits: "3(2-0)" },
+              { title: "Biophysics (PHY409)", credits: "3(3-0)" }
+            ]
+          },
+          {
+            name: "Semester 8",
+            totalCredits: 15,
+            courses: [
+              { title: "Health Biotechnology (BTE406)", credits: "3(3-0)" },
+              { title: "Industrial Biotechnology (BTE407)", credits: "3(2-0)" },
+              { title: "Nanotechnology (BTE408)", credits: "3(3-0)" },
+              { title: "Research Project/ Special Paper (BTE409)", credits: "6(6-0)" }
+            ]
+          }
+        ]
+      },
+      {
+        name: "MS Biotechnology",
+        description: "Duration: 2 Years (4 Semesters)\nCredit Hours: 30 (24 taught + 6 project)\n\nThe MS Biotechnology program at Kohsar University Murree offers advanced training in core and elective areas of biotechnology. The program is designed to prepare students for high-level research and professional roles in the biotechnology industry and academia.",
+        scheme: [
+          {
+            name: "Core Courses",
+            totalCredits: 9,
+            courses: [
+              { title: "Principles and Practices in Biotechnology (BTE611)", credits: 3 },
+              { title: "Advanced Biotechnology (BTE612)", credits: 3 },
+              { title: "Advanced Molecular Genetics (BTE613)", credits: 3 }
+            ]
+          },
+          {
+            name: "Elective Courses (Choose 15 Cr Hr)",
+            totalCredits: 15,
+            courses: [
+              { title: "Advances in Molecular Biology (BTE614)", credits: "3(2+1)" },
+              { title: "Advances in Microbiology (BTE615)", credits: 3 },
+              { title: "Pharmaco genomics (BTE616)", credits: 3 },
+              { title: "Gene Expression and Regulation (BTE617)", credits: "3(2+1)" },
+              { title: "Plant Cell and Tissue Culture (BTE618)", credits: 3 },
+              { title: "Regenerative Medicine (BTE619)", credits: "3(2+1)" },
+              { title: "Animal Biotechnology (BTE620)", credits: 3 },
+              { title: "Protein Engineering (BTE621)", credits: 3 },
+              { title: "Gene manipulation (BTE622)", credits: 3 },
+              { title: "Nanobiotechnology (BTE623)", credits: 3 },
+              { title: "Cancer Genetics (BTE624)", credits: 3 },
+              { title: "General Virology (BTE625)", credits: 3 },
+              { title: "Stem Cell and Therapeutic Cloning (BTE626)", credits: "3(2+1)" },
+              { title: "Health Biotechnology (BTE627)", credits: 3 },
+              { title: "Research Techniques (BTE628)", credits: "3(2+1)" },
+              { title: "Biosafety and Bioethics (BTE629)", credits: 3 },
+              { title: "Microbial Physiology & Genetics (BTE630)", credits: 3 }
+            ]
+          },
+          {
+            name: "Research",
+            totalCredits: 6,
+            courses: [
+              { title: "Research Thesis", credits: 6 }
+            ]
+          }
+        ]
+      }
+    ]
   },
   {
     id: "bioscience",
@@ -443,38 +733,38 @@ export const departmentPages: DepartmentPage[] = [
     faculty: [
       {
         name: "Dr. Aftab Ahmad",
-        designation: "Assistant Professor / HOD | Specialization: Human Gut microbiota dynamics in health & Disease conditions.",
+        designation: "Assistant Professor (HOD) Microbiology | PhD- COMSATS University Islamabad | Specialization: Human Gut microbiota dynamics in health & Disease conditions.",
         image: bioAftab
       },
       {
         name: "Dr. Nasar Khan",
-        designation: "Assistant Professor | Specialization: Regenerative medicine, umbilical cord stem cell therapy"
+        designation: "Assistant Professor Microbiology | Ph.D. iNANO, Aarhus University, Denmark | Specialization: Regenerative medicine, umbilical cord stem cell therapy"
       },
       {
         name: "Dr. Muhammad Adnan Shereen",
-        designation: "Faculty Member | Specialization: Virology/Zika Virus"
+        designation: "Assistant Professor | PhD- Wuhan University, China | Specialization: Virology/Zika Virus"
       },
       {
         name: "Dr. Sadia Mehmood Satti",
-        designation: "Faculty Member | Specialization: Microbial Degradation of plastics"
+        designation: "Assistant Professor | PhD- Quaid-e-Azam University Islamabad | Specialization: Microbial Degradation of plastics"
       },
       {
         name: "Dr. Muhammad Imran Khan",
-        designation: "Faculty Member | Specialization: Biomedical Engineering"
+        designation: "Assistant Professor | PhD- Chonnam National University South Korea | Specialization: Biomedical Engineering"
       },
       {
         name: "Mr. Shahid Hussain",
-        designation: "Faculty Member | Specialization: Cancer Exosomes Biology."
+        designation: "Lecturer | MS International Islamic University Islamabad | Specialization: Cancer Exosomes Biology."
       }
     ],
     programs: [
       {
         name: "Undergraduate Programs",
-        description: "• Bachelor of Science in Microbiology\n• Bachelor of Science in Bioinformatics\n• Bachelor of Science in Biotechnology"
+        description: "The department offers the following undergraduate programs:\n\n• Bachelor of Science in Microbiology\n• Bachelor of Science in Bioinformatics\n• Bachelor of Science in Biotechnology"
       },
       {
         name: "Graduate Programs",
-        description: "• Master of Science in Microbiology\n• Master of Science in Bioinformatics\n• Master of Science in Biotechnology"
+        description: "The department offers the following graduate programs:\n\n• Master of Science in Microbiology\n• Master of Science in Bioinformatics\n• Master of Science in Biotechnology"
       }
     ],
     events: [
@@ -717,19 +1007,198 @@ export const departmentPages: DepartmentPage[] = [
     id: "english",
     name: "Department of English",
     shortName: "English",
-    vision: "",
-    mission: "",
-    faculty: [],
-    programs: [],
-  },
-  {
-    id: "urdu",
-    name: "Department of Urdu",
-    shortName: "Urdu",
-    vision: "",
-    mission: "",
-    faculty: [],
-    programs: [],
+    overview: "The Department of English of Kohsar University Murree was started in 2020 at BS Block, Jhika Gali Campus. Initially the department had 5 regular members of faculty to run the undergraduate Program (BS English 04-Year Programme). Currently the Department is running BS English (Language and Literature) Programme. The Department of English is going to launch MS/M.Phil English (Literature/Linguistics) in near future as well.",
+    vision: "The Department of English seeks to foster knowledge and a love of Literature and of Language in our students. Department will teach students to speak, read, and write effectively. It will encourage students to think deeply and to reflect on what they have learned.",
+    mission: "The Department of English strengthens the students of liberal education by developing a deepened understanding of language and literacy, the value of critical reading and effective writing, and the richness of literature, past and present.",
+    faculty: [
+      {
+        name: "Dr. Muhammad Sultan",
+        designation: "Dean / In charge Campus"
+      }
+    ],
+    programs: [
+      {
+        name: "BS English (Language and Literature)",
+        description: "BS English is a specialized Four-year program, tailored to implement HEC’s proposed paradigm of learning, building a broad base by introducing students to a number of diverse fields such as Logic, Philosophy, Human Rights, Psychology and Business Administration.\n\nAdmission Criteria:\n• The candidates holding F.A/F.Sc or equivalent qualification with at least 2nd division or equivalent grade shall be eligible for admission to BS Programme.\n• The candidate shall have to fulfill all the eligibility criteria specified by the university in its policy.\n\nDegree Completion Requirement:\nTo become eligible for award of BS degree, a student must satisfy the following requirements:\na) Minimum credit hours shall be 130 for BS English (Language and Literature) program including elective courses.\nb) Must have earned CGPA (Cumulative Grade Point Average) of at least 2.0 on a scale of 4.0.",
+        majors: [
+          {
+            name: "English Literature Electives",
+            description: "1. African Literature\n2. Postcolonial Women’s Writing\n3. Postmodern Fiction\n4. Islam and Western Literature\n5. Pakistani Folk Literature"
+          },
+          {
+            name: "English Language/Linguistics Electives",
+            description: "1. Emerging Trends in Sociolinguistics\n2. Introduction to Computational Linguistics\n3. ESP\n4. Introduction to Critical Pedagogy\n5. Pakistani English\n6. Second language acquisition\n7. Introduction to Syntax\n8. Introduction to Forensic Linguistics\n9. Clinical Linguistics\n10. Language Testing and Assessment\n11. Language and education\n12. Language and gender\n13. Corpus linguistics"
+          }
+        ],
+        scheme: [
+          {
+            name: "Semester 1",
+            totalCredits: 17,
+            courses: [
+              { title: "English-1: Reading and Writing Skills (ENG101)", credits: 3 },
+              { title: "History of English Literature-I (Medieval to Romantics) (ENG102)", credits: 3 },
+              { title: "Introduction to Literary Studies (ENG103)", credits: 3 },
+              { title: "Introduction to Language Studies (ENG104)", credits: 3 },
+              { title: "Islamic Studies (IST101)", credits: 2 },
+              { title: "Introduction to Computer Technology (ICT151)", credits: 3 }
+            ]
+          },
+          {
+            name: "Semester 2",
+            totalCredits: 17,
+            courses: [
+              { title: "English-II: Composition Writing (ENG105)", credits: 3 },
+              { title: "Introduction to Phonetics & Phonology (ENG106)", credits: 3 },
+              { title: "History of English Literature-II (19th Century to Onward) (ENG107)", credits: 3 },
+              { title: "Introduction to Environmental Sciences (ENV101)", credits: 3 },
+              { title: "Pakistan Studies (PST101)", credits: 2 },
+              { title: "Introduction to International Relations (POL102)", credits: 3 }
+            ]
+          },
+          {
+            name: "Semester 3",
+            totalCredits: 15,
+            courses: [
+              { title: "English-III (Communication & Presentation Skills) (ENG201)", credits: 3 },
+              { title: "Introduction to Morphology (ENG202)", credits: 3 },
+              { title: "Introduction to Sociology (SOC101)", credits: 3 },
+              { title: "Islamic History & Culture (GEN202)", credits: 3 },
+              { title: "Mathematics-I (MTH106)", credits: 3 }
+            ]
+          },
+          {
+            name: "Semester 4",
+            totalCredits: 18,
+            courses: [
+              { title: "English-IV Academic Reading and Writing (ENG203)", credits: 3 },
+              { title: "Renaissance Drama (ENG204)", credits: 3 },
+              { title: "Introduction to Semantics (ENG205)", credits: 3 },
+              { title: "Introduction to Economics (GEN103)", credits: 3 },
+              { title: "Introduction to Geography (GEN104)", credits: 3 },
+              { title: "Introduction to Psychology (PSY101)", credits: 3 }
+            ]
+          },
+          {
+            name: "Semester 5",
+            totalCredits: 18,
+            courses: [
+              { title: "Classical Poetry (ENG301)", credits: 3 },
+              { title: "Romantic & Victorian Poetry (ENG302)", credits: 3 },
+              { title: "Introduction to Sociolinguistics (ENG303)", credits: 3 },
+              { title: "Modern Novel (ENG304)", credits: 3 },
+              { title: "Popular Fiction (ENG305)", credits: 3 },
+              { title: "Foundations of Literary Criticism (ENG306)", credits: 3 }
+            ]
+          },
+          {
+            name: "Semester 6",
+            totalCredits: 15,
+            courses: [
+              { title: "Modern Poetry (ENG307)", credits: 3 },
+              { title: "Modern Drama (ENG308)", credits: 3 },
+              { title: "Post Modern Fiction (ENG309)", credits: 3 },
+              { title: "American Literature (ENG310)", credits: 3 },
+              { title: "Discourse Analysis (ENG311)", credits: 3 }
+            ]
+          },
+          {
+            name: "Semester 7",
+            totalCredits: 18,
+            courses: [
+              { title: "Research Methods & Term Paper Writing (ENG401)", credits: 3 },
+              { title: "Introduction to Applied Linguistics (ENG402)", credits: 3 },
+              { title: "Pakistani Literature in English (ENG403)", credits: 3 },
+              { title: "Post-Colonial Literature (ENG404)", credits: 3 },
+              { title: "Introduction to Translation Studies (ENG405)", credits: 3 },
+              { title: "Research/ Internship (ENG406)", credits: 3 }
+            ]
+          },
+          {
+            name: "Semester 8",
+            totalCredits: 15,
+            courses: [
+              { title: "Research/ Internship (ENG406)", credits: 3 },
+              { title: "World Englishes (ENG407)", credits: 3 },
+              { title: "Literary Theory and Practice (ENG408)", credits: 3 },
+              { title: "Stylistics (ENG409)", credits: 3 },
+              { title: "Corpus Linguistics (ENG410)", credits: 3 }
+            ]
+          }
+        ]
+      },
+      {
+        name: "MPhil English (Literature)",
+        description: "The MPhil English (Literature) program offers advanced study in literary and cultural research. Note: Only four courses are to be offered in each semester. However, list of courses may be extended according to availability of intellectual and human resources at the institution.",
+        majors: [
+          {
+            name: "Elective Subjects for MPhil English Literature",
+            description: "1. Contemporary Postcolonial Studies (ELIT509)\n2. War Literature (ELIT510)\n3. Literature and Globalization (ELIT502)\n4. Literature and Environment (ELIT5011)\n5. Literature and Film Studies (ELIT507)\n6. Women’s Writings (ELIT513)\n7. Postmodern Fiction (ELIT514)\n8. Transnational Poetry (ELIT515)\n9. Digital Humanities (ELIT516)"
+          }
+        ],
+        scheme: [
+          {
+            name: "Semester 1",
+            totalCredits: 12,
+            courses: [
+              { title: "Advanced Literary-Cultural Research Methodology (ELIT501)", credits: 3 },
+              { title: "Literature and Globalization (ELIT502)", credits: 3 },
+              { title: "Shakespearean Studies (ELIT503)", credits: 3 },
+              { title: "Contemporary Postcolonial Studies (ELIT504)", credits: 3 }
+            ]
+          },
+          {
+            name: "Semester 2",
+            totalCredits: 12,
+            courses: [
+              { title: "Critical Theories (ELIT505)", credits: 3 },
+              { title: "World Literature in Translation (ELIT506)", credits: 3 },
+              { title: "Literature and Film Studies (ELIT507)", credits: 3 },
+              { title: "Diasporic Literatures (ELIT508)", credits: 3 }
+            ]
+          }
+        ]
+      },
+      {
+        name: "MS/MPhil (Linguistics)",
+        description: "The MS/MPhil (Linguistics) programme offers specialization in Linguistics. The course is designed in such a way that the students’ needs regarding linguistics are met.\n\nDuration: 2 years\nEligibility:\n• MA English, BS English (16 years or 4-year education after intermediate).\n• MA English with minimum 45% marks, BS English with minimum 2.5 CGPA on 4.00 scale or as per HEC criteria.\n\nStructure:\n• Total credit hours: 30\n• Course work credit hours: 24\n• Research work credit hours: 06\n• Total semesters: 04",
+        scheme: [
+          {
+            name: "Semester 1",
+            totalCredits: 12,
+            courses: [
+              { title: "Advanced Research Methodology (ELING501)", credits: 3 },
+              { title: "Applied Grammar and Syntax (ELING502)", credits: 3 },
+              { title: "Discourse Studies (ELING503)", credits: 3 },
+              { title: "Advanced Stylistics (ELING504)", credits: 3 }
+            ]
+          },
+          {
+            name: "Semester 2",
+            totalCredits: 12,
+            courses: [
+              { title: "Linguistic Theories (ELING505)", credits: 3 },
+              { title: "Language Power and Identity (ELING506)", credits: 3 },
+              { title: "Translation Studies (ELING507)", credits: 3 },
+              { title: "Latest Trends in Linguistics (ENG508)", credits: 3 }
+            ]
+          },
+          {
+            name: "Year II, Semester III",
+            totalCredits: 6,
+            courses: [
+              { title: "Research Thesis (ENG 509)", credits: 6 }
+            ]
+          },
+          {
+            name: "Year II, Semester IV",
+            totalCredits: 6,
+            courses: [
+              { title: "Research Thesis (ENG 509)", credits: 6 }
+            ]
+          }
+        ]
+      }
+    ]
   },
   {
     id: "physics",
@@ -1049,10 +1518,141 @@ export const departmentPages: DepartmentPage[] = [
     id: "mathematics",
     name: "Department of Mathematics",
     shortName: "Mathematics",
-    vision: "",
-    mission: "",
+    overview: "The Department of Mathematics at Kohsar University Murree is a dynamic and integral part of our academic institution, dedicated to fostering a deep appreciation and understanding of mathematics among our students. Our department, which is tucked away in the picturesque Murree Hills, provides a lively and welcoming atmosphere for the study of mathematical ideas and their practical applications.\n\nOur department is dedicated to providing top-notch mathematics outreach, research, and education. We believe that mathematics is not only a fundamental discipline but also a gateway to unlocking the mysteries of the natural world and the key to addressing complex challenges in various fields.\n\nThe mathematics department at Kohsar University Murree provides a wide range of courses, from basic mathematics to more complex subjects, so that students can explore the world of mathematics. Our dedicated and experienced faculty members are passionate about teaching and mentoring, guiding students in their pursuit of mathematical knowledge and critical thinking skills.\n\nOur research covers a broad range of mathematical fields, such as mathematical modeling, statistics, applied mathematics, and pure mathematics. We actively engage in cutting-edge research projects, contributing to the global mathematical community's body of knowledge while also addressing local and regional challenges.\n\nInterdisciplinary collaboration is a core principle of our department. We recognize that mathematics is not isolated but an integral part of solving multifaceted real-world problems. Through collaborations with other departments and institutions, we aim to harness the power of mathematics to find innovative solutions to pressing issues, whether they pertain to environmental sustainability, healthcare, or technology.\n\nMoreover, we are deeply committed to outreach and community engagement. We organize math competitions, workshops, and seminars to promote mathematical literacy and interest among students of all ages in the Murree region.",
+    vision: "To be known around the world as a provider of world-class education, a welcoming hub for basic, applied, and multidisciplinary research, a source of producing high-quality graduates for the job market, and a contributor to societal progress.",
+    mission: "Mission of Mathematics department is to create a positive work environment that fosters effective teaching, qualitative scientific research, and the development of distinguished academic programmes to keep pace with the latest international scientific developments, while also taking into account the quality standards of qualifying competent professionals who possess logical, scientific, and mathematical thinking skills, as well as scientific research skills in mathematical sciences.",
     faculty: [],
-    programs: [],
+    programs: [
+      {
+        name: "BS Mathematics (Batch 2025 and onwards)",
+        description: "Summary of the Program\nDuration: 4 Years\nNumber of Semesters: 8\nTotal Credit Hours: 139\nEffective Date/ Semester/Batch: Batch 2025 & onwards.\nEligibility criteria: F.Sc (Pre-engineering / Pre-medical) or F.A (with Mathematics) or F.A or Equivalent with at least 45% marks or 2nd division in FA/F.Sc or equivalent.",
+        objectives: [
+          "Competency Based Learning: To develop the 21st century outcomes of the learning process focusing on Knowledge, Skills, Professional Behavior, and Interpersonal Attributes.",
+          "Balance between Breadth and Depth: To ensure undergraduate education emphasizes exposure to multidisciplinary fields in addition to the primary field of specialty.",
+          "Applied Knowledge: To promote application of academic knowledge to effectively respond to real life, entrepreneurial and industry challenges.",
+          "Emphasis on Creativity: To equip students with the ability to demonstrate creativity, curiosity, exploration and reflective problem solving.",
+          "Terminal Degree: To design degrees sufficient to meet the requirements of the job market."
+        ],
+        plos: [
+          "Comprehend mathematical reasoning in many mathematics disciplines.",
+          "Contribute substantially to academia through teaching and research.",
+          "Prepare to seek advanced research degrees in applied, pure, and computational mathematics."
+        ],
+        majors: [
+          {
+            name: "Elective Courses Data Science",
+            description: "MTH-510 Probability Theory, MTH-511 Introduction to Data Science, MTH-512 Numerical Linear Algebra, MTH-513 Mathematical Modelling, MTH-514 Linear Statistical Models, MTH-515 Matrix Methods for Data Science, MTH-516 Data Analysis and Visualization, MTH-517 Econometrics, MTH-611 Stochastic Processes, MTH-612 Time Series Analysis, MTH-613 Linear Programming and Optimization, MTH-614 Introduction to Image Processing, MTH-615 Functional Analysis, BSE-363 Deep Learning, BSE-357 Natural Language Processing"
+          },
+          {
+            name: "Pure Mathematics Electives",
+            description: "MTH-530 Abstract Algebra II, MTH-531 Linear Algebra II, MTH-532 Matrix Analysis, MTH-533 Graph Theory, MTH-534 Measure Theory, MTH-535 Lie Analysis, MTH-536 History of Mathematics, MTH-537 Number Theory, MTH-538 Introduction to Cryptography, MTH-615 Functional Analysis, MTH-631 Convex Analysis, MTH-632 Algebraic Topology, MTH-633 Introduction to Manifolds, MTH-634 Introduction to Algebraic Geometry, MTH-635 Introduction to Operator Theory, MTH-636 Axiomatic Set Theory"
+          },
+          {
+            name: "Applied and Computational Mathematics Electives",
+            description: "MTH-512 Numerical Linear Algebra, MTH-513 Mathematical Modelling, MTH-535 Lie Analysis, MTH-551 Exact Solutions of Dynamical Systems, MTH-552 Mathematical Physics, MTH-553 Mathematical Biology, MTH-554 Dynamical Systems, MTH-555 Fluid Mechanics, MTH-556 Numerical Solutions of Ordinary Differential Equations, MTH-557 Approximation Theory, MTH-558 Applications of Non-Linear Waves, MTH-559 Introduction to Control Systems, MTH-613 Linear Programming and Optimization, MTH-615 Functional Analysis, MTH-651 Solitary Wave Solutions, MTH-652 Integral Equations, MTH-653 Introduction to Game Theory, MTH-654 Numerical Solutions of Partial Differential Equations, MTH-655 Advanced Numerical Analysis"
+          }
+        ],
+        scheme: [
+          {
+            name: "Semester 1",
+            totalCredits: 18,
+            courses: [
+              { title: "Calculus-I (MTH-301)", credits: 3 },
+              { title: "Programming Fundamentals (CSC-102)", credits: 3 },
+              { title: "Quantitative Reasoning-I (GEN-109)", credits: 3 },
+              { title: "Fundamentals of Chemistry (CHM-111)", credits: 3 },
+              { title: "Functional English (ENG-101)", credits: 3 },
+              { title: "Applications of ICT (ICT-103)", credits: 3 }
+            ]
+          },
+          {
+            name: "Semester 2",
+            totalCredits: 17,
+            courses: [
+              { title: "Calculus II (MTH-302)", credits: 3 },
+              { title: "Discrete Mathematics (MTH-303)", credits: 3 },
+              { title: "Quantitative Reasoning-II (GEN-110)", credits: 3 },
+              { title: "Expository Writing (GNG-102)", credits: 3 },
+              { title: "Ideology & Constitution of Pakistan (GEN-105)", credits: 2 },
+              { title: "Arabic Language (GEN-302)", credits: 2 },
+              { title: "Understanding of Quran-I (GEN-121)", credits: 1 }
+            ]
+          },
+          {
+            name: "Semester 3",
+            totalCredits: 18,
+            courses: [
+              { title: "Calculus III (MTH-401)", credits: 3 },
+              { title: "Linear Algebra I (MTH-402)", credits: 3 },
+              { title: "Elementary Differential Equations (MTH-403)", credits: 3 },
+              { title: "Introductory Statistics (STA-101)", credits: 3 },
+              { title: "Pakistan Studies (GEN-102)", credits: 2 },
+              { title: "Islamic Studies/Ethics (IST-104)", credits: 2 },
+              { title: "Introduction to Psychology (PSY-101)", credits: 2 }
+            ]
+          },
+          {
+            name: "Semester 4",
+            totalCredits: 17,
+            courses: [
+              { title: "Abstract Algebra-I (MTH-404)", credits: 3 },
+              { title: "Numerical Methods (MTH-405)", credits: 3 },
+              { title: "Data Structure & Algorithms (MTH-406)", credits: 3 },
+              { title: "Ordinary Differential Equations (MTH-407)", credits: 3 },
+              { title: "Civics & Community Engagement (GED-211)", credits: 2 },
+              { title: "Entrepreneurship (GED-212)", credits: 2 },
+              { title: "Understanding of Quran-II (GED-122)", credits: 1 }
+            ]
+          },
+          {
+            name: "Semester 5",
+            totalCredits: 18,
+            courses: [
+              { title: "Real Analysis-I (MTH-501)", credits: 3 },
+              { title: "Topology (MTH-502)", credits: 3 },
+              { title: "Partial Differential Equations (MTH-503)", credits: 3 },
+              { title: "Advanced Programming (CSC-381)", credits: 3 },
+              { title: "Introduction to Mechanics (PHY-525)", credits: 3 },
+              { title: "Artificial Intelligence (CSC-208)", credits: 3 }
+            ]
+          },
+          {
+            name: "Semester 6",
+            totalCredits: 18,
+            courses: [
+              { title: "Real Analysis-II (MTH-504)", credits: 3 },
+              { title: "Complex Analysis (MTH-505)", credits: 3 },
+              { title: "Elective-I (MTH---)", credits: 3 },
+              { title: "Elective-II (MTH---)", credits: 3 },
+              { title: "Introduction to Machine Learning (CSC-382)", credits: 3 },
+              { title: "Introduction to Classical Mechanics (PHY-526)", credits: 3 }
+            ]
+          },
+          {
+            name: "Semester 7",
+            totalCredits: 15,
+            courses: [
+              { title: "Differential Geometry (MTH-601)", credits: 3 },
+              { title: "Elective-III (MTH----)", credits: 3 },
+              { title: "Elective-IV (MTH-----)", credits: 3 },
+              { title: "Scientific Writing & Research Methods (SRM-301)", credits: 3 },
+              { title: "Final Year Project-I (MTH-698)", credits: 3 }
+            ]
+          },
+          {
+            name: "Semester 8",
+            totalCredits: 15,
+            courses: [
+              { title: "Elective-V (MTH----)", credits: 3 },
+              { title: "Elective-VI (MTH----)", credits: 3 },
+              { title: "Elective-VII (MTH----)", credits: 3 },
+              { title: "Elective-VIII (MTH----)", credits: 3 },
+              { title: "Final Year Project-II (MTH-699)", credits: 3 }
+            ]
+          }
+        ]
+      }
+    ]
   },
   {
     id: "psychology",
@@ -1101,28 +1701,123 @@ export const departmentPages: DepartmentPage[] = [
     id: "sociology",
     name: "Department of Sociology",
     shortName: "Sociology",
-    vision: "",
-    mission: "",
+    overview: "The Department of Sociology at Kohsar University Murree is dedicated to providing students with a transformative educational experience. By promoting a deep understanding of social forces, experiential learning, and a humanistic worldview, we prepare our graduates to have a meaningful impact on their communities and society at large. Our curriculum is designed to foster critical thinking, rigorous research skills, and a proactive approach to solving complex social phenomena locally and globally.",
+    vision: "The Department envisioned students to have a transformative effect on society by promoting continuous change in their communities through the knowledge of social forces, devotion, experiential learning and a humanistic worldview.",
+    mission: [
+      "Teach concrete concepts, theories, and research tools of sociology.",
+      "Equip students with competencies and skills to understand substantive fields of sociological research.",
+      "Establish scientific knowledge for theoretical, rigorous, and multidimensional analysis of social processes.",
+      "Prepare insightful researchers who can contribute to the body of knowledge and understand societal problems holistically.",
+      "Produce responsible and proactive members of society.",
+      "Foster out-of-the-box thinking to understand multifaceted social realities."
+    ],
     faculty: [],
-    programs: [],
-  },
-  {
-    id: "statistics",
-    name: "Department of Statistics",
-    shortName: "Statistics",
-    vision: "",
-    mission: "",
-    faculty: [],
-    programs: [],
-  },
-  {
-    id: "political-science",
-    name: "Department of Political Science",
-    shortName: "Political Science",
-    vision: "",
-    mission: "",
-    faculty: [],
-    programs: [],
+    programs: [
+      {
+        name: "BS Sociology",
+        description: "The BS Sociology program is a 4-year integrated degree (136 credit hours) that provides a comprehensive foundation in sociological theory, research methods, and substantive fields of social inquiry. The program includes a mandatory internship and a two-part thesis research project to ensure practical experience and academic rigor.",
+        scheme: [
+          {
+            name: "Semester 1",
+            totalCredits: 17,
+            courses: [
+              { title: "Functional English (ENG-111)", credits: 3 },
+              { title: "Mathematics (MTH-113)", credits: 3 },
+              { title: "Pakistan Studies (PST-111)", credits: 2 },
+              { title: "Introduction to Political Science (POL-111)", credits: 3 },
+              { title: "Introduction to Psychology (PSY-111)", credits: 3 },
+              { title: "Introduction to Sociology - I (SOC-111)", credits: 3 },
+              { title: "Quranic Education (QUE-112) - Noncredit", credits: 1 }
+            ]
+          },
+          {
+            name: "Semester 2",
+            totalCredits: 17,
+            courses: [
+              { title: "Communication Skills (ENG-I21)", credits: 3 },
+              { title: "Application of Computer in Sociology (CSC-311)", credits: 3 },
+              { title: "Islamic Studies / Ethics (IST-111 / ETH-111)", credits: 2 },
+              { title: "Introduction to Environment / Environmental Biology (Env-111)", credits: 3 },
+              { title: "Introduction to Hotel and Hospitality Management", credits: 3 },
+              { title: "Introduction to Sociology - II (SOC-121)", credits: 3 }
+            ]
+          },
+          {
+            name: "Semester 3",
+            totalCredits: 18,
+            courses: [
+              { title: "Basic Academic Writing (ENG-211)", credits: 3 },
+              { title: "Social Statistics – I (SOC-232)", credits: 3 },
+              { title: "Logic and Critical Thinking (SOC-234)", credits: 3 },
+              { title: "Social Work (SOC-233)", credits: 3 },
+              { title: "Cultural Tourism", credits: 3 },
+              { title: "Pakistani Society and Culture (SOC-231)", credits: 3 },
+              { title: "Quranic Education (QUE-232) - Noncredit", credits: 1 }
+            ]
+          },
+          {
+            name: "Semester 4",
+            totalCredits: 18,
+            courses: [
+              { title: "Introduction to Population Studies (SOC-241)", credits: 3 },
+              { title: "Introduction to Law / Introduction to Education (LAW-111 / EDU-111)", credits: 3 },
+              { title: "Social Psychology (SOC-121)", credits: 3 },
+              { title: "Sociology of Gender Studies (SOC-243)", credits: 3 },
+              { title: "Social Statistics - II (SOC-242)", credits: 3 },
+              { title: "Internship (SOC-244)", credits: 3 }
+            ]
+          },
+          {
+            name: "Semester 5",
+            totalCredits: 18,
+            courses: [
+              { title: "Classical Sociological Theory – I (SOC-351)", credits: 3 },
+              { title: "Social Anthropology (SOC-352)", credits: 3 },
+              { title: "Sociology of Social Change and Development (SOC-353)", credits: 3 },
+              { title: "Sociology of Tourism / Sociology of Environment (SOC-354 / SOC-355)", credits: 3 },
+              { title: "Community Development / Rural Sociology (SOC-356 / SOC-357)", credits: 3 },
+              { title: "Sociology of Globalization (SOC-358)", credits: 3 },
+              { title: "Quranic Education (QUE-352) - Noncredit", credits: 1 }
+            ]
+          },
+          {
+            name: "Semester 6",
+            totalCredits: 18,
+            courses: [
+              { title: "Contemporary Sociological Theory – II (SOC-361)", credits: 3 },
+              { title: "Introduction to Research Methods in Social Science – I (SOC-362)", credits: 3 },
+              { title: "Criminology (SOC-363)", credits: 3 },
+              { title: "Sociology of Health and Medicine (SOC-364)", credits: 3 },
+              { title: "Sociology of Gerontology and Aging (SOC-365)", credits: 3 },
+              { title: "Human Resource Development (SOC-366)", credits: 3 }
+            ]
+          },
+          {
+            name: "Semester 7",
+            totalCredits: 15,
+            courses: [
+              { title: "Advanced Research Methods in Social Sciences – II (SOC-472)", credits: 3 },
+              { title: "Thesis Research – I (SOC-481)", credits: 3 },
+              { title: "Project Planning and Management (SOC-471)", credits: 3 },
+              { title: "Sociology of Media / Social Capital and Social Networking (SOC-473 / SOC-474)", credits: 3 },
+              { title: "Sociology of Law and Human Rights (SOC-475)", credits: 3 },
+              { title: "Quranic Education (QUE-472) - Noncredit", credits: 1 }
+            ]
+          },
+          {
+            name: "Semester 8",
+            totalCredits: 15,
+            courses: [
+              { title: "Thesis Research – II (SOC-481)", credits: 3 },
+              { title: "Sociology of Education (SOC-482)", credits: 3 },
+              { title: "Urban Sociology (SOC-483)", credits: 3 },
+              { title: "Seminar; Social Problems of Pakistan (SOC-484)", credits: 3 },
+              { title: "Corporate Social Responsibility / NGO Management (SOC-485 / SOC-486)", credits: 3 }
+            ]
+          }
+        ]
+      }
+    ]
   },
   {
     id: "microbiology",

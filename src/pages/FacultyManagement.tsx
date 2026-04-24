@@ -6,10 +6,8 @@ import { departmentPages } from "@/data/departmentPages";
 const departmentsList = [
   "art-and-design",
   "english",
-  "urdu",
   "psychology",
   "sociology",
-  "political-science",
   "tourism-and-hospitality",
 ];
 
