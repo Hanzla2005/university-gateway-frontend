@@ -167,17 +167,9 @@ const Navbar = () => {
     setOpenNestedSubmenu(null);
   }, [location.pathname]);
 
-  const navClasses = isHomePage
-    ? scrolled ? "shadow-lg bg-primary" : ""
-    : "shadow-lg bg-primary";
-
-  const topBarClasses = isHomePage
-    ? scrolled ? "bg-primary" : "bg-transparent"
-    : "bg-primary";
-
-  const mainBarClasses = isHomePage
-    ? scrolled ? "bg-primary/90" : "bg-black/20"
-    : "bg-primary/90";
+  const navClasses = "shadow-lg bg-primary";
+  const topBarClasses = "bg-primary";
+  const mainBarClasses = "bg-primary/90";
 
 
   const handleSubmenuPdfClick = (pdfPath: string) => {

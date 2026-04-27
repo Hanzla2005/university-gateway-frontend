@@ -8,7 +8,7 @@ import Footer from "@/components/Footer";
 import AnnouncementsSlider from "@/components/AnnouncementsSlider";
 import { departmentPages } from "@/data/departmentPages";
 import departmentImages from "@/data/departmentImages";
-import heroBg from "@/assets/home/hero-campus.jpg";
+import heroBg from "@/assets/home/bg1.png";
 
 import chancellorImg from "@/assets/home/chancellor.png";
 import vcImg from "@/assets/home/vc.png";
@@ -81,7 +81,7 @@ const Index = () => {
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <Link to={`/stories/${story.id}`} className="group block bg-white border border-gray-200 hover:shadow-md transition-shadow duration-300">
+                <Link to={`/stories/${story.id}`} className="group block bg-white border border-gray-200 hover:shadow-md transition-shadow duration-300 h-full flex flex-col">
                   <div className="aspect-[16/10] overflow-hidden">
                     <img
                       src={story.image}
@@ -92,23 +92,15 @@ const Index = () => {
                       height={512}
                     />
                   </div>
-                  <div className="p-5">
-                    <p className="text-xs font-bold text-accent uppercase tracking-widest mb-2">{story.tag}</p>
-                    <h3 className="text-base font-serif text-foreground leading-snug mb-2 group-hover:text-primary transition-colors">{story.title}</h3>
+                  <div className="p-3 text-center flex-grow flex items-center justify-center">
+                    <h3 className="text-[13px] font-medium text-slate-500 leading-snug group-hover:text-primary transition-colors">{story.title}</h3>
                   </div>
                 </Link>
               </motion.div>
             ))}
           </div>
 
-          <div className="text-center mt-10">
-            <Link
-              to="/stories"
-              className="inline-flex items-center gap-2 px-7 py-2.5 bg-accent text-accent-foreground font-semibold hover:brightness-110 transition-all text-base"
-            >
-              More Stories
-            </Link>
-          </div>
+          {/* Removed More Stories button as requested to only show 3 stories */}
         </div>
       </section>
 
