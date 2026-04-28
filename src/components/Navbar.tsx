@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, ChevronDown, FileText, BookOpen, Users, Building2, GraduationCap, Briefcase, FileStack, Users2, Search } from "lucide-react";
+import { Menu, X, ChevronDown, FileText, BookOpen, Users, Building2, GraduationCap, Briefcase, FileStack, Users2, Search, Download, ShieldCheck, Trophy, Handshake, Rocket } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import logo from "@/assets/logo.png";
 import universityActPdf from "@/assets/pdfs/KOHSAR-UNIVERSITY-ACT.pdf";
@@ -10,6 +10,33 @@ import visitingFacultyPdf from "@/assets/pdfs/Visiting-Advertisment.pdf";
 import adminPostFormPdf from "@/assets/pdfs/Job-Application-Form-Administrative-Post-KUM-1.pdf";
 import internshipPdf from "@/assets/pdfs/WhatsApp-Image-2025-08-11-at-5.33.58-PM.pdf";
 import admissionAdPdf from "@/assets/pdfs/Admission-Add.pdf";
+
+// ORIC PDFs - Downloads
+import oricDlHjrs21_22 from "@/assets/ORIC Website/Downloads/HJRS  2021-22.pdf";
+import oricDlHjrs20_21 from "@/assets/ORIC Website/Downloads/HJRS 2020-21.pdf";
+import oricDlHjrs22_23 from "@/assets/ORIC Website/Downloads/HJRS 2022-23.pdf";
+import oricDlHjrs23_24 from "@/assets/ORIC Website/Downloads/HJRS 2023-24.pdf";
+import oricDlHonorarium from "@/assets/ORIC Website/Downloads/Honorarium Performa- Template.pdf";
+import oricDlInvention from "@/assets/ORIC Website/Downloads/Invention Disclosure Form.pdf";
+import oricDlAnnual2025 from "@/assets/ORIC Website/Downloads/KUM Annual Report 2025.pdf";
+
+// ORIC PDFs - Ethical Review Board
+import oricErbBoard from "@/assets/ORIC Website/Ethical Review Board/KUM Ethical institutional review board.pdf";
+import oricErbRecon from "@/assets/ORIC Website/Ethical Review Board/Reconstitution of KUM Ethical institutional review board .pdf";
+
+// ORIC PDFs - Annual Report
+import oricAr2025 from "@/assets/ORIC Website/KUM Annual Report/KUM Annual Report 2025.pdf";
+
+// ORIC PDFs - KUM Policies
+import oricKpJournal from "@/assets/ORIC Website/KUM Policies/HEC Journal Recognition.pdf";
+import oricKpPubPolicy from "@/assets/ORIC Website/KUM Policies/HEC Research Publications Policy.pdf";
+import oricKpHjrs20_21 from "@/assets/ORIC Website/KUM Policies/hjrs 2020-21.pdf";
+import oricKpHjrs21_22 from "@/assets/ORIC Website/KUM Policies/hjrs 2021-22.pdf";
+import oricKpHjrs22_23 from "@/assets/ORIC Website/KUM Policies/hjrs 2022-23.pdf";
+import oricKpHjrs23_24 from "@/assets/ORIC Website/KUM Policies/HJRS 2023-24.pdf";
+import oricKpMou from "@/assets/ORIC Website/KUM Policies/KUM MOU Policy.pdf";
+import oricKpSop from "@/assets/ORIC Website/KUM Policies/KUM Proposal SOPs.pdf";
+import oricKpPolicy2021 from "@/assets/ORIC Website/KUM Policies/ORICs Policy 2021.pdf";
 
 const topBarLinks = [
   { label: "Vice Chancellor", path: "/vice-chancellor" },
@@ -141,6 +168,57 @@ const mainNavItems = [
       },
     ]
   },
+  {
+    label: "ORIC",
+    path: "/oric",
+    submenu: [
+      { label: "ORIC Introduction", path: "/oric", icon: Building2 },
+      { 
+        label: "Downloads", 
+        path: "#oric-downloads", 
+        icon: Download,
+        nested: [
+          { label: "HJRS 2021-22", path: "/oric-dl-hjrs-21-22", isExternal: true },
+          { label: "HJRS 2020-21", path: "/oric-dl-hjrs-20-21", isExternal: true },
+          { label: "HJRS 2022-23", path: "/oric-dl-hjrs-22-23", isExternal: true },
+          { label: "HJRS 2023-24", path: "/oric-dl-hjrs-23-24", isExternal: true },
+          { label: "Honorarium Performa - Template", path: "/oric-dl-honorarium", isExternal: true },
+          { label: "Invention Disclosure Form", path: "/oric-dl-invention", isExternal: true },
+        ]
+      },
+      { 
+        label: "Ethical Review Board", 
+        path: "#oric-erb", 
+        icon: ShieldCheck,
+        nested: [
+          { label: "KUM Ethical Review Board", path: "/oric-erb-board", isExternal: true },
+          { label: "Reconstitution of Board", path: "/oric-erb-recon", isExternal: true },
+        ]
+      },
+      { label: "KUM Annual Report 2025", path: "/oric-ar-2025", icon: FileStack, isExternal: true },
+      { 
+        label: "KUM Policies", 
+        path: "#oric-kp", 
+        icon: FileText,
+        nested: [
+          { label: "HEC Journal Recognition", path: "/oric-kp-journal", isExternal: true },
+          { label: "HEC Research Publications Policy", path: "/oric-kp-pub-policy", isExternal: true },
+          { label: "hjrs 2020-21", path: "/oric-kp-hjrs-20-21", isExternal: true },
+          { label: "hjrs 2021-22", path: "/oric-kp-hjrs-21-22", isExternal: true },
+          { label: "hjrs 2022-23", path: "/oric-kp-hjrs-22-23", isExternal: true },
+          { label: "HJRS 2023-24", path: "/oric-kp-hjrs-23-24", isExternal: true },
+          { label: "KUM MOU Policy", path: "/oric-kp-mou", isExternal: true },
+          { label: "KUM Proposal SOPs", path: "/oric-kp-sop", isExternal: true },
+          { label: "ORICs Policy 2021", path: "/oric-kp-policy-2021", isExternal: true },
+        ]
+      },
+      { label: "Landmark Achievements", path: "/oric", icon: Trophy },
+      { label: "Collaborations", path: "/mous", icon: Handshake },
+      { label: "ORIC Steering Committee", path: "/oric", icon: Users },
+      { label: "R&D Projects", path: "/rd-projects", icon: Rocket },
+      { label: "Research Publications", path: "/research-publications", icon: BookOpen },
+    ]
+  },
   { label: "ANNOUNCEMENTS", path: "/announcements" },
   { label: "CAMPUS LIFE", path: "/campus-life" },
 ];
@@ -175,6 +253,7 @@ const Navbar = () => {
   const handleSubmenuPdfClick = (pdfPath: string) => {
     if (pdfPath === "/university-act") window.open(universityActPdf, "_blank");
     else if (pdfPath === "/admissions-ad-fall-2025") window.open(admissionAdPdf, "_blank");
+    else if (pdfPath === "/oric-ar-2025") window.open(oricAr2025, "_blank");
   };
 
   const handleNestedPdfClick = (pdfPath: string) => {
@@ -183,6 +262,27 @@ const Navbar = () => {
     else if (pdfPath === "/jobs-visiting-faculty") window.open(visitingFacultyPdf, "_blank");
     else if (pdfPath === "/jobs-admin-posts") window.open(adminPostFormPdf, "_blank");
     else if (pdfPath === "/jobs-internship") window.open(internshipPdf, "_blank");
+    // ORIC Downloads
+    else if (pdfPath === "/oric-dl-hjrs-21-22") window.open(oricDlHjrs21_22, "_blank");
+    else if (pdfPath === "/oric-dl-hjrs-20-21") window.open(oricDlHjrs20_21, "_blank");
+    else if (pdfPath === "/oric-dl-hjrs-22-23") window.open(oricDlHjrs22_23, "_blank");
+    else if (pdfPath === "/oric-dl-hjrs-23-24") window.open(oricDlHjrs23_24, "_blank");
+    else if (pdfPath === "/oric-dl-honorarium") window.open(oricDlHonorarium, "_blank");
+    else if (pdfPath === "/oric-dl-invention") window.open(oricDlInvention, "_blank");
+    else if (pdfPath === "/oric-dl-annual-2025") window.open(oricDlAnnual2025, "_blank");
+    // ORIC ERB
+    else if (pdfPath === "/oric-erb-board") window.open(oricErbBoard, "_blank");
+    else if (pdfPath === "/oric-erb-recon") window.open(oricErbRecon, "_blank");
+    // ORIC KUM Policies
+    else if (pdfPath === "/oric-kp-journal") window.open(oricKpJournal, "_blank");
+    else if (pdfPath === "/oric-kp-pub-policy") window.open(oricKpPubPolicy, "_blank");
+    else if (pdfPath === "/oric-kp-hjrs-20-21") window.open(oricKpHjrs20_21, "_blank");
+    else if (pdfPath === "/oric-kp-hjrs-21-22") window.open(oricKpHjrs21_22, "_blank");
+    else if (pdfPath === "/oric-kp-hjrs-22-23") window.open(oricKpHjrs22_23, "_blank");
+    else if (pdfPath === "/oric-kp-hjrs-23-24") window.open(oricKpHjrs23_24, "_blank");
+    else if (pdfPath === "/oric-kp-mou") window.open(oricKpMou, "_blank");
+    else if (pdfPath === "/oric-kp-sop") window.open(oricKpSop, "_blank");
+    else if (pdfPath === "/oric-kp-policy-2021") window.open(oricKpPolicy2021, "_blank");
   };
 
   return (

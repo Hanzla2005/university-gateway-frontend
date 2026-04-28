@@ -62,6 +62,10 @@ import Layout from "./components/Layout";
 import Stories from "./pages/Stories";
 import StoryDetail from "./pages/StoryDetail";
 
+import ORIC from "./pages/ORIC";
+import RDProjects from "./pages/RDProjects";
+import ResearchPublications from "./pages/ResearchPublications";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -79,6 +83,11 @@ const App = () => (
             <Route path="/university-act" element={<UniversityAct />} />
             <Route path="/study-at-kum" element={<StudyAtKUM />} />
             <Route path="/campus-student-affairs" element={<CampusStudentAffairs />} />
+
+            {/* ORIC Routes */}
+            <Route path="/oric" element={<ORIC />} />
+            <Route path="/rd-projects" element={<RDProjects />} />
+            <Route path="/research-publications" element={<ResearchPublications />} />
 
             {/* Faculties Routes */}
             <Route path="/faculties" element={<Faculties />} />
