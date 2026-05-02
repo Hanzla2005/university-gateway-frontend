@@ -3,19 +3,22 @@ import Footer from "@/components/Footer";
 import PageHeader from "@/components/PageHeader";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { 
-  Target, 
-  Lightbulb, 
-  Search, 
-  Rocket, 
-  Handshake, 
-  FileCheck, 
-  Database, 
-  ShieldCheck, 
+import {
+  Target,
+  Lightbulb,
+  Search,
+  Rocket,
+  Handshake,
+  FileCheck,
+  Database,
+  ShieldCheck,
   GraduationCap,
   Users,
   Mail,
-  Building
+  Building,
+  BookOpen,
+  FlaskConical,
+  BarChart3
 } from "lucide-react";
 
 // Team Images
@@ -92,16 +95,16 @@ const ORIC = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      <PageHeader 
-        title="ORIC" 
+      <PageHeader
+        title="ORIC"
         subtitle="Office of Research, Innovation & Commercialization"
       />
 
       <div className="container-main px-4 sm:px-6 lg:px-8 py-16 space-y-32">
-        
+
         {/* Introduction Section */}
         <section className="grid lg:grid-cols-2 gap-12 items-start">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -110,7 +113,7 @@ const ORIC = () => {
             <h2 className="text-3xl font-serif text-foreground mb-6">Introduction</h2>
             <div className="space-y-4 text-muted-foreground leading-relaxed mb-8">
               <p>
-                Office of Research, Innovation & Commercialization (ORIC) was established in 2021 at Kohsar University Murree, under the guidelines of the Higher Education Commission (HEC) Pakistan. 
+                Office of Research, Innovation & Commercialization (ORIC) was established in 2021 at Kohsar University Murree, under the guidelines of the Higher Education Commission (HEC) Pakistan.
               </p>
               <p>
                 Aligned with the Kohsar University vision, <span className="italic font-medium text-primary">"To be amongst the top institutions in the world with a great environment for promoting high-impact applied research, entrepreneurship, and innovation,"</span> KUM ORIC is committed to strengthening collaboration between the University's research groups, HEC, and various national and international research funding bodies.
@@ -139,7 +142,7 @@ const ORIC = () => {
               </div>
             </div>
           </motion.div>
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
@@ -175,7 +178,7 @@ const ORIC = () => {
             <h2 className="text-3xl font-serif text-foreground mb-8 text-center">Key Functions of KUM ORIC</h2>
             <div className="grid md:grid-cols-2 gap-6">
               {keyFunctions.map((func, index) => (
-                <motion.div 
+                <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -201,7 +204,7 @@ const ORIC = () => {
           </div>
           <div className="grid lg:grid-cols-3 gap-8">
             {domains.map((domain, index) => (
-              <motion.div 
+              <motion.div
                 key={domain.title}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -223,7 +226,7 @@ const ORIC = () => {
         <section className="relative overflow-hidden rounded-[3rem] bg-primary py-20 px-8 lg:px-16 text-primary-foreground">
           <div className="absolute top-0 right-0 w-96 h-96 bg-accent/20 rounded-full -mr-48 -mt-48 blur-3xl" />
           <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent/10 rounded-full -ml-48 -mb-48 blur-3xl" />
-          
+
           <div className="relative z-10 max-w-4xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -238,7 +241,7 @@ const ORIC = () => {
                 </div>
                 <h2 className="text-4xl lg:text-5xl font-serif font-bold tracking-tight">National & International Collaborations</h2>
               </div>
-              
+
               <p className="text-xl text-primary-foreground/90 mb-12 leading-relaxed font-medium">
                 Kohsar University Murree has established a robust network of <span className="text-accent font-bold">60+ strategic partnerships</span> across academia, industry, and social sectors, fostering a vibrant ecosystem for research and innovation.
               </p>
@@ -257,7 +260,7 @@ const ORIC = () => {
               </div>
 
               <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-                <Link 
+                <Link
                   to="/mous"
                   className="group relative inline-flex items-center gap-3 px-10 py-5 bg-accent text-accent-foreground rounded-2xl font-black hover:scale-105 transition-all shadow-2xl shadow-accent/40 overflow-hidden"
                 >
@@ -274,7 +277,7 @@ const ORIC = () => {
         {/* R&D Projects Summary Section */}
         <section className="relative overflow-hidden rounded-[3rem] bg-secondary py-20 px-8 lg:px-16 text-secondary-foreground border border-border shadow-xl">
           <div className="absolute top-0 left-0 w-96 h-96 bg-primary/5 rounded-full -ml-48 -mt-48 blur-3xl" />
-          
+
           <div className="relative z-10 max-w-4xl">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -288,7 +291,7 @@ const ORIC = () => {
                 </div>
                 <h2 className="text-3xl lg:text-4xl font-serif font-bold text-foreground">Research & Development Portfolio</h2>
               </div>
-              
+
               <p className="text-xl text-muted-foreground mb-10 leading-relaxed">
                 Our research initiatives drive innovation across multiple disciplines, from AI-enabled biodiversity monitoring to sustainable energy solutions. We manage a diverse portfolio of ongoing and proposed projects funded by HEC, NRPU, and PSF.
               </p>
@@ -307,7 +310,7 @@ const ORIC = () => {
                 ))}
               </div>
 
-              <Link 
+              <Link
                 to="/rd-projects"
                 className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground rounded-2xl font-bold hover:scale-105 transition-transform shadow-lg shadow-primary/20"
               >
@@ -321,7 +324,7 @@ const ORIC = () => {
         {/* Research Excellence Section */}
         <section className="relative overflow-hidden rounded-[3rem] bg-accent py-20 px-8 lg:px-16 text-accent-foreground">
           <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full -mr-48 -mt-48 blur-3xl" />
-          
+
           <div className="relative z-10 max-w-4xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
@@ -333,11 +336,11 @@ const ORIC = () => {
                 <BarChart3 className="h-4 w-4" />
                 Scholarly Impact 2025
               </div>
-              
+
               <h2 className="text-4xl lg:text-6xl font-serif font-black mb-8 leading-tight">
                 96.8 Total Impact Factor
               </h2>
-              
+
               <p className="text-xl text-accent-foreground/80 mb-12 leading-relaxed max-w-2xl mx-auto">
                 Our faculty members are contributing to global knowledge through high-impact research published in world-class journals like Nature Scientific Reports, IEEE Transactions, and Frontiers in Immunology.
               </p>
@@ -353,7 +356,7 @@ const ORIC = () => {
                 </div>
               </div>
 
-              <Link 
+              <Link
                 to="/research-publications"
                 className="group inline-flex items-center gap-3 px-10 py-5 bg-white text-accent rounded-2xl font-black hover:scale-105 transition-all shadow-2xl shadow-white/20"
               >
@@ -372,7 +375,7 @@ const ORIC = () => {
           </div>
           <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
             {teamMembers.map((member, index) => (
-              <motion.div 
+              <motion.div
                 key={member.name}
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}

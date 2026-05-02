@@ -81,7 +81,7 @@ const mainNavItems = [
           { label: "Computer Science", path: "/departments/computer-science" },
           { label: "Mathematics", path: "/departments/mathematics" },
           { label: "Physics", path: "/departments/physics" },
-          { label: "Bioinformatics", path: "/departments/bioinformatics" },
+          { label: "Software Engineering", path: "/departments/software-engineering" },
         ]
       },
       {

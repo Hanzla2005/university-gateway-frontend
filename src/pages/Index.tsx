@@ -12,8 +12,7 @@ import heroBg from "@/assets/home/bg1.png";
 
 import chancellorImg from "@/assets/home/chancellor.png";
 import vcImg from "@/assets/home/vc.png";
-import stemImg from "@/assets/home/stem.png";
-import honeyProductionImg from "@/assets/home/honeyProduction.png";
+import proVcImg from "@/assets/home/proVC.png";
 import graduationImg from "@/assets/graduation.jpg";
 import { topStories } from "@/data/stories";
 
@@ -22,7 +21,7 @@ const facultyGroups = [
     key: "applied",
     name: "Applied Sciences & Computing",
     icon: FlaskConical,
-    departments: ["computer-science", "mathematics", "physics", "bioinformatics"],
+    departments: ["computer-science", "mathematics", "physics", "software-engineering"],
   },
   {
     key: "biomedical",
@@ -146,7 +145,7 @@ const Index = () => {
         </div>
 
         {/* Leadership Cards */}
-        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           <div className="border border-border rounded-lg overflow-hidden hover:border-primary/30 transition-all bg-card shadow-sm hover:shadow-md flex flex-col">
             <div className="p-6">
               <div className="flex gap-4 mb-4">
@@ -182,81 +181,29 @@ const Index = () => {
               </p>
             </div>
           </div>
+
+          <div className="border rounded-lg overflow-hidden bg-card hover:border-primary/30 shadow-sm hover:shadow-md flex flex-col">
+            <div className="p-6">
+              <div className="flex gap-4 mb-4">
+                <div className="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
+                  <img src={proVcImg} alt="Pro Chancellor" className="w-full h-full object-cover" />
+                </div>
+                <div className="flex-1">
+                  <p className="text-sm font-medium text-accent tracking-widest uppercase mb-2">Pro Chancellor</p>
+                  <h3 className="font-serif text-xl text-foreground">Rana Sikandar Hayat</h3>
+                  <p className="text-sm text-muted-foreground mt-1">Dedicated academic leader</p>
+                </div>
+              </div>
+              <p className="text-base text-muted-foreground leading-relaxed border-t pt-4">
+                Rana Sikandar Hayat is committed to academic excellence and research advancement. His leadership focuses on fostering an environment of innovation and ensuring high standards of education across all faculties.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Announcements Slider */}
       <AnnouncementsSlider />
-
-      {/* STEM Section */}
-      <section className="bg-gray-50 py-16">
-        <div className="container-main px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <motion.div
-              className="space-y-6"
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5 }}
-            >
-              <h2 className="text-4xl font-serif text-foreground">STEM</h2>
-              <p className="text-lg text-foreground leading-relaxed text-justify">
-                STEM is an educational program developed to prepare primary and secondary students for college, graduate study, and careers in the fields of science, technology, engineering and mathematics (STEM). In addition to subject-specific learning, STEM aims to foster inquiring minds, logical reasoning, and collaboration skills.
-              </p>
-              <Link to="/academics" className="inline-block px-5 py-2 bg-accent text-accent-foreground text-sm font-semibold hover:brightness-110 transition-all">
-                View More
-              </Link>
-            </motion.div>
-            <motion.div
-              className="aspect-[4/3] overflow-hidden"
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: 0.15 }}
-            >
-              <img src={stemImg} alt="STEM Laboratory" className="w-full h-full object-cover" />
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Agriculture Section */}
-      <section className="bg-white py-16">
-        <div className="container-main px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <motion.div
-              className="aspect-[4/3] overflow-hidden lg:order-1"
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5 }}
-            >
-              <img src={honeyProductionImg} alt="Agriculture" className="w-full h-full object-cover" />
-            </motion.div>
-            <motion.div
-              className="space-y-6 lg:order-2"
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: 0.15 }}
-            >
-              <h2 className="text-4xl font-serif text-foreground">Agriculture</h2>
-              <p className="text-lg text-foreground leading-relaxed text-justify">
-                Agriculture is the art and science of cultivating the soil, growing crops, and raising livestock. It includes the preparation of plant and animal products for people to use and their distribution to markets.
-              </p>
-              <div className="space-y-3">
-                <h3 className="font-serif text-xl text-foreground">Major disciplines of Agriculture are</h3>
-                <p className="text-lg text-foreground leading-relaxed">
-                  Food Science and Technology, Environmental Science, Forestry, Agronomy, Soil Sciences, Plant Breeding and Genetics
-                </p>
-              </div>
-              <Link to="/academics" className="inline-block px-5 py-2 bg-accent text-accent-foreground text-sm font-semibold hover:brightness-110 transition-all">
-                View More
-              </Link>
-            </motion.div>
-          </div>
-        </div>
-      </section>
 
       {/* Our Faculties & Departments - Structural Design */}
       <section className="bg-[#f0f1f3] py-20 border-y border-gray-200">

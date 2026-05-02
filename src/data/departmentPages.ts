@@ -64,10 +64,6 @@ import mbF8 from "@/assets/departments/microbiology/faculty/shahSaud.png";
 
 import physicsTahir from "@/assets/departments/physics/faculty/tahirAmin.png";
 
-import bioinformaticsSara from "@/assets/departments/bioinformatics/faculty/sara.png";
-import bioinformaticsShehroz from "@/assets/departments/bioinformatics/faculty/shehroz.png";
-import bioinformaticsRozeena from "@/assets/departments/bioinformatics/faculty/rozeena.png";
-
 import csWaqas from "@/assets/departments/CS/faculty/waqas.png";
 import csRehan from "@/assets/departments/CS/faculty/rehan.png";
 import csFaran from "@/assets/departments/CS/faculty/faran.png";
@@ -274,153 +270,18 @@ export const departmentPages: DepartmentPage[] = [
   },
 
   {
-    id: "bioinformatics",
-    name: "Department of Bioinformatics",
-    shortName: "Bioinformatics",
-    overview: "Bioinformatics is a broad scientific research field that combines Biology, Computer Science, Data Science, Mathematics and Statistics to drive the analysis of the vast amount of data associated with modern Bioscience. It involves the scientific interpretation with the computational information and analysis of various factors which affects the movement in our biological systems. Computers and software tools are extensively used for observations of these databases and preserve them for further analyses.\n\nAs computational power increases and becomes more accessible, the age of Bioinformatics will accelerate our ability to understand and tackle global challenges like never before. From discovering new antibiotics to fighting pandemics or making agriculture more sustainable, the promise is great and the applications are already rolling in. The Department of Bioinformatics at Kohsar University is established in 2022. It is housed in GPO Chowk Campus at Kohsar University Murree with state of the art computational lab and well-designed classrooms. Currently the department is run by three faculty members with an aim to expand it further.",
-    vision: "Department of Bioinformatics at Kohsar University Murree aims to postulate an encouraging and varied research environment within which fundamental and existing areas of modern Biology can be studied. Faculty of the department of Bioinformatics intends to train the next generation professionals and researchers in the interdisciplinary field of Bioinformatics that is required to design and implement novel methods and tools to provide a better understanding of biological systems.",
-    mission: "Our mission is to to translate knowledge into products through translational research or complex data analysis and prepare skilled researchers with practical knowledge of the field so that they can pursue career in diverse academic discipline of Biosciences.",
-    aimsAndObjectivesOverview: "Primary objecive of Bioinformatics is to enhance the understading of biological processes. Our goal is that the graduates should have strong understanding of:",
-    aimsAndObjectives: [
-      "Various aspects of biological systems.",
-      "Different areas of Computer Science including programming languages.",
-      "Existing Bioinformatics tools and databases.",
-      "Computational applications related to biological systems.",
-      "Analysis and interpretation of biological data."
-    ],
-    faculty: [
-      {
-        name: "Dr. Sara Sarfaraz",
-        designation: "Assistant Professor (HOD)",
-        email: "dr.sara@kum.edu.pk",
-        image: bioinformaticsSara
-      },
-      {
-        name: "Mr. Muhammad Shehroz",
-        designation: "Lecturer",
-        email: "muhammadshehroz@kum.edu.pk",
-        image: bioinformaticsShehroz
-      },
-      {
-        name: "Ms. Rozeena Arif",
-        designation: "Lecturer",
-        email: "rozeenaarif@kum.edu.pk",
-        image: bioinformaticsRozeena
-      }
-    ],
+    id: "software-engineering",
+    name: "Department of Software Engineering",
+    shortName: "Software Engineering",
+    vision: "To become a center of excellence in software engineering education and research, producing graduates who can lead the software industry with innovation and ethical practices.",
+    mission: "To provide high-quality education in software engineering, fostering technical expertise, creative problem-solving, and professional ethics among students to meet the evolving needs of the global software industry.",
+    overview: "Software Engineering is a disciplined approach to the design, development, operation, and maintenance of software. It is the application of engineering to software. The Department of Software Engineering at Kohsar University Murree is dedicated to providing students with a solid foundation in software development principles and practices.\n\nThe department will offer programs that prepare students for careers in software design, development, and management. Content for this department will be shared soon.",
+    faculty: [],
     programs: [
       {
-        name: "BS Bioinformatics",
-        description: "Total numbers of Credit hours 132\nDuration 4 years (8 Semesters)\nSemester duration 16-18 weeks\nCourse Load per Semester 15-18 credit hours\nNumber of courses per semester 4-6 (not more than 3 lab/ practical courses)",
-        plos: [
-          "Explain the relationship between genes and proteins and use of computer to handle biological data.",
-          "Have a deeper insight into various tools and techniques commonly used in Bioinformatics.",
-          "Be able to identify diversified areas and applications like Genomics, Drug Designing, Agri- and Health Informatics, Biotechnology, Systems Biology and others."
-        ],
-        careersOverview: "Bioinformatics or computational biology is an interdisciplinary field of science that combines computer science, mathematics, engineering and statistics to understand and interpret biological information. It is the application of computer technology to the management of biological data. Bioinformatics is an emerging scientific discipline with highly remunerative career options.",
-        careers: [
-          "Bioinformatics has become an important part of many areas of Biology. It plays an important role in Biomedical Research.",
-          "The career prospect in Bioinformatics has been gradually increasing with the use of information technology in the area of Molecular Biology.",
-          "Bioinformatics degree holder can work in all sectors of Pharmaceutical, Biomedical organizations, Biotechnology, scientific research institutes, hospital, industry and even NGOs.",
-          "You can work in private & government hospitals and as a teacher in private and public colleges/universities.",
-          "One can also find employment in manufacturing industries of various biomedical products.",
-          "Students having a degree in Bioinformatics can be a part of the leading IT Companies.",
-          "Other career opportunities include database design & maintenance, proteomics, pharmacology, sequence assembly & analysis, informatics developer, bio analytics, clinical pharmacologist, etc.",
-          "Bioinformatics has applications in broad range of fields including microbial genome applications, molecular medicine, personalized medicine, gene therapy, drug development, evolutionary studies, Biotechnology, climate change studies, crop improvement, forensic analysis, improving nutritional quality and many others."
-        ],
-        scheme: [
-          {
-            name: "Semester 1",
-            totalCredits: 17,
-            courses: [
-              { title: "Mathematics (MATH-)", credits: "3(3-0)" },
-              { title: "Chemistry (CHEM-)", credits: "3(3-0)" },
-              { title: "Introduction to Computer (CSC-)", credits: "3(2-1)" },
-              { title: "English-I (Functional English) (ENG-)", credits: "3(3-0)" },
-              { title: "Islamic Studies or Ethics (IST-/ETH-)", credits: "2(2-0)" },
-              { title: "Basic Cell Biology (BIF-111)", credits: "3(3-0)" }
-            ]
-          },
-          {
-            name: "Semester 2",
-            totalCredits: 16,
-            courses: [
-              { title: "English II (Communication Skills) (ENG-)", credits: "3(3-0)" },
-              { title: "Pakistan Studies (PST-)", credits: "2(2-0)" },
-              { title: "Programming Fundamentals (CSC-)", credits: "4(3-1)" },
-              { title: "Biochemistry I (BIF-121)", credits: "4(3-1)" },
-              { title: "Bioinformatics-I (BIF-122)", credits: "3(2-1)" }
-            ]
-          },
-          {
-            name: "Semester 3",
-            totalCredits: 18,
-            courses: [
-              { title: "English III (Technical Writing and Presentation Skills) (ENG-)", credits: "3(3-0)" },
-              { title: "Calculus I (MATH-)", credits: "3(3-0)" },
-              { title: "Object Oriented Programming (CSC-)", credits: "4(3-1)" },
-              { title: "Bioinformatics Computing I (BIF-231)", credits: "4(3-1)" },
-              { title: "Molecular Biology (BIF-232)", credits: "4(3-1)" }
-            ]
-          },
-          {
-            name: "Semester 4",
-            totalCredits: 18,
-            courses: [
-              { title: "Sociology (SOC-)", credits: "3(3-0)" },
-              { title: "Discrete Mathematics (MATH-)", credits: "3(3-0)" },
-              { title: "Data Structure and Algorithms (CSC-)", credits: "4(3-1)" },
-              { title: "Ethical and Legal Issues in Bioinformatics (BIF-241)", credits: "2(2-0)" },
-              { title: "Bioinformatics Database Development (BIF-242)", credits: "3(2-1)" },
-              { title: "Essential of Genetics (BIF-243)", credits: "3(3-0)" }
-            ]
-          },
-          {
-            name: "Semester 5",
-            totalCredits: 18,
-            courses: [
-              { title: "Linear Algebra and Differential Equation (MATH-)", credits: "3(3-0)" },
-              { title: "Biochemistry II (BIF-351)", credits: "3(3-0)" },
-              { title: "Bioinformatics II (BIF-352)", credits: "3(2-1)" },
-              { title: "Probability and Biostatistics (BIF-353)", credits: "3(3-0)" },
-              { title: "Genomics (BIF-354)", credits: "3(3-0)" },
-              { title: "Elective I", credits: "3" }
-            ]
-          },
-          {
-            name: "Semester 6",
-            totalCredits: 18,
-            courses: [
-              { title: "Recombinant DNA Technology (BIF-361)", credits: "3(2-1)" },
-              { title: "Bioinformatics Computing II (BIF-362)", credits: "3(0-3)" },
-              { title: "Proteomics (BIF-363)", credits: "3(3-0)" },
-              { title: "Modern Programming Languages (BIF-364)", credits: "3(2-1)" },
-              { title: "Scientific Writing (BIF-365)", credits: "3(3-0)" },
-              { title: "Elective II", credits: "3" }
-            ]
-          },
-          {
-            name: "Semester 7",
-            totalCredits: 18,
-            courses: [
-              { title: "Bioinformatics Software Engineering (BIF-471)", credits: "3(2-1)" },
-              { title: "Systems Biology (BIF-472)", credits: "3(3-0)" },
-              { title: "Artificial Intelligence (CSC-)", credits: "3(3-0)" },
-              { title: "Special Topics in Bioinformatics (BIF-473)", credits: "3(3-0)" },
-              { title: "Biological Modeling and Simulation (BIF-474)", credits: "3(2-1)" },
-              { title: "Research Project part I/ Internship (BIF-475)", credits: "3(0-3)" }
-            ]
-          },
-          {
-            name: "Semester 8",
-            totalCredits: 9,
-            courses: [
-              { title: "Elective III", credits: "3" },
-              { title: "Elective IV", credits: "3" },
-              { title: "Research Project part II / Internship (BIF-481)", credits: "3(0-3)" }
-            ]
-          }
-        ]
+        name: "BS Software Engineering",
+        description: "A comprehensive four-year degree program focused on developing high-quality software systems. The curriculum covers software requirements, design, implementation, testing, and maintenance.",
+        scheme: []
       }
     ]
   },
@@ -518,7 +379,7 @@ export const departmentPages: DepartmentPage[] = [
               { title: "Clinical Parasitology (MLT-308)", credits: "3(2,1)" },
               { title: "Clinical Immunology & Serology (MLT-309)", credits: "3(2,1)" },
               { title: "Research Methodology (MLT-310)", credits: "3(3,0)" },
-              { title: "Bioinformatics - I (BIF-102)", credits: "3(2,1)" }
+              { title: "Health Informatics (MLT-102)", credits: "3(2,1)" }
             ]
           },
           {
@@ -556,10 +417,10 @@ export const departmentPages: DepartmentPage[] = [
     overview: "Biotechnology is the use of engineering and biological concepts to the processing of various living creatures' components for human benefit. It is a vast field that entails decoding the human genome, as well as its consequences in comprehending genetic illnesses, family genetics, history, and even life itself. It can be used in many various areas of life, including agriculture, health, industry, food, and ecology. This groundbreaking research is also used in synthetic biology, medication development, vaccine development, and gene therapy. The Department of Biotechnology at Kohsar University Murree is being established due to the field's applicability.\n\nBiotechnology will be offered as a BS and MS degree program by the department. These are learner-centered, employment-oriented programs that promote a collaborative, reflective, and current approach in the subject of Biotechnology. The Department strives to provide high-quality biotechnology education and research by employing skilled and knowledgeable academic members.",
     vision: "New developments in the field of biotechnology have prompted the scientific community to recognize the need to decipher and interpret the knowledge and information contained within living organisms, as well as to use, exploit, modify, or improve existing biological processes in order to improve the quality of human life, either directly or indirectly. This ambition has prompted Kohsar University Murree to establish the Department of Biotechnology in order to accomplish and investigate various parts of life science through the use of cutting-edge technology. The department wants to broaden the scope of biotechnology in the country and provide students' careers a new dimension.",
     mission: "The Department of Biotechnology's mission is to provide the finest learning environment for students to cope them with the most up-to-date learning and research trends. The department's goal is to ensure the quality education and research. Students will be encouraged to conduct basic research, develop advanced solutions, and solve real problems. Our objective is to provide a solid foundation for cutting-edge research and to achieve excellence in all aspects of biotechnology.",
-    aimsAndObjectivesOverview: "Biotechnology is the next big thing, with applications in agriculture, vaccine production, the textile, leather, and chemical industries, bioinformatics, health biotechnology, environmental biotechnology, animal biotechnology, and microbial biotechnology. The following are the goals of the BS program given by the department:",
+    aimsAndObjectivesOverview: "Biotechnology is the next big thing, with applications in agriculture, vaccine production, the textile, leather, and chemical industries, health biotechnology, environmental biotechnology, animal biotechnology, and microbial biotechnology. The following are the goals of the BS program given by the department:",
     aimsAndObjectives: [
       "To train professional workers, scientists, and researchers who will work at national and international universities, research institutes, and molecular diagnostics laboratories.",
-      "To impart knowledge in Molecular biology, Genetics, Bioinformatics, Biochemistry, Microbiology, and Immunology, as well as other multidisciplinary areas.",
+      "To impart knowledge in Molecular biology, Genetics, Biochemistry, Microbiology, and Immunology, as well as other multidisciplinary areas.",
       "To teach various methods of data exploration, inquiry, and arrangement, as well as their application in real-life situations."
     ],
     faculty: [],
@@ -649,7 +510,7 @@ export const departmentPages: DepartmentPage[] = [
               { title: "Biosensors (BTE309)", credits: "3(3-0)" },
               { title: "Food Biotechnology (BTE310)", credits: "3(2-1)" },
               { title: "Animal Biotechnology (BTE311)", credits: "3(2-1)" },
-              { title: "Bioinformatics I (BIF102)", credits: "3(2-1)" }
+              { title: "Genomics I (GEN102)", credits: "3(2-1)" }
             ]
           },
           {
@@ -727,8 +588,8 @@ export const departmentPages: DepartmentPage[] = [
     id: "bioscience",
     name: "Department of Bioscience",
     shortName: "Bioscience",
-    overview: "The Department of Biosciences was established a year back at the KUM, Murree. The department started with the BS Microbiology program in 2021. This program is becoming very popular in the country and will fulfill the future needs of Pakistan in this very important field of study. In addition to the BS program the department has started MS programs in Microbiology, Admissions will be announced soon for fall 2022.\n\nWelcome to the Department of Biosciences at Jhika Galli campus Kohsar University Murree. The Department of Biosciences was established in 2020 with a mission to provide quality education and research in emerging horizons of biosciences. This department aims to equip the learner with emerging technologies and nascent skills currently being applied in various fields of modern biological sciences. Biology interconnects to almost all fields of basic and applied sciences. The department of Biosciences is proving as unique platform of emerging disciplines of life sciences. Our collaborative research based, and conducive teaching learning culture empowers our students with a excellent understanding of life sciences systems through genetic, molecular, and computational methods of exploration. The department is growing at excellent pace in various branches of biosciences offering BS, MS programs in the fields of Microbiology, Bioinformatics, Biochemistry, and Zoology. Currently, we are an impressive team of PhD faculty members groomed and trained in the top labs and universities of the developed countries including USA, UK, Denmark, and France. The department offers 3 BS and 3 MS programs in different domains of biological sciences with a considerable student body.\n\nThe department welcomes a students and researchers each year. We have strong research linkages and collaborations with some celebrated labs of USA, Denmark, Netherlands, Italy and UK where our undergraduate graduate students have secured future opportunities of international exposure to equip themselves with advanced skills and research techniques.\n\nOur research spans the breadth of biological sciences, and currently we are moving ahead with interdisciplinary approach to interlink the departments. Departmental Research Publications 2021-22: >20",
-    vision: "The Department of Biosciences will formally combine the research and teaching excellence of the Departments of bioinformatics, biomedical engineering, microbiology and Zoology, allowing us to build upon KUM legacy leading biological research in an increasingly interdisciplinary manner. The Department of Biosciences will continue to teach undergraduate course, as well as launching a new BS and MS programmes. Students studying at the Department will benefit from working with experts, remarkable library and state-of-the-art facilities.",
+    overview: "The Department of Biosciences was established a year back at the KUM, Murree. The department started with the BS Microbiology program in 2021. This program is becoming very popular in the country and will fulfill the future needs of Pakistan in this very important field of study. In addition to the BS program the department has started MS programs in Microbiology, Admissions will be announced soon for fall 2022.\n\nWelcome to the Department of Biosciences at Jhika Galli campus Kohsar University Murree. The Department of Biosciences was established in 2020 with a mission to provide quality education and research in emerging horizons of biosciences. This department aims to equip the learner with emerging technologies and nascent skills currently being applied in various fields of modern biological sciences. Biology interconnects to almost all fields of basic and applied sciences. The department of Biosciences is proving as unique platform of emerging disciplines of life sciences. Our collaborative research based, and conducive teaching learning culture empowers our students with a excellent understanding of life sciences systems through genetic, molecular, and computational methods of exploration. The department is growing at excellent pace in various branches of biosciences offering BS, MS programs in the fields of Microbiology, Biochemistry, and Zoology. Currently, we are an impressive team of PhD faculty members groomed and trained in the top labs and universities of the developed countries including USA, UK, Denmark, and France. The department offers BS and MS programs in different domains of biological sciences with a considerable student body.\n\nThe department welcomes a students and researchers each year. We have strong research linkages and collaborations with some celebrated labs of USA, Denmark, Netherlands, Italy and UK where our undergraduate graduate students have secured future opportunities of international exposure to equip themselves with advanced skills and research techniques.\n\nOur research spans the breadth of biological sciences, and currently we are moving ahead with interdisciplinary approach to interlink the departments. Departmental Research Publications 2021-22: >20",
+    vision: "The Department of Biosciences will formally combine the research and teaching excellence of the Departments of biomedical engineering, microbiology and Zoology, allowing us to build upon KUM legacy leading biological research in an increasingly interdisciplinary manner. The Department of Biosciences will continue to teach undergraduate course, as well as launching a new BS and MS programmes. Students studying at the Department will benefit from working with experts, remarkable library and state-of-the-art facilities.",
     mission: "Department of Biosciences believe in strengthening the linkage between industry and institutions for sustainable growth and productivity.",
     faculty: [
       {
@@ -760,11 +621,11 @@ export const departmentPages: DepartmentPage[] = [
     programs: [
       {
         name: "Undergraduate Programs",
-        description: "The department offers the following undergraduate programs:\n\n• Bachelor of Science in Microbiology\n• Bachelor of Science in Bioinformatics\n• Bachelor of Science in Biotechnology"
+        description: "The department offers the following undergraduate programs:\n\n• Bachelor of Science in Microbiology\n• Bachelor of Science in Biotechnology"
       },
       {
         name: "Graduate Programs",
-        description: "The department offers the following graduate programs:\n\n• Master of Science in Microbiology\n• Master of Science in Bioinformatics\n• Master of Science in Biotechnology"
+        description: "The department offers the following graduate programs:\n\n• Master of Science in Microbiology\n• Master of Science in Biotechnology"
       }
     ],
     events: [
@@ -2147,7 +2008,7 @@ export const departmentPages: DepartmentPage[] = [
       "Attain skills in written and verbal scientific communication.",
       "Develop the ability to design and perform a scientific study on insects, and to analyze results.",
       "Develop an understanding of the distributions and abundances of organisms including insects, and their interactions with each other and the environment.",
-      "Learn modern techniques in insect science such as molecular biology, bioinformatics, and/or imaging.",
+      "Learn modern techniques in insect science such as molecular biology and/or imaging.",
       "To provide enduring solutions for environmental problems by using innovative green technologies.",
       "To develop collaboration with national and international environment supporting bodies for research and development revenues generation.",
       "To establish productive programs that develops an association between our expert faculty members and students for strengthen our department.",

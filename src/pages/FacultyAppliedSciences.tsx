@@ -7,7 +7,7 @@ const departmentsList = [
   "computer-science",
   "mathematics",
   "physics",
-  "bioinformatics",
+  "software-engineering",
 ];
 
 const FacultyAppliedSciences = () => {

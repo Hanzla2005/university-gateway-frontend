@@ -13,7 +13,7 @@ const departmentImages: Record<string, string> = {
   "computer-science": csImg,
   "mathematics": educationImg,
   "physics": naturalImg,
-  "bioinformatics": healthImg,
+  "software-engineering": engineeringImg,
   "medical-laboratory-technology": healthImg,
   "biotechnology": engineeringImg,
   "bioscience": naturalImg,

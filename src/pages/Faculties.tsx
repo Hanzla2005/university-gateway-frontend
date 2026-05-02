@@ -12,7 +12,7 @@ const facultyGroups = [
       "computer-science",
       "mathematics",
       "physics",
-      "bioinformatics",
+      "software-engineering",
     ],
   },
   {
