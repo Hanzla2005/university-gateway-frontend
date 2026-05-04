@@ -10,6 +10,7 @@ import visitingFacultyPdf from "@/assets/pdfs/Visiting-Advertisment.pdf";
 import adminPostFormPdf from "@/assets/pdfs/Job-Application-Form-Administrative-Post-KUM-1.pdf";
 import internshipPdf from "@/assets/pdfs/WhatsApp-Image-2025-08-11-at-5.33.58-PM.pdf";
 import admissionAdPdf from "@/assets/pdfs/Admission-Add.pdf";
+import alumniFormPdf from "@/assets/pdfs/Alumni Registration from.pdf";
 
 // ORIC PDFs - Downloads
 import oricDlHjrs21_22 from "@/assets/ORIC Website/Downloads/HJRS  2021-22.pdf";
@@ -44,6 +45,7 @@ const topBarLinks = [
   { label: "Guest House", path: "/guest-house" },
   { label: "Downloads", path: "/downloads" },
   { label: "Jobs", path: "/jobs" },
+  { label: "Alumni", path: alumniFormPdf, isExternal: true },
   { label: "Convocation", path: "https://docs.google.com/forms/d/e/1FAIpQLSdGaBUzTNJIW1xwpp5VfvMMdnFSU0z98oU95DlU26D3xvYv6A/viewform", isExternal: true },
 ];
 
