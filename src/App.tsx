@@ -63,6 +63,7 @@ import Stories from "./pages/Stories";
 import StoryDetail from "./pages/StoryDetail";
 
 import ORIC from "./pages/ORIC";
+import QEC from "./pages/QEC";
 import RDProjects from "./pages/RDProjects";
 import ResearchPublications from "./pages/ResearchPublications";
 
@@ -86,6 +87,7 @@ const App = () => (
 
             {/* ORIC Routes */}
             <Route path="/oric" element={<ORIC />} />
+            <Route path="/qec" element={<QEC />} />
             <Route path="/rd-projects" element={<RDProjects />} />
             <Route path="/research-publications" element={<ResearchPublications />} />
 
