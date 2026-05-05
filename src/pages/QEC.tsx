@@ -21,6 +21,7 @@ import ibrahimImg from "@/assets/QEC/QEC Team/Dr Ibrahim.jpeg";
 import raheelImg from "@/assets/QEC/QEC Team/DD QEC.jpeg";
 import sehrishImg from "@/assets/QEC/QEC Team/Sehrish.jpg";
 import aroobaImg from "@/assets/QEC/QEC Team/Arooba.jpg";
+import sadamImg from "@/assets/QEC/QEC Team/sadamHussain.png";
 
 // Intro Images
 import intro1 from "@/assets/QEC/Introduction/1.png";
@@ -50,6 +51,14 @@ const teamMembers = [
     institute: "SCME, NUST, Islamabad, Pakistan",
     email: "qazi.raheel@kum.edu.pk",
     image: raheelImg
+  },
+  {
+    name: "Mr. Sadam Hussain Abbasi",
+    title: "Deputy Director QEC",
+    qualification: "MS (Computer Science)",
+    institute: "Kohsar University Murree, Pakistan",
+    email: "Saddam.abbasi@kum.edu.pk",
+    image: sadamImg
   },
   {
     name: "Ms. Sehrish Batool",

@@ -53,7 +53,7 @@ const managementData = [
     staff: [
       { designation: "Director QEC", name: "Dr Syed Mustafa Gillani", email: "-", phone: "-" },
       { designation: "Deputy Director QEC", name: "Qazi Raheel", email: "-", phone: "-" },
-      { designation: "Ass Director QEC", name: "Saddam Hussain Abbasi", email: "-", phone: "-" },
+      { designation: "Deputy Director QEC", name: "Saddam Hussain Abbasi", email: "-", phone: "-" },
     ]
   },
   {
