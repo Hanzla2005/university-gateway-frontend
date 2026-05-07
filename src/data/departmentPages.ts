@@ -80,11 +80,11 @@ import bioAftab from "@/assets/departments/bioscience/faculty/aftab.png";
 import bioGallery1 from "@/assets/departments/bioscience/gallery1.png";
 import bioGallery2 from "@/assets/departments/bioscience/gallery2.png";
 
-import btRamla from "@/assets/departments/biotechnology/faculty/ramlaShahid.png";
-import btShahid from "@/assets/departments/biotechnology/faculty/shahidHusaain.png";
-import btImran from "@/assets/departments/biotechnology/faculty/imran.png";
-import btAnsar from "@/assets/departments/biotechnology/faculty/muhammadAnsar.png";
-import btSaeed from "@/assets/departments/biotechnology/faculty/muhammadSaeed.png";
+import btRamla from "@/assets/departments/bioTechnology/faculty/ramlaShahid.png";
+import btShahid from "@/assets/departments/bioTechnology/faculty/shahidHusaain.png";
+import btImran from "@/assets/departments/bioTechnology/faculty/imran.png";
+import btAnsar from "@/assets/departments/bioTechnology/faculty/muhammadAnsar.png";
+import btSaeed from "@/assets/departments/bioTechnology/faculty/muhammadSaeed.png";
 
 export interface FacultyMember {
   id?: string;
