@@ -61,6 +61,7 @@ import Downloads from "./pages/Downloads";
 import Layout from "./components/Layout";
 import Stories from "./pages/Stories";
 import StoryDetail from "./pages/StoryDetail";
+import FacultyProfile from "./pages/FacultyProfile";
 
 import ORIC from "./pages/ORIC";
 import QEC from "./pages/QEC";
@@ -94,6 +95,7 @@ const App = () => (
             {/* Faculties Routes */}
             <Route path="/faculties" element={<Faculties />} />
             <Route path="/departments/:id" element={<DepartmentDetail />} />
+            <Route path="/faculty/:id" element={<FacultyProfile />} />
             <Route path="/all-faculty-members" element={<AllFacultyMembers />} />
             <Route path="/faculty-applied-sciences" element={<FacultyAppliedSciences />} />
             <Route path="/faculty-biomedical" element={<FacultyBiomedical />} />

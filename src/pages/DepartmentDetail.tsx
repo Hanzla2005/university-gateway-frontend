@@ -28,6 +28,19 @@ const DepartmentDetail = () => {
   const setSlide = (eventIdx: number, slide: number) =>
     setActiveSlides((prev) => ({ ...prev, [eventIdx]: slide }));
 
+  const hod = department.faculty.find(member =>
+    member.designation.toLowerCase().includes("hod") ||
+    member.designation.toLowerCase().includes("head of department") ||
+    member.designation.toLowerCase().includes("chairperson")
+  );
+
+  const getHodTitle = (designation: string) => {
+    const lower = designation.toLowerCase();
+    if (lower.includes("chairperson")) return "Chairperson's Message";
+    if (lower.includes("in charge") || lower.includes("in-charge")) return "In-Charge's Message";
+    return "HOD's Message";
+  };
+
   if (!department) {
     return <Navigate to="/faculties" replace />;
   }
@@ -95,6 +108,71 @@ const DepartmentDetail = () => {
           </div>
         ) : (
           <div className="container-main px-4 sm:px-6 lg:px-8 py-14 space-y-16">
+
+            {/* ── HOD MESSAGE ─────────────────────────────────────── */}
+            {department.hodMessage && hod && (
+              <section className="relative group">
+                <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-transparent rounded-3xl -m-2 blur-xl opacity-50 group-hover:opacity-100 transition-opacity" />
+                <div className="relative bg-white rounded-3xl border border-gray-100 shadow-xl overflow-hidden">
+                  <div className="grid md:grid-cols-12 gap-0">
+                    {/* Image side */}
+                    <div className="md:col-span-4 bg-slate-50/50 flex flex-col items-center justify-center p-8 border-r border-gray-50">
+                      <div className="relative group/img">
+                        <div className="absolute inset-0 bg-primary/20 rounded-2xl rotate-3 group-hover/img:rotate-6 transition-transform" />
+                        <div className="relative w-44 h-52 rounded-2xl overflow-hidden border-4 border-white shadow-lg bg-white">
+                          {hod.image ? (
+                            <img src={hod.image} alt={hod.name} className="w-full h-full object-cover grayscale-[0.2] hover:grayscale-0 transition-all duration-500" />
+                          ) : (
+                            <div className="w-full h-full bg-primary/5 flex items-center justify-center text-primary text-5xl font-serif">
+                              {hod.name.charAt(0)}
+                            </div>
+                          )}
+                        </div>
+                        <div className="absolute -bottom-3 -right-3 bg-primary text-white text-[10px] font-black px-4 py-1.5 rounded-lg uppercase tracking-[0.2em] shadow-xl z-10">
+                          HOD
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Message side */}
+                    <div className="md:col-span-8 p-10 lg:p-14 flex flex-col justify-center relative overflow-hidden">
+                      {/* Large Background Quote Icon */}
+                      <div className="absolute top-0 right-0 -translate-y-4 translate-x-4">
+                        <span className="text-[200px] leading-none text-primary/5 font-serif select-none italic">”</span>
+                      </div>
+
+                      <div className="relative z-10">
+                        <div className="flex items-center gap-2 mb-8">
+                          <span className="h-0.5 w-8 bg-primary/30 rounded-full" />
+                          <span className="text-[11px] font-black text-primary uppercase tracking-[0.3em]">{getHodTitle(hod.designation)}</span>
+                        </div>
+
+                        <blockquote className="text-xl lg:text-2xl text-slate-800 font-serif leading-relaxed italic mb-8 relative">
+                          <span className="text-4xl text-primary/40 font-serif absolute -left-8 -top-2">“</span>
+                          {department.hodMessage}
+                        </blockquote>
+
+                        <div className="flex flex-col gap-0.5 border-l-2 border-primary/20 pl-6">
+                          <h3 className="text-2xl font-bold text-slate-900 tracking-tight">{hod.name}</h3>
+                          <p className="text-[13px] text-slate-500 font-medium uppercase tracking-widest">{hod.designation}</p>
+                          {hod.email && (
+                            <a
+                              href={`mailto:${hod.email}`}
+                              className="mt-3 flex items-center gap-2 text-xs text-primary/70 hover:text-primary font-semibold transition-colors group/mail"
+                            >
+                              <div className="w-6 h-6 rounded-full bg-primary/5 flex items-center justify-center group-hover/mail:bg-primary group-hover/mail:text-white transition-colors">
+                                <Mail className="h-3 w-3" />
+                              </div>
+                              {hod.email}
+                            </a>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            )}
 
             {/* ── OVERVIEW ─────────────────────────────────────────── */}
             {department.overview && (
@@ -187,41 +265,78 @@ const DepartmentDetail = () => {
               <section>
                 <SectionHeading icon={Users} title="Faculty" />
                 <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                  {department.faculty.map((member) => (
-                    <div
-                      key={member.name}
-                      className="bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden hover:shadow-md transition-shadow text-center"
-                    >
-                      {member.image ? (
-                        <div className="w-full aspect-square bg-slate-50 flex items-center justify-center p-4">
-                          <img
-                            src={member.image}
-                            alt={member.name}
-                            className="w-full h-full object-contain drop-shadow-sm"
-                          />
-                        </div>
-                      ) : (
-                        <div className="w-full aspect-square bg-primary/5 flex items-center justify-center">
-                          <div className="w-20 h-20 rounded-full bg-primary/15 flex items-center justify-center text-primary font-serif text-3xl">
-                            {member.name.charAt(0)}
+                  {department.faculty.map((member) => {
+                    const isHod = member === hod;
+                    const CardContent = (
+                      <>
+                        {isHod && (
+                          <div className="absolute top-3 right-3 bg-primary text-white text-[9px] font-bold px-2 py-0.5 rounded shadow-sm uppercase tracking-tighter z-20">
+                            Head of Department
                           </div>
-                        </div>
-                      )}
-                      <div className="p-5">
-                        <h3 className="text-base font-bold text-slate-800 mb-1">{member.name}</h3>
-                        <p className="text-sm text-slate-500 mb-3 leading-snug">{member.designation}</p>
-                        {member.email && (
-                          <a
-                            href={`mailto:${member.email}`}
-                            className="inline-flex items-center justify-center gap-1.5 text-xs text-primary bg-primary/8 hover:bg-primary/15 py-1.5 px-3 rounded-full transition-colors w-full"
-                          >
-                            <Mail className="h-3.5 w-3.5 flex-shrink-0" />
-                            <span className="truncate">{member.email}</span>
-                          </a>
                         )}
+                        {member.image ? (
+                          <div className={`w-full aspect-square flex items-center justify-center p-4 transition-colors ${isHod ? 'bg-primary/5' : 'bg-slate-50 group-hover/card:bg-primary/5'}`}>
+                            <img
+                              src={member.image}
+                              alt={member.name}
+                              className="w-full h-full object-contain drop-shadow-sm group-hover/card:scale-105 transition-transform duration-500"
+                            />
+                          </div>
+                        ) : (
+                          <div className={`w-full aspect-square flex items-center justify-center transition-colors ${isHod ? 'bg-primary/10' : 'bg-primary/5 group-hover/card:bg-primary/10'}`}>
+                            <div className="w-20 h-20 rounded-full bg-primary/15 flex items-center justify-center text-primary font-serif text-3xl">
+                              {member.name.charAt(0)}
+                            </div>
+                          </div>
+                        )}
+                        <div className="p-5">
+                          <h3 className={`text-base font-bold mb-1 transition-colors ${isHod ? 'text-primary' : 'text-slate-800 group-hover/card:text-primary'}`}>{member.name}</h3>
+                          <p className="text-sm text-slate-500 mb-3 leading-snug">{member.designation}</p>
+                          {member.email && (
+                            <div
+                              className="inline-flex items-center justify-center gap-1.5 text-xs text-primary bg-primary/8 hover:bg-primary/15 py-1.5 px-3 rounded-full transition-colors w-full"
+                              onClick={(e) => {
+                                if (member.id) {
+                                  e.preventDefault();
+                                  e.stopPropagation();
+                                  window.location.href = `mailto:${member.email}`;
+                                }
+                              }}
+                            >
+                              <Mail className="h-3.5 w-3.5 flex-shrink-0" />
+                              <span className="truncate">{member.email}</span>
+                            </div>
+                          )}
+                          {member.id && (
+                            <div className="mt-4 pt-4 border-t border-gray-100 flex items-center justify-center gap-2 text-[10px] font-bold text-primary uppercase tracking-widest opacity-0 group-hover/card:opacity-100 transition-opacity">
+                              View Profile <ChevronRight className="h-3 w-3" />
+                            </div>
+                          )}
+                        </div>
+                      </>
+                    );
+
+                    if (member.id) {
+                      return (
+                        <Link
+                          key={member.name}
+                          to={`/faculty/${member.id}`}
+                          className={`bg-white border rounded-xl shadow-sm overflow-hidden hover:shadow-md transition-all text-center relative group/card ${isHod ? 'border-primary/40 ring-1 ring-primary/20 scale-[1.02] z-10' : 'border-gray-200 hover:border-primary/30'}`}
+                        >
+                          {CardContent}
+                        </Link>
+                      );
+                    }
+
+                    return (
+                      <div
+                        key={member.name}
+                        className={`bg-white border rounded-xl shadow-sm overflow-hidden text-center relative ${isHod ? 'border-primary/40 ring-1 ring-primary/20 scale-[1.02] z-10' : 'border-gray-200'}`}
+                      >
+                        {CardContent}
                       </div>
-                    </div>
-                  ))}
+                    );
+                  })}
                 </div>
               </section>
             )}

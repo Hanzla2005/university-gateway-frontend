@@ -74,16 +74,27 @@ import agriShahida from "@/assets/departments/AgricultureAndEnvironmentalScience
 import agriSumaira from "@/assets/departments/AgricultureAndEnvironmentalScience/faculty/sumaira.png";
 import agriZia from "@/assets/departments/AgricultureAndEnvironmentalScience/faculty/zia.png";
 import agriKhadija from "@/assets/departments/AgricultureAndEnvironmentalScience/faculty/khadija.png";
+import agriMazahir from "@/assets/departments/AgricultureAndEnvironmentalScience/faculty/mazahir.png";
 
 import bioAftab from "@/assets/departments/bioscience/faculty/aftab.png";
 import bioGallery1 from "@/assets/departments/bioscience/gallery1.png";
 import bioGallery2 from "@/assets/departments/bioscience/gallery2.png";
 
+import btRamla from "@/assets/departments/biotechnology/faculty/ramlaShahid.png";
+import btShahid from "@/assets/departments/biotechnology/faculty/shahidHusaain.png";
+import btImran from "@/assets/departments/biotechnology/faculty/imran.png";
+import btAnsar from "@/assets/departments/biotechnology/faculty/muhammadAnsar.png";
+import btSaeed from "@/assets/departments/biotechnology/faculty/muhammadSaeed.png";
+
 export interface FacultyMember {
+  id?: string;
   name: string;
   designation: string;
   email?: string;
   image?: string;
+  education?: string[];
+  researchInterests?: string[];
+  bio?: string;
 }
 
 export interface CourseEntry {
@@ -128,6 +139,7 @@ export interface DepartmentPage {
   programs: ProgramOffered[];
   facilities?: string[];
   events?: DepartmentEvent[];
+  hodMessage?: string;
 }
 
 export const departmentPages: DepartmentPage[] = [
@@ -139,6 +151,7 @@ export const departmentPages: DepartmentPage[] = [
       "The Department of Art and Design will achieve excellence in the diverse domains of contemporary Art & Design by giving its graduates opportunity to develop skills through extensive practical work (i.e., hand-on) knowledge of state-of-the art techniques and processes to develop a strong portfolio in the visual as well as digital arts.",
     mission:
       "The Department of Art and Design will achieve its vision by inculcating creative thinking, artistic expression, effective communication, indigenous cultural awareness among its graduates. Moreover, the creative skill-based learning through collaborative initiatives by merging visual, oral, and written communication with creative and technological innovation will help to produce employable graduates in various industries including Tourism Industry to promote Heritage & Culture as well.",
+    hodMessage: "Welcome to Art & Design. We nurture creativity and innovation, empowering students to lead in the contemporary art world through hands-on experience and state-of-the-art techniques. Our goal is to transform your artistic potential into professional excellence.",
     faculty: [
       {
         name: "Ms. Rabeea Yousafzai",
@@ -423,7 +436,95 @@ export const departmentPages: DepartmentPage[] = [
       "To impart knowledge in Molecular biology, Genetics, Biochemistry, Microbiology, and Immunology, as well as other multidisciplinary areas.",
       "To teach various methods of data exploration, inquiry, and arrangement, as well as their application in real-life situations."
     ],
-    faculty: [],
+    faculty: [
+      {
+        id: "ramla-shahid",
+        name: "Prof. Dr. Ramla Shahid",
+        designation: "Professor Biochemistry | In charge Faculty of Biomedical and Life Science",
+        email: "ramla.shahid@kum.edu.pk",
+        image: btRamla,
+        education: [
+          "Ph.D in Chemical Biology, Department of Chemistry, University of Cambridge, UK",
+          "Fulbright Postdoctoral Fellow, Department of Biological Engineering, Massachusetts Institute of Technology (MIT), USA"
+        ],
+        researchInterests: [
+          "Understanding the molecular mechanisms underlying cancer",
+          "Studying new biomarkers for breast cancer and leukemia",
+          "Exploring diagnostic and prognostic potential and evaluating natural bioactive molecules as therapeutic agents",
+          "mRNA-based cancer vaccines",
+          "Cancer stem cells (CSCs)—self-renewal, tumor initiation, and therapy resistance"
+        ]
+      },
+      {
+        id: "shahid-hussain",
+        name: "Dr. Shahid Hussain",
+        designation: "In charge, Department of Biotechnology",
+        email: "Shahid.akhtar@kum.edu.pk",
+        image: btShahid,
+        education: ["PhD. in Biosciences"],
+        researchInterests: [
+          "Effects of Cancer Derived Extracellular Vesicles on Immune Cells",
+          "Cancer Metastatic Mechanism with special emphasis on Exosomes",
+          "Exosomes as Therapeutic and Diagnostic tools",
+          "Molecular Analysis of Exosomes Cargo (miRNAs and Protein)",
+          "Therapeutic effects of Stem Cells Derived Exosomes"
+        ]
+      },
+      {
+        id: "muhammad-imran-khan",
+        name: "Dr. Muhammad Imran Khan",
+        designation: "Lecturer, Department of Biotechnology",
+        email: "drimrankhan@kum.edu.pk",
+        image: btImran,
+        education: [
+          "PhD. in Biotechnology, South Korea",
+          "Postdoc in Biotechnology, South Korea"
+        ],
+        researchInterests: [
+          "Interdisciplinary Biotechnology: Pharmacology, Molecular Biology, Biomedical Engineering",
+          "Microbial Biotechnology: Microalgae, Bacteria, Natural products",
+          "Medical Applications: Cancer, Angiogenesis, Obesity, Inflammation, Neurodegenerative Diseases",
+          "Nanomedicine: Stem cells Regenerative Therapies, Extracellular Vesicles, Exosomes",
+          "Toxicology: Neurotoxicity induced by microplastic, etc."
+        ]
+      },
+      {
+        id: "muhammad-ansar",
+        name: "Mr. Muhammad Ansar",
+        designation: "Lecturer, Department of Biotechnology",
+        email: "mohammad.ansar@kum.edu.pk",
+        image: btAnsar,
+        education: [
+          "MS Biotechnology",
+          "BS-MLT (Medical Laboratory Technology)"
+        ],
+        researchInterests: [
+          "Transfusion medicine",
+          "Clinical pathology and hematology assays",
+          "Molecular diagnostics",
+          "Point of care testing",
+          "Microbiological Assays"
+        ]
+      },
+      {
+        id: "muhammad-saeed",
+        name: "Mr. Muhammad Saeed",
+        designation: "Lecturer, Department of Biotechnology",
+        email: "m.saeed@kum.edu.pk",
+        image: btSaeed,
+        education: [
+          "MS Biotechnology",
+          "DMLT, DMLS (Doctor of Medical Laboratory Sciences)"
+        ],
+        researchInterests: [
+          "Transfusion Medicine",
+          "Chemical Pathology",
+          "Point of care Testing & Molecular Assays",
+          "Infection Prevention and Control",
+          "Education and Training in Medical Laboratory Sciences"
+        ]
+      }
+    ],
     programs: [
       {
         name: "BS Biotechnology",
@@ -871,10 +972,39 @@ export const departmentPages: DepartmentPage[] = [
     overview: "The Department of English of Kohsar University Murree was started in 2020 at BS Block, Jhika Gali Campus. Initially the department had 5 regular members of faculty to run the undergraduate Program (BS English 04-Year Programme). Currently the Department is running BS English (Language and Literature) Programme. The Department of English is going to launch MS/M.Phil English (Literature/Linguistics) in near future as well.",
     vision: "The Department of English seeks to foster knowledge and a love of Literature and of Language in our students. Department will teach students to speak, read, and write effectively. It will encourage students to think deeply and to reflect on what they have learned.",
     mission: "The Department of English strengthens the students of liberal education by developing a deepened understanding of language and literacy, the value of critical reading and effective writing, and the richness of literature, past and present.",
+    hodMessage: "Welcome to the Department of English Language & Literature. We are dedicated to academic excellence, blending classical literary knowledge with modern linguistics and digital trends. Aligned with HEC’s 2025 policy, we offer a comprehensive BS English program and are soon launching MPhil and PhD tracks. Our goal is to prepare critical thinkers and ethical leaders, ready to navigate the 21st century one critical word at a time.",
     faculty: [
       {
-        name: "Dr. Muhammad Sultan",
-        designation: "Dean / In charge Campus"
+        id: "abdus-samad",
+        name: "Dr. Abdus Samad Baloch",
+        designation: "Associate Professor & Chairperson | In-Charge Faculty of Management, Humanities and Social Sciences",
+        education: [
+          "Doctorate in Applied Linguistics, University of Exeter, UK",
+          "MPhil in Applied Linguistics and TESOL, University of Leicester, UK",
+          "Master’s in English Language and Literature, University of Peshawar"
+        ],
+        bio: "Dr. Abdus Samad Baloch is an expert in Applied Linguistics with over 18 years of university teaching experience. A triple gold medalist and recipient of international travel grants, he has served as a keynote speaker abroad and is an active member of HEC committees."
+      },
+      {
+        id: "mudassir-ullah",
+        name: "Mr. Mudassir Ullah Khan",
+        designation: "Lecturer, Department of English",
+        education: [
+          "PhD Scholar, Muslim Youth University, Islamabad",
+          "MPhil English Literature and Linguistics, Gomal University",
+          "BS English Literature and Linguistics, Gomal University"
+        ],
+        bio: "Mudassir Ullah Khan is an expert in essay writing and advanced composition. A distinction holder in both BS and MPhil, his research in postcolonial literature and linguistics is published in prestigious international journals."
+      },
+      {
+        id: "zil-e-huma",
+        name: "Ms. Zil-e-Huma",
+        designation: "Lecturer, Department of English",
+        education: [
+          "MS English Linguistics and Literature, Air University, Islamabad",
+          "BS (Hons.) English Literature and Linguistics"
+        ],
+        bio: "Zil-e-Huma specializes in discourse analysis, sociolinguistics, and corpus linguistics. With over six years of higher education experience, she is dedicated to fostering intellectually engaging environments for language and communication studies."
       }
     ],
     programs: [
@@ -1068,6 +1198,7 @@ export const departmentPages: DepartmentPage[] = [
     overview: "Physics is one of the most significant discipline of natural sciences, which describes the nature and properties of matter and energy. Physics play key role in maintaining and developing stable economic growth since it offers new technological advances in various fields such as engineering, computer science and biomedical science.\n\nThe physics program, here at Kohsar University Murree, is designed such that it covers the needs of those who want to pursue higher education in the field of physics, seek jobs, or want to have strong base while working in allied technological areas. We strive to offer research and study environment such that it creates equal opportunity for all. Department of Physics is newly established department at Kohsar University Murree (KUM), Pakistan. The department aims to build a strong foundation for excellence and encourages the development as a premier department by igniting and promoting enthusiasm, interest, and passion in the study of physics. Furthermore, department will train the next generation professionals and experts to gain advance knowledge in different fields of physics.",
     vision: "To build a strong foundation for excellence and encourage development as a premier department by igniting enthusiasm, interest, and passion in the study of physics.",
     mission: "To train the next generation professionals and experts to gain advance knowledge in different fields of physics and offer a research and study environment that creates equal opportunity for all.",
+    hodMessage: "Physics is the fundamental science that unlocks the mysteries of the universe. We foster a passion for discovery, equipping students with the analytical skills needed to excel in a rapidly evolving technological landscape and explore the wonders of the physical world.",
     faculty: [
       { name: "Dr. Muhammad Sultan", designation: "Professor BPS-21 / Dean of Faculties" },
       { name: "Dr. Syed Tahir Amin", designation: "Assistant Professor BPS-19 / HOD Physics", image: physicsTahir },
@@ -1187,7 +1318,8 @@ export const departmentPages: DepartmentPage[] = [
     id: "computer-science",
     name: "Department of Computer Science",
     shortName: "Computer Science",
-    overview: "HOD’s Message:\n\nIt is a pleasure to head the department of computer science at Kohsar University, Murree. The department has a team of highly experienced and motivated faculty members who are in process of tuning the young minds to make them globally competitive. The strength of the department is highly motivated students who understand the dynamics of the industry and upgrade their skills accordingly. The scope of computer science is endless. The students of the computer science are highly demanded by the recruiters of the top companies. Depending upon the interest of the student, he/she may choose to go for higher studies or if employed can choose to do research, development, design, production, application, testing, or management in the Information Technology industry. In our department we not only give emphasis on study but also apply our knowledge in understanding what computers are, what is its architecture, how to efficiently program them, different tools to write an effective algorithm, the interface between the computer and the user, the computer graphics, computer networking, managing the software database, software engineering and testing them efficiently and more. Through innovative teaching-learning process a teamwork approach and leadership building experience, our students gain vital communication and critical-thinking skills. Our institution provides a platform for the students to enhance their employability skills through Industry Institute Collaboration.\n\nOverview:\n\nThe Department of Computer Science at Kohsar university Murree is one of the largest departments that was founded in 2021 as an undergraduate program along with the inauguration of the University. The main objective of establishment of the department of computer science is to produce Computer Scientists to meet the growing demand for computer professionals in the country. BS Computer science covers a wide spectrum of areas within the field of computing, ranging from the theoretical to practical. Computer scientists can specialize in areas such as artificial intelligence, distributed systems, computer graphics, databases, human computer interaction and security.\n\nThe BS Computer Science is offered successfully in Fall 2021. Department of Computer Science is planning to offer BS Software Engineering, BS Artificial Engineering, BS Data Science and BS Information Technology as undergraduate programs. and MSCS as graduate degree. Each degree program has a specific objective and focus under the guideline of HEC and NCEAC. The course of study and syllabus for each degree is updated and is in-line with its objectives and market demand.",
+    overview: "The Department of Computer Science at Kohsar university Murree is one of the largest departments that was founded in 2021 as an undergraduate program along with the inauguration of the University. The main objective of establishment of the department of computer science is to produce Computer Scientists to meet the growing demand for computer professionals in the country. BS Computer science covers a wide spectrum of areas within the field of computing, ranging from the theoretical to practical. Computer scientists can specialize in areas such as artificial intelligence, distributed systems, computer graphics, databases, human computer interaction and security.\n\nThe BS Computer Science is offered successfully in Fall 2021. Department of Computer Science is planning to offer BS Software Engineering, BS Artificial Engineering, BS Data Science and BS Information Technology as undergraduate programs. and MSCS as graduate degree. Each degree program has a specific objective and focus under the guideline of HEC and NCEAC. The course of study and syllabus for each degree is updated and is in-line with its objectives and market demand.",
+    hodMessage: "Our mission is to empower young minds through innovative teaching and hands-on technical experience, making them globally competitive. We focus on teamwork, leadership, and industry collaboration to shape the next generation of computer scientists who will lead the digital future.",
     vision: "To become a centre of excellence in Computer Science education and research. The department excels in teaching, research, and service that advance the economic strength of the region, state, nation, and beyond. Our faculty members conduct nationally recognized teaching and research in key areas of computer science. Our graduates bring technical, ethical, and life-long learning skills to the computer science profession.",
     mission: "Computer Science Department offers HEC designed curriculum to meet the global challenges. In addition, department is continuously analysing international trends. Department of computer science Provide quality undergraduate and graduate education in both the theoretical and applied foundations of computer science and train students to effectively apply this education to solve real-world problems thus amplifying their potential for lifelong high-quality careers and give them a competitive advantage in the ever-changing and challenging global work environment of the 21st century. Conduct research to advance the state of the art in computer science and integrate research results and innovations into other scientific disciplines. Provide computer science education and training to students in allied departments at Kohsar University and public sector offices and Provide computer science expertise / digital solutions to the people of Pakistan.",
     aimsAndObjectivesOverview: "Our aim is to provide knowledge to our graduates can:",
@@ -1538,10 +1670,11 @@ export const departmentPages: DepartmentPage[] = [
     ],
     vision: "To prepare professional psychologists for making contribution in diverse jobs like clinical psychologists, career counseling, academia, military services, special education, Social Walfare, aids control program, NGOs, HR, Marketing and Organizational Development conasultations. educate students with the scientific knowledge of Psychology through proficient teaching, professional training, and modern research which will enable them to serve in diverse fields in general and psychological professional as particular. To engage in psychological research and provide excellent teaching and service, informed and enhanced by our efforts to discover, synthesize and transmit knowledge.",
     mission: "The mission of department of Psychology is to prepare Ready to Serve Mental Health Professionals through modern education, up-to-date research and practical exposure, for contributing in the mental health of the society.",
+    hodMessage: "We are dedicated to providing a comprehensive education that balances theoretical knowledge with practical research. Our goal is to prepare students for successful careers in clinical practice and research, making a positive impact on the mental health of our society.",
     faculty: [
       {
         name: "Dr. Naila Batool",
-        designation: "Ph.D International Islamic University, Islamabad",
+        designation: "Assistant Professor / HOD | Ph.D International Islamic University, Islamabad",
         email: "nailabatool@kum.edu.pk",
         image: nadiaBatoolImg,
       }
@@ -1849,15 +1982,29 @@ export const departmentPages: DepartmentPage[] = [
         email: "safdarhussain@kum.edu.pk"
       },
       {
+        id: "muhammad-qasim",
+        name: "Dr. Muhammad Qasim",
+        designation: "Lecturer (Entomology) | Deputy Registrar (Establishment)",
+        email: "mqasim@kum.edu.pk",
+        education: [
+          "Ph.D in Entomology – University of Poonch, AJ&K",
+          "M.Sc. (Hons.) Agriculture (Entomology) – PMAS-Arid Agriculture University Rawalpindi",
+          "B.Sc. (Hons.) Agriculture (Entomology) – Islamia University Bahawalpur"
+        ],
+        researchInterests: [
+          "Agricultural Entomology",
+          "Taxonomy & Systematics",
+          "Biodiversity & Biogeography",
+          "Insect Collection & Museum Curation",
+          "Biosystematics of Wasps (Hymenoptera: Vespidae)"
+        ],
+        bio: "Dr. Muhammad Qasim is an accomplished academic and researcher in Agricultural Entomology, with expertise in insect taxonomy and biodiversity. He has discovered 2 new insect species (Hymenoptera: Vespidae) and authored over 40 research publications. He also holds several administrative roles at KUM, including Deputy Registrar (Establishment) and In-charge Vice Chancellor Secretariat."
+      },
+      {
         name: "Dr. Mohiuddin Zia",
         designation: "Assistant Professor (IPFP)",
         email: "md.mohiuddin87@gmail.com"
       },
-      {
-        name: "Dr. Muhammad Qasim",
-        designation: "Assistant Professor (IPFP)",
-        email: "qasimagri@yahoo.com"
-      }
     ],
     programs: [
       {
@@ -1998,6 +2145,7 @@ export const departmentPages: DepartmentPage[] = [
     name: "Department of Mountain, Agriculture and Environmental Sciences",
     shortName: "Mountain, Agriculture & Environmental Sciences",
     overview: "Mountain, Agriculture and Environmental Sciences is an interdisciplinary field that deals with an assemblage of Physical, chemical, Biological and social sciences under one umbrella. The discipline of Environmental sciences deals with the direct and indirect interaction of human beings with environmental issues that influence the environmental laws and policies.\n\nThe Department of Mountain, Agriculture and Environmental Sciences is going to be establish in FA-2022, at Kohsar University Murree. Its main focus is the protection and management of environment from the emerging pollutants nationally and globally through research and public awareness.",
+    hodMessage: "Our mission is to lead in innovative discovery and education, solving societal concerns in agriculture and environmental health. Through professional commitment and community engagement, we strive to promote sustainable livelihoods and environmental awareness, bridging the gap between academia and society for a greener future.",
     vision: "The KUM’s Department of Mountain, Agriculture and Environmental Sciences will lead in innovative discovery, education, and service not only to the students of Murree as well as to the world. We envision a future in which high-impact science based on our collective arthropod biology expertise addresses and solves large societal concerns in agriculture, the environment, and human health. Our vision and mission is the provision of comprehensive knowledge and skills about the basics of natural, biological and physical sciences in solving the emerging environmental issues globally that will reflects the Sustainable Development Goals for the protection of natural resources.",
     mission: "Our mission is to generate and disseminate fundamental and applied scientific knowledge about arthropods, insects that contributes to human well-being through breakthroughs in human health, agriculture, and the environment.\nTo prepare, train, and inspire students from diverse backgrounds to achieve personal goals and make meaningful societal contributions; and to engage citizens and policymakers/stakeholders in making informed proactive decisions that maximize the benefits, minimize the risks, and minimize the environmental impact of insects and arthropods. We enhance the quality of life in Murree and throughout the world by doing globally relevant and exceptional research, extension, and teaching. We succeed by cultivating a collegial, inclusive, and enthusiastic department culture that values mutual respect, work/life balance, cross-disciplinary cooperation, and shared accomplishments.",
     aimsAndObjectivesOverview: "The major aims and objectives of the Department of Mountain, Agriculture and Environmental Sciences, are following i.e. Department's teaching mission is extensive, ranging from fundamental aspects of Agriculture, biological control and Environmental sciences.\n\nMajor aspects of agriculture includes arthropod ecology, morphology, parasitology, physiology, systematics, and toxicity to applied disciplines such as, agricultural, medical, and veterinary pest management.\nMajor aspects of Environmental sciences includes soil, air and water toxicology, environmental biotechnology, GIS, Conservation of natural resources and biodiversity, ecology, and wastewater management. We offer a diverse range of basic courses aimed at educating and inspiring BS and MS students in agriculture and Environmental Sciences as well as complete courses for undergraduate majors and advanced course work for outstanding graduate student education.\n\nAdditionally, students studying these areas have a range of interests, depending on their professional route. Regardless of their future orientation, there are similar learning goals and objectives that we will assist students in achieving through their different education.\nThe primary Program Learning Objectives (PLOs) will be the following:",
@@ -2017,15 +2165,28 @@ export const departmentPages: DepartmentPage[] = [
     faculty: [
       {
         name: "Dr. Shahida Shaheen",
-        designation: "Lecturer / HOD",
+        designation: "Lecturer",
         email: "shahida.shaheen@kum.edu.pk",
         image: agriShahida
       },
       {
+        id: "sumaira-maqsood",
         name: "Dr. Sumaira Maqsood",
-        designation: "Lecturer",
+        designation: "HOD Environmental Sciences & Addl. Director Student Affairs",
         email: "sumairamaqsood@kum.edu.pk",
-        image: agriSumaira
+        image: agriSumaira,
+        education: [
+          "PhD in Entomology",
+          "Agriculture (Entomology)"
+        ],
+        researchInterests: [
+          "Apiculture",
+          "Natural resource management",
+          "Biodiversity conservation",
+          "Climate change",
+          "Sustainable Agriculture"
+        ],
+        bio: "Dr. Sumaira Maqsood is a dedicated academician with over 45 research publications and 8 book chapters. She received STEM faculty training from King’s College London and has actively participated in international scientific congresses. She is an expert in apiculture and sustainable honey production, actively engaged in community outreach and extension services."
       },
       {
         name: "Dr. Mohiuddin Zia",
@@ -2038,6 +2199,25 @@ export const departmentPages: DepartmentPage[] = [
         designation: "Assistant Professor (IPFP)",
         email: "dr.khadijajaved@kum.edu.pk",
         image: agriKhadija
+      },
+      {
+        id: "muhammad-mazahir",
+        name: "Dr. Muhammad Mazahir",
+        designation: "Lecturer (Food Technology)",
+        email: "m.mazahir@kum.edu.pk",
+        image: agriMazahir,
+        education: [
+          "Ph.D Food Technology, PMAS-Arid Agriculture University Rawalpindi",
+          "M.Sc (Hons.) Agriculture (Food Science & Technology), University of Agriculture Peshawar",
+          "B.Sc (Hons.) Agriculture (Food Science & Technology), University of Poonch, AJ&K"
+        ],
+        researchInterests: [
+          "Food Science & Technology",
+          "Climate Smart Agriculture",
+          "Food Security and Pandemic Management",
+          "Organic Farming and Clean Food"
+        ],
+        bio: "Dr. Muhammad Mazahir is a Lecturer at Kohsar University Murree with a Ph.D. in Food Technology. He has extensive experience in research and development, having served as a Research Fellow at NARC and a Food Technologist at Akbar Foods. With over 25 research publications, he is a member of the Pakistan Society of Food Scientist and Technologist and a recipient of the Silver Medal in his M.Sc. (Hons.)."
       }
     ],
     programs: [
