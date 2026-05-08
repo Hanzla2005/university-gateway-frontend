@@ -3,6 +3,7 @@ import img2 from "@/assets/announcements/2.png";
 import img3 from "@/assets/announcements/3.png";
 import img4 from "@/assets/announcements/4.png";
 import img5 from "@/assets/announcements/5.png";
+import img6 from "@/assets/announcements/6.png";
 
 
 export interface Announcement {
@@ -17,6 +18,16 @@ export interface Announcement {
 }
 
 export const announcements: Announcement[] = [
+  {
+    id: "6",
+    slug: "chief-minister-punjab-it-internship-opportunities",
+    title: "Chief Minister Punjab Initiative: IT Internship Opportunities",
+    date: "May 8, 2026",
+    tag: "News",
+    image: img6,
+    excerpt: "The Chief Minister Punjab has launched an initiative offering 2400+ IT Internship Opportunities with leading IT companies across Punjab, providing a monthly stipend of 50,000 PKR.",
+    content: "A Chief Minister Punjab Initiative has been announced, offering exceptional Internship Opportunities with Leading IT Companies Across Punjab. With over 2400+ positions available, this program is designed to empower young professionals and provide them with hands-on experience in the tech industry.\n\nAvailable fields include 3D Animation & Graphics, Laravel/PHP Development, Software Development, DevOps Engineering, Salesforce Administration, Product Management, and many more.\n\nSelected interns will receive a Monthly Stipend of 50,000 PKR (subject to monthly performance and an HEC verified degree) for a maximum internship duration of 5 months.\n\nEligibility Criteria:\n• IT / CS or Relevant Degree\n• Degree completed within the last 4 years\n• Valid CNIC (Computerized National Identity Card)\n• Punjab Domicile\n\nInterested candidates can apply now at cmitinterns.punjab.gov.pk. For more information, contact 042-99000000 Ext: (1925, 1908, 1207) or email info@cmitinterns.punjab.gov.pk.",
+  },
   {
     id: "5",
     slug: "prof-dr-rafia-mumtaz-honored-with-ieee-distinguished-service-award-medal",

@@ -161,7 +161,6 @@ const mainNavItems = [
           { label: "Diploma & Certification", path: "/diploma-certification" },
           { label: "Events", path: "/events" },
           { label: "MOUs", path: "/mous" },
-          { label: "News", path: "/news" },
           { label: "Achievements", path: "/achievements" },
           { label: "Societies", path: "/societies" },
           { label: "Hostel", path: "/hostel" },

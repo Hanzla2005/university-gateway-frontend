@@ -31,7 +31,6 @@ import Conferences from "./pages/Conferences";
 import DiplomaCertification from "./pages/DiplomaCertification";
 import Events from "./pages/Events";
 import MOUs from "./pages/MOUs";
-import News from "./pages/News";
 import Achievements from "./pages/Achievements";
 import Societies from "./pages/Societies";
 import Hostel from "./pages/Hostel";
@@ -113,7 +112,6 @@ const App = () => (
             <Route path="/diploma-certification" element={<DiplomaCertification />} />
             <Route path="/events" element={<Events />} />
             <Route path="/mous" element={<MOUs />} />
-            <Route path="/news" element={<News />} />
             <Route path="/achievements" element={<Achievements />} />
             <Route path="/societies" element={<Societies />} />
             <Route path="/hostel" element={<Hostel />} />
