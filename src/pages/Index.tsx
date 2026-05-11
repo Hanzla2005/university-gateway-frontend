@@ -164,6 +164,26 @@ const Index = () => {
             </div>
           </div>
 
+          {/* Pro VC Card */}
+          <div className="border rounded-lg overflow-hidden bg-card hover:border-primary/30 shadow-sm hover:shadow-md flex flex-col">
+            <div className="p-6">
+              <div className="flex gap-4 mb-4">
+                <div className="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
+                  <img src={proVcImg} alt="Pro VC" className="w-full h-full object-cover" />
+                </div>
+                <div className="flex-1">
+                  <p className="text-sm font-medium text-accent tracking-widest uppercase mb-2">Pro Vice Chancellor</p>
+                  <h3 className="font-serif text-xl text-foreground">Rana Sikandar Hayat</h3>
+                  <p className="text-sm text-muted-foreground mt-1">Dedicated academic leader</p>
+                </div>
+              </div>
+              <p className="text-base text-muted-foreground leading-relaxed border-t pt-4">
+                Rana Sikandar Hayat is committed to academic excellence and research advancement. His leadership focuses on fostering an environment of innovation and ensuring high standards of education across all faculties.
+              </p>
+            </div>
+          </div>
+
+          {/* VC Card */}
           <div className="border rounded-lg overflow-hidden bg-card hover:border-primary/30 shadow-sm hover:shadow-md flex flex-col">
             <div className="p-6">
               <div className="flex gap-4 mb-4">
@@ -178,24 +198,6 @@ const Index = () => {
               </div>
               <p className="text-base text-muted-foreground leading-relaxed border-t pt-4">
                 Professor Dr. Rafia Mumtaz is a visionary academic leader and distinguished researcher. She has made pioneering contributions in IoT, AI, and embedded systems, earning recognition for outstanding academic leadership and research excellence.
-              </p>
-            </div>
-          </div>
-
-          <div className="border rounded-lg overflow-hidden bg-card hover:border-primary/30 shadow-sm hover:shadow-md flex flex-col">
-            <div className="p-6">
-              <div className="flex gap-4 mb-4">
-                <div className="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
-                  <img src={proVcImg} alt="Pro Chancellor" className="w-full h-full object-cover" />
-                </div>
-                <div className="flex-1">
-                  <p className="text-sm font-medium text-accent tracking-widest uppercase mb-2">Pro Chancellor</p>
-                  <h3 className="font-serif text-xl text-foreground">Rana Sikandar Hayat</h3>
-                  <p className="text-sm text-muted-foreground mt-1">Dedicated academic leader</p>
-                </div>
-              </div>
-              <p className="text-base text-muted-foreground leading-relaxed border-t pt-4">
-                Rana Sikandar Hayat is committed to academic excellence and research advancement. His leadership focuses on fostering an environment of innovation and ensuring high standards of education across all faculties.
               </p>
             </div>
           </div>
