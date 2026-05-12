@@ -49,10 +49,6 @@ import PolicySexualHarassment from "./pages/PolicySexualHarassment";
 import PolicyDrugTobacco from "./pages/PolicyDrugTobacco";
 import PolicyProtectionHarassment from "./pages/PolicyProtectionHarassment";
 import Jobs from "./pages/Jobs";
-import JobsDPL2025 from "./pages/JobsDPL2025";
-import JobsVisitingFaculty from "./pages/JobsVisitingFaculty";
-import JobsAdminPosts from "./pages/JobsAdminPosts";
-import JobsInternship from "./pages/JobsInternship";
 import OnlineAdmissions from "./pages/OnlineAdmissions";
 import MeritLists from "./pages/MeritLists";
 import GuestHouse from "./pages/GuestHouse";
@@ -140,10 +136,6 @@ const App = () => (
 
             {/* Jobs Routes */}
             <Route path="/jobs" element={<Jobs />} />
-            <Route path="/jobs-dpl-2025" element={<JobsDPL2025 />} />
-            <Route path="/jobs-visiting-faculty" element={<JobsVisitingFaculty />} />
-            <Route path="/jobs-admin-posts" element={<JobsAdminPosts />} />
-            <Route path="/jobs-internship" element={<JobsInternship />} />
 
             {/* Other Routes */}
             <Route path="/institutions" element={<Institutions />} />

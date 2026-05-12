@@ -5,10 +5,6 @@ import { AnimatePresence, motion } from "framer-motion";
 import logo from "@/assets/logo.png";
 import universityActPdf from "@/assets/pdfs/KOHSAR-UNIVERSITY-ACT.pdf";
 import circularSpringPdf from "@/assets/pdfs/Circular-Regarding-spring-semester.pdf";
-import dplAdvertisementPdf from "@/assets/pdfs/Advertisment-DPL.pdf";
-import visitingFacultyPdf from "@/assets/pdfs/Visiting-Advertisment.pdf";
-import adminPostFormPdf from "@/assets/pdfs/Job-Application-Form-Administrative-Post-KUM-1.pdf";
-import internshipPdf from "@/assets/pdfs/WhatsApp-Image-2025-08-11-at-5.33.58-PM.pdf";
 import admissionAdPdf from "@/assets/pdfs/Admission-Add.pdf";
 import alumniFormPdf from "@/assets/pdfs/Alumni Registration from.pdf";
 
@@ -190,12 +186,6 @@ const mainNavItems = [
         label: "Jobs",
         path: "/jobs",
         icon: Briefcase,
-        nested: [
-          { label: "Advertisement DPL 2025", path: "/jobs-dpl-2025", isExternal: true },
-          { label: "Visiting Faculty Advertisement Fall 2025", path: "/jobs-visiting-faculty", isExternal: true },
-          { label: "Application Form for Administrative Posts", path: "/jobs-admin-posts", isExternal: true },
-          { label: "Advertisement for paid Internship", path: "/jobs-internship", isExternal: true },
-        ]
       },
     ]
   },
@@ -351,10 +341,6 @@ const Navbar = () => {
 
   const handleNestedPdfClick = (pdfPath: string) => {
     if (pdfPath === "/circular-spring-semester") window.open(circularSpringPdf, "_blank");
-    else if (pdfPath === "/jobs-dpl-2025") window.open(dplAdvertisementPdf, "_blank");
-    else if (pdfPath === "/jobs-visiting-faculty") window.open(visitingFacultyPdf, "_blank");
-    else if (pdfPath === "/jobs-admin-posts") window.open(adminPostFormPdf, "_blank");
-    else if (pdfPath === "/jobs-internship") window.open(internshipPdf, "_blank");
     // ORIC Downloads
     else if (pdfPath === "/oric-dl-hjrs-21-22") window.open(oricDlHjrs21_22, "_blank");
     else if (pdfPath === "/oric-dl-hjrs-20-21") window.open(oricDlHjrs20_21, "_blank");
