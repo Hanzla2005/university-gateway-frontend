@@ -81,8 +81,24 @@ const FacultyProfile = () => {
             {facultyMember.bio && (
               <section className="space-y-4">
                 <h2 className="text-xl font-bold text-slate-900 border-b border-slate-100 pb-2">Professional Summary</h2>
-                <div className="text-slate-700 leading-relaxed text-justify whitespace-pre-line">
-                  {facultyMember.bio}
+                <div className="text-slate-700 leading-relaxed text-justify space-y-1">
+                  {facultyMember.bio.split('\n').map((line, i) => {
+                    const parts = line.split(/(\*\*.*?\*\*)/g);
+                    const isHeading = line.trim().startsWith('**') && line.trim().endsWith('**');
+                    return (
+                      <span 
+                        key={i} 
+                        className={`block ${isHeading ? "mt-6 mb-2" : ""} ${line.trim() === "" ? "h-4" : ""}`}
+                      >
+                        {parts.map((part, j) => {
+                          if (part.startsWith('**') && part.endsWith('**')) {
+                            return <strong key={j} className="text-slate-900 font-bold">{part.slice(2, -2)}</strong>;
+                          }
+                          return part;
+                        })}
+                      </span>
+                    );
+                  })}
                 </div>
               </section>
             )}

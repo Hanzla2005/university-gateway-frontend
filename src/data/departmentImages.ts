@@ -25,6 +25,7 @@ const departmentImages: Record<string, string> = {
   "sociology": businessImg,
   "tourism-and-hospitality": businessImg,
   "microbiology": microBg,
+  "food-science": healthImg,
 };
 
 export default departmentImages;

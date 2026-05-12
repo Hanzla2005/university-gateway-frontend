@@ -117,13 +117,12 @@ const mainNavItems = [
         path: "/faculty-biomedical",
         icon: GraduationCap,
         nested: [
-          { label: "Medical Laboratory Technology", path: "/departments/medical-laboratory-technology" },
           { label: "Biotechnology", path: "/departments/biotechnology" },
-          { label: "Bioscience", path: "/departments/bioscience" },
           { label: "Botany", path: "/departments/botany" },
-          { label: "Mountain Agriculture & Environmental Sciences", path: "/departments/mountain-agriculture" },
+          { label: "Environmental Sciences", path: "/departments/mountain-agriculture" },
           { label: "Microbiology", path: "/departments/microbiology" },
           { label: "Forestry", path: "/departments/forestry" },
+          { label: "Food Science", path: "/departments/food-science" },
         ]
       },
       {

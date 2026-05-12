@@ -18,13 +18,12 @@ const facultyGroups = [
   {
     faculty: "Faculty of Biomedical & Life Sciences",
     departments: [
-      "medical-laboratory-technology",
       "biotechnology",
-      "bioscience",
       "botany",
       "mountain-agriculture",
       "microbiology",
       "forestry",
+      "food-science",
     ],
   },
   {

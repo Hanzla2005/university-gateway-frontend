@@ -27,7 +27,7 @@ const facultyGroups = [
     key: "biomedical",
     name: "Biomedical & Life Sciences",
     icon: HeartPulse,
-    departments: ["medical-laboratory-technology", "biotechnology", "bioscience", "botany", "mountain-agriculture", "microbiology", "forestry"],
+    departments: ["biotechnology", "botany", "mountain-agriculture", "microbiology", "forestry", "food-science"],
   },
   {
     key: "management",

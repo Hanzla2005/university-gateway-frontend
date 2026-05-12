@@ -86,6 +86,14 @@ import btImran from "@/assets/departments/bioTechnology/faculty/imran.png";
 import btAnsar from "@/assets/departments/bioTechnology/faculty/muhammadAnsar.png";
 import btSaeed from "@/assets/departments/bioTechnology/faculty/muhammadSaeed.png";
 
+import foodTalat from "@/assets/departments/foodSience/faculty/talatMahmood.png";
+import foodMujtaba from "@/assets/departments/foodSience/faculty/mujtaba.png";
+import foodMazahir from "@/assets/departments/foodSience/faculty/Muhmmad Mazahir.png";
+import mathRahim from "@/assets/departments/mathematics/faculty/rahimShah.png";
+import bbaHussain from "@/assets/departments/bba/faculty/HussainMustafa.png";
+import bbaTehmina from "@/assets/departments/bba/faculty/TehminaMuneer.png";
+import bbaZainab from "@/assets/departments/bba/faculty/ZainabKhanam.png";
+
 export interface FacultyMember {
   id?: string;
   name: string;
@@ -157,6 +165,10 @@ export const departmentPages: DepartmentPage[] = [
         name: "Ms. Rabeea Yousafzai",
         designation: "HOD / Lecturer",
         image: artRabeea,
+      },
+      {
+        name: "Mr. Waqas Shah",
+        designation: "Lecturer",
       },
     ],
     events: [
@@ -295,131 +307,6 @@ export const departmentPages: DepartmentPage[] = [
         name: "BS Software Engineering",
         description: "A comprehensive four-year degree program focused on developing high-quality software systems. The curriculum covers software requirements, design, implementation, testing, and maintenance.",
         scheme: []
-      }
-    ]
-  },
-  {
-    id: "medical-laboratory-technology",
-    name: "Department of Medical Laboratory Technology",
-    shortName: "MLT",
-    vision: "The vision of the Medical Laboratory Technology (MLT) department at Kohsar University Murree is to achieve excellence and aim milestones to become renowned for its brand at the national and international levels. The department aims to provide a platform for biomedical research and a diagnostic facility for the students, university staff, and local public residing in Murree as well as the upcoming tourists. The department will venture into collaborative and interdisciplinary projects nationally and internationally. The department will be used as a surveillance center for the monitoring of various diseases in the local population of Murree. The department is committed to transferring the updated knowledge and skills required for innovation, upgradation, and development of the modern health care system.",
-    mission: "The program will prepare the graduates to cope with the current challenges occurring in the biomedical fields like clinical diagnostics, public health, forensic technology, therapeutics production, basic and applied biomedical research. The graduates will effectively assist other health professionals in the delivery of quality health services. Students will be equipped with the updated knowledge, skills, and attitudes needed for clinical competence and laboratory-based diagnostics to substitute the conventional methods of diagnosis with modern technologies. The program will produce leaders and entrepreneurs with complementary skills required for the establishment of modern medical laboratories and diagnostic systems.",
-    faculty: [
-      {
-        name: "Dr. Nasar Khan",
-        designation: "Assistant Professor Microbiology",
-      },
-      {
-        name: "Dr. Muhammad Imran Khan",
-        designation: "Lecturer Biomedical Engineering",
-      },
-      {
-        name: "Dr. Shahid Hussain",
-        designation: "Lecturer Biomedical Engineering",
-      }
-    ],
-    programs: [
-      {
-        name: "BS Medical Laboratory Technology (MLT)",
-        description: "A comprehensive 4-year degree program (136 credit hours) designed to produce highly skilled medical laboratory professionals. The program follows the new HEC policy (2020) and includes clinical competence and laboratory-based diagnostics training using modern technologies.",
-        scheme: [
-          {
-            name: "Semester 1",
-            totalCredits: 15,
-            courses: [
-              { title: "Sociology (SOC-101)", credits: "3(3,0)" },
-              { title: "Pakistan Studies (KUM-111)", credits: "2(2,0)" },
-              { title: "Human Anatomy (MLT-101)", credits: "3(2,1)" },
-              { title: "Mathematics – I (MTH-106)", credits: "3(3,0)" },
-              { title: "English – I (ENG-101)", credits: "3(3,0)" },
-              { title: "Medical laboratory orientation (MLT-102)", credits: "(0,1)" }
-            ]
-          },
-          {
-            name: "Semester 2",
-            totalCredits: 17,
-            courses: [
-              { title: "Economics (GEN-103)", credits: "3(3,0)" },
-              { title: "Biostatistics (STA-202)", credits: "3(3,0)" },
-              { title: "Fundamentals of Chemistry (MIC-102)", credits: "3(2,1)" },
-              { title: "English-II (ENG-102)", credits: "3(3,0)" },
-              { title: "Islamic Studies / Ethics (IST-101)", credits: "2(2,0)" },
-              { title: "Human Physiology (MLT-103)", credits: "3(2,1)" }
-            ]
-          },
-          {
-            name: "Semester 3",
-            totalCredits: 18,
-            courses: [
-              { title: "Introduction to Psychology (PSY-101)", credits: "3(3,0)" },
-              { title: "Introduction to ICT (CSC-101)", credits: "3(3,0)" },
-              { title: "Fundamentals of Medical Laboratory Technology (MLT-201)", credits: "3(2,1)" },
-              { title: "Basic Biochemistry (MLT-202)", credits: "3(2,1)" },
-              { title: "General Pathology (MLT-203)", credits: "3(3,0)" },
-              { title: "Cell Biology (BBT-102)", credits: "3(2+1)" }
-            ]
-          },
-          {
-            name: "Semester 4",
-            totalCredits: 18,
-            courses: [
-              { title: "Biosafety and Risk Management (MIC-203)", credits: "3(3,0)" },
-              { title: "Fundamentals of Microbiology (MIC-104)", credits: "3(2,1)" },
-              { title: "Fundamentals of Hematology (MLT-204)", credits: "3(2,1)" },
-              { title: "Basic Immunology (MLT-205)", credits: "3(2,1)" },
-              { title: "Histotechniques (MLT-206)", credits: "3(2,1)" },
-              { title: "Chemical Pathology-I (MLT-207)", credits: "3(2,1)" }
-            ]
-          },
-          {
-            name: "Semester 5",
-            totalCredits: 18,
-            courses: [
-              { title: "Red Blood Cells Disorders (MLT-301)", credits: "3(2,1)" },
-              { title: "Chemical Pathology-II (MLT-302)", credits: "3(2,1)" },
-              { title: "Medical Bacteriology-I (MLT-303)", credits: "3(2,1)" },
-              { title: "Medical Laboratory Instrumentation (MLT-304)", credits: "3(3,0)" },
-              { title: "Medical Virology (MLT-305)", credits: "3(2,1)" },
-              { title: "Introduction to Molecular Biology (BBT-201)", credits: "3(2,1)" }
-            ]
-          },
-          {
-            name: "Semester 6",
-            totalCredits: 18,
-            courses: [
-              { title: "WBC and Platelets Disorders (MLT-306)", credits: "3(2,1)" },
-              { title: "Medical Bacteriology II (MLT-307)", credits: "3(2,1)" },
-              { title: "Clinical Parasitology (MLT-308)", credits: "3(2,1)" },
-              { title: "Clinical Immunology & Serology (MLT-309)", credits: "3(2,1)" },
-              { title: "Research Methodology (MLT-310)", credits: "3(3,0)" },
-              { title: "Health Informatics (MLT-102)", credits: "3(2,1)" }
-            ]
-          },
-          {
-            name: "Semester 7",
-            totalCredits: 16,
-            courses: [
-              { title: "Blood Banking (MLT-401)", credits: "3(2,1)" },
-              { title: "Medical Laboratory Management Skills (MLT-402)", credits: "2(2,0)" },
-              { title: "Clinical Mycology (MLT-403)", credits: "3(2,1)" },
-              { title: "Molecular Diagnostics (MLT-404)", credits: "3(2,1)" },
-              { title: "Biomedical Ethics (MLT-405)", credits: "2(2,0)" },
-              { title: "Research/ Senior Design Project I", credits: "3(0,3)" }
-            ]
-          },
-          {
-            name: "Semester 8",
-            totalCredits: 16,
-            courses: [
-              { title: "Epidemiology and public health (MLT-406)", credits: "3(3,0)" },
-              { title: "Vaccinology (MLT-407)", credits: "3(2,1)" },
-              { title: "Cytology and Cytogenetics (MLT-408)", credits: "3(2,1)" },
-              { title: "Health Informatics (MLT-409)", credits: "3(2,1)" },
-              { title: "Seminar (MLT-410)", credits: "1(1,0)" },
-              { title: "Research/ Senior Design Project II", credits: "3(0,3)" }
-            ]
-          }
-        ]
       }
     ]
   },
@@ -686,57 +573,6 @@ export const departmentPages: DepartmentPage[] = [
     ]
   },
   {
-    id: "bioscience",
-    name: "Department of Bioscience",
-    shortName: "Bioscience",
-    overview: "The Department of Biosciences was established a year back at the KUM, Murree. The department started with the BS Microbiology program in 2021. This program is becoming very popular in the country and will fulfill the future needs of Pakistan in this very important field of study. In addition to the BS program the department has started MS programs in Microbiology, Admissions will be announced soon for fall 2022.\n\nWelcome to the Department of Biosciences at Jhika Galli campus Kohsar University Murree. The Department of Biosciences was established in 2020 with a mission to provide quality education and research in emerging horizons of biosciences. This department aims to equip the learner with emerging technologies and nascent skills currently being applied in various fields of modern biological sciences. Biology interconnects to almost all fields of basic and applied sciences. The department of Biosciences is proving as unique platform of emerging disciplines of life sciences. Our collaborative research based, and conducive teaching learning culture empowers our students with a excellent understanding of life sciences systems through genetic, molecular, and computational methods of exploration. The department is growing at excellent pace in various branches of biosciences offering BS, MS programs in the fields of Microbiology, Biochemistry, and Zoology. Currently, we are an impressive team of PhD faculty members groomed and trained in the top labs and universities of the developed countries including USA, UK, Denmark, and France. The department offers BS and MS programs in different domains of biological sciences with a considerable student body.\n\nThe department welcomes a students and researchers each year. We have strong research linkages and collaborations with some celebrated labs of USA, Denmark, Netherlands, Italy and UK where our undergraduate graduate students have secured future opportunities of international exposure to equip themselves with advanced skills and research techniques.\n\nOur research spans the breadth of biological sciences, and currently we are moving ahead with interdisciplinary approach to interlink the departments. Departmental Research Publications 2021-22: >20",
-    vision: "The Department of Biosciences will formally combine the research and teaching excellence of the Departments of biomedical engineering, microbiology and Zoology, allowing us to build upon KUM legacy leading biological research in an increasingly interdisciplinary manner. The Department of Biosciences will continue to teach undergraduate course, as well as launching a new BS and MS programmes. Students studying at the Department will benefit from working with experts, remarkable library and state-of-the-art facilities.",
-    mission: "Department of Biosciences believe in strengthening the linkage between industry and institutions for sustainable growth and productivity.",
-    faculty: [
-      {
-        name: "Dr. Aftab Ahmad",
-        designation: "Assistant Professor (HOD) Microbiology | PhD- COMSATS University Islamabad | Specialization: Human Gut microbiota dynamics in health & Disease conditions.",
-        image: bioAftab
-      },
-      {
-        name: "Dr. Nasar Khan",
-        designation: "Assistant Professor Microbiology | Ph.D. iNANO, Aarhus University, Denmark | Specialization: Regenerative medicine, umbilical cord stem cell therapy"
-      },
-      {
-        name: "Dr. Muhammad Adnan Shereen",
-        designation: "Assistant Professor | PhD- Wuhan University, China | Specialization: Virology/Zika Virus"
-      },
-      {
-        name: "Dr. Sadia Mehmood Satti",
-        designation: "Assistant Professor | PhD- Quaid-e-Azam University Islamabad | Specialization: Microbial Degradation of plastics"
-      },
-      {
-        name: "Dr. Muhammad Imran Khan",
-        designation: "Assistant Professor | PhD- Chonnam National University South Korea | Specialization: Biomedical Engineering"
-      },
-      {
-        name: "Mr. Shahid Hussain",
-        designation: "Lecturer | MS International Islamic University Islamabad | Specialization: Cancer Exosomes Biology."
-      }
-    ],
-    programs: [
-      {
-        name: "Undergraduate Programs",
-        description: "The department offers the following undergraduate programs:\n\n• Bachelor of Science in Microbiology\n• Bachelor of Science in Biotechnology"
-      },
-      {
-        name: "Graduate Programs",
-        description: "The department offers the following graduate programs:\n\n• Master of Science in Microbiology\n• Master of Science in Biotechnology"
-      }
-    ],
-    events: [
-      {
-        title: "Photo Gallery",
-        images: [bioGallery1, bioGallery2]
-      }
-    ]
-  },
-  {
     id: "botany",
     name: "Department of Botany",
     shortName: "Botany",
@@ -759,17 +595,11 @@ export const departmentPages: DepartmentPage[] = [
         image: botanyIlyas,
       },
       {
-        name: "Mrs. Jaweria Naz",
-        designation: "Lecturer",
-        email: "Patriotic1989@gmail.com",
+        name: "Riffat Batool",
+        designation: "Assistant Professor",
+        email: "r.batool@kum.edu.pk",
         image: botanyJaveria,
       },
-      {
-        name: "Mrs. Shafia Farooq",
-        designation: "Lecturer",
-        email: "shafiafarooq1987@gmail.com",
-        image: botanyShafia,
-      }
     ],
     facilities: [
       "Well established class rooms and labs",
@@ -894,7 +724,20 @@ export const departmentPages: DepartmentPage[] = [
     mission: "The department of tourism and hospitality management, is keen on imparting skills based education, providing dynamic environment to its students through reorganized curriculum, experimental/industry-based learning and with its international outreach and linkages with world-class schools of tourism and hospitality.",
     aimsAndObjectives: [],
     aimsAndObjectivesOverview: "The Tourism & Hospitality program intends to create an intellectual, collaborative, ethical and inclusive environment for students, faculty, industry and community to produce innovative education, leadership and research opportunities. This will be achieved by producing leaders and professionals in the field of Tourism and Hospitality Management using modern pedagogical approaches, intensive fieldwork, internships, community work, and hands-on experiences/extensive laboratory work.",
-    faculty: [],
+    faculty: [
+      {
+        name: "Dr. Adnan Ahmad Dogar",
+        designation: "Associate Professor & HOD",
+      },
+      {
+        name: "Ms. Syeda Tahira",
+        designation: "Lecturer",
+      },
+      {
+        name: "Ms. Zunera",
+        designation: "Lecturer",
+      }
+    ],
     programs: [
       {
         name: "BS in Tourism and Hospitality Management",
@@ -1202,7 +1045,6 @@ export const departmentPages: DepartmentPage[] = [
     faculty: [
       { name: "Dr. Muhammad Sultan", designation: "Professor BPS-21 / Dean of Faculties" },
       { name: "Dr. Syed Tahir Amin", designation: "Assistant Professor BPS-19 / HOD Physics", image: physicsTahir },
-      { name: "Dr. Darvaish Khan", designation: "Assistant Professor, IPFP" },
       { name: "Mr. Ammar Shahid", designation: "Lecturer BPS-18" },
       { name: "Engr. Zeeshan Tariq", designation: "Lab. Incharge" }
     ],
@@ -1338,12 +1180,6 @@ export const departmentPages: DepartmentPage[] = [
         designation: "Associate Professor / Head of Department",
         email: "waqas.bangyal@kum.edu.pk",
         image: csWaqas
-      },
-      {
-        name: "Dr. Rehan Tariq Chohan",
-        designation: "Assistant Professor",
-        email: "Rehan.chohan@kum.edu.pk",
-        image: csRehan
       },
       {
         name: "Dr. Muhammad Faran Majeed",
@@ -1514,7 +1350,44 @@ export const departmentPages: DepartmentPage[] = [
     overview: "The Department of Mathematics at Kohsar University Murree is a dynamic and integral part of our academic institution, dedicated to fostering a deep appreciation and understanding of mathematics among our students. Our department, which is tucked away in the picturesque Murree Hills, provides a lively and welcoming atmosphere for the study of mathematical ideas and their practical applications.\n\nOur department is dedicated to providing top-notch mathematics outreach, research, and education. We believe that mathematics is not only a fundamental discipline but also a gateway to unlocking the mysteries of the natural world and the key to addressing complex challenges in various fields.\n\nThe mathematics department at Kohsar University Murree provides a wide range of courses, from basic mathematics to more complex subjects, so that students can explore the world of mathematics. Our dedicated and experienced faculty members are passionate about teaching and mentoring, guiding students in their pursuit of mathematical knowledge and critical thinking skills.\n\nOur research covers a broad range of mathematical fields, such as mathematical modeling, statistics, applied mathematics, and pure mathematics. We actively engage in cutting-edge research projects, contributing to the global mathematical community's body of knowledge while also addressing local and regional challenges.\n\nInterdisciplinary collaboration is a core principle of our department. We recognize that mathematics is not isolated but an integral part of solving multifaceted real-world problems. Through collaborations with other departments and institutions, we aim to harness the power of mathematics to find innovative solutions to pressing issues, whether they pertain to environmental sustainability, healthcare, or technology.\n\nMoreover, we are deeply committed to outreach and community engagement. We organize math competitions, workshops, and seminars to promote mathematical literacy and interest among students of all ages in the Murree region.",
     vision: "To be known around the world as a provider of world-class education, a welcoming hub for basic, applied, and multidisciplinary research, a source of producing high-quality graduates for the job market, and a contributor to societal progress.",
     mission: "Mission of Mathematics department is to create a positive work environment that fosters effective teaching, qualitative scientific research, and the development of distinguished academic programmes to keep pace with the latest international scientific developments, while also taking into account the quality standards of qualifying competent professionals who possess logical, scientific, and mathematical thinking skills, as well as scientific research skills in mathematical sciences.",
-    faculty: [],
+    faculty: [
+      {
+        id: "rahim-shah",
+        name: "Dr. Rahim Shah",
+        designation: "Assistant Professor | HOD Mathematics",
+        email: "rahimshah@kum.edu.pk",
+        image: mathRahim,
+        education: [
+          "Ph.D. in Mathematics (Analysis and Applied Mathematics), University of Peshawar (2015-2018)"
+        ],
+        researchInterests: [
+          "Analysis",
+          "Applied Mathematics"
+        ],
+        bio: `Dr. Rahim Shah is an Assistant Professor and Head of the Mathematics Department at Kohsar University Murree. He is an HEC Approved Supervisor and also serves as the Deputy Controller of Examination. With extensive experience in both academia and research, he has supervised numerous undergraduate and master's students.
+
+**Administrative Responsibilities:**
+• Head of Mathematics Department, Kohsar University Murree
+• Deputy Controller of Examination, Kohsar University Murree
+
+**Professional Experience:**
+• Assistant Professor, Kohsar University Murree (April 2022 - Present)
+• Assistant Professor, Qurtuba University of Science & IT, Peshawar (2018 - 2021)
+
+**Academic Contributions:**
+Dr. Shah serves as a referee for multiple prestigious journals, including the Hacettepe Journal of Mathematics and Statistics, Results in Nonlinear Analysis, and the International Journal of Theoretical Physics. He has a prolific research background with over 70 publications in international journals.
+
+**Selected Publications:**
+1. Akbar Zada, Omer Shah, Rahim Shah: Hyers–Ulam stability of non-autonomous systems in terms of boundedness of Cauchy problems, Applied Mathematics and Computation (2015).
+2. Akbar Zada, Rahim Shah and Tongxing Li: Integral type contraction and coupled coincidence fixed point theorems for two pairs in G-metric spaces. Hacettepe Journal of Mathematics and Statistics (2016).
+3. Rahim Shah, Akbar Zada: A fixed point approach to the stability of a nonlinear Volterra integrodifferential equation with delay. Hacettepe Journal of Mathematics and Statistics (2018).
+4. Peiguang Wang, Akbar Zada, Rahim Shah, Tongxing Li: Some common fixed point results for two pairs of self-maps in dislocated metric spaces. J. Computational analysis and applications (2018).
+5. Rahim Shah, Tongxing Li: The thermal and laminar boundary layer flow over prolate and oblate spheroids. International Journal of Heat and Mass Transfer (2018).
+6. Rahim Shah, Natasha Irshad: Ulam–Hyers–Mittag–Leffler stability for class of nonlinear fractional reaction–diffusion equations with delay, Int. J. Theor. Phys. (2025).
+7. Rahim Shah, Natasha Irshad: On the Hyers-Ulam stability of Bernoulli's differential equation, Russian Mathematics (2023).
+8. Rahim Shah, Natasha Irshad: Ulam–Hyers and Ulam–Hyers–Rassias stability of nonlinear fractional differential equations. Acta Univ. Sapientiae Math. (2026).`
+      }
+    ],
     programs: [
       {
         name: "BS Mathematics (Batch 2025 and onwards)",
@@ -1677,7 +1550,13 @@ export const departmentPages: DepartmentPage[] = [
         designation: "Assistant Professor / HOD | Ph.D International Islamic University, Islamabad",
         email: "nailabatool@kum.edu.pk",
         image: nadiaBatoolImg,
+      },
+      {
+        name: "Ms. Arooba Khursheed",
+        designation: "Lecturer",
       }
+
+
     ],
     events: [
       { title: "Character Building Awareness Sessions", images: [cbImg] },
@@ -1705,7 +1584,20 @@ export const departmentPages: DepartmentPage[] = [
       "Produce responsible and proactive members of society.",
       "Foster out-of-the-box thinking to understand multifaceted social realities."
     ],
-    faculty: [],
+    faculty: [
+      {
+        name: "Dr. Muhammad Ibrahim",
+        designation: "Assistant Professor / HOD",
+      },
+      {
+        name: "Dr. Muhammad Waqas",
+        designation: "Lecturer",
+      },
+      {
+        name: "Mr. Mansoor Bukhari",
+        designation: "Lecturer",
+      }
+    ],
     programs: [
       {
         name: "BS Sociology",
@@ -1832,14 +1724,8 @@ export const departmentPages: DepartmentPage[] = [
       "ELISA plate reader"
     ],
     faculty: [
-      { name: "Professor Dr. Habib Bokhari (VC, KUM)", designation: "Professor", image: mbF4 },
       { name: "Dr. Aftab Ahmad", designation: "HOD / Assistant Professor", email: "aftabahmad@kum.edu.pk", image: mbF2 },
-      { name: "Dr. Nasar Khan", designation: "Assistant Professor", email: "nasarkhan@kum.edu.pk", image: mbF6 },
-      { name: "Dr. Muhammad Adnan Shereen", designation: "Lecturer", email: "adnan.shereen@kum.edu.pk", image: mbF1 },
       { name: "Dr. Sadia Mehmood Satti", designation: "Lecturer", email: "sadiasatti@kum.edu.pk", image: mbF7 },
-      { name: "Dr. Ahmad Mujtaba", designation: "Assistant Professor (IPFP)", email: "amujtaba@kum.edu.pk", image: mbF3 },
-      { name: "Dr. Shah Saud", designation: "Assistant Professor (IPFP)", email: "saud_lodhi@yahoo.com", image: mbF8 },
-      { name: "Dr. Hina Mukhtar", designation: "Assistant Professor (IPFP)", email: "hinamukhtar90@hotmail.com", image: mbF5 }
     ],
     programs: [
       {
@@ -1858,7 +1744,23 @@ export const departmentPages: DepartmentPage[] = [
     shortName: "Business Administration",
     vision: "",
     mission: "",
-    faculty: [],
+    faculty: [
+      {
+        name: "Dr. Hussain Mustafa Gilani",
+        designation: "Associate Professor & HOD",
+        image: bbaHussain,
+      },
+      {
+        name: "Ms. Tehmina Muneer",
+        designation: "Lecturer",
+        image: bbaTehmina,
+      },
+      {
+        name: "Ms. Zainab Khanam",
+        designation: "Lecturer",
+        image: bbaZainab,
+      }
+    ],
     programs: [
       {
         name: "Bachelor of Business Administration (BBA)",
@@ -2000,11 +1902,6 @@ export const departmentPages: DepartmentPage[] = [
         ],
         bio: "Dr. Muhammad Qasim is an accomplished academic and researcher in Agricultural Entomology, with expertise in insect taxonomy and biodiversity. He has discovered 2 new insect species (Hymenoptera: Vespidae) and authored over 40 research publications. He also holds several administrative roles at KUM, including Deputy Registrar (Establishment) and In-charge Vice Chancellor Secretariat."
       },
-      {
-        name: "Dr. Mohiuddin Zia",
-        designation: "Assistant Professor (IPFP)",
-        email: "md.mohiuddin87@gmail.com"
-      },
     ],
     programs: [
       {
@@ -2142,13 +2039,13 @@ export const departmentPages: DepartmentPage[] = [
   },
   {
     id: "mountain-agriculture",
-    name: "Department of Mountain, Agriculture and Environmental Sciences",
-    shortName: "Mountain, Agriculture & Environmental Sciences",
-    overview: "Mountain, Agriculture and Environmental Sciences is an interdisciplinary field that deals with an assemblage of Physical, chemical, Biological and social sciences under one umbrella. The discipline of Environmental sciences deals with the direct and indirect interaction of human beings with environmental issues that influence the environmental laws and policies.\n\nThe Department of Mountain, Agriculture and Environmental Sciences is going to be establish in FA-2022, at Kohsar University Murree. Its main focus is the protection and management of environment from the emerging pollutants nationally and globally through research and public awareness.",
+    name: "Department of Environmental Sciences",
+    shortName: "Environmental Sciences",
+    overview: "Environmental Sciences is an interdisciplinary field that deals with an assemblage of Physical, chemical, Biological and social sciences under one umbrella. The discipline of Environmental sciences deals with the direct and indirect interaction of human beings with environmental issues that influence the environmental laws and policies.\n\nThe Department of Environmental Sciences is going to be establish in FA-2022, at Kohsar University Murree. Its main focus is the protection and management of environment from the emerging pollutants nationally and globally through research and public awareness.",
     hodMessage: "Our mission is to lead in innovative discovery and education, solving societal concerns in agriculture and environmental health. Through professional commitment and community engagement, we strive to promote sustainable livelihoods and environmental awareness, bridging the gap between academia and society for a greener future.",
-    vision: "The KUM’s Department of Mountain, Agriculture and Environmental Sciences will lead in innovative discovery, education, and service not only to the students of Murree as well as to the world. We envision a future in which high-impact science based on our collective arthropod biology expertise addresses and solves large societal concerns in agriculture, the environment, and human health. Our vision and mission is the provision of comprehensive knowledge and skills about the basics of natural, biological and physical sciences in solving the emerging environmental issues globally that will reflects the Sustainable Development Goals for the protection of natural resources.",
+    vision: "The KUM’s Department of Environmental Sciences will lead in innovative discovery, education, and service not only to the students of Murree as well as to the world. We envision a future in which high-impact science based on our collective arthropod biology expertise addresses and solves large societal concerns in agriculture, the environment, and human health. Our vision and mission is the provision of comprehensive knowledge and skills about the basics of natural, biological and physical sciences in solving the emerging environmental issues globally that will reflects the Sustainable Development Goals for the protection of natural resources.",
     mission: "Our mission is to generate and disseminate fundamental and applied scientific knowledge about arthropods, insects that contributes to human well-being through breakthroughs in human health, agriculture, and the environment.\nTo prepare, train, and inspire students from diverse backgrounds to achieve personal goals and make meaningful societal contributions; and to engage citizens and policymakers/stakeholders in making informed proactive decisions that maximize the benefits, minimize the risks, and minimize the environmental impact of insects and arthropods. We enhance the quality of life in Murree and throughout the world by doing globally relevant and exceptional research, extension, and teaching. We succeed by cultivating a collegial, inclusive, and enthusiastic department culture that values mutual respect, work/life balance, cross-disciplinary cooperation, and shared accomplishments.",
-    aimsAndObjectivesOverview: "The major aims and objectives of the Department of Mountain, Agriculture and Environmental Sciences, are following i.e. Department's teaching mission is extensive, ranging from fundamental aspects of Agriculture, biological control and Environmental sciences.\n\nMajor aspects of agriculture includes arthropod ecology, morphology, parasitology, physiology, systematics, and toxicity to applied disciplines such as, agricultural, medical, and veterinary pest management.\nMajor aspects of Environmental sciences includes soil, air and water toxicology, environmental biotechnology, GIS, Conservation of natural resources and biodiversity, ecology, and wastewater management. We offer a diverse range of basic courses aimed at educating and inspiring BS and MS students in agriculture and Environmental Sciences as well as complete courses for undergraduate majors and advanced course work for outstanding graduate student education.\n\nAdditionally, students studying these areas have a range of interests, depending on their professional route. Regardless of their future orientation, there are similar learning goals and objectives that we will assist students in achieving through their different education.\nThe primary Program Learning Objectives (PLOs) will be the following:",
+    aimsAndObjectivesOverview: "The major aims and objectives of the Department of Environmental Sciences, are following i.e. Department's teaching mission is extensive, ranging from fundamental aspects of Agriculture, biological control and Environmental sciences.\n\nMajor aspects of agriculture includes arthropod ecology, morphology, parasitology, physiology, systematics, and toxicity to applied disciplines such as, agricultural, medical, and veterinary pest management.\nMajor aspects of Environmental sciences includes soil, air and water toxicology, environmental biotechnology, GIS, Conservation of natural resources and biodiversity, ecology, and wastewater management. We offer a diverse range of basic courses aimed at educating and inspiring BS and MS students in agriculture and Environmental Sciences as well as complete courses for undergraduate majors and advanced course work for outstanding graduate student education.\n\nAdditionally, students studying these areas have a range of interests, depending on their professional route. Regardless of their future orientation, there are similar learning goals and objectives that we will assist students in achieving through their different education.\nThe primary Program Learning Objectives (PLOs) will be the following:",
     aimsAndObjectives: [
       "Attain a solid foundation in Agriculture, insect biology, including general entomology, basic systematics, morphology, physiology, and biodiversity.",
       "Understand evolution and biodiversity generation through macro- and micro- evolutionary processes, including how these processes have formed and diversified insects.",
@@ -2163,12 +2060,6 @@ export const departmentPages: DepartmentPage[] = [
       "To develop competence among students to face the ongoing environmental challenges (air, soil, water, overuse of natural resources, energy crises and climate change) with environment friendly scientific skills"
     ],
     faculty: [
-      {
-        name: "Dr. Shahida Shaheen",
-        designation: "Lecturer",
-        email: "shahida.shaheen@kum.edu.pk",
-        image: agriShahida
-      },
       {
         id: "sumaira-maqsood",
         name: "Dr. Sumaira Maqsood",
@@ -2188,37 +2079,6 @@ export const departmentPages: DepartmentPage[] = [
         ],
         bio: "Dr. Sumaira Maqsood is a dedicated academician with over 45 research publications and 8 book chapters. She received STEM faculty training from King’s College London and has actively participated in international scientific congresses. She is an expert in apiculture and sustainable honey production, actively engaged in community outreach and extension services."
       },
-      {
-        name: "Dr. Mohiuddin Zia",
-        designation: "Assistant Professor (IPFP)",
-        email: "md.mohiuddin87@gmail.com",
-        image: agriZia
-      },
-      {
-        name: "Dr. Khadija Javed",
-        designation: "Assistant Professor (IPFP)",
-        email: "dr.khadijajaved@kum.edu.pk",
-        image: agriKhadija
-      },
-      {
-        id: "muhammad-mazahir",
-        name: "Dr. Muhammad Mazahir",
-        designation: "Lecturer (Food Technology)",
-        email: "m.mazahir@kum.edu.pk",
-        image: agriMazahir,
-        education: [
-          "Ph.D Food Technology, PMAS-Arid Agriculture University Rawalpindi",
-          "M.Sc (Hons.) Agriculture (Food Science & Technology), University of Agriculture Peshawar",
-          "B.Sc (Hons.) Agriculture (Food Science & Technology), University of Poonch, AJ&K"
-        ],
-        researchInterests: [
-          "Food Science & Technology",
-          "Climate Smart Agriculture",
-          "Food Security and Pandemic Management",
-          "Organic Farming and Clean Food"
-        ],
-        bio: "Dr. Muhammad Mazahir is a Lecturer at Kohsar University Murree with a Ph.D. in Food Technology. He has extensive experience in research and development, having served as a Research Fellow at NARC and a Food Technologist at Akbar Foods. With over 25 research publications, he is a member of the Pakistan Society of Food Scientist and Technologist and a recipient of the Silver Medal in his M.Sc. (Hons.)."
-      }
     ],
     programs: [
       {
@@ -2444,6 +2304,94 @@ export const departmentPages: DepartmentPage[] = [
           }
         ]
       }
+    ]
+  },
+  {
+    id: "food-science",
+    name: "Department of Food Science",
+    shortName: "Food Science",
+    overview: "The Department of Food Sciences and Technology at Kohsar University Murree, established in Fall 2024, offers valuable educational opportunities in the rapidly growing field of food science in Pakistan. Food Science and Technology programs in Pakistan are typically housed under Agriculture and Food Sciences departments and are in high demand due to the wide range of career prospects they provide in both public and private sectors. Key Bachelor of Science (BS) degree programs include BS in Food Science and Technology, BS in Human Nutrition and Dietetics, BS in Food and Nutrition.\n\nThese programs are carefully designed to equip students with comprehensive knowledge and practical skills essential for success in various areas of the food industry. From innovations in food production and processing to understanding human nutrition and dietetics, the curriculum addresses the multifaceted nature of the sector. Graduates of these programs are well-prepared to meet the demands of the food industry and contribute meaningfully to public health, food safety, and nutritional well-being.\n\nVision\nTo be a premier institution in Food and Nutritional Sciences, leading in knowledge, research, and innovation.\n\nMission\nOur mission is to provide comprehensive education and practical expertise in Food Science and Nutrition. We cultivate critical thinkers who drive meaningful advancements through relevant research, addressing key sector challenges.\n\nScope of Food Science and Technology\nOwing to its strategic geographic location, Kohsar University Murree is poised to play a pivotal role in bolstering the tourism industry in Murree. The university has taken proactive steps by introducing degree programs that are aligned with the domains of food, nutrition, hospitality, and tourism, a key sector that forms the lifeblood of the local communities. The Food Science and Technology graduates will find a multitude of employment prospects in both government and private sectors, including: Academia and Universities, Provincial and Federal Food Departments, Food Safety Authorities, Research Institutes, Food Professionals in UN Organizations, Health Institutes including Hospitals, Food Industries, Hostels and Tourism Departments, and Food Entrepreneurship.\n\nOpportunities\nDiscipline has great opportunities that include jobs as a technologist, nutritionist and a dietitian. Jobs in Pakistan Atomic Energy Commission as Food Scientists, Universities and R&D institutes as Teachers and Researchers, Pak army Food Consultants in supply cores, Punjab Food Authorities as Food Safety officer, Assistant Directors, Food Departments and Food Inspectors, NGOs like Nutrition International, Gain etc., and Quality Assurance Officers and production managers in industries like Nestle, Coca-Cola, National Foods, Qureshi Industries, etc.",
+    vision: "To be a premier institution in Food and Nutritional Sciences, leading in knowledge, research, and innovation",
+    mission: "Our mission is to provide comprehensive education and practical expertise in Food Science and Nutrition. We cultivate critical thinkers who drive meaningful advancements through relevant research, addressing key sector challenges.",
+    aimsAndObjectivesOverview: "The Department of Food Science aims to achieve the following objectives:",
+    aimsAndObjectives: [
+      "Enhancing Student Competency: Our primary objective is to empower students with the knowledge and skills needed to comprehend and tackle emerging issues and challenges within the food sector effectively.",
+      "Fostering Entrepreneurship: To equip our students with a wide array of professional skills, enabling them to become young entrepreneurs, thus contributing to the growth of the food industry from an early stage in their careers.",
+      "Building a Skilled Workforce: To produce a highly skilled workforce that serves as a vital link between food industries, research academia, and consumers, thereby strengthening the overall food ecosystem."
+    ],
+    faculty: [
+      {
+        id: "talat-mahmood",
+        name: "Dr. Talat Mahmood",
+        designation: "Associate Professor and Chairperson",
+        email: "talat.mahmood@kum.edu.pk",
+        image: foodTalat,
+        education: [
+          "PhD in Food Technology",
+          "Post-Doc Fellowship (Advanced nuclear and Molecular techniques), BRIN Indonesia under IAEA"
+        ],
+        researchInterests: [
+          "Food Bio-preservatives",
+          "Fermented Dairy Products",
+          "Probiotic Foods",
+          "Nuclear and Molecular Techniques in Food Science"
+        ],
+        bio: "Dr. Talat Mahmood is an Associate Professor and Chairperson of the Department of Food Science and Technology. He has a distinguished career with extensive experience in food technology and research. He has served as a Senior Scientist at NIFA, Assistant Professor at The University of Haripur, and Agriculture Officer in the Punjab Agriculture Department. He has secured significant research funding for projects on food bio-preservatives and probiotic foods."
+      },
+      {
+        id: "ahmed-mujtaba-1",
+        name: "Dr. Ahmed Mujtaba",
+        designation: "Lecturer Food Sciences & Technology",
+        image: foodMujtaba,
+        education: [
+          "PhD in Food Science and Technology",
+          "IRSIP at University of Massachusetts Amherst, USA"
+        ],
+        researchInterests: [
+          "Nutraceuticals",
+          "Functional Foods",
+          "Food Chemistry",
+          "Innovative Food Technologies"
+        ],
+        bio: "Dr. Ahmed Mujtaba possesses 8 years of experience in the education sector and 2 years in the food industry. He is an HEC Approved Supervisor and recipient of the prestigious HEC Indigenous Scholarship. He has published more than 48 research articles in reputed international journals and is a lifetime member of PSFST."
+      },
+      {
+        id: "muhmmad-mazahir",
+        name: "Dr. Muhmmad Mazahir",
+        designation: "Lecturer Food Sciences & Technology",
+        image: foodMazahir,
+        education: [
+          "PhD in Food Science and Technology",
+          "M.Sc. (Hons) Food Technology (Silver Medalist)"
+        ],
+        researchInterests: [
+          "Food Quality",
+          "Food Safety",
+          "Food Processing",
+          "Innovative Food Technologies"
+        ],
+        bio: "Dr. Muhmmad Mazahir has served at prestigious organizations including NARC, PMAS-AAUR, PCSIR, and PepsiCo. He was awarded the HEC PhD Prime Minister Fee Reimbursement Scholarship and is an active member of PSFST and GBFSN. He has authored more than 22 research publications."
+      }
+    ],
+    programs: [
+      {
+        name: "BS Food Science and Technology",
+        description: "A comprehensive undergraduate program designed to equip students with knowledge and practical skills in food production, processing, nutrition, and safety.",
+        plos: [
+          "Apply core principles of food chemistry, microbiology, engineering, and nutrition to understand and optimize food systems, processing, and safety across various products and categories.",
+          "Design, implement, and evaluate food processing and preservation through modern techniques and quality assurance systems, enhance shelf life and sustainability in alignment with national and international standards.",
+          "Demonstrate practical skills in laboratory, analytical, and industrial settings, integrating multidisciplinary knowledge relevant to specialized areas like dairy, meat, cereals, and halal science.",
+          "Critically analyze and solve food-related problems using scientific reasoning, data interpretation, and technological innovations.",
+          "Communicate effectively, uphold professional ethics, and engage in lifelong learning and research to contribute to academia and industry."
+        ]
+      },
+      {
+        name: "MS Food Science and Technology",
+        description: "A graduate program focused on advanced research and specialization in food sciences and technological innovations."
+      }
+    ],
+    facilities: [
+      "Well-established laboratory for research work"
     ]
   }
 ];

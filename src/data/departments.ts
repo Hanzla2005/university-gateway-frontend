@@ -68,7 +68,7 @@ export const institutions: Institution[] = [
     desc: "Public health, pharmacy, and allied health sciences.",
     image: healthImg,
     overview: "The Faculty of Health Sciences trains healthcare professionals through rigorous academic programs and clinical rotations at affiliated hospitals in Rawalpindi and Islamabad. Our research in public health and mountain community healthcare has regional significance.",
-    departments: ["Public Health", "Pharmacy", "Nursing", "Nutrition & Dietetics", "Medical Lab Technology", "Physiotherapy"],
+    departments: ["Public Health", "Pharmacy", "Nursing", "Nutrition & Dietetics", "Medical Lab Technology", "Physiotherapy", "Food Science & Technology"],
   },
   {
     id: "law",
