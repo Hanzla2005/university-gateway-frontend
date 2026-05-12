@@ -9,9 +9,9 @@ const ViceChancellor = () => {
   return (
     <div className="min-h-screen">
       <Navbar />
-      
-      <PageHeader 
-        title="Message of the Vice Chancellor" 
+
+      <PageHeader
+        title="Message of the Vice Chancellor"
         subtitle="Prof. Dr. Rafia Mumtaz"
       />
 
@@ -77,7 +77,7 @@ const ViceChancellor = () => {
       </section>
 
       {/* Related Leadership */}
-      <section className="bg-muted/50">
+      {/* <section className="bg-muted/50">
         <div className="container-main px-4 sm:px-6 lg:px-8 py-16">
           <h2 className="text-2xl font-serif text-foreground mb-8 text-center">University Leadership</h2>
           <div className="grid md:grid-cols-2 gap-8 max-w-2xl mx-auto">
@@ -97,7 +97,7 @@ const ViceChancellor = () => {
             </Link>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <Footer />
     </div>
