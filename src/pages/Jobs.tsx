@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 import PageHeader from "@/components/PageHeader";
 import { FileText, Download, Eye } from "lucide-react";
 import advertisementPdf from "@/assets/pdfs/KUM Statutory Positions Advertisement Final.pdf";
-import applicationFormPdf from "@/assets/pdfs/Revised Administrative postions application form for  KUM Statutory Posiitons.pdf";
+import applicationFormPdf from "@/assets/pdfs/Administrative postions application form for  KUM Statutory Posiitons.pdf";
 
 const jobListings = [
 	{
