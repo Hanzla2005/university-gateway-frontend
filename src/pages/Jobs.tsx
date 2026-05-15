@@ -1,12 +1,23 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageHeader from "@/components/PageHeader";
-import { FileText } from "lucide-react";
+import { FileText, Download, Eye } from "lucide-react";
+import advertisementPdf from "@/assets/pdfs/KUM Statutory Positions Advertisement Final.pdf";
+import applicationFormPdf from "@/assets/pdfs/Revised Administrative postions application form for  KUM Statutory Posiitons.pdf";
 
-const jobListings: { title: string; pdf: string }[] = [];
+const jobListings = [
+	{
+		title: "SITUATIONS VACANT (Advertisement No. 01/2026)",
+		pdf: advertisementPdf,
+	},
+	{
+		title: "APPLICATION FORM FOR STATUTORY POSITIONS",
+		pdf: applicationFormPdf,
+	},
+];
 
 const Jobs = () => {
-	const handlePdfClick = (pdfPath: string) => {
+	const handlePdfView = (pdfPath: string) => {
 		window.open(pdfPath, "_blank");
 	};
 
@@ -19,26 +30,50 @@ const Jobs = () => {
 			/>
 			<div className="flex-1">
 				<div className="container-main px-4 sm:px-6 lg:px-8 py-14">
-					<div className="mb-8">
-						<p className="text-muted-foreground leading-relaxed mb-6">
+					<div className="mb-10">
+						<p className="text-muted-foreground text-lg leading-relaxed max-w-3xl">
 							Kohsar University Murree is looking for talented and dedicated
 							individuals to join our team. Below are the current job openings
-							and opportunities available at our university. Click on any position
-							to view the detailed advertisement or application form.
+							and opportunities available at our university. You can view the
+							detailed advertisement and download the application forms below.
 						</p>
 					</div>
 
 					{jobListings.length > 0 ? (
-						<div className="grid md:grid-cols-2 gap-6">
+						<div className="grid md:grid-cols-2 gap-8">
 							{jobListings.map((job) => (
-								<button
+								<div
 									key={job.title}
-									onClick={() => handlePdfClick(job.pdf)}
-									className="w-full text-left px-6 py-4 flex items-center gap-4 bg-muted/50 hover:bg-muted transition-colors rounded-lg"
+									className="group bg-card border border-border rounded-xl overflow-hidden hover:shadow-xl hover:border-primary/20 transition-all duration-300"
 								>
-									<FileText className="h-6 w-6 text-primary flex-shrink-0" />
-									<span className="text-lg text-foreground">{job.title}</span>
-								</button>
+									<div className="p-8">
+										<div className="flex items-start gap-5 mb-8">
+											<div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+												<FileText className="h-7 w-7 text-primary" />
+											</div>
+											<h3 className="text-xl font-bold text-foreground leading-tight pt-1">
+												{job.title}
+											</h3>
+										</div>
+										<div className="flex flex-col sm:flex-row gap-4">
+											<button
+												onClick={() => handlePdfView(job.pdf)}
+												className="flex-1 inline-flex items-center justify-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors font-semibold shadow-sm"
+											>
+												<Eye className="h-4 w-4" />
+												View PDF
+											</button>
+											<a
+												href={job.pdf}
+												download
+												className="flex-1 inline-flex items-center justify-center gap-2 px-6 py-3 border-2 border-primary/20 text-primary rounded-lg hover:bg-primary/5 hover:border-primary transition-all font-semibold"
+											>
+												<Download className="h-4 w-4" />
+												Download
+											</a>
+										</div>
+									</div>
+								</div>
 							))}
 						</div>
 					) : (
@@ -52,26 +87,22 @@ const Jobs = () => {
 					)}
 
 					{jobListings.length > 0 && (
-						<div className="mt-12 bg-primary/5 border border-primary/20 rounded-lg p-8">
-							<h2 className="text-xl font-serif text-foreground mb-4">
+						<div className="mt-16 bg-primary/5 border border-primary/20 rounded-2xl p-8 md:p-10">
+							<h2 className="text-2xl font-serif text-foreground mb-6 flex items-center gap-3">
+								<span className="w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-sm font-sans">!</span>
 								How to Apply
 							</h2>
-							<p className="text-muted-foreground leading-relaxed mb-4">
-								To apply for any of the above positions:
-							</p>
-							<ol className="space-y-3 text-muted-foreground list-decimal list-inside">
-								<li>
-									Select the position from the "Jobs" dropdown menu in the navigation
-									bar
-								</li>
-								<li>Download the relevant advertisement or application form</li>
-								<li>Follow the instructions provided in the document</li>
-								<li>Submit your application through the specified channels</li>
-							</ol>
-							<p className="text-sm text-muted-foreground italic mt-6">
-								For any queries regarding job applications, please contact the HR
-								Department at hr@kohsaruniversity.edu.pk
-							</p>
+							<div className="max-w-4xl">
+								<p className="text-muted-foreground text-lg leading-relaxed mb-8">
+									Follow these steps to submit your application for the statutory positions:
+								</p>
+								<ol className="space-y-6 text-muted-foreground list-decimal list-inside text-lg">
+									<li className="pl-2">Download and carefully read the <span className="font-semibold text-foreground">Detailed Advertisement</span></li>
+									<li className="pl-2">Download the <span className="font-semibold text-foreground">Application Form</span> relevant to your position</li>
+									<li className="pl-2">Fill out the form completely and attach all required documents</li>
+									<li className="pl-2">Submit your application through the specified channels mentioned in the advertisement</li>
+								</ol>
+							</div>
 						</div>
 					)}
 				</div>
