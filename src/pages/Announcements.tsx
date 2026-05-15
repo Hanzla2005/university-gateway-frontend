@@ -19,14 +19,14 @@ const Announcements = () => {
               to={`/announcements/${a.slug}`}
               className="group block border border-border rounded overflow-hidden hover:border-primary/30 transition-colors"
             >
-              <div className="aspect-[16/10] overflow-hidden">
+              <div className="aspect-[16/10] overflow-hidden bg-muted flex items-center justify-center">
                 <img
                   src={a.image}
                   alt={a.title}
                   loading="lazy"
                   width={800}
                   height={512}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="w-full h-full object-contain transition-opacity duration-300"
                 />
               </div>
               <div className="p-5">

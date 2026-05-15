@@ -4,7 +4,9 @@ import img3 from "@/assets/announcements/3.png";
 import img4 from "@/assets/announcements/4.png";
 import img5 from "@/assets/announcements/5.png";
 import img6 from "@/assets/announcements/6.png";
-
+import img7 from "@/assets/announcements/7.jpeg";
+import img8 from "@/assets/announcements/8.jpeg";
+import img9 from "@/assets/announcements/9.jpeg";
 
 export interface Announcement {
   id: string;
@@ -18,6 +20,36 @@ export interface Announcement {
 }
 
 export const announcements: Announcement[] = [
+  {
+    id: "9",
+    slug: "students-of-botany-secure-1st-position-at-idea-fest-2026",
+    title: "Students of Department of Botany Secure 1st Position at Idea-Fest 2026",
+    date: "May 15, 2026",
+    tag: "Achievement",
+    image: img9,
+    excerpt: "The students of the Department of Botany, Kohsar University Murree, under the supervision of Dr. Riffat Batool, achieved a remarkable milestone by securing 1st Position at the 3rd Idea-Fest 2026.",
+    content: "The students of the Department of Botany, Kohsar University Murree, under the supervision of Dr. Riffat Batool, achieved a remarkable milestone by securing 1st Position at the 3rd Idea-Fest 2026 hosted by Rawalpindi Women University. The prestigious event witnessed enthusiastic participation from students representing 19 universities from across Pakistan, providing a competitive platform for innovative ideas, research, and academic excellence. This outstanding achievement is a matter of great pride for Kohsar University Murree and reflects the students’ innovation, teamwork, creativity, and unwavering dedication. The accomplishment also highlights the commitment of the university and its faculty toward promoting quality education, research, and experiential learning opportunities for students.",
+  },
+  {
+    id: "7",
+    slug: "presidential-pride-of-performance-conferred-upon-prof-dr-rafia-mumtaz",
+    title: "Presidential Pride of Performance Conferred Upon Prof. Dr. Rafia Mumtaz",
+    date: "May 15, 2026",
+    tag: "Achievement",
+    image: img7,
+    excerpt: "The Governor of Punjab honored Professor. Dr. Rafia Mumtaz, Vice Chancellor of Kohsar University Murree, with the prestigious Presidential Pride of Performance.",
+    content: "The Governor of Punjab, Sardar Saleem Haider Khan, today honored Professor. Dr. Rafia Mumtaz, Vice Chancellor of Kohsar University Murree, with the prestigious Presidential Pride of Performance in recognition of her outstanding and exemplary contributions to the fields of Science, Technology, and the Internet of Things (IoT). Professor. Dr. Rafia Mumtaz has made remarkable contributions to higher education, scientific research, and technological advancement in Pakistan through her visionary leadership, academic excellence, and dedication to innovation-driven education. Professor. Dr. Rafia Mumtaz has successfully secured more than Rs. 215 million through 24 national and international competitive research grants, reflecting her exceptional research capabilities and international academic standing. Prof. Dr. Rafia Mumtaz has also played a pioneering role in strengthening global academic partnerships. She established joint research laboratories and collaborative research initiatives in partnership with Coventry University (London) and Chiang Mai University (Thiland). These collaborations are focused on promoting international scientific cooperation, advanced technological research, faculty and student exchange programs, and innovation in emerging fields of science and engineering. Under her dynamic educational leadership, major reforms have been introduced in curriculum modernization, outcome-based education, and quality assurance in higher education. She has led the successful accreditation of Software Engineering programs in accordance with international academic standards and played a vital role in launching postgraduate-level specializations in Internet of Things (IoT). Through her initiatives, the university has strengthened its research ecosystem, enhanced industry-academia linkages, and expanded opportunities for young researchers and students in advanced technological domains. In recognition of her extraordinary services, groundbreaking research contributions, and dedication to the advancement of Science and Internet of Things (IoT), the President of the Pakistan conferred upon her the distinguished Presidential Pride of Performance, one of the nation’s highest civilian honors. The academic community, researchers, students, and civil society members have widely appreciated this prestigious recognition, describing it as a proud moment for Pakistan’s higher education sector and a testament to the growing role of women leaders in science, research, and technological innovation.",
+  },
+  {
+    id: "8",
+    slug: "visit-of-prof-dr-rafia-mumtaz-to-allah-walay-trust",
+    title: "Visit of Professor. Dr. Rafia Mumtaz to Allah Walay Trust",
+    date: "May 15, 2026",
+    tag: "News",
+    image: img8,
+    excerpt: "Professor. Dr. Rafia Mumtaz, Vice Chancellor of Kohsar University Murree, paid a distinguished visit to Allah Walay Trust to explore potential avenues of collaboration.",
+    content: "Professor. Dr. Rafia Mumtaz, Vice Chancellor of Kohsar University Murree, paid a distinguished visit to Allah Walay Trust (AWF) on the invitation of Mr. Khalid Mahmood Head Youth Programs AWF to explore potential avenues of collaboration between Allah Walay Trust and Kohsar University Murree. During the visit, comprehensive discussions were held regarding future partnerships focused on students’ educational initiatives, and community engagement programs. Mr. Khalid Mahmood emphasized the significance of strengthening educational opportunities for deserving students and expressed his keen interest in organizing community-oriented educational activities in collaboration with Kohsar University Murree. Addressing the students and participants, Professor Dr. Rafia Mumtaz shared her inspiring life journey, reflecting on the challenges, experiences, and achievements that shaped her professional career and ultimately led her to the esteemed position of Vice Chancellor. Her insightful and motivational address encouraged students to remain steadfast in pursuing their goals, overcome challenges with determination and resilience, and contribute positively to society through education, leadership, and community service. The visit concluded on a positive and encouraging note, with both institutions expressing a mutual commitment to fostering educational development, empowering youth through and promoting meaningful community engagement through collaborative initiatives between Allah Walay Trust and Kohsar University Murree",
+  },
   {
     id: "6",
     slug: "chief-minister-punjab-it-internship-opportunities",
@@ -79,3 +111,4 @@ export const announcements: Announcement[] = [
     content: "Kohsar University Murree has officially initiated preparations for first Convocation-2026. The first meeting in this regard was held at the Vice Chancellor Secretariat, Kashmir Point, Murree, under the directions of vice chancellor, Professor Dr. Rafia Mumtaz. The meeting was attended by university management and committee members, who engaged in detailed discussions on various arrangements for the upcoming convocation. Key aspects, including administrative planning, logistics, and overall coordination, were thoroughly reviewed and evaluated. The university management exchanged views to ensure the event is conducted in a well-organized and dignified manner. Several important decisions were taken, and responsibilities were assigned to facilitate smooth and effective arrangements. The forthcoming convocation is expected to be a historic milestone in the history of Kohsar University Murree. The university extends its best wishes to its graduating students for a successful future, marking the beginning of new achievements and higher aspirations.",
   },
 ];
+

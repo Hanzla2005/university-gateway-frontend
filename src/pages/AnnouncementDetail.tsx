@@ -42,8 +42,8 @@ const AnnouncementDetail = () => {
                 </div>
               </header>
 
-              <div className="aspect-video rounded-lg overflow-hidden mb-10 border border-border">
-                <img src={announcement.image} alt={announcement.title} className="w-full h-full object-cover" width={1200} height={675} />
+              <div className="aspect-video rounded-lg overflow-hidden mb-10 border border-border bg-muted flex items-center justify-center">
+                <img src={announcement.image} alt={announcement.title} className="w-full h-full object-contain" width={1200} height={675} />
               </div>
 
               <div className="prose prose-lg max-w-none text-foreground/90 leading-relaxed">

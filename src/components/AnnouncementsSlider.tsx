@@ -110,11 +110,11 @@ const AnnouncementsSlider = () => {
             >
               <div className="grid md:grid-cols-5 border border-gray-200 bg-white">
                 {/* Image - takes 2 of 5 cols */}
-                <div className="md:col-span-2 aspect-[4/3] md:aspect-auto md:min-h-[400px] overflow-hidden">
+                <div className="md:col-span-2 aspect-[4/3] md:aspect-auto md:min-h-[400px] overflow-hidden bg-gray-100 flex items-center justify-center">
                   <img
                     src={current.image}
                     alt={current.title}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-contain"
                     loading="lazy"
                   />
                 </div>
