@@ -97,8 +97,8 @@ const Jobs = () => {
 									Follow these steps to submit your application for the statutory positions:
 								</p>
 								<ol className="space-y-6 text-muted-foreground list-decimal list-inside text-lg">
-									<li className="pl-2">Download and carefully read the <span className="font-semibold text-foreground">Detailed Advertisement</span></li>
-									<li className="pl-2">Download the <span className="font-semibold text-foreground">Application Form</span> relevant to your position</li>
+									<li className="pl-2">Download and carefully read the <a href={advertisementPdf} download className="font-semibold text-primary hover:underline">Detailed Advertisement</a></li>
+									<li className="pl-2">Download the <a href={applicationFormPdf} download className="font-semibold text-primary hover:underline">Application Form</a> relevant to your position</li>
 									<li className="pl-2">Fill out the form completely and attach all required documents</li>
 									<li className="pl-2">Submit your application through the specified channels mentioned in the advertisement</li>
 								</ol>
