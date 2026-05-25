@@ -2,7 +2,7 @@ import { useParams, Link, Navigate } from "react-router-dom";
 import { useState } from "react";
 import {
   ChevronDown, ChevronRight, ChevronLeft, Eye, Target, BookOpen, Users,
-  GraduationCap, Palette, Info, CheckCircle, Calendar, Mail, X, Images
+  GraduationCap, Palette, Info, CheckCircle, Calendar, Mail, X, Images, FileText
 } from "lucide-react";
 import PageHeader from "@/components/PageHeader";
 import Footer from "@/components/Footer";
@@ -171,6 +171,32 @@ const DepartmentDetail = () => {
                       {para}
                     </p>
                   ))}
+                </div>
+              </section>
+            )}
+
+            {/* ── BOARD OF STUDIES (BOS) PDF DOCUMENT ─────────────── */}
+            {department.pdfUrl && (
+              <section>
+                <SectionHeading icon={BookOpen} title="Board of Studies (BOS) Document" />
+                <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-6 lg:p-8 flex flex-col sm:flex-row items-center justify-between gap-6 hover:shadow-md transition-shadow duration-300">
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 rounded-lg bg-red-50 flex items-center justify-center text-red-500 shrink-0">
+                      <FileText className="h-6 w-6" />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-bold text-slate-800">1st Board of Studies (BOS) Media</h3>
+                      <p className="text-sm text-slate-500">Official curriculum, course structure, and academic plan (PDF)</p>
+                    </div>
+                  </div>
+                  <a
+                    href={department.pdfUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 bg-primary text-primary-foreground font-semibold rounded hover:bg-primary/90 transition-all shadow-sm shrink-0"
+                  >
+                    <Eye className="h-4 w-4" /> View BOS Document
+                  </a>
                 </div>
               </section>
             )}

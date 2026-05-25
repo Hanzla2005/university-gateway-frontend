@@ -93,6 +93,9 @@ import mathRahim from "@/assets/departments/mathematics/faculty/rahimShah.png";
 import bbaHussain from "@/assets/departments/bba/faculty/HussainMustafa.png";
 import bbaTehmina from "@/assets/departments/bba/faculty/TehminaMuneer.png";
 import bbaZainab from "@/assets/departments/bba/faculty/ZainabKhanam.png";
+import irfanQadirImg from "@/assets/departments/massCoummincation/faculty/Irfan Qadir.JPG";
+import zanabArshadImg from "@/assets/departments/massCoummincation/faculty/Zanab Arshad.jpeg";
+import massCommPdf from "@/assets/departments/massCoummincation/Ist BOS Media.pdf";
 
 export interface FacultyMember {
   id?: string;
@@ -148,6 +151,7 @@ export interface DepartmentPage {
   facilities?: string[];
   events?: DepartmentEvent[];
   hodMessage?: string;
+  pdfUrl?: string;
 }
 
 export const departmentPages: DepartmentPage[] = [
@@ -2392,6 +2396,87 @@ Dr. Shah serves as a referee for multiple prestigious journals, including the Ha
     ],
     facilities: [
       "Well-established laboratory for research work"
+    ]
+  },
+  {
+    id: "mass-communication",
+    name: "Department of Mass Communication & Mass Studies",
+    shortName: "Mass Communication",
+    hodMessage: "Welcome to the Department of Mass Communication & Mass Studies at Kohsar University Murree. Our mission is to prepare a class of media entrepreneurs and professionals with ingrained human values and commitment to expand the frontiers of knowledge for the advancement of society. At MCS, we inspire, empower, and develop students in pursuit of professional careers in media, helping them gain creativity, critical thinking, a deep commitment to ethical and civically productive communication, and competitive, marketable skills.",
+    overview: "The world we live in is dominated by media in many forms. From entertainment and culture, through news and social media, to politics and promotion; the media shapes our understanding of what we know and what we consume. Whether one wants to work in one of these areas, to research their impact or simply to understand more and more about the relationship of the audience with the media itself. The world of communication is fascinating, fast-paced, and ever-changing.\n\nIt is widely known that one of the skills that world leaders value the most is effective communication; an eloquent, confident and well-informed graduate with strong oral, written and visual communication skills will enter the job market ready to shine in many roles, industries and media outlets. This means that professionals in the industry need to be adaptable and stay up to date with the latest trends and developments.\n\nIn today's media landscape, it's increasingly important for communication and media professionals to have a range of skills and be able to work across different platforms and mediums. This is because the way people consume and interact with media has changed dramatically in recent years, particularly with the rise of digital and social media platforms.\n\nThe Department of Media and Communication Studies at Kohsar University plays an important role in educating students and professionals to navigate this new digital media and information ecosystem, and as well providing opportunities to be creative and innovative in the field. At MCS, students can gain a comprehensive understanding of the digital media and information landscape, from the technical aspects of creating and distributing content to the social, cultural, and economic impact of digital media on society.",
+    vision: "To become leading Pakistani media institute driving excellence in producing expert communicators, media entrepreneurs and knowledge creators, in a rapidly changing field.",
+    mission: "To prepare a class media entrepreneurs and professionals with ingrained human values and commitment to expand the frontiers of knowledge for the advancement of society. We at MCS, inspire, empower and develop students in pursuit of professional careers in media. Through innovative curriculum design, service learning, mentorship, research collaboration and practical experience, our students gain creativity, critical thinking, a deep and life-long commitment to ethical and civically productive communication, competitive and marketable skills.",
+    pdfUrl: massCommPdf,
+    faculty: [
+      {
+        id: "irfan-qadir",
+        name: "Dr. Muhammad Irfan Qadir",
+        designation: "Assistant Professor / Head of Department",
+        image: irfanQadirImg,
+        education: [
+          "PhD (Media & Communication Studies), University of Central Punjab, Lahore, Pakistan"
+        ],
+        bio: "Dr. Muhammad Irfan Qadir is an Assistant Professor and the Head of Department (HOD) of Mass Communication & Mass Studies at Kohsar University Murree. He holds a PhD in Media & Communication Studies from the University of Central Punjab, Lahore. With extensive academic and research experience, Dr. Qadir is dedicated to driving excellence in producing expert communicators, media entrepreneurs, and knowledge creators in a rapidly changing media landscape.",
+        researchInterests: [
+          "Digital Media Landscapes",
+          "Media and Cultural Studies",
+          "Political Communication",
+          "Media Ethics and Society"
+        ]
+      },
+      {
+        id: "zanab-arshad",
+        name: "Miss Zanab Arshad",
+        designation: "Lecturer",
+        image: zanabArshadImg,
+        education: [
+          "M.Phil (Media Studies and Mass Communication), Riphah International University"
+        ],
+        bio: "Miss Zanab Arshad is a Lecturer in the Department of Mass Communication & Mass Studies at Kohsar University Murree. She holds an M.Phil in Media Studies and Mass Communication from Riphah International University. Miss Arshad is passionate about mentoring students, innovative curriculum design, and developing students' oral, written, and visual communication skills.",
+        researchInterests: [
+          "Mass Communication Theories",
+          "Social Media Strategies",
+          "Development Communication",
+          "Public Relations and Promotion"
+        ]
+      }
+    ],
+    programs: [
+      {
+        name: "BS Media and Communication Studies",
+        description: "Media and Communication Studies is a rapidly growing field, and there is a high demand for well skilled and specialized practitioners and journalists. Media institutions, government bodies, and a variety of organizations are looking for well-qualified communicators to connect with their audiences and help them achieve their desired goals. Our (BS) program in Communication and Media Studies provide students with up to date knowledge and skills they need to enter the professional world of the media industry. Our program is designed to meet the current and future needs of students, organizations, and businesses in Pakistan and other countries. Our curriculum is kept up to date with the latest trends and developments in the field, and that it should be tailored to provide students with the knowledge and skills they need to succeed in the local and international job market. They will also be offered hands-on experience and opportunities to work on real-world projects, which will help them develop the practical skills they need to succeed in the industry. Overall, BS in Media and Communication Studies program prepares students for a variety of careers in the media industry and help them develop the skills and knowledge they need to make an impact in their chosen field.\n\nEligibility Criteria: F.A/F.Sc/ICS or equivalent with Minimum 45% Marks.\n\nDuration: The program shall comprise Eight semesters spread over Four calendar years with two semesters (Fall/Spring) a year.\n\nKey Program Details:\n• Total numbers of credit hours required: 124-136\n• Duration: 4-year (8 semesters)\n• Semester duration: 16-18 weeks\n• Course load per semester: 15-18 Credit Hours\n• Number of courses per semester: 5-6",
+        objectives: [
+          "Make our students media entrepreneurs who can work independently.",
+          "Draw on a rigorous combination of theory, analysis, and hands-on digital work in development of creative ideas in digital media.",
+          "Prepare students for careers that combine social media strategies with business objectives and marketing communications.",
+          "Demonstrate how the media work, and how communication can function as a means of control at societal, organizational and group level.",
+          "Highlight the role and duties of future journalists and to make them prepare for the challenges ahead with special emphasis on ethical and social values in the field of Journalism.",
+          "Increase interaction among academic, industry and government organizations."
+        ],
+        careersOverview: "Graduates of BS Media and Communication Studies have a wide range of career paths in the rapidly growing media landscape:",
+        careers: [
+          "Media Entrepreneurship",
+          "Digital Journalism & News",
+          "Social Media Strategic Planning",
+          "Marketing & Public Relations",
+          "Content Creation & Video Production",
+          "Media Research & Analysis",
+          "Public Administration & Corporate Communication",
+          "Advertising & Promotion"
+        ],
+        scheme: [
+          {
+            name: "Program Duration & Structure",
+            totalCredits: 136,
+            courses: [
+              { title: "8 Semesters over 4 Calendar Years", credits: "124-136 Total" },
+              { title: "Course Load per Semester", credits: "15-18 Credits" },
+              { title: "Courses per Semester", credits: "5-6 Courses" },
+              { title: "Semester Duration", credits: "16-18 Weeks" }
+            ]
+          }
+        ]
+      }
     ]
   }
 ];

@@ -35,6 +35,7 @@ const facultyGroups = [
       "sociology",
       "tourism-and-hospitality",
       "business-administration",
+      "mass-communication",
     ],
   },
 ];

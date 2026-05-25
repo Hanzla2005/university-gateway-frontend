@@ -136,6 +136,7 @@ const mainNavItems = [
           { label: "Sociology", path: "/departments/sociology" },
           { label: "Tourism and Hospitality Management", path: "/departments/tourism-and-hospitality" },
           { label: "Business Administration", path: "/departments/business-administration" },
+          { label: "Mass Communication & Mass Studies", path: "/departments/mass-communication" },
         ]
       },
       { label: "International Affiliate Faculty", path: "/faculty-international", icon: GraduationCap },

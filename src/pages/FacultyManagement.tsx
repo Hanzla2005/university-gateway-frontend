@@ -9,6 +9,7 @@ const departmentsList = [
   "psychology",
   "sociology",
   "tourism-and-hospitality",
+  "mass-communication",
 ];
 
 const FacultyManagement = () => {

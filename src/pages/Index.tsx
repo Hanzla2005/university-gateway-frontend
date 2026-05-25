@@ -33,7 +33,7 @@ const facultyGroups = [
     key: "management",
     name: "Management, Humanities & Social Sciences",
     icon: BookOpen,
-    departments: ["art-and-design", "english", "psychology", "sociology", "tourism-and-hospitality", "business-administration"],
+    departments: ["art-and-design", "english", "psychology", "sociology", "tourism-and-hospitality", "business-administration", "mass-communication"],
   },
 ];
 
