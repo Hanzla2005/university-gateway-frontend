@@ -53,6 +53,7 @@ import OnlineAdmissions from "./pages/OnlineAdmissions";
 import MeritLists from "./pages/MeritLists";
 import GuestHouse from "./pages/GuestHouse";
 import Downloads from "./pages/Downloads";
+import Library from "./pages/Library";
 import Layout from "./components/Layout";
 import Stories from "./pages/Stories";
 import StoryDetail from "./pages/StoryDetail";
@@ -118,6 +119,7 @@ const App = () => (
             <Route path="/scholarships" element={<Scholarships />} />
             <Route path="/guest-house" element={<GuestHouse />} />
             <Route path="/downloads" element={<Downloads />} />
+            <Route path="/library" element={<Library />} />
 
             {/* Policies */}
             <Route path="/policies" element={<Policies />} />

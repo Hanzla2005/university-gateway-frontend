@@ -69,6 +69,7 @@ const topBarLinks = [
   { label: "Vice Chancellor", path: "/vice-chancellor" },
   { label: "Scholarships", path: "/scholarships" },
   { label: "Guest House", path: "/guest-house" },
+  { label: "Library", path: "/library" },
   { label: "Downloads", path: "/downloads" },
   { label: "Jobs", path: "/jobs" },
   { label: "Alumni", path: alumniFormPdf, isExternal: true },

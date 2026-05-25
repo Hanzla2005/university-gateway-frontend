@@ -23,7 +23,7 @@ const inFocusLinks = [
 ];
 
 const quickLinks = [
-  { label: "Library", path: "/downloads" },
+  { label: "Library", path: "/library" },
   { label: "Downloads", path: "/downloads" },
   { label: "Merit Lists", path: "/merit-lists" },
   { label: "Anti-Harassment Policy", path: "/policy-sexual-harassment" },
