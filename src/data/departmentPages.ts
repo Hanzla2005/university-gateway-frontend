@@ -97,6 +97,14 @@ import irfanQadirImg from "@/assets/departments/massCoummincation/faculty/Irfan 
 import zanabArshadImg from "@/assets/departments/massCoummincation/faculty/Zanab Arshad.jpeg";
 import massCommPdf from "@/assets/departments/massCoummincation/Ist BOS Media.pdf";
 
+import malikSaddamImg from "@/assets/departments/chemistry/faculty/malikSaddam.png";
+import shaheedUllahImg from "@/assets/departments/chemistry/faculty/shaheedUllah.png";
+import summeUllahImg from "@/assets/departments/chemistry/faculty/summeUllah.png";
+
+import chemAct1 from "@/assets/departments/chemistry/activities/1.png";
+import chemAct2 from "@/assets/departments/chemistry/activities/2.png";
+import chemAct3 from "@/assets/departments/chemistry/activities/3.png";
+
 export interface FacultyMember {
   id?: string;
   name: string;
@@ -2477,6 +2485,129 @@ Dr. Shah serves as a referee for multiple prestigious journals, including the Ha
           }
         ]
       }
+    ]
+  },
+  {
+    id: "chemistry",
+    name: "Department of Chemistry",
+    shortName: "Chemistry",
+    overview: "Chemistry is a central science that plays a vital role in understanding the natural world and addressing the challenges faced by modern society. At the Department of Chemistry, we are committed to providing high-quality education, promoting innovative research, and developing skilled graduates who can contribute effectively to academia, industry, and society.\n\nOur department offers a dynamic learning environment where students are encouraged to develop critical thinking, analytical skills, and scientific curiosity. Through a combination of rigorous coursework, practical laboratory training, and research activities, we strive to equip our students with the knowledge and competencies required to excel in their professional careers.",
+    vision: "• To Develop Creativity\n• To inject Self-Confidence\n• To impart Value based Education\n• To provide High Quality Education\n• To encourage the students to learn and to carry out the Research Work.",
+    mission: "• To provide dynamically updated program in the field of Chemistry.\n• Promote vigorous research\n• To impart qualitative/quantitative analytical and synthetic chemical knowledge and skills.\n• To make the students able to analyze and solve real world problems.\n• To impart ability to analyze complex chemical problems.",
+    hodMessage: "Welcome to the Department of Chemistry at Kohsar University Murree.\n\nChemistry is a central science that plays a vital role in understanding the natural world and addressing the challenges faced by modern society. At the Department of Chemistry, we are committed to providing high-quality education, promoting innovative research, and developing skilled graduates who can contribute effectively to academia, industry, and society.\n\nOur department offers a dynamic learning environment where students are encouraged to develop critical thinking, analytical skills, and scientific curiosity. Through a combination of rigorous coursework, practical laboratory training, and research activities, we strive to equip our students with the knowledge and competencies required to excel in their professional careers.",
+    faculty: [
+      {
+        id: "samee-ullah",
+        name: "Dr. Raja Samee Ullah",
+        designation: "Assistant Professor/ Head of Department",
+        email: "samee.ullah@kum.edu.pk",
+        image: summeUllahImg,
+        education: [
+          "PhD Chemistry, Zhejiang University China"
+        ],
+        bio: "Dr. Raja Samee Ullah is a distinguished academician and researcher currently serving as an Assistant Professor and Head of the Department of Chemistry at Kohsar University Murree. With an active research portfolio, he specializes in several cutting-edge areas of chemical sciences, including biomaterials, drug delivery systems, synthetic chemistry, and the study of biological activities. His scholarly contributions are widely recognized in the academic community, reflected by his extensive publication record and significant citation count. Beyond his research, Dr. Samee Ullah plays a pivotal role in the administration and academic development of the Department of Chemistry at Kohsar University. He has published research in many well-known international journals with overall impact factor of over 100.",
+        researchInterests: [
+          "Biomaterials",
+          "Drug delivery systems",
+          "Synthetic chemistry",
+          "Study of biological activities"
+        ]
+      },
+      {
+        id: "saddam-malik",
+        name: "Dr. Malik Saddam Khan",
+        designation: "Lecturer (BPS-18)",
+        email: "chemistsaddam@kum.edu.pk",
+        image: malikSaddamImg,
+        education: [
+          "PhD (Chemical Engineering & Technology) – University of Jinan, China",
+          "M Phil (Physical Chemistry) – National Centre of Excellence in Physical Chemistry, University of Peshawar",
+          "Postdoc: Category A Postdoctoral Fellow – Fuzhou University, China"
+        ],
+        bio: "Highlights: ~30 SCI-indexed publications (Impact Factor ≈ 230). Published in Analytical Chemistry and Biosensors and Bioelectronics. Several years of university-level teaching experience.",
+        researchInterests: [
+          "Nanomaterials",
+          "Biosensors",
+          "Immunosensors",
+          "Gas sensing technologies"
+        ]
+      },
+      {
+        id: "shaheed-ullah",
+        name: "Dr. Shaheed Ullah",
+        designation: "Lecturer",
+        email: "shaheedullah@kum.edu.pk",
+        image: shaheedUllahImg,
+        education: [
+          "PhD Chemistry, Tsinghua University, Beijing, China",
+          "M.Phil.: Department of Chemistry, Quaid-i-Azam University, Islamabad, Pakistan",
+          "M.Sc.: Department of Chemistry, Quaid-i-Azam University, Islamabad, Pakistan"
+        ],
+        bio: "Dr. Shaheed Ullah serves as a Lecturer in the Department of Chemistry. His research focuses on metal-organic frameworks and organic/inorganic hybrid materials.",
+        researchInterests: [
+          "Metal-Organic Frameworks",
+          "Organic/inorganic hybrid materials"
+        ]
+      }
+    ],
+    programs: [
+      {
+        name: "BS Chemistry",
+        description: "4-6 Year Degree\nTotal Credit Hours: 139 | Semesters: 8-12 | Eligibility: 45% in HSSC (F.Sc/ICS)\nCore Focus: Organic Chemistry, Inorganic Chemistry, Physical Chemistry, Analytical Chemistry, Biochemistry, Environmental Chemistry, Materials Chemistry, Polymer Chemistry, Medicinal Chemistry, Nano-chemistry",
+        objectives: [
+          "To provide dynamically updated program in the field of Chemistry.",
+          "Promote vigorous research",
+          "To impart qualitative/quantitative analytical and synthetic chemical knowledge and skills.",
+          "To make the students able to analyze and solve real world problems.",
+          "To impart ability to analyze complex chemical problems."
+        ],
+        careersOverview: "Graduates with a BS in Chemistry find opportunities in diverse areas:",
+        careers: [
+          "Research & Academia",
+          "Pharmaceutical & Healthcare",
+          "Industrial & Manufacturing",
+          "Analytical & Testing Laboratories",
+          "Environmental & Energy Sector",
+          "Government & Regulatory Jobs"
+        ],
+        scheme: []
+      },
+      {
+        name: "MS Chemistry",
+        description: "2-4 Year Program\nCredit Hours: 30 (24 coursework + 6 thesis) | Eligibility: 16-yr BS/ Chemistry with 2.50 CGPA\n\nCore Focus: Organic Chemistry, Inorganic Chemistry, Physical Chemistry, Analytical Chemistry, Biochemistry, Environmental Chemistry, Materials Chemistry, Polymer Chemistry, Medicinal Chemistry, Nano-chemistry",
+        objectives: [
+          "To provide dynamically updated program in the field of Chemistry.",
+          "Promote vigorous research",
+          "To impart qualitative/quantitative analytical and synthetic chemical knowledge and skills.",
+          "To make the students able to analyze and solve real world problems.",
+          "To impart ability to analyze complex chemical problems."
+        ],
+        careersOverview: "Graduates with an MS in Chemistry find opportunities in diverse areas:",
+        careers: [
+          "Research & Academia",
+          "Pharmaceutical & Healthcare",
+          "Industrial & Manufacturing",
+          "Analytical & Testing Laboratories",
+          "Environmental & Energy Sector",
+          "Government & Regulatory Jobs"
+        ],
+        scheme: []
+      }
+    ],
+    events: [
+      {
+        title: "Chemistry Laboratory Research and Academic Activities",
+        images: [chemAct1, chemAct2, chemAct3]
+      }
+    ],
+    facilities: [
+      "Foreign qualified faculty",
+      "Well equipped labs",
+      "Scholarships for Talented and needy students",
+      "Collaborations with other universities and industries",
+      "Short internships in relevant industries",
+      "Short courses to enhance practical skills",
+      "Hybrid learning system including both class and on-line learning"
     ]
   }
 ];

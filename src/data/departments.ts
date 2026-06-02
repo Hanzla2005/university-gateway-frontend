@@ -32,7 +32,7 @@ export const institutions: Institution[] = [
     desc: "AI, cybersecurity, software engineering, and data science programs in the scenic hills of Murree.",
     image: csImg,
     overview: "The Faculty of Computer Science & IT at Kohsar University Murree offers cutting-edge programs in artificial intelligence, machine learning, cybersecurity, software engineering, and data science. Located in the serene mountain environment, our students benefit from focused learning with modern computing labs and industry partnerships across Pakistan.",
-    departments: ["Artificial Intelligence", "Software Engineering", "Cybersecurity", "Data Science", "Computer Networks", "Information Systems"],
+    departments: ["Artificial Intelligence", "Software Engineering", "Cybersecurity", "Data Science", "Computer Networks", "Information Systems", "Chemistry"],
   },
   {
     id: "engineering",
@@ -92,7 +92,7 @@ export const institutions: Institution[] = [
     desc: "Physics, chemistry, biology, environmental science, and mountain ecology.",
     image: sciImg,
     overview: "The Faculty of Natural Sciences drives fundamental research in physics, chemistry, biology, and environmental science. Our unique location in the Murree hills provides unparalleled access to diverse ecosystems for field research in mountain ecology and biodiversity.",
-    departments: ["Physics", "Chemistry", "Biology", "Environmental Science", "Mathematics", "Earth Sciences"],
+    departments: ["Physics", "Biology", "Environmental Science", "Mathematics", "Earth Sciences"],
   },
   {
     id: "arts-humanities",

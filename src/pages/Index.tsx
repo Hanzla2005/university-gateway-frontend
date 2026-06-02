@@ -21,7 +21,7 @@ const facultyGroups = [
     key: "applied",
     name: "Applied Sciences & Computing",
     icon: FlaskConical,
-    departments: ["computer-science", "mathematics", "physics", "software-engineering"],
+    departments: ["computer-science", "chemistry", "mathematics", "physics", "software-engineering"],
   },
   {
     key: "biomedical",

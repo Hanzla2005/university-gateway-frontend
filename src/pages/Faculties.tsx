@@ -10,6 +10,7 @@ const facultyGroups = [
     faculty: "Faculty of Applied Sciences and Computing",
     departments: [
       "computer-science",
+      "chemistry",
       "mathematics",
       "physics",
       "software-engineering",

@@ -108,6 +108,7 @@ const mainNavItems = [
         icon: GraduationCap,
         nested: [
           { label: "Computer Science", path: "/departments/computer-science" },
+          { label: "Chemistry", path: "/departments/chemistry" },
           { label: "Mathematics", path: "/departments/mathematics" },
           { label: "Physics", path: "/departments/physics" },
           { label: "Software Engineering", path: "/departments/software-engineering" },
