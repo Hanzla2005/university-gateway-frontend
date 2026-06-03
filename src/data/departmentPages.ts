@@ -2497,15 +2497,15 @@ Dr. Shah serves as a referee for multiple prestigious journals, including the Ha
     hodMessage: "Welcome to the Department of Chemistry at Kohsar University Murree.\n\nChemistry is a central science that plays a vital role in understanding the natural world and addressing the challenges faced by modern society. At the Department of Chemistry, we are committed to providing high-quality education, promoting innovative research, and developing skilled graduates who can contribute effectively to academia, industry, and society.\n\nOur department offers a dynamic learning environment where students are encouraged to develop critical thinking, analytical skills, and scientific curiosity. Through a combination of rigorous coursework, practical laboratory training, and research activities, we strive to equip our students with the knowledge and competencies required to excel in their professional careers.",
     faculty: [
       {
-        id: "samee-ullah",
-        name: "Dr. Raja Samee Ullah",
+        id: "summe-ullah",
+        name: "Dr. Raja Summe Ullah",
         designation: "Assistant Professor/ Head of Department",
-        email: "samee.ullah@kum.edu.pk",
+        email: "summe.ullah@kum.edu.pk",
         image: summeUllahImg,
         education: [
           "PhD Chemistry, Zhejiang University China"
         ],
-        bio: "Dr. Raja Samee Ullah is a distinguished academician and researcher currently serving as an Assistant Professor and Head of the Department of Chemistry at Kohsar University Murree. With an active research portfolio, he specializes in several cutting-edge areas of chemical sciences, including biomaterials, drug delivery systems, synthetic chemistry, and the study of biological activities. His scholarly contributions are widely recognized in the academic community, reflected by his extensive publication record and significant citation count. Beyond his research, Dr. Samee Ullah plays a pivotal role in the administration and academic development of the Department of Chemistry at Kohsar University. He has published research in many well-known international journals with overall impact factor of over 100.",
+        bio: "Dr. Raja Summe Ullah is a distinguished academician and researcher currently serving as an Assistant Professor and Head of the Department of Chemistry at Kohsar University Murree. With an active research portfolio, he specializes in several cutting-edge areas of chemical sciences, including biomaterials, drug delivery systems, synthetic chemistry, and the study of biological activities. His scholarly contributions are widely recognized in the academic community, reflected by his extensive publication record and significant citation count. Beyond his research, Dr. Summe Ullah plays a pivotal role in the administration and academic development of the Department of Chemistry at Kohsar University. He has published research in many well-known international journals with overall impact factor of over 100.",
         researchInterests: [
           "Biomaterials",
           "Drug delivery systems",
