@@ -4,7 +4,7 @@ import PageHeader from "@/components/PageHeader";
 import { FileText, Download, Eye } from "lucide-react";
 import advertisementPdf from "@/assets/pdfs/KUM Statutory Positions Advertisement.pdf";
 import applicationFormPdf from "@/assets/pdfs/Administrative postions application form for  KUM Statutory Posiitons.pdf";
-import applicantsDetailsPdf from "@/assets/pdfs/Details of Applicants Applied Against Advertisement No. 01:2026.pdf";
+import applicantsDetailsPdf from "@/assets/pdfs/Detail of Applicants Applied Against Advertisement No. 01 2026.pdf";
 
 const jobListings = [
 	{
