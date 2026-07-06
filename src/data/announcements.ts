@@ -1,7 +1,7 @@
-import img1 from "@/assets/announcements/1.png";
-import img2 from "@/assets/announcements/2.png";
-import img3 from "@/assets/announcements/3.png";
-import img4 from "@/assets/announcements/4.png";
+import img10 from "@/assets/announcements/10.png";
+import img11 from "@/assets/announcements/11.png";
+import img12 from "@/assets/announcements/12.png";
+import img13 from "@/assets/announcements/13.png";
 import img5 from "@/assets/announcements/5.png";
 import img6 from "@/assets/announcements/6.png";
 import img7 from "@/assets/announcements/7.jpeg";
@@ -20,6 +20,46 @@ export interface Announcement {
 }
 
 export const announcements: Announcement[] = [
+  {
+    id: "10",
+    slug: "4th-conference-on-future-of-education-2026",
+    title: "4th Conference on Future of Education 2026",
+    date: "July 10, 2026",
+    tag: "Event",
+    image: img10,
+    excerpt: "Kohsar University Murree is hosting the 4th Conference on Future of Education 2026 on July 10-11, 2026.",
+    content: "Kohsar University Murree, in collaboration with the University of Sargodha, is hosting the 4th Conference on Future of Education 2026 under the theme 'Shaping Minds, Building Futures for a Better Tomorrow'. The conference will be held on July 10-11, 2026. Prof. Dr. Muhammad Iqbal Choudhary (Coordinator General OIC-COMSTECH) will be the Chief Guest, and Prof. Dr. Qaisar Abbas (Vice Chancellor, University of Sargodha) will be the Patron in Chief. The event will feature keynote speakers from various universities and a panel discussion on 'Pakistan's Higher Education at a Crossroad'.",
+  },
+  {
+    id: "11",
+    slug: "22nd-global-science-technology-and-management-conference",
+    title: "22nd Global Science Technology and Management Conference (GSTMC-26)",
+    date: "September 14, 2026",
+    tag: "Event",
+    image: img11,
+    excerpt: "Kohsar University Murree and Evolution EduTech are jointly organizing the 22nd Global Science Technology and Management Conference on 14-15 September, 2026.",
+    content: "Kohsar University Murree and Evolution EduTech (Pakistan) are jointly organizing the 22nd Global Science Technology and Management Conference (GSTMC-26) in Murree on 14-15 September, 2026. The conference covers fields including Biological & Chemical Sciences, Environmental, Pharmacy & Allied Health Sciences, Computer, Physics & Numerical Sciences, Commerce & Management Sciences, and Social Sciences & Languages. Prof. Dr. Rafia Mumtaz, Vice Chancellor Kohsar University Murree, will serve as the Patron-in-Chief.",
+  },
+  {
+    id: "12",
+    slug: "panel-discussion-pakistans-higher-education-at-a-crossroad",
+    title: "Panel Discussion: Pakistan's Higher Education at a Crossroad",
+    date: "July 10, 2026",
+    tag: "Event",
+    image: img12,
+    excerpt: "A panel discussion featuring eminent Vice Chancellors on the topic of 'Pakistan's Higher Education at a Crossroad' will take place at Kohsar University Murree.",
+    content: "As part of the upcoming conference, a high-level panel discussion titled 'Pakistan's Higher Education at a Crossroad' will take place. The esteemed panelists include Prof. Dr. Ashfaq Ahmad (VC Ghazi University), Prof. Dr. Omer Chaudhry (VC GC University Lahore), Prof. Dr. Saeed Ahmad Buzdar (VC Thal University Bhakkar), Prof. Dr. Rafia Mumtaz (VC Kohsar University), Prof. Dr. Shazia Anjum (VC Government Sadiq College Women University), and Prof. Dr. Syeda Shahida Batool (VC The Women University Multan). The session will be held under the patronage of Prof. Dr. Qaisar Abbas, Vice Chancellor University of Sargodha.",
+  },
+  {
+    id: "13",
+    slug: "keynote-speakers-at-future-of-education-conference",
+    title: "Keynote Speakers announced for the Future of Education Conference",
+    date: "July 10, 2026",
+    tag: "Event",
+    image: img13,
+    excerpt: "Distinguished keynote speakers have been announced for the 4th Conference on Future of Education 2026.",
+    content: "The 4th Conference on Future of Education 2026 will feature an array of distinguished keynote speakers from leading academic institutions across Pakistan. The lineup includes Prof. Dr. M. Kamran (VC The Islamia University of Bahawalpur), Prof. Dr. Nasir Mahmood (VC AIOU Islamabad), Prof. Dr. Rauf-i-Azam (VC GC University Faisalabad), Prof. Dr. Kanwal Ameen (VC GC Women University Faisalabad), Prof. Dr. M. Zubair Iqbal (VC Bahauddin Zakariya University Multan), and Prof. Dr. Uzma Quraishi (VC Lahore College for Women University). They will share their insights on shaping the future of education.",
+  },
   {
     id: "9",
     slug: "students-of-botany-secure-1st-position-at-idea-fest-2026",
@@ -69,46 +109,6 @@ export const announcements: Announcement[] = [
     image: img5,
     excerpt: "The Vice Chancellor of Kohsar University Murree, Professor Dr. Rafia Mumtaz has been honored with the IEEE Distinguished Service Award Medal by the Institute of Electrical and Electronics Engineers (IEEE) Islamabad Section.",
     content: "The Vice Chancellor of Kohsar University Murree, Professor Dr. Rafia Mumtaz has been honored with the IEEE Distinguished Service Award Medal by the Institute of Electrical and Electronics Engineers (IEEE) Islamabad Section, in recognition of her outstanding contributions to academia, industry, and the engineering profession. The prestigious award was conferred during the Annual General Meeting (AGM) of the IEEE Islamabad Section, held on 16 January 2026, at the Islamabad Club. The ceremony was part of the celebrations marking the 25th Anniversary of the IEEE Islamabad Section, a significant milestone in the organization's history. IEEE is the world's largest technical professional organization, serving professionals across more than 190 countries. The Distinguished Service Award Medal is bestowed upon individuals who have demonstrated exemplary leadership, distinguished service, and sustained impact in advancing engineering, technology, and professional excellence. The conferment of this award stands as a testament to Professor Dr. Rafia Mumtaz's dedication, visionary leadership, and invaluable services to the engineering and academic community. Her recognition not only highlights her personal achievements but also brings pride and distinction to Kohsar University Murree and the institutions she represents.",
-  },
-  {
-    id: "1",
-    slug: "prof-dr-rafia-mumtaz-meets-chairman-hec",
-    title: "Prof. Dr. Rafia Mumtaz Meets Chairman Higher Education Commission of Pakistan",
-    date: "March 15, 2026",
-    tag: "Administration",
-    image: img1,
-    excerpt: "The Vice Chancellor of Kohsar University Murree, Prof. Dr. Rafia Mumtaz, held a meeting with Prof. Dr. Niaz Ahmad Akhtar, Chairman of the Higher Education Commission of Pakistan.",
-    content: "The Vice Chancellor of Kohsar University Murree, Prof. Dr. Rafia Mumtaz, held a meeting with Prof. Dr. Niaz Ahmad Akhtar, Chairman of the Higher Education Commission of Pakistan. During the meeting, Prof. Dr. Rafia Mumtaz congratulated Prof. Dr. Niaz Ahmad Akhtar on his appointment as Chairman of HEC and conveyed her best wishes for his tenure. She also formally invited him to attend the first convocation of Kohsar University Murree. The discussion focused on the academic and institutional progress of Kohsar University Murree. Prof. Dr. Rafia Mumtaz highlighted the initiatives and strategic steps taken by the university administration to strengthen academic standards, enhance research activities, and promote overall institutional development. Prof. Dr. Niaz Ahmad Akhtar appreciated the progress made by Kohsar University Murree and assured his full support. He emphasized that HEC would extend all possible assistance for the development of university and the improvement of the quality of academic programs. The meeting concluded with a shared commitment to further strengthening higher education standards and supporting the continued growth and excellence of Kohsar University Murree.",
-  },
-  {
-    id: "4",
-    slug: "10th-syndicate-meeting-of-kohsar-university-murree",
-    title: "10th Syndicate Meeting of Kohsar University Murree",
-    date: "February 9, 2026",
-    tag: "Academic",
-    image: img4,
-    excerpt: "The 10th Syndicate Meeting of Kohsar University Murree was held on December 30, 2025, at the Punjab Higher Education Commission (PHEC), Lahore.",
-    content: "The 10th Syndicate Meeting of Kohsar University Murree was held on December 30, 2025, at the Punjab Higher Education Commission (PHEC), Lahore, under the chairmanship of the Honorable Minister for Higher Education, Punjab, Mr. Rana Sikandar Hayat. The Vice Chancellor of Kohsar University Murree, Professor Dr. Rafia Mumtaz, presented a comprehensive progress report highlighting the university's academic achievements, administrative developments, and future plans. All agenda items presented during the meeting were discussed in detail and unanimously approved by the Syndicate. The Syndicate members highly appreciated the efforts of the university leadership, particularly acknowledging the significant progress made in academic growth, institutional development, and governance under the leadership of Professor Dr. Rafia Mumtaz. The top management also expressed full confidence in the Vice Chancellor's vision and leadership. Following the successful conduct of the Syndicate meeting, faculty members of Kohsar University Murree extended their heartfelt congratulations to Vice Chancellor Professor Dr. Rafia Mumtaz, commending her dedication and effective leadership in steering the university toward excellence. The meeting concluded with a renewed commitment to strengthening higher education standards and fostering sustainable academic development at Kohsar University Murree.",
-  },
-  {
-    id: "3",
-    slug: "kohsar-university-murree-receives-ac-coaster",
-    title: "Kohsar University Murree has received an AC coaster",
-    date: "February 9, 2026",
-    tag: "News",
-    image: img3,
-    excerpt: "The Vice Chancellor of Kohsar University Murree, Professor. Dr. Rafia Mumtaz, has expressed her sincere gratitude for the generous provision of an AC Coaster to the university.",
-    content: "The Vice Chancellor of Kohsar University Murree, Professor. Dr. Rafia Mumtaz, has expressed her sincere gratitude to the Chief Minister Punjab, Ms. Maryam Nawaz Sharif, the Provincial Minister for Higher Education, Mr. Rana Sikandar Hayat, and the Secretary, Higher Education Department, Mr. Ghulam Farid for the generous provision of an AC Coaster to the university. She acknowledged the Chief Minister Punjab's initiative as a significant step toward ensuring safe, comfortable, and reliable transportation for female students. Professor. Dr. Rafia Mumtaz also appreciated the continued support and patronage of the Higher Education Department, stating that such initiatives reflect the government's strong commitment to academic excellence, student welfare, and the promotion of a conducive learning environment.",
-  },
-  {
-    id: "2",
-    slug: "preparations-for-first-convocation-2026",
-    title: "Preparations for First Convocation-2026",
-    date: "February 9, 2026",
-    tag: "Admissions",
-    image: img2,
-    excerpt: "Kohsar University Murree has officially initiated preparations for first Convocation-2026 with detailed discussions on arrangements and coordination.",
-    content: "Kohsar University Murree has officially initiated preparations for first Convocation-2026. The first meeting in this regard was held at the Vice Chancellor Secretariat, Kashmir Point, Murree, under the directions of vice chancellor, Professor Dr. Rafia Mumtaz. The meeting was attended by university management and committee members, who engaged in detailed discussions on various arrangements for the upcoming convocation. Key aspects, including administrative planning, logistics, and overall coordination, were thoroughly reviewed and evaluated. The university management exchanged views to ensure the event is conducted in a well-organized and dignified manner. Several important decisions were taken, and responsibilities were assigned to facilitate smooth and effective arrangements. The forthcoming convocation is expected to be a historic milestone in the history of Kohsar University Murree. The university extends its best wishes to its graduating students for a successful future, marking the beginning of new achievements and higher aspirations.",
   },
 ];
 
