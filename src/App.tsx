@@ -58,6 +58,7 @@ import Layout from "./components/Layout";
 import Stories from "./pages/Stories";
 import StoryDetail from "./pages/StoryDetail";
 import FacultyProfile from "./pages/FacultyProfile";
+import ApplicationPortal from "./pages/ApplicationPortal";
 
 import ORIC from "./pages/ORIC";
 import QEC from "./pages/QEC";
@@ -120,6 +121,8 @@ const App = () => (
             <Route path="/guest-house" element={<GuestHouse />} />
             <Route path="/downloads" element={<Downloads />} />
             <Route path="/library" element={<Library />} />
+            <Route path="/online-admissions" element={<OnlineAdmissions />} />
+            <Route path="/application-portal" element={<ApplicationPortal />} />
 
             {/* Policies */}
             <Route path="/policies" element={<Policies />} />

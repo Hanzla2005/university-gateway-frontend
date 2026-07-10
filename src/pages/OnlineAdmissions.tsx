@@ -19,8 +19,8 @@ const OnlineAdmissions = () => {
     },
     {
       title: "Apply for BS Programs (Click Here)",
-      href: "#soon",
-      isExternal: true,
+      href: "/application-portal",
+      isExternal: false,
       icon: ExternalLink,
       description: "Start your application process through our online portal."
     },
@@ -90,13 +90,6 @@ const OnlineAdmissions = () => {
               );
 
               if (link.isExternal) {
-                if (link.href === "#soon") {
-                  return (
-                    <button key={index} onClick={() => alert("Will be available soon")} className="block text-left w-full">
-                      {cardContent}
-                    </button>
-                  );
-                }
                 return (
                   <a key={index} href={link.href} target="_blank" rel="noopener noreferrer" className="block">
                     {cardContent}

@@ -90,7 +90,7 @@ const mainNavItems = [
     label: "ADMISSIONS",
     path: "/online-admissions",
     submenu: [
-      { label: "Online Admissions", path: "#soon", icon: Users2, isExternal: true },
+      { label: "Online Admissions", path: "/application-portal", icon: Users2 },
       { label: "Scholarships", path: "/scholarships", icon: GraduationCap },
       { label: "Merit Lists", path: "/merit-lists", icon: FileStack },
     ]
@@ -334,10 +334,6 @@ const Navbar = () => {
 
 
   const handleSubmenuPdfClick = (pdfPath: string) => {
-    if (pdfPath === "#soon") {
-      alert("Will be available soon");
-      return;
-    }
     if (pdfPath.startsWith("http")) {
       window.open(pdfPath, "_blank");
       return;
