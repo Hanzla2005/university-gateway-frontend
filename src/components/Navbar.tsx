@@ -5,7 +5,6 @@ import { AnimatePresence, motion } from "framer-motion";
 import logo from "@/assets/logo.png";
 import universityActPdf from "@/assets/pdfs/KOHSAR-UNIVERSITY-ACT.pdf";
 import circularSpringPdf from "@/assets/pdfs/Circular-Regarding-spring-semester.pdf";
-import admissionAdPdf from "@/assets/pdfs/Admission-Add.pdf";
 import alumniFormPdf from "@/assets/pdfs/Alumni Registration from.pdf";
 
 // ORIC PDFs - Downloads
@@ -91,8 +90,7 @@ const mainNavItems = [
     label: "ADMISSIONS",
     path: "/online-admissions",
     submenu: [
-      { label: "Online Admissions", path: "/online-admissions", icon: Users2 },
-      { label: "Admissions Ad Fall 2025", path: "/admissions-ad-fall-2025", icon: FileText, isExternal: true },
+      { label: "Online Admissions", path: "#soon", icon: Users2, isExternal: true },
       { label: "Scholarships", path: "/scholarships", icon: GraduationCap },
       { label: "Merit Lists", path: "/merit-lists", icon: FileStack },
     ]
@@ -336,8 +334,15 @@ const Navbar = () => {
 
 
   const handleSubmenuPdfClick = (pdfPath: string) => {
+    if (pdfPath === "#soon") {
+      alert("Will be available soon");
+      return;
+    }
+    if (pdfPath.startsWith("http")) {
+      window.open(pdfPath, "_blank");
+      return;
+    }
     if (pdfPath === "/university-act") window.open(universityActPdf, "_blank");
-    else if (pdfPath === "/admissions-ad-fall-2025") window.open(admissionAdPdf, "_blank");
     else if (pdfPath === "/oric-ar-2025") window.open(oricAr2025, "_blank");
   };
 
