@@ -1,7 +1,9 @@
 import img10 from "@/assets/announcements/10.png";
 import img11 from "@/assets/announcements/11.png";
 import img12 from "@/assets/announcements/12.png";
-import img13 from "@/assets/announcements/13.png";
+import img14 from "@/assets/announcements/14.png";
+import img15 from "@/assets/announcements/15.png";
+import img16 from "@/assets/announcements/16.png";
 import img5 from "@/assets/announcements/5.png";
 import img6 from "@/assets/announcements/6.png";
 import img7 from "@/assets/announcements/7.jpeg";
@@ -20,6 +22,36 @@ export interface Announcement {
 }
 
 export const announcements: Announcement[] = [
+  {
+    id: "14",
+    slug: "huawei-delegation-visited-kohsar-university-murree",
+    title: "Huawei Delegation Visited Kohsar University Murree for Smart Classroom Initiative",
+    date: "July 14, 2026",
+    tag: "News",
+    image: img14,
+    excerpt: "A delegation from Huawei visited Kohsar University Murree to explore opportunities for technological collaboration and the development of smart classrooms.",
+    content: "A delegation from Huawei visited Kohsar University Murree to explore opportunities for technological collaboration and the development of smart classrooms to enhance digital learning. During the visit, Mr. Alex Wang, a representative from Huawei, delivered a comprehensive presentation to the Vice Chancellor, Professor Dr. Rafia Mumtaz (Pride of Performance), showcasing the company's innovative smart classroom solutions powered by interactive digital platforms, artificial intelligence, and advanced educational technologies. The delegation also shared global best practices in smart education, highlighting how technology-enabled classrooms can enhance student engagement, support hybrid learning, and modernize teaching methods. Both sides expressed optimism about future collaboration and reaffirmed their commitment to promoting innovation, academic excellence, and the digital transformation of higher education.",
+  },
+  {
+    id: "15",
+    slug: "future-of-education-conference-2026",
+    title: "University of Sargodha and Kohsar University Murree Organized Future of Education Conference 2026",
+    date: "July 14, 2026",
+    tag: "Event",
+    image: img15,
+    excerpt: "The University of Sargodha, in collaboration with Kohsar University Murree, successfully organized the Future of Education Conference 2026.",
+    content: "The University of Sargodha, in collaboration with Kohsar University Murree, successfully organized the Future of Education Conference 2026, bringing together vice chancellors from across Pakistan to discuss the future of higher education. Welcoming the participants, the Vice Chancellor of Kohsar University Murree, Prof. Dr. Rafia Mumtaz (Pride of Performance), underscored the importance of collaboration in addressing emerging challenges and opportunities in the education sector. The conference featured keynote addresses on innovative pedagogy, research commercialization, transparent governance, internationalization, community engagement, and emotionally intelligent leadership. A high-level panel discussion titled \"Pakistan's Higher Education at a Crossroads: Harnessing Technology, AI, and Bold Governance to Compete Globally and Serve Locally\" explored the integration of artificial intelligence, governance reforms, university-industry partnerships, curriculum innovation, and the role of universities in promoting social and economic development. In her concluding remarks, Prof. Dr. Rafia Mumtaz (Pride of Performance) appreciated the successful collaboration between the University of Sargodha and Kohsar University Murree, emphasizing that innovation, academic excellence, and institutional partnerships are vital to building a globally competitive higher education system in Pakistan.",
+  },
+  {
+    id: "16",
+    slug: "mou-kohsar-university-murree-university-of-sargodha",
+    title: "Kohsar University Murree and the University of Sargodha Signed Memorandum of Understanding to Strengthen Academic and Research Collaboration",
+    date: "July 14, 2026",
+    tag: "News",
+    image: img16,
+    excerpt: "Kohsar University Murree and the University of Sargodha have signed a Memorandum of Understanding to promote long-term collaboration in research, academics, faculty development, and institutional capacity building.",
+    content: "Kohsar University Murree and the University of Sargodha have signed a Memorandum of Understanding to promote long-term collaboration in research, academics, faculty development, and institutional capacity building. The Memorandum of Understanding was signed by Prof. Dr. Rafia Mumtaz (Pride of Performance), Vice Chancellor of Kohsar University Murree, and Prof. Dr. Qaisar Abbas, Vice Chancellor of the University of Sargodha. Under the Memorandum of Understanding, both universities will collaborate on joint research projects, faculty and student exchange programs, curriculum development, academic events, capacity-building initiatives, and the sharing of academic resources and expertise. Speaking on the occasion, Prof. Dr. Rafia Mumtaz (Pride of Performance) described the partnership as an important step toward strengthening academic ties and promoting research, innovation, and knowledge exchange to address national and global challenges. Prof. Dr. Qaisar Abbas emphasized that the Memorandum of Understanding will create new opportunities for collaborative research, faculty development, and academic innovation, contributing to the continued advancement of higher education in Pakistan.",
+  },
   {
     id: "10",
     slug: "4th-conference-on-future-of-education-2026",
@@ -49,16 +81,6 @@ export const announcements: Announcement[] = [
     image: img12,
     excerpt: "A panel discussion featuring eminent Vice Chancellors on the topic of 'Pakistan's Higher Education at a Crossroad' will take place at Kohsar University Murree.",
     content: "As part of the upcoming conference, a high-level panel discussion titled 'Pakistan's Higher Education at a Crossroad' will take place. The esteemed panelists include Prof. Dr. Ashfaq Ahmad (VC Ghazi University), Prof. Dr. Omer Chaudhry (VC GC University Lahore), Prof. Dr. Saeed Ahmad Buzdar (VC Thal University Bhakkar), Prof. Dr. Rafia Mumtaz (VC Kohsar University), Prof. Dr. Shazia Anjum (VC Government Sadiq College Women University), and Prof. Dr. Syeda Shahida Batool (VC The Women University Multan). The session will be held under the patronage of Prof. Dr. Qaisar Abbas, Vice Chancellor University of Sargodha.",
-  },
-  {
-    id: "13",
-    slug: "keynote-speakers-at-future-of-education-conference",
-    title: "Keynote Speakers announced for the Future of Education Conference",
-    date: "July 10, 2026",
-    tag: "Event",
-    image: img13,
-    excerpt: "Distinguished keynote speakers have been announced for the 4th Conference on Future of Education 2026.",
-    content: "The 4th Conference on Future of Education 2026 will feature an array of distinguished keynote speakers from leading academic institutions across Pakistan. The lineup includes Prof. Dr. M. Kamran (VC The Islamia University of Bahawalpur), Prof. Dr. Nasir Mahmood (VC AIOU Islamabad), Prof. Dr. Rauf-i-Azam (VC GC University Faisalabad), Prof. Dr. Kanwal Ameen (VC GC Women University Faisalabad), Prof. Dr. M. Zubair Iqbal (VC Bahauddin Zakariya University Multan), and Prof. Dr. Uzma Quraishi (VC Lahore College for Women University). They will share their insights on shaping the future of education.",
   },
   {
     id: "9",
