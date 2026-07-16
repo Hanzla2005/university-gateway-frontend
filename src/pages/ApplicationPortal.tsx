@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import PageHeader from "@/components/PageHeader";
 import { ExternalLink, FileText, Download } from "lucide-react";
 import AdmissionNoticePDF from "@/assets/pdfs/Admission Notice.pdf";
+import admissionBanner from "@/assets/admissionBanner.png";
 
 const ApplicationPortal = () => {
   return (
@@ -13,22 +14,36 @@ const ApplicationPortal = () => {
       <main className="flex-1 container-main py-12 md:py-20">
         <div className="max-w-4xl mx-auto space-y-12">
           
-          <div className="text-center px-4 bg-white p-8 md:p-12 rounded-xl shadow-sm border border-gray-100">
-            <h2 className="text-3xl md:text-4xl font-serif text-primary mb-6">
-              Ready to Apply?
-            </h2>
-            <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto leading-relaxed font-light">
-              Click the button below to access our online application portal and start your admission process.
-            </p>
-            <a 
-              href="https://admissions.kum.edu.pk/application/index.php" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-primary text-white px-8 py-4 rounded-lg font-medium hover:bg-primary/90 transition-colors shadow-md hover:shadow-lg text-lg"
-            >
-              Go to Application Portal
-              <ExternalLink className="w-5 h-5" />
-            </a>
+          <div className="rounded-2xl shadow-lg border border-gray-100 overflow-hidden bg-white flex flex-col md:flex-row">
+            {/* Left Side: Full Bleed Image */}
+            <div className="w-full md:w-[45%] flex bg-slate-900">
+              <img 
+                src={admissionBanner} 
+                alt="Admission Banner" 
+                className="w-full h-64 md:h-full object-cover" 
+              />
+            </div>
+            
+            {/* Right Side: Content */}
+            <div className="w-full md:w-[55%] p-8 md:p-12 flex flex-col justify-center text-center md:text-left">
+              <h2 className="text-4xl md:text-5xl font-serif text-primary leading-tight mb-6">
+                Ready to Apply?
+              </h2>
+              <p className="text-lg text-gray-600 leading-relaxed font-light mb-8">
+                Click the button below to access our online application portal and start your admission process for the <strong className="font-semibold text-primary">Fall 2026</strong> session.
+              </p>
+              <div>
+                <a 
+                  href="https://admissions.kum.edu.pk/application/index.php" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-3 bg-primary text-white px-8 py-4 rounded-xl font-medium hover:bg-primary/90 transition-all shadow-md hover:shadow-xl hover:-translate-y-1 text-lg w-full sm:w-auto"
+                >
+                  Go to Application Portal
+                  <ExternalLink className="w-5 h-5" />
+                </a>
+              </div>
+            </div>
           </div>
 
           <div className="px-4 bg-white p-8 md:p-12 rounded-xl shadow-sm border border-gray-100">

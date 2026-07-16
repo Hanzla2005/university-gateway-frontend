@@ -8,7 +8,7 @@ import campusStudents from "@/assets/campus-students.jpg";
 
 const leadership = [
   { name: "Prof. Dr. Ahmad Hassan", role: "Vice Chancellor" },
-  { name: "Prof. Dr. Sarah Khan", role: "Pro Vice Chancellor" },
+  { name: "Prof. Dr. Sarah Khan", role: "Pro Chancellor" },
   { name: "Dr. Ali Raza", role: "Registrar" },
   { name: "Prof. Dr. Maria Qureshi", role: "Dean of Research" },
   { name: "Mr. Tariq Mehmood", role: "Director Finance" },
