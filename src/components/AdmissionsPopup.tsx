@@ -4,6 +4,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, Di
 import { Button } from "@/components/ui/button";
 import admissionPdf from "@/assets/pdfs/Admission Notice.pdf";
 import admissionBanner from "@/assets/admissionBanner.png";
+import { FileText, Info } from "lucide-react";
 
 const AdmissionsPopup = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -55,7 +56,9 @@ const AdmissionsPopup = () => {
                 rel="noreferrer" 
                 className="flex flex-col items-center justify-center p-5 rounded-xl border border-gray-200 hover:border-primary hover:bg-primary/5 hover:shadow-md transition-all text-center group cursor-pointer bg-white"
               >
-                <span className="text-4xl mb-3 group-hover:-translate-y-1 transition-transform duration-300">📄</span>
+                <div className="mb-3 p-3 bg-primary/5 rounded-full group-hover:-translate-y-1 group-hover:bg-primary/10 transition-all duration-300">
+                  <FileText className="w-8 h-8 text-primary" strokeWidth={1.5} />
+                </div>
                 <span className="font-semibold text-primary">Official Notice</span>
                 <span className="text-xs text-gray-500 mt-1">View announcement</span>
               </a>
@@ -65,7 +68,9 @@ const AdmissionsPopup = () => {
                 className="flex flex-col items-center justify-center p-5 rounded-xl border border-gray-200 hover:border-primary hover:bg-primary/5 hover:shadow-md transition-all text-center group cursor-pointer bg-white"
                 onClick={() => setIsOpen(false)}
               >
-                <span className="text-4xl mb-3 group-hover:-translate-y-1 transition-transform duration-300">ℹ️</span>
+                <div className="mb-3 p-3 bg-primary/5 rounded-full group-hover:-translate-y-1 group-hover:bg-primary/10 transition-all duration-300">
+                  <Info className="w-8 h-8 text-primary" strokeWidth={1.5} />
+                </div>
                 <span className="font-semibold text-primary">Guidelines</span>
                 <span className="text-xs text-gray-500 mt-1">Read before applying</span>
               </Link>
