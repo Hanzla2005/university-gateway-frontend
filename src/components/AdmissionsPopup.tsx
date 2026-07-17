@@ -87,7 +87,7 @@ const AdmissionsPopup = () => {
                 <div className="mb-3 p-3 bg-primary/5 rounded-full group-hover:-translate-y-1 group-hover:bg-primary/10 transition-all duration-300">
                   <GraduationCap className="w-8 h-8 text-primary" strokeWidth={1.5} />
                 </div>
-                <span className="font-semibold text-primary">Intermediate</span>
+                <span className="font-semibold text-primary">Intermediate Admissions</span>
                 <span className="text-xs text-gray-500 mt-1">On-campus apply</span>
               </Link>
             </div>
