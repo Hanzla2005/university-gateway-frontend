@@ -3,8 +3,7 @@ import { Link } from "react-router-dom";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import admissionPdf from "@/assets/pdfs/Admission Notice.pdf";
-import admissionBanner from "@/assets/admissionBanner.png";
-import { FileText, Info, GraduationCap } from "lucide-react";
+import { FileText, Info, GraduationCap, Laptop } from "lucide-react";
 
 const AdmissionsPopup = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,19 +25,10 @@ const AdmissionsPopup = () => {
 
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
-      <DialogContent className="sm:max-w-4xl w-[95vw] rounded-xl p-0 overflow-hidden bg-white shadow-2xl border-0 flex flex-col md:flex-row">
+      <DialogContent className="sm:max-w-3xl w-[95vw] rounded-xl p-0 overflow-hidden bg-white shadow-2xl border-0">
         
-        {/* Left Side: Image */}
-        <div className="w-full md:w-[45%] flex bg-slate-900">
-          <img 
-            src={admissionBanner} 
-            alt="Kohsar University Murree Admissions 2026" 
-            className="w-full h-64 md:h-full object-cover"
-          />
-        </div>
-        
-        {/* Right Side: Content */}
-        <div className="w-full md:w-[55%] px-6 py-8 md:py-10 flex flex-col justify-center">
+        {/* Content */}
+        <div className="w-full px-6 py-8 md:py-10 flex flex-col justify-center">
           <DialogHeader className="mb-4">
             <DialogTitle className="text-3xl md:text-4xl font-serif text-primary text-center">
               Admissions Open 2026
@@ -49,7 +39,7 @@ const AdmissionsPopup = () => {
           </DialogHeader>
           
           <div className="flex flex-col items-center justify-center gap-4 py-4 md:py-6">
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 w-full">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 w-full">
               <a 
                 href={admissionPdf} 
                 target="_blank" 
@@ -74,6 +64,20 @@ const AdmissionsPopup = () => {
                 <span className="font-semibold text-primary">Guidelines</span>
                 <span className="text-xs text-gray-500 mt-1">Read before applying</span>
               </Link>
+
+              <a 
+                href="https://admissions.kum.edu.pk/application/index.php"
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="flex flex-col items-center justify-center p-5 rounded-xl border border-gray-200 hover:border-primary hover:bg-primary/5 hover:shadow-md transition-all text-center group cursor-pointer bg-white"
+                onClick={() => setIsOpen(false)}
+              >
+                <div className="mb-3 p-3 bg-primary/5 rounded-full group-hover:-translate-y-1 group-hover:bg-primary/10 transition-all duration-300">
+                  <Laptop className="w-8 h-8 text-primary" strokeWidth={1.5} />
+                </div>
+                <span className="font-semibold text-primary">BS Admissions</span>
+                <span className="text-xs text-gray-500 mt-1">Apply online</span>
+              </a>
 
               <Link 
                 to="/intermediate-admission" 

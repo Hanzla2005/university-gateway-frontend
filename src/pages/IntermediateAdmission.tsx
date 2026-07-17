@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import admissionBanner2 from "@/assets/admissionBanner-2.png";
+import admissionBanner from "@/assets/admissionBanner.png";
 
 const IntermediateAdmission = () => {
   return (
@@ -24,12 +25,21 @@ const IntermediateAdmission = () => {
             </div>
             
             <div className="p-6 md:p-8">
-              <div className="relative rounded-lg overflow-hidden shadow-md">
-                <img 
-                  src={admissionBanner2} 
-                  alt="Intermediate Admissions Banner" 
-                  className="w-full h-auto object-cover"
-                />
+              <div className="flex flex-col gap-8 items-center">
+                <div className="relative rounded-xl overflow-hidden shadow-lg max-w-md w-full border border-border">
+                  <img 
+                    src={admissionBanner} 
+                    alt="Intermediate Admissions Banner" 
+                    className="w-full h-auto object-cover hover:scale-[1.02] transition-transform duration-500"
+                  />
+                </div>
+                <div className="relative rounded-xl overflow-hidden shadow-lg w-full border border-border">
+                  <img 
+                    src={admissionBanner2} 
+                    alt="Intermediate Admissions Banner 2" 
+                    className="w-full h-auto object-cover hover:scale-[1.01] transition-transform duration-500"
+                  />
+                </div>
               </div>
 
               <div className="mt-8 bg-accent/10 border border-accent/20 rounded-lg p-6">
