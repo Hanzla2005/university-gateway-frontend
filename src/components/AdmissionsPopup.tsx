@@ -4,7 +4,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, Di
 import { Button } from "@/components/ui/button";
 import admissionPdf from "@/assets/pdfs/Admission Notice.pdf";
 import admissionBanner from "@/assets/admissionBanner.png";
-import { FileText, Info } from "lucide-react";
+import { FileText, Info, GraduationCap } from "lucide-react";
 
 const AdmissionsPopup = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -49,7 +49,7 @@ const AdmissionsPopup = () => {
           </DialogHeader>
           
           <div className="flex flex-col items-center justify-center gap-4 py-4 md:py-6">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 w-full">
               <a 
                 href={admissionPdf} 
                 target="_blank" 
@@ -73,6 +73,18 @@ const AdmissionsPopup = () => {
                 </div>
                 <span className="font-semibold text-primary">Guidelines</span>
                 <span className="text-xs text-gray-500 mt-1">Read before applying</span>
+              </Link>
+
+              <Link 
+                to="/intermediate-admission" 
+                className="flex flex-col items-center justify-center p-5 rounded-xl border border-gray-200 hover:border-primary hover:bg-primary/5 hover:shadow-md transition-all text-center group cursor-pointer bg-white"
+                onClick={() => setIsOpen(false)}
+              >
+                <div className="mb-3 p-3 bg-primary/5 rounded-full group-hover:-translate-y-1 group-hover:bg-primary/10 transition-all duration-300">
+                  <GraduationCap className="w-8 h-8 text-primary" strokeWidth={1.5} />
+                </div>
+                <span className="font-semibold text-primary">Intermediate</span>
+                <span className="text-xs text-gray-500 mt-1">On-campus apply</span>
               </Link>
             </div>
           </div>

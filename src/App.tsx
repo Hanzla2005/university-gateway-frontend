@@ -59,6 +59,7 @@ import Stories from "./pages/Stories";
 import StoryDetail from "./pages/StoryDetail";
 import FacultyProfile from "./pages/FacultyProfile";
 import ApplicationPortal from "./pages/ApplicationPortal";
+import IntermediateAdmission from "./pages/IntermediateAdmission";
 
 import ORIC from "./pages/ORIC";
 import QEC from "./pages/QEC";
@@ -123,6 +124,7 @@ const App = () => (
             <Route path="/library" element={<Library />} />
             <Route path="/online-admissions" element={<OnlineAdmissions />} />
             <Route path="/application-portal" element={<ApplicationPortal />} />
+            <Route path="/intermediate-admission" element={<IntermediateAdmission />} />
 
             {/* Policies */}
             <Route path="/policies" element={<Policies />} />

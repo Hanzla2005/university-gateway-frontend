@@ -91,6 +91,7 @@ const mainNavItems = [
     path: "/online-admissions",
     submenu: [
       { label: "Online Admissions", path: "/application-portal", icon: Users2 },
+      { label: "Intermediate Admission", path: "/intermediate-admission", icon: BookOpen },
       { label: "Scholarships", path: "/scholarships", icon: GraduationCap },
       { label: "Merit Lists", path: "/merit-lists", icon: FileStack },
     ]
