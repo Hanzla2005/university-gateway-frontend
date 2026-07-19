@@ -1197,7 +1197,7 @@ export const departmentPages: DepartmentPage[] = [
       },
       {
         name: "Dr. Muhammad Faran Majeed",
-        designation: "Assistant Professor",
+        designation: "Associate Professor",
         email: "Faran.majeed@kum.edu.pk",
         image: csFaran
       },
