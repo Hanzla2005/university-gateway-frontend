@@ -1,4 +1,5 @@
 import nadiaBatoolImg from "@/assets/departments/Psychology/nadiaBatool.png";
+import aroobaKhurshidImg from "@/assets/departments/Psychology/Arooba Khurshid.png";
 import cbImg from "@/assets/departments/Psychology/characterBuilding.png";
 import pinkRibbon1 from "@/assets/departments/Psychology/pinkRibbon1.png";
 import pinkRibbon2 from "@/assets/departments/Psychology/pinkRibbon2.png";
@@ -65,6 +66,7 @@ import mbF8 from "@/assets/departments/microbiology/faculty/shahSaud.png";
 import physicsTahir from "@/assets/departments/physics/faculty/tahirAmin.png";
 
 import csWaqas from "@/assets/departments/CS/faculty/waqas.png";
+import csSohrab from "@/assets/departments/CS/faculty/sohrab.png";
 import csRehan from "@/assets/departments/CS/faculty/rehan.png";
 import csFaran from "@/assets/departments/CS/faculty/faran.png";
 import csAsma from "@/assets/departments/CS/faculty/asma.png";
@@ -1210,6 +1212,17 @@ export const departmentPages: DepartmentPage[] = [
         designation: "Lecturer",
         email: "Saddam.abbasi@kum.edu.pk",
         image: csHussain
+      },
+      {
+        name: "Sohrab Sattar",
+        designation: "Lecturer SE",
+        email: "soharab.sattar@kum.edu.pk",
+        image: csSohrab
+      },
+      {
+        name: "Sehrish Batool",
+        designation: "Lecturer SE",
+        email: "sehrish.batool@kum.edu.pk"
       }
     ],
     programs: [
@@ -1564,8 +1577,10 @@ Dr. Shah serves as a referee for multiple prestigious journals, including the Ha
         image: nadiaBatoolImg,
       },
       {
-        name: "Ms. Arooba Khursheed",
+        name: "Ms. Arooba Khurshid",
         designation: "Lecturer",
+        email: "arooba.khurshid@kum.edu.pk",
+        image: aroobaKhurshidImg,
       }
 
 
