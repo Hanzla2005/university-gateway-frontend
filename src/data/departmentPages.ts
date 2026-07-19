@@ -1215,14 +1215,12 @@ export const departmentPages: DepartmentPage[] = [
       },
       {
         name: "Sohrab Sattar",
-        designation: "Lecturer SE",
-        email: "soharab.sattar@kum.edu.pk",
+        designation: "Lecturer",
         image: csSohrab
       },
       {
         name: "Sehrish Batool",
-        designation: "Lecturer SE",
-        email: "sehrish.batool@kum.edu.pk"
+        designation: "Lecturer",
       }
     ],
     programs: [
