@@ -1772,7 +1772,7 @@ Dr. Shah serves as a referee for multiple prestigious journals, including the Ha
     faculty: [
       {
         name: "Dr. Hussain Mustafa Gilani",
-        designation: "Associate Professor & HOD",
+        designation: "Associate Professor & Chairperson",
         image: bbaHussain,
       },
       {

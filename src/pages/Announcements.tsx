@@ -9,7 +9,7 @@ const Announcements = () => {
   return (
     <div className="min-h-screen">
       <Navbar />
-      <PageHeader title="Announcements" subtitle="Latest news and updates from Prestige University." />
+      <PageHeader title="Announcements" subtitle="Latest news and updates from Kohsar University Murree." />
 
       <div className="container-main px-4 sm:px-6 lg:px-8 py-14">
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">

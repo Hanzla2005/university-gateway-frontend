@@ -4,6 +4,9 @@ import img12 from "@/assets/announcements/12.png";
 import img14 from "@/assets/announcements/14.png";
 import img15 from "@/assets/announcements/15.png";
 import img16 from "@/assets/announcements/16.png";
+import img17 from "@/assets/announcements/17.png";
+import img18 from "@/assets/announcements/18.png";
+import img19 from "@/assets/announcements/19.png";
 import img5 from "@/assets/announcements/5.png";
 import img6 from "@/assets/announcements/6.png";
 import img7 from "@/assets/announcements/7.jpeg";
@@ -22,6 +25,36 @@ export interface Announcement {
 }
 
 export const announcements: Announcement[] = [
+  {
+    id: "17",
+    slug: "hec-review-team-visited-kohsar-university-murree",
+    title: "HEC Review Team Visited Kohsar University Murree to Evaluate Computing Programs",
+    date: "July 22, 2026",
+    tag: "News",
+    image: img17,
+    excerpt: "A review team from the Higher Education Commission (HEC) visited Kohsar University Murree (KUM) to assess the University's Computing programs under HEC's quality assurance and academic review framework.",
+    content: "A review team from the Higher Education Commission (HEC) visited Kohsar University Murree (KUM) to assess the University's Computing programs under HEC’s quality assurance and academic review framework. The team, led by Dr. Usman Ghani of IM Sciences Peshawar as Convener, included Dr. Ejaz and Dr. Hammad Majeed from FAST Islamabad, Mr. Faisal Khan, HEC Representative, and Mr. Nasir Shah, Director General Quality Assurance, HEC. During the visit, Dr. Ramla, Director ORIC, also presented Kohsar University Murree’s Five-Year Strategic Plan, outlining the University's vision, institutional priorities, and roadmap for sustainable academic and research development. Dr. Waqas Bangyal, Chairperson, Department of Computer Science, then presented an overview of the University's Computing programs, highlighting academic progress, infrastructure, research initiatives, and future development plans. The team also reviewed academic facilities, computer laboratories, and quality assurance mechanisms. The reviewers appreciated the visionary leadership of Vice Chancellor Prof. Dr. Rafia Mumtaz (Pride of Performance) for strengthening computing education through upgraded laboratories, enhanced academic infrastructure, research promotion, and international collaborations. They acknowledged her strategic efforts in advancing the University's academic standards and positioning KUM as an emerging institution of excellence. On the occasion, Vice Chancellor Prof. Dr. Rafia Mumtaz (Pride of Performance) thanked the HEC review team for their valuable feedback and recommendations. She reaffirmed the University's commitment to academic excellence, innovation, and continuous quality enhancement in line with HEC standards.",
+  },
+  {
+    id: "18",
+    slug: "workshop-on-intellectual-property-and-patent-filing",
+    title: "Kohsar University Murree Conducted Interactive Workshop on Intellectual Property and Patent Filing to Promote Research Innovation",
+    date: "July 21, 2026",
+    tag: "Event",
+    image: img18,
+    excerpt: "The Office of Research, Innovation and Commercialization (ORIC), Kohsar University Murree, organized a one-day interactive training workshop on Intellectual Property (IP) and Patent Filing.",
+    content: "The Office of Research, Innovation and Commercialization (ORIC), Kohsar University Murree (KUM), organized a one-day interactive training workshop on Intellectual Property (IP) and Patent Filing upon the directions of Vice Chancellor Prof. Dr. Rafia Mumtaz (Pride of Performance). The workshop brought together faculty members from all faculties and disciplines to enhance their understanding of Intellectual Property Rights (IPRs), patent protection, and research commercialization. The session covered the significance of IPRs in academia, an overview of patents, trademarks, copyrights, industrial designs, and other forms of intellectual property, along with patent filing procedures and best practices for protecting innovative ideas. Participants also gained valuable insights into commercializing research outcomes and maximizing the societal and economic impact of their intellectual contributions. The workshop featured distinguished resource persons from the Intellectual Property Organization (IPO) Pakistan, Mr. Muhammad Ismail, Director Patents, and Ms. Humaira Shakeel, Deputy Director, whose informative presentations, practical guidance, and interactive discussions deepened participants' understanding of Pakistan's intellectual property landscape and encouraged them to pursue innovation with confidence. Through such initiatives, ORIC continues to empower researchers to transform creative ideas into protected intellectual assets and impactful solutions, reaffirming the University's vision of \"Empowering Innovation, Protecting Ideas, Creating Impact.\"",
+  },
+  {
+    id: "19",
+    slug: "inauguration-of-three-new-computer-laboratories-and-fydp-lab",
+    title: "Professor Dr. Rafia Mumtaz (Pride of Performance) Inaugurated Three New Computer Laboratories and a Dedicated Final Year Design Project Lab",
+    date: "July 20, 2026",
+    tag: "News",
+    image: img19,
+    excerpt: "Vice Chancellor of Kohsar University Murree, Professor Dr. Rafia Mumtaz (Pride of Performance), inaugurated three newly established computer laboratories along with a dedicated Final Year Design Project (FYDP) Laboratory.",
+    content: "Vice Chancellor of Kohsar University Murree, Professor. Dr. Rafia Mumtaz (Pride of Performance), inaugurated three newly established computer laboratories along with a dedicated Final Year Design Project (FYDP) Laboratory, marking another significant milestone in the University's continued efforts to strengthen its academic and technological infrastructure. The inauguration ceremony was attended by the Deputy Commissioner Murree, Mr. Agha Zaheer Abbas Shirazi, who graced the occasion as the Chief Guest. He commended the visionary leadership of Professor Dr. Rafia Mumtaz and appreciated her firm commitment to transforming Kohsar University into a centre of excellence by investing in high-quality academic facilities and technology-enabled learning environments. The three newly established computer laboratories are equipped with contemporary computing facilities designed to provide students with an enriched learning experience, hands-on practical training, and enhanced opportunities for research, innovation, and skill development. In addition to these laboratories, the University has also established a dedicated Final Year Design Project (FYDP) Laboratory, providing a collaborative workspace where final-year students can undertake advanced research, develop innovative projects, and work on industry-oriented solutions in a professional environment. The establishment of these facilities reflects Professor Dr. Rafia Mumtaz's vision of equipping students with quality educational resources, practical expertise, and access to emerging technologies essential for success in today's rapidly evolving digital landscape. She believes that strengthening academic infrastructure is fundamental to preparing graduates who are innovative, competitive, and equipped to meet the evolving needs of academia, industry, and the national economy. Faculty members, students, and distinguished guests warmly welcomed the initiative, describing it as a landmark achievement that reflects Kohsar University Murree's steadfast pursuit of academic excellence, technological advancement, and innovation. The inauguration of these laboratories represents another important step in the University's mission to create a dynamic learning environment that fosters creativity, research excellence, and the development of a highly skilled, future-ready workforce.",
+  },
   {
     id: "14",
     slug: "huawei-delegation-visited-kohsar-university-murree",
