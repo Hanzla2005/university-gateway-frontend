@@ -62,6 +62,7 @@ import ApplicationPortal from "./pages/ApplicationPortal";
 import IntermediateAdmission from "./pages/IntermediateAdmission";
 
 import ORIC from "./pages/ORIC";
+import ORICSteeringCommittee from "./pages/ORICSteeringCommittee";
 import QEC from "./pages/QEC";
 import RDProjects from "./pages/RDProjects";
 import ResearchPublications from "./pages/ResearchPublications";
@@ -86,6 +87,7 @@ const App = () => (
 
             {/* ORIC Routes */}
             <Route path="/oric" element={<ORIC />} />
+            <Route path="/oric-steering-committee" element={<ORICSteeringCommittee />} />
             <Route path="/qec" element={<QEC />} />
             <Route path="/rd-projects" element={<RDProjects />} />
             <Route path="/research-publications" element={<ResearchPublications />} />

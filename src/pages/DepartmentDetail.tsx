@@ -363,6 +363,22 @@ const DepartmentDetail = () => {
                       ))}
                     </div>
 
+                    {program.eligibility && program.eligibility.length > 0 && (
+                      <div className="bg-white border border-gray-200 rounded-xl shadow-sm p-6 lg:p-8 border-l-4 border-l-primary">
+                        <h4 className="text-lg font-bold text-slate-800 mb-5 flex items-center gap-2">
+                          <CheckCircle className="h-5 w-5 text-primary" />
+                          Eligibility & Admission Criteria
+                        </h4>
+                        <ul className="space-y-3">
+                          {program.eligibility.map((item, i) => (
+                            <li key={i} className="flex gap-3">
+                              <span className="text-slate-700 leading-relaxed text-justify">{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+
                     {program.objectives && program.objectives.length > 0 && (
                       <div className="bg-white border border-gray-200 rounded-xl shadow-sm p-6 lg:p-8">
                         <h4 className="text-lg font-bold text-slate-800 mb-5">Program Objectives</h4>

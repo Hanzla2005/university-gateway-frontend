@@ -132,6 +132,7 @@ export interface SchemeCategory {
 export interface ProgramOffered {
   name: string;
   description: string;
+  eligibility?: string[];
   objectives?: string[];
   plos?: string[];
   slos?: string[];
@@ -1755,11 +1756,18 @@ Dr. Shah serves as a referee for multiple prestigious journals, including the Ha
     programs: [
       {
         name: "BS Microbiology",
-        description: "Duration: A four-year degree program spread over 8 semesters.\nEligibility: F.Sc. Pre-Medical or equivalent qualification with at least 50% marks. Age limit 24 years.\n\nBachelor of Science in Microbiology aims to produce professionals who have thorough knowledge and skills to develop a career in any sub discipline ranging from Human Health (Diagnostics; Epidemiology & Sanitation & Hygiene; Immunology; Vaccines) as well as Livestock Health, Plant Microbiology to Environmental Microbiology. The program is committed to provide the budding scientists with an environment conducive for learning and critical thinking in different aspects of biological sciences. A degree in Microbiology discipline will prepare students for a promising career in the field of teaching, clinical and research institutes, pharmaceutical companies, biotechnology industries, etc. In short, graduates with focused and unique understanding as well as expertise in techniques involved in bacteriology/mycology/virology, emergence and re-emergence of infectious diseases, resistance acquired by the bacteria and viruses against antibacterial and antiviral drugs, failure of successful vaccines against infectious diseases. Upon successful completion of the degree program, the graduates should be able to apply knowledge of bacteriology/mycology/virology for agriculture, animal health, environment and clinical research in an applied context.",
+        description: "Duration: A four-year degree program spread over 8 semesters.\n\nBachelor of Science in Microbiology aims to produce professionals who have thorough knowledge and skills to develop a career in any sub discipline ranging from Human Health (Diagnostics; Epidemiology & Sanitation & Hygiene; Immunology; Vaccines) as well as Livestock Health, Plant Microbiology to Environmental Microbiology. The program is committed to provide the budding scientists with an environment conducive for learning and critical thinking in different aspects of biological sciences. A degree in Microbiology discipline will prepare students for a promising career in the field of teaching, clinical and research institutes, pharmaceutical companies, biotechnology industries, etc. In short, graduates with focused and unique understanding as well as expertise in techniques involved in bacteriology/mycology/virology, emergence and re-emergence of infectious diseases, resistance acquired by the bacteria and viruses against antibacterial and antiviral drugs, failure of successful vaccines against infectious diseases. Upon successful completion of the degree program, the graduates should be able to apply knowledge of bacteriology/mycology/virology for agriculture, animal health, environment and clinical research in an applied context.",
+        eligibility: [
+          "F.Sc. Pre-Medical or equivalent qualification with at least 50% marks. Age limit 24 years."
+        ]
       },
       {
         name: "MS Microbiology",
-        description: "Duration: A two-year degree program spread over 4 semesters.\nEligibility: 16 years degree in relevant field from HEC accredited universities with CGPA 2.0/4 or 50% in annual system.\n\nMicrobiology program covers range of specialized fields, from more applied disciplines such as medical, public health, industrial, and food microbiology, to basic fields of immunology, microbial ecology and evolution, physiology, genetics of microbes, antibiotic resistance, microbial forensics and host-pathogen interaction. The training through taught courses will help students to understand the disease-causing potential of various pathogenic bacteria, fungi and viruses, and the responses of the immune system. These studies will teach the students that how knowledge gained by studying microbiology and immunology can be applied and will prepare them for suitable careers in areas as diverse as medicine (disease epidemiology), brewing, food spoilage, control of environmental pollution, biotechnology, diagnostics and therapeutics.",
+        description: "Duration: A two-year degree program spread over 4 semesters.\n\nMicrobiology program covers range of specialized fields, from more applied disciplines such as medical, public health, industrial, and food microbiology, to basic fields of immunology, microbial ecology and evolution, physiology, genetics of microbes, antibiotic resistance, microbial forensics and host-pathogen interaction. The training through taught courses will help students to understand the disease-causing potential of various pathogenic bacteria, fungi and viruses, and the responses of the immune system. These studies will teach the students that how knowledge gained by studying microbiology and immunology can be applied and will prepare them for suitable careers in areas as diverse as medicine (disease epidemiology), brewing, food spoilage, control of environmental pollution, biotechnology, diagnostics and therapeutics.",
+        eligibility: [
+          "16 years of education in field of biological sciences including 4-year BS Microbiology / or related area or 2 years M. Sc Microbiology, Biotechnology, or related areas.",
+          "A GAT test or Equivalent with 50% scoring marks will be held eligible."
+        ]
       }
     ]
   },
@@ -2587,7 +2595,12 @@ Dr. Shah serves as a referee for multiple prestigious journals, including the Ha
       },
       {
         name: "MS Chemistry",
-        description: "2-4 Year Program\nCredit Hours: 30 (24 coursework + 6 thesis) | Eligibility: 16-yr BS/ Chemistry with 2.50 CGPA\n\nCore Focus: Organic Chemistry, Inorganic Chemistry, Physical Chemistry, Analytical Chemistry, Biochemistry, Environmental Chemistry, Materials Chemistry, Polymer Chemistry, Medicinal Chemistry, Nano-chemistry",
+        description: "2-4 Year Program\nCredit Hours: 30 (24 coursework + 6 thesis)\n\nCore Focus: Organic Chemistry, Inorganic Chemistry, Physical Chemistry, Analytical Chemistry, Biochemistry, Environmental Chemistry, Materials Chemistry, Polymer Chemistry, Medicinal Chemistry, Nano-chemistry",
+        eligibility: [
+          "a) An undergraduate degree (involving 16 years of education) in Chemistry or any of its specialized areas is the basic eligibility requirement for admission in the Master of Science in Chemistry or in any of its specialized areas.",
+          "b) An undergraduate degree (involving 16 years of education) in any discipline other than but related to the field of Chemistry are also eligible for admission in the Master of Science in Chemistry subject to completion of deficiency courses up-to 9 credit hours in accordance with HEC Graduate Education Policy 2023.",
+          "c) In addition to the basic eligibility, the department will conduct a rigorous admission test as an eligibility condition for admission to the program, with a passing score of 50% (OR) accept the GRE / HAT General / equivalent tests, with a passing score of 50%."
+        ],
         objectives: [
           "To provide dynamically updated program in the field of Chemistry.",
           "Promote vigorous research",

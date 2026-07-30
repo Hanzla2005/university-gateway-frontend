@@ -35,9 +35,10 @@ const managementData = [
   {
     office: "ORIC",
     staff: [
-      { designation: "Director ORIC", name: "Prof Dr Ramla", email: "-", phone: "-" },
-      { designation: "Deputy Director ORIC", name: "Qazi Raheel", email: "-", phone: "-" },
-      { designation: "Ass Director ORIC", name: "-", email: "-", phone: "-" },
+      { designation: "Director ORIC", name: "Prof. Dr. Ramla Shahid", email: "director.oric@kum.edu.pk", phone: "-" },
+      { designation: "Deputy Director ORIC (I&C)", name: "Qazi Muhammad Raheel Anjum", email: "qazi.raheel@kum.edu.pk", phone: "-" },
+      { designation: "Deputy Director ORIC (RM)", name: "Dr. Riffat Batool", email: "Riffat.batool@kum.edu.pk", phone: "-" },
+      { designation: "Communication Assistant", name: "Ms. Kubra Fida", email: "kubrafida@kum.edu.pk", phone: "-" },
     ]
   },
   {

@@ -14,14 +14,27 @@ import {
   BookOpen,
   FlaskConical,
   BarChart3,
-  CheckCircle2
+  CheckCircle2,
+  Users,
+  ShieldCheck,
+  ChevronRight
 } from "lucide-react";
 
 // Team Images
 import directorImg from "@/assets/ORIC Website/ORIC Team/Director ORIC.jpg";
 import ddImg from "@/assets/ORIC Website/ORIC Team/DD ORIC.jpeg";
 
-const teamMembers = [
+interface TeamMember {
+  name: string;
+  title: string;
+  qualification: string;
+  institute: string;
+  email: string;
+  image?: string;
+  initials?: string;
+}
+
+const teamMembers: TeamMember[] = [
   {
     name: "Prof. Dr. Ramla Shahid",
     title: "Director ORIC",
@@ -31,12 +44,28 @@ const teamMembers = [
     image: directorImg
   },
   {
+    name: "Dr. Riffat Batool",
+    title: "Deputy Director ORIC (RM)",
+    qualification: "PhD (Plant Sciences)",
+    institute: "QAU, Islamabad",
+    email: "Riffat.batool@kum.edu.pk",
+    initials: "RB"
+  },
+  {
     name: "Mr. Qazi Muhammad Raheel Anjum",
-    title: "Deputy Director ORIC",
+    title: "Deputy Director ORIC (I&C)",
     qualification: "MS (Materials & Surface Engineering)",
     institute: "SCME, NUST, Islamabad, Pakistan",
     email: "qazi.raheel@kum.edu.pk",
     image: ddImg
+  },
+  {
+    name: "Ms. Kubra Fida",
+    title: "Communication Assistant",
+    qualification: "MA (Political Science)",
+    institute: "PU",
+    email: "kubrafida@kum.edu.pk",
+    initials: "KF"
   }
 ];
 
@@ -279,32 +308,63 @@ const ORIC = () => {
           </div>
         </section>
 
+        {/* KUM ORIC Steering Committee Section */}
+        <section className="bg-gradient-to-br from-primary via-primary/95 to-primary/90 p-8 sm:p-10 rounded-2xl text-white shadow-lg relative overflow-hidden">
+          <div className="max-w-3xl space-y-4 relative z-10">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-accent/20 border border-accent/40 text-accent text-xs font-semibold uppercase tracking-wider">
+              <ShieldCheck className="h-4 w-4" />
+              HEC Framework Governance
+            </div>
+            <h2 className="text-3xl font-serif font-bold text-white">KUM ORIC Steering Committee</h2>
+            <p className="text-primary-foreground/90 text-sm sm:text-base leading-relaxed">
+              As per Higher Education Commission (HEC) guidelines, Kohsar University Murree has constituted the KUM ORIC Steering Committee to oversee strategic research directions, policy formulation, industry collaborations, and commercialization initiatives.
+            </p>
+            <div className="pt-2">
+              <Link
+                to="/oric-steering-committee"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-white text-primary font-bold text-sm rounded-lg hover:bg-accent hover:text-white transition-all shadow-md"
+              >
+                <Users className="h-4 w-4 text-accent group-hover:text-white" />
+                View Committee Members & Notification
+                <ChevronRight className="h-4 w-4" />
+              </Link>
+            </div>
+          </div>
+        </section>
+
         {/* ORIC Team */}
-        <section className="space-y-12">
-          <h2 className="text-3xl font-serif text-primary border-b border-gray-200 pb-4">Our Leadership</h2>
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <section id="team" className="space-y-12">
+          <div className="border-b border-gray-200 pb-4">
+            <h2 className="text-3xl font-serif text-primary font-bold">ORIC Team & Leadership</h2>
+            <p className="text-gray-600 text-sm mt-1">Dedicated officers leading research management, innovation, and communication at KUM.</p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {teamMembers.map((member) => (
               <div
                 key={member.name}
-                className="bg-white border border-gray-200 rounded-xl p-8 flex flex-col items-center text-center shadow-sm hover:shadow-md transition-shadow"
+                className="bg-white border border-gray-200 rounded-xl p-6 flex flex-col items-center text-center shadow-sm hover:shadow-md transition-all group"
               >
-                <div className="w-32 h-32 rounded-full overflow-hidden mb-6 border-4 border-gray-50 shadow-inner">
-                  <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
+                <div className="w-24 h-24 rounded-full overflow-hidden mb-5 border-4 border-gray-50 shadow-inner bg-primary/10 flex items-center justify-center flex-shrink-0">
+                  {member.image ? (
+                    <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
+                  ) : (
+                    <span className="font-serif font-bold text-2xl text-primary">{member.initials || "KUM"}</span>
+                  )}
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 leading-tight mb-1">{member.name}</h3>
-                <p className="text-primary text-xs font-bold uppercase tracking-wider mb-4">{member.title}</p>
+                <h3 className="text-base font-bold text-gray-900 leading-snug mb-1">{member.name}</h3>
+                <p className="text-primary text-xs font-bold uppercase tracking-wider mb-4 h-8 flex items-center justify-center">{member.title}</p>
                 
-                <div className="space-y-3 w-full pt-4 border-t border-gray-100 text-sm">
-                  <div className="flex items-start justify-center gap-2">
-                    <GraduationCap className="h-4 w-4 text-gray-400 mt-0.5" />
-                    <p className="text-gray-600 leading-snug">
+                <div className="space-y-3 w-full pt-4 border-t border-gray-100 text-xs mt-auto">
+                  <div className="flex items-start justify-center gap-1.5">
+                    <GraduationCap className="h-3.5 w-3.5 text-gray-400 mt-0.5 flex-shrink-0" />
+                    <p className="text-gray-600 leading-relaxed text-left">
                       {member.qualification} <br />
-                      <span className="text-gray-900 font-medium">{member.institute}</span>
+                      <span className="text-gray-900 font-semibold">{member.institute}</span>
                     </p>
                   </div>
-                  <div className="flex items-center justify-center gap-2">
-                    <Mail className="h-4 w-4 text-gray-400" />
-                    <a href={`mailto:${member.email}`} className="text-primary hover:underline transition-colors">{member.email}</a>
+                  <div className="flex items-center justify-center gap-1.5 pt-1">
+                    <Mail className="h-3.5 w-3.5 text-gray-400 flex-shrink-0" />
+                    <a href={`mailto:${member.email}`} className="text-primary hover:underline transition-colors truncate max-w-full">{member.email}</a>
                   </div>
                 </div>
               </div>

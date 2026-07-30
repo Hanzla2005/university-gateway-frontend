@@ -236,7 +236,16 @@ const mainNavItems = [
       },
       { label: "Landmark Achievements", path: "/oric", icon: Trophy },
       { label: "Collaborations", path: "/mous", icon: Handshake },
-      { label: "ORIC Steering Committee", path: "/oric", icon: Users },
+      {
+        label: "KUM ORIC Steering Committee",
+        path: "/oric-steering-committee",
+        icon: Users,
+        nested: [
+          { label: "Committee Overview & Notification", path: "/oric-steering-committee#notification" },
+          { label: "Steering Committee Members", path: "/oric-steering-committee#members" },
+          { label: "Terms of Reference (TORs)", path: "/oric-steering-committee#tors" },
+        ]
+      },
       { label: "R&D Projects", path: "/rd-projects", icon: Rocket },
       { label: "Research Publications", path: "/research-publications", icon: BookOpen },
     ]
