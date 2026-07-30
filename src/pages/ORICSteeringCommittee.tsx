@@ -28,7 +28,7 @@ export interface CommitteeMember {
   name: string;
   designation: string;
   role: string;
-  category: "Internal Leadership" | "ORIC Directorate" | "Faculty Deans" | "External & Industry Experts" | "Secretariat";
+  category: "Leadership" | "ORIC Directorate" | "Industry & Corporate Leaders" | "Secretariat";
   qualification?: string;
   email?: string;
   image?: string;
@@ -37,90 +37,65 @@ export interface CommitteeMember {
 const steeringCommitteeMembers: CommitteeMember[] = [
   {
     srNo: 1,
-    name: "Prof. Dr. Rafia Mumtaz (Pride of Performance)",
-    designation: "Vice Chancellor, Kohsar University Murree",
-    role: "Chairperson / Patron",
-    category: "Internal Leadership"
+    name: "Prof. Dr. Rafia Mumtaz",
+    designation: "Vice Chancellor, KUM",
+    role: "Chair",
+    category: "Leadership"
   },
   {
     srNo: 2,
-    name: "Prof. Dr. Ramla Shahid",
-    designation: "Director ORIC",
-    qualification: "PhD, Chemistry/Chemical Biology (Univ. of Cambridge, UK)",
-    email: "director.oric@kum.edu.pk",
-    role: "Convener / Member Secretary",
-    category: "ORIC Directorate",
-    image: directorImg
+    name: "Mr. Yasir Niazi",
+    designation: "CEO Akbar Niazi Teaching hospital/ GAK Healthcare International",
+    role: "Co-Chair",
+    category: "Industry & Corporate Leaders"
   },
   {
     srNo: 3,
-    name: "Dr. Riffat Batool",
-    designation: "Deputy Director ORIC (RM)",
-    qualification: "PhD (Plant Sciences), QAU, Islamabad",
-    email: "Riffat.batool@kum.edu.pk",
+    name: "Prof. Dr. Ramla Shahid",
+    designation: "Prof-BPS-21 / Director ORIC, KUM",
     role: "Member",
-    category: "ORIC Directorate"
+    category: "ORIC Directorate",
+    qualification: "PhD, Chemistry/Chemical Biology (Univ. of Cambridge, UK)",
+    email: "director.oric@kum.edu.pk",
+    image: directorImg
   },
   {
     srNo: 4,
-    name: "Mr. Qazi Muhammad Raheel Anjum",
-    designation: "Deputy Director ORIC (I&C)",
-    qualification: "MS (Materials & Surface Eng.), SCME, NUST, Islamabad",
-    email: "qazi.raheel@kum.edu.pk",
+    name: "Mr. Pervaiz Abbasi",
+    designation: "EX Director National Incubation Center, Founder Adventures Studio",
     role: "Member",
-    category: "ORIC Directorate",
-    image: ddImg
+    category: "Industry & Corporate Leaders"
   },
   {
     srNo: 5,
-    name: "Dean, Faculty of Applied Sciences & Technology",
-    designation: "Kohsar University Murree",
+    name: "Mr. Muazzam Arslan Bhatti",
+    designation: "CEO, Alfoze Technologies Pvt Ltd",
     role: "Member",
-    category: "Faculty Deans"
+    category: "Industry & Corporate Leaders"
   },
   {
     srNo: 6,
-    name: "Dean, Faculty of Social Sciences & Humanities",
-    designation: "Kohsar University Murree",
+    name: "Mr. Zain Ul Hassan",
+    designation: "Associate, Systems, Pvt Ltd",
     role: "Member",
-    category: "Faculty Deans"
+    category: "Industry & Corporate Leaders"
   },
   {
     srNo: 7,
-    name: "Dean, Faculty of Management Sciences",
-    designation: "Kohsar University Murree",
+    name: "Mr. Salman Ansari",
+    designation: "Data Scientist, Walee Group",
     role: "Member",
-    category: "Faculty Deans"
+    category: "Industry & Corporate Leaders"
   },
   {
     srNo: 8,
-    name: "Treasurer / Director Finance",
-    designation: "Kohsar University Murree",
-    role: "Member",
-    category: "Internal Leadership"
-  },
-  {
-    srNo: 9,
-    name: "HEC Nominee / R&D Expert",
-    designation: "Higher Education Commission (HEC), Islamabad",
-    role: "External Member",
-    category: "External & Industry Experts"
-  },
-  {
-    srNo: 10,
-    name: "Industry & Corporate Leader",
-    designation: "Chamber of Commerce & Corporate Sector Nominee",
-    role: "External Member",
-    category: "External & Industry Experts"
-  },
-  {
-    srNo: 11,
-    name: "Ms. Kubra Fida",
-    designation: "Communication Assistant, ORIC",
-    qualification: "MA (Political Science), PU",
-    email: "kubrafida@kum.edu.pk",
-    role: "Secretariat Support",
-    category: "Secretariat"
+    name: "Muhammad Raheel Anjum",
+    designation: "Deputy Director ORIC (BS-18), KUM",
+    role: "Secretary",
+    category: "ORIC Directorate",
+    qualification: "MS (Materials & Surface Eng.), NUST",
+    email: "qazi.raheel@kum.edu.pk",
+    image: ddImg
   }
 ];
 
@@ -177,26 +152,26 @@ const ORICSteeringCommittee = () => {
           <div className="relative z-10 max-w-4xl space-y-4">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-accent/20 border border-accent/40 text-accent font-semibold text-xs uppercase tracking-wider">
               <ShieldCheck className="h-4 w-4" />
-              HEC Recognition Requirement
+              Official Registrar Notification
             </div>
             <h2 className="text-2xl sm:text-3xl font-serif font-bold leading-tight">
               Constitution of KUM ORIC Steering Committee
             </h2>
             <p className="text-primary-foreground/90 text-sm sm:text-base leading-relaxed">
-              In pursuance of the Higher Education Commission (HEC) ORIC Policy Guidelines 2021 and Kohsar University Murree Statues, the Vice Chancellor, Kohsar University Murree, has been pleased to approve the constitution of the <strong>KUM ORIC Steering Committee</strong> to guide, monitor, and evaluate research, innovation, and commercialization activities.
+              In pursuance of section 15(5)(a) of Kohsar University Murree Act-2020 (Notification No. <strong>KUM/REG/Notif./198-2026</strong>, dated 16th July 2026), the Vice Chancellor, KUM, has been pleased to approve the constitution of the <strong>KUM ORIC Steering Committee</strong> to guide, monitor, and evaluate research, innovation, and commercialization activities at Kohsar University Murree till further orders.
             </p>
             <div className="pt-2 flex flex-wrap items-center gap-4 text-xs font-medium text-white/80">
               <span className="flex items-center gap-1.5 bg-white/10 px-3 py-1.5 rounded-lg border border-white/10">
                 <FileCheck2 className="h-4 w-4 text-accent" />
-                Notification Enclosed
+                No. KUM/REG/Notif./198-2026
               </span>
               <span className="flex items-center gap-1.5 bg-white/10 px-3 py-1.5 rounded-lg border border-white/10">
                 <Building2 className="h-4 w-4 text-accent" />
-                Kohsar University Murree
+                Dated 16th July 2026
               </span>
               <span className="flex items-center gap-1.5 bg-white/10 px-3 py-1.5 rounded-lg border border-white/10">
                 <Award className="h-4 w-4 text-accent" />
-                HEC ORIC Framework 2021
+                Section 15(5)(a) KUM Act-2020
               </span>
             </div>
           </div>
@@ -206,8 +181,8 @@ const ORICSteeringCommittee = () => {
         <section id="members" className="space-y-6">
           <div className="border-b border-gray-200 pb-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div>
-              <h2 className="text-2xl font-serif text-primary font-bold">Committee Leadership & ORIC Directorate</h2>
-              <p className="text-sm text-gray-600">Key office bearers leading the KUM ORIC Steering Committee.</p>
+              <h2 className="text-2xl font-serif text-primary font-bold">Committee Leadership & Key Office Bearers</h2>
+              <p className="text-sm text-gray-600">Designated leadership of the KUM ORIC Steering Committee.</p>
             </div>
             <a
               href={oricTeamPdf}
@@ -227,10 +202,19 @@ const ORICSteeringCommittee = () => {
               <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mb-4 text-primary font-serif font-bold text-2xl border-2 border-primary/20">
                 VC
               </div>
-              <span className="text-[11px] font-bold uppercase tracking-wider text-accent bg-accent/10 px-2.5 py-0.5 rounded-full mb-2">Chairperson</span>
+              <span className="text-[11px] font-bold uppercase tracking-wider text-amber-800 bg-amber-100 px-2.5 py-0.5 rounded-full mb-2 border border-amber-300">Chair</span>
               <h3 className="font-bold text-gray-900 text-base leading-snug">Prof. Dr. Rafia Mumtaz</h3>
-              <p className="text-xs text-gray-500 font-medium mt-1">Pride of Performance</p>
               <p className="text-xs text-primary font-semibold mt-2">Vice Chancellor, KUM</p>
+            </div>
+
+            {/* Co-Chair */}
+            <div className="bg-white rounded-xl p-6 border border-gray-200 shadow-sm flex flex-col items-center text-center hover:shadow-md transition-shadow">
+              <div className="w-20 h-20 rounded-full bg-accent/10 flex items-center justify-center mb-4 text-accent font-serif font-bold text-2xl border-2 border-accent/30">
+                YN
+              </div>
+              <span className="text-[11px] font-bold uppercase tracking-wider text-accent bg-accent/10 px-2.5 py-0.5 rounded-full mb-2 border border-accent/20">Co-Chair</span>
+              <h3 className="font-bold text-gray-900 text-base leading-snug">Mr. Yasir Niazi</h3>
+              <p className="text-xs text-gray-500 font-medium mt-1">CEO Akbar Niazi Teaching Hospital / GAK Healthcare International</p>
             </div>
 
             {/* Director ORIC */}
@@ -242,36 +226,25 @@ const ORICSteeringCommittee = () => {
                   <div className="w-full h-full flex items-center justify-center text-primary font-serif font-bold text-xl">RS</div>
                 )}
               </div>
-              <span className="text-[11px] font-bold uppercase tracking-wider text-primary bg-primary/10 px-2.5 py-0.5 rounded-full mb-2">Convener / Secretary</span>
+              <span className="text-[11px] font-bold uppercase tracking-wider text-gray-700 bg-gray-100 px-2.5 py-0.5 rounded-full mb-2 border border-gray-200">Member</span>
               <h3 className="font-bold text-gray-900 text-base leading-snug">Prof. Dr. Ramla Shahid</h3>
-              <p className="text-xs text-gray-500 font-medium mt-1">PhD, Univ. of Cambridge, UK</p>
-              <p className="text-xs text-primary font-semibold mt-2">Director ORIC, KUM</p>
+              <p className="text-xs text-gray-500 font-medium mt-1">Prof-BPS-21</p>
+              <p className="text-xs text-primary font-semibold mt-1">Director ORIC, KUM</p>
             </div>
 
-            {/* DD ORIC (RM) */}
-            <div className="bg-white rounded-xl p-6 border border-gray-200 shadow-sm flex flex-col items-center text-center hover:shadow-md transition-shadow">
-              <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mb-4 text-primary font-serif font-bold text-xl border-2 border-primary/20">
-                RB
-              </div>
-              <span className="text-[11px] font-bold uppercase tracking-wider text-blue-700 bg-blue-50 px-2.5 py-0.5 rounded-full mb-2">Member</span>
-              <h3 className="font-bold text-gray-900 text-base leading-snug">Dr. Riffat Batool</h3>
-              <p className="text-xs text-gray-500 font-medium mt-1">PhD (Plant Sciences), QAU</p>
-              <p className="text-xs text-primary font-semibold mt-2">Deputy Director ORIC (RM)</p>
-            </div>
-
-            {/* DD ORIC (I&C) */}
+            {/* DD ORIC / Secretary */}
             <div className="bg-white rounded-xl p-6 border border-gray-200 shadow-sm flex flex-col items-center text-center hover:shadow-md transition-shadow">
               <div className="w-20 h-20 rounded-full overflow-hidden mb-4 border-2 border-primary/20 shadow-inner bg-gray-100">
                 {ddImg ? (
-                  <img src={ddImg} alt="Qazi Muhammad Raheel Anjum" className="w-full h-full object-cover" />
+                  <img src={ddImg} alt="Muhammad Raheel Anjum" className="w-full h-full object-cover" />
                 ) : (
                   <div className="w-full h-full flex items-center justify-center text-primary font-serif font-bold text-xl">RA</div>
                 )}
               </div>
-              <span className="text-[11px] font-bold uppercase tracking-wider text-blue-700 bg-blue-50 px-2.5 py-0.5 rounded-full mb-2">Member</span>
-              <h3 className="font-bold text-gray-900 text-base leading-snug">Qazi M. Raheel Anjum</h3>
-              <p className="text-xs text-gray-500 font-medium mt-1">MS (Materials & Surface Eng.), NUST</p>
-              <p className="text-xs text-primary font-semibold mt-2">Deputy Director ORIC (I&C)</p>
+              <span className="text-[11px] font-bold uppercase tracking-wider text-blue-800 bg-blue-100 px-2.5 py-0.5 rounded-full mb-2 border border-blue-300">Secretary</span>
+              <h3 className="font-bold text-gray-900 text-base leading-snug">Muhammad Raheel Anjum</h3>
+              <p className="text-xs text-gray-500 font-medium mt-1">Deputy Director ORIC (BS-18)</p>
+              <p className="text-xs text-primary font-semibold mt-1">Kohsar University Murree</p>
             </div>
           </div>
         </section>
@@ -284,10 +257,10 @@ const ORICSteeringCommittee = () => {
                 <Users className="h-6 w-6 text-accent" />
                 KUM ORIC Steering Committee Members
               </h3>
-              <p className="text-sm text-gray-600 mt-1">Full list of internal leadership, deans, directorate, and external representatives.</p>
+              <p className="text-sm text-gray-600 mt-1">Official composition as notified under Notification No. KUM/REG/Notif./198-2026.</p>
             </div>
             <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-green-50 text-green-700 border border-green-200 rounded-lg text-xs font-semibold self-start sm:self-auto">
-              <CheckCircle2 className="h-4 w-4" /> Official HEC Constitution
+              <CheckCircle2 className="h-4 w-4" /> Official Registrar Notification
             </span>
           </div>
 
@@ -295,20 +268,20 @@ const ORICSteeringCommittee = () => {
             <table className="w-full text-left text-sm border-collapse">
               <thead>
                 <tr className="bg-gray-50 border-y border-gray-200 text-gray-700 font-serif font-semibold text-xs uppercase tracking-wider">
-                  <th className="py-3.5 px-4 w-12 text-center">Sr.</th>
-                  <th className="py-3.5 px-4">Name & Position</th>
-                  <th className="py-3.5 px-4">Designation & Institution</th>
-                  <th className="py-3.5 px-4">Role in Committee</th>
+                  <th className="py-3.5 px-4 w-16 text-center">Sr. No.</th>
+                  <th className="py-3.5 px-4">Name & Designation</th>
+                  <th className="py-3.5 px-4">Responsibilities</th>
                   <th className="py-3.5 px-4">Category</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-100 text-gray-700">
                 {steeringCommitteeMembers.map((member) => (
                   <tr key={member.srNo} className="hover:bg-primary/5 transition-colors">
-                    <td className="py-4 px-4 text-center font-bold text-gray-400">{member.srNo}</td>
+                    <td className="py-4 px-4 text-center font-bold text-gray-500">{String(member.srNo).padStart(2, '0')}</td>
                     <td className="py-4 px-4 font-semibold text-gray-900">
                       <div>
-                        {member.name}
+                        <div className="text-base text-gray-900 font-bold">{member.name}</div>
+                        <div className="text-xs font-medium text-gray-600 mt-0.5">{member.designation}</div>
                         {member.qualification && (
                           <div className="text-xs font-normal text-gray-500 mt-0.5 flex items-center gap-1">
                             <GraduationCap className="h-3 w-3 text-primary/60" />
@@ -323,15 +296,14 @@ const ORICSteeringCommittee = () => {
                         )}
                       </div>
                     </td>
-                    <td className="py-4 px-4 font-medium text-gray-700">{member.designation}</td>
                     <td className="py-4 px-4">
-                      <span className={`inline-block px-2.5 py-1 rounded-full text-xs font-bold ${
-                        member.role.includes("Chairperson")
+                      <span className={`inline-block px-3 py-1 rounded-full text-xs font-bold ${
+                        member.role === "Chair"
+                          ? "bg-amber-100 text-amber-800 border border-amber-300"
+                          : member.role === "Co-Chair"
                           ? "bg-accent/15 text-accent border border-accent/30"
-                          : member.role.includes("Convener")
-                          ? "bg-primary/10 text-primary border border-primary/20"
-                          : member.role.includes("Secretariat")
-                          ? "bg-purple-50 text-purple-700 border border-purple-200"
+                          : member.role === "Secretary"
+                          ? "bg-blue-100 text-blue-800 border border-blue-300"
                           : "bg-gray-100 text-gray-700 border border-gray-200"
                       }`}>
                         {member.role}
@@ -370,11 +342,11 @@ const ORICSteeringCommittee = () => {
           <div className="space-y-2">
             <h3 className="text-xl font-serif font-bold text-accent">ORIC Steering Committee Secretariat</h3>
             <p className="text-sm text-white/80 max-w-2xl">
-              For agenda submissions, meeting notices, or inquiries regarding the ORIC Steering Committee at Kohsar University Murree:
+              For agenda submissions, meeting notices, or official correspondence regarding the ORIC Steering Committee at Kohsar University Murree:
             </p>
             <div className="pt-2 text-xs text-white/90 space-y-1">
-              <p><strong>Communication Assistant:</strong> Ms. Kubra Fida (MA Political Science, PU)</p>
-              <p><strong>Email:</strong> kubrafida@kum.edu.pk / director.oric@kum.edu.pk</p>
+              <p><strong>Secretary:</strong> Muhammad Raheel Anjum (Deputy Director ORIC (BS-18), KUM)</p>
+              <p><strong>Email:</strong> qazi.raheel@kum.edu.pk / director.oric@kum.edu.pk</p>
             </div>
           </div>
 
