@@ -10,18 +10,15 @@ import {
   Award,
   ShieldCheck,
   CheckCircle2,
-  Briefcase,
   GraduationCap,
   Mail,
   ChevronRight,
-  Download,
   ScrollText
 } from "lucide-react";
 
 // Team Images
 import directorImg from "@/assets/ORIC Website/ORIC Team/Director ORIC.jpg";
 import ddImg from "@/assets/ORIC Website/ORIC Team/DD ORIC.jpeg";
-import oricTeamPdf from "@/assets/pdfs/ORIC Team Orignal.pdf";
 
 export interface CommitteeMember {
   srNo: number;
@@ -177,80 +174,8 @@ const ORICSteeringCommittee = () => {
           </div>
         </section>
 
-        {/* Committee Key Leadership Cards */}
-        <section id="members" className="space-y-6">
-          <div className="border-b border-gray-200 pb-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-            <div>
-              <h2 className="text-2xl font-serif text-primary font-bold">Committee Leadership & Key Office Bearers</h2>
-              <p className="text-sm text-gray-600">Designated leadership of the KUM ORIC Steering Committee.</p>
-            </div>
-            <a
-              href={oricTeamPdf}
-              download="ORIC Team Orignal.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-2.5 bg-primary text-white text-xs sm:text-sm font-semibold rounded-xl hover:bg-primary/90 transition-all shadow-sm hover:shadow border border-primary/20 self-start sm:self-auto group"
-            >
-              <Download className="h-4 w-4 text-accent group-hover:translate-y-0.5 transition-transform" />
-              <span>Download ORIC Team PDF</span>
-            </a>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {/* VC */}
-            <div className="bg-white rounded-xl p-6 border border-gray-200 shadow-sm flex flex-col items-center text-center hover:shadow-md transition-shadow">
-              <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mb-4 text-primary font-serif font-bold text-2xl border-2 border-primary/20">
-                VC
-              </div>
-              <span className="text-[11px] font-bold uppercase tracking-wider text-amber-800 bg-amber-100 px-2.5 py-0.5 rounded-full mb-2 border border-amber-300">Chair</span>
-              <h3 className="font-bold text-gray-900 text-base leading-snug">Prof. Dr. Rafia Mumtaz</h3>
-              <p className="text-xs text-primary font-semibold mt-2">Vice Chancellor, KUM</p>
-            </div>
-
-            {/* Co-Chair */}
-            <div className="bg-white rounded-xl p-6 border border-gray-200 shadow-sm flex flex-col items-center text-center hover:shadow-md transition-shadow">
-              <div className="w-20 h-20 rounded-full bg-accent/10 flex items-center justify-center mb-4 text-accent font-serif font-bold text-2xl border-2 border-accent/30">
-                YN
-              </div>
-              <span className="text-[11px] font-bold uppercase tracking-wider text-accent bg-accent/10 px-2.5 py-0.5 rounded-full mb-2 border border-accent/20">Co-Chair</span>
-              <h3 className="font-bold text-gray-900 text-base leading-snug">Mr. Yasir Niazi</h3>
-              <p className="text-xs text-gray-500 font-medium mt-1">CEO Akbar Niazi Teaching Hospital / GAK Healthcare International</p>
-            </div>
-
-            {/* Director ORIC */}
-            <div className="bg-white rounded-xl p-6 border border-gray-200 shadow-sm flex flex-col items-center text-center hover:shadow-md transition-shadow">
-              <div className="w-20 h-20 rounded-full overflow-hidden mb-4 border-2 border-primary/20 shadow-inner bg-gray-100">
-                {directorImg ? (
-                  <img src={directorImg} alt="Prof. Dr. Ramla Shahid" className="w-full h-full object-cover" />
-                ) : (
-                  <div className="w-full h-full flex items-center justify-center text-primary font-serif font-bold text-xl">RS</div>
-                )}
-              </div>
-              <span className="text-[11px] font-bold uppercase tracking-wider text-gray-700 bg-gray-100 px-2.5 py-0.5 rounded-full mb-2 border border-gray-200">Member</span>
-              <h3 className="font-bold text-gray-900 text-base leading-snug">Prof. Dr. Ramla Shahid</h3>
-              <p className="text-xs text-gray-500 font-medium mt-1">Prof-BPS-21</p>
-              <p className="text-xs text-primary font-semibold mt-1">Director ORIC, KUM</p>
-            </div>
-
-            {/* DD ORIC / Secretary */}
-            <div className="bg-white rounded-xl p-6 border border-gray-200 shadow-sm flex flex-col items-center text-center hover:shadow-md transition-shadow">
-              <div className="w-20 h-20 rounded-full overflow-hidden mb-4 border-2 border-primary/20 shadow-inner bg-gray-100">
-                {ddImg ? (
-                  <img src={ddImg} alt="Muhammad Raheel Anjum" className="w-full h-full object-cover" />
-                ) : (
-                  <div className="w-full h-full flex items-center justify-center text-primary font-serif font-bold text-xl">RA</div>
-                )}
-              </div>
-              <span className="text-[11px] font-bold uppercase tracking-wider text-blue-800 bg-blue-100 px-2.5 py-0.5 rounded-full mb-2 border border-blue-300">Secretary</span>
-              <h3 className="font-bold text-gray-900 text-base leading-snug">Muhammad Raheel Anjum</h3>
-              <p className="text-xs text-gray-500 font-medium mt-1">Deputy Director ORIC (BS-18)</p>
-              <p className="text-xs text-primary font-semibold mt-1">Kohsar University Murree</p>
-            </div>
-          </div>
-        </section>
-
         {/* Complete Committee Members Table */}
-        <section className="bg-white rounded-2xl border border-gray-200 p-6 sm:p-8 shadow-sm space-y-6">
+        <section id="members" className="bg-white rounded-2xl border border-gray-200 p-6 sm:p-8 shadow-sm space-y-6">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-gray-100 pb-4">
             <div>
               <h3 className="text-2xl font-serif text-primary font-bold flex items-center gap-2">
