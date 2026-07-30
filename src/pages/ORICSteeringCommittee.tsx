@@ -25,7 +25,6 @@ export interface CommitteeMember {
   name: string;
   designation: string;
   role: string;
-  category: "Leadership" | "ORIC Directorate" | "Industry & Corporate Leaders" | "Secretariat";
   qualification?: string;
   email?: string;
   image?: string;
@@ -36,62 +35,50 @@ const steeringCommitteeMembers: CommitteeMember[] = [
     srNo: 1,
     name: "Prof. Dr. Rafia Mumtaz",
     designation: "Vice Chancellor, KUM",
-    role: "Chair",
-    category: "Leadership"
+    role: "Chair"
   },
   {
     srNo: 2,
     name: "Mr. Yasir Niazi",
     designation: "CEO Akbar Niazi Teaching hospital/ GAK Healthcare International",
-    role: "Co-Chair",
-    category: "Industry & Corporate Leaders"
+    role: "Co-Chair"
   },
   {
     srNo: 3,
     name: "Prof. Dr. Ramla Shahid",
-    designation: "Prof-BPS-21 / Director ORIC, KUM",
+    designation: "Director ORIC, KUM",
     role: "Member",
-    category: "ORIC Directorate",
-    qualification: "PhD, Chemistry/Chemical Biology (Univ. of Cambridge, UK)",
-    email: "director.oric@kum.edu.pk",
     image: directorImg
   },
   {
     srNo: 4,
     name: "Mr. Pervaiz Abbasi",
     designation: "EX Director National Incubation Center, Founder Adventures Studio",
-    role: "Member",
-    category: "Industry & Corporate Leaders"
+    role: "Member"
   },
   {
     srNo: 5,
     name: "Mr. Muazzam Arslan Bhatti",
     designation: "CEO, Alfoze Technologies Pvt Ltd",
-    role: "Member",
-    category: "Industry & Corporate Leaders"
+    role: "Member"
   },
   {
     srNo: 6,
     name: "Mr. Zain Ul Hassan",
     designation: "Associate, Systems, Pvt Ltd",
-    role: "Member",
-    category: "Industry & Corporate Leaders"
+    role: "Member"
   },
   {
     srNo: 7,
     name: "Mr. Salman Ansari",
     designation: "Data Scientist, Walee Group",
-    role: "Member",
-    category: "Industry & Corporate Leaders"
+    role: "Member"
   },
   {
     srNo: 8,
     name: "Muhammad Raheel Anjum",
-    designation: "Deputy Director ORIC (BS-18), KUM",
+    designation: "Deputy Director ORIC",
     role: "Secretary",
-    category: "ORIC Directorate",
-    qualification: "MS (Materials & Surface Eng.), NUST",
-    email: "qazi.raheel@kum.edu.pk",
     image: ddImg
   }
 ];
@@ -196,7 +183,6 @@ const ORICSteeringCommittee = () => {
                   <th className="py-3.5 px-4 w-16 text-center">Sr. No.</th>
                   <th className="py-3.5 px-4">Name & Designation</th>
                   <th className="py-3.5 px-4">Responsibilities</th>
-                  <th className="py-3.5 px-4">Category</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-100 text-gray-700">
@@ -222,19 +208,17 @@ const ORICSteeringCommittee = () => {
                       </div>
                     </td>
                     <td className="py-4 px-4">
-                      <span className={`inline-block px-3 py-1 rounded-full text-xs font-bold ${
-                        member.role === "Chair"
-                          ? "bg-amber-100 text-amber-800 border border-amber-300"
-                          : member.role === "Co-Chair"
+                      <span className={`inline-block px-3 py-1 rounded-full text-xs font-bold ${member.role === "Chair"
+                        ? "bg-amber-100 text-amber-800 border border-amber-300"
+                        : member.role === "Co-Chair"
                           ? "bg-accent/15 text-accent border border-accent/30"
                           : member.role === "Secretary"
-                          ? "bg-blue-100 text-blue-800 border border-blue-300"
-                          : "bg-gray-100 text-gray-700 border border-gray-200"
-                      }`}>
+                            ? "bg-blue-100 text-blue-800 border border-blue-300"
+                            : "bg-gray-100 text-gray-700 border border-gray-200"
+                        }`}>
                         {member.role}
                       </span>
                     </td>
-                    <td className="py-4 px-4 text-xs font-medium text-gray-500">{member.category}</td>
                   </tr>
                 ))}
               </tbody>
