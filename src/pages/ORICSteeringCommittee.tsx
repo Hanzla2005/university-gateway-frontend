@@ -175,7 +175,7 @@ const ORICSteeringCommittee = () => {
         </section>
 
         {/* Complete Committee Members Table */}
-        <section id="members" className="bg-white rounded-2xl border border-gray-200 p-6 sm:p-8 shadow-sm space-y-6">
+        <section id="members" className="bg-white rounded-2xl border border-gray-200 p-6 sm:p-8 shadow-sm space-y-6 scroll-mt-24">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-gray-100 pb-4">
             <div>
               <h3 className="text-2xl font-serif text-primary font-bold flex items-center gap-2">
@@ -243,7 +243,7 @@ const ORICSteeringCommittee = () => {
         </section>
 
         {/* TORs & Functions Section */}
-        <section id="tors" className="space-y-6">
+        <section id="tors" className="space-y-6 scroll-mt-24">
           <div className="border-b border-gray-200 pb-4">
             <h2 className="text-2xl font-serif text-primary font-bold">Terms of Reference (TORs)</h2>
             <p className="text-sm text-gray-600">Core mandate and responsibilities of the KUM ORIC Steering Committee under HEC framework.</p>
