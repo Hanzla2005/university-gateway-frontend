@@ -584,6 +584,140 @@ export const departmentPages: DepartmentPage[] = [
             ]
           }
         ]
+      },
+      {
+        name: "BS Medical Laboratory Technology (MLT)",
+        description: "Duration: 4 Years (8 Semesters)\nCredit Hours: 139\nEligibility: F.Sc Premedical or equivalent qualification F.Sc MLT with relevant subject with at least 50% marks.\n\nThe Bachelor of Science in Medical Laboratory Technology (BS-MLT) is a recognized undergraduate program at Kohsar University Murree, accredited by the Allied Health Professional Council (AHPC), Pakistan. The BS-MLT program is designed to prepare highly competent, ethical, and skilled medical laboratory professionals with a strong foundation in scientific knowledge, technical expertise, and professional practice. Through excellence in teaching, innovative research, hands-on clinical training, and community engagement, the program develops graduates with advanced diagnostic, analytical, and laboratory management competencies required to meet the evolving demands of modern healthcare and contribute effectively to improved patient care and public health.",
+        eligibility: [
+          "F.Sc Premedical or equivalent qualification / F.Sc MLT with relevant subject with at least 50% marks.",
+          "Accredited by Allied Health Professional Council (AHPC), Pakistan."
+        ],
+        careersOverview: "Career Scope of BS Medical Laboratory Technology (BS MLT):",
+        careers: [
+          "Clinical Medical Laboratory Scientist",
+          "Medical Laboratory Technologist",
+          "Blood Bank and Transfusion Medicine Specialist",
+          "Molecular Diagnostics Technologist",
+          "Quality Assurance and Laboratory Quality Manager",
+          "ISO Technical experts",
+          "Public Health Laboratory Professional",
+          "Biomedical and Diagnostic Industry Specialist",
+          "Forensic Laboratory Scientist",
+          "Infection Prevention and Biosafety Officer",
+          "Entrepreneur and Diagnostic Laboratory Owner",
+          "International Healthcare Professional",
+          "Government Health Services Professional from RHC level to DHQS",
+          "Higher Education and Research Scholar",
+          "Healthcare Policy and Laboratory Accreditation Specialist"
+        ],
+        mous: [
+          "Dr. Akbar Niazi teaching Hospital (ANTH)",
+          "Pakistan Institute of Medical Sciences (PIMS)",
+          "THQ Hospital Murree"
+        ],
+        scheme: [
+          {
+            name: "Semester 1",
+            totalCredits: 17,
+            courses: [
+              { title: "Human Anatomy", credits: "3(2-1)" },
+              { title: "Human Physiology", credits: "3(2-1)" },
+              { title: "Introduction to Medical Biochemistry", credits: "2(1-1)" },
+              { title: "Quantitative Reasoning – I *", credits: "3(3-0)" },
+              { title: "Functional English *", credits: "3(3-0)" },
+              { title: "Applications of Information and Communication Technologies (ICT) *", credits: "3(2-1)" }
+            ]
+          },
+          {
+            name: "Semester 2",
+            totalCredits: 18,
+            courses: [
+              { title: "Introduction to Medical Laboratory Technology", credits: "2(2-0)" },
+              { title: "First Aid & Emergency Care", credits: "2(1-1)" },
+              { title: "Introduction to Medical Equipment & Technology", credits: "3(2-1)" },
+              { title: "Introduction to Allied Health Sciences - I", credits: "2(2-0)" },
+              { title: "Patient Safety & Infection Control", credits: "2(1-1)" },
+              { title: "Quantitative Reasoning – II *", credits: "3(3-0)" },
+              { title: "Social Sciences **", credits: "2(2-0)" },
+              { title: "Islamic Studies * (Religious Edu / Ethics for non-Muslim students)", credits: "2(2-0)" }
+            ]
+          },
+          {
+            name: "Semester 3",
+            totalCredits: 18,
+            courses: [
+              { title: "Introduction to Allied Health Sciences - II", credits: "2(2-0)" },
+              { title: "General Pathology", credits: "3(2-1)" },
+              { title: "Introduction to Public Health and Epidemiology", credits: "3(3-0)" },
+              { title: "Natural Science ***", credits: "3(2-1)" },
+              { title: "Arts & Humanities ****", credits: "2(2-0)" },
+              { title: "Civics and Community Engagement *", credits: "2(2-0)" },
+              { title: "Ideology and Constitution of Pakistan *", credits: "2(2-0)" },
+              { title: "Understanding of Holy Quran - I *", credits: "1(0-1)" }
+            ]
+          },
+          {
+            name: "Semester 4",
+            totalCredits: 18,
+            courses: [
+              { title: "General Pharmacology", credits: "3(2-1)" },
+              { title: "Understanding of Holy Quran - II *", credits: "1(0-1)" },
+              { title: "Expository Writing *", credits: "3(3-0)" },
+              { title: "Healthcare Systems & Policies", credits: "2(2-0)" },
+              { title: "Healthcare Marketing & Management", credits: "2(2-0)" },
+              { title: "Introduction to Nursing Practice", credits: "3(2-1)" },
+              { title: "Entrepreneurship *", credits: "2(2-0)" },
+              { title: "Pakistan Studies *", credits: "2(2-0)" }
+            ]
+          },
+          {
+            name: "Semester 5",
+            totalCredits: 18,
+            courses: [
+              { title: "Hematology", credits: "3(2-1)" },
+              { title: "Clinical Biochemistry", credits: "3(2-1)" },
+              { title: "Clinical Bacteriology and Virology", credits: "3(2-1)" },
+              { title: "Medical Laboratory Instrumentations", credits: "3(2-1)" },
+              { title: "Molecular Biology", credits: "3(2-1)" },
+              { title: "Supervised Clinical Practice – I: Biochemistry", credits: "3(0-3)" }
+            ]
+          },
+          {
+            name: "Semester 6",
+            totalCredits: 15,
+            courses: [
+              { title: "Chemical Pathology", credits: "3(2-1)" },
+              { title: "Medical Parasitology & Mycology", credits: "3(2-1)" },
+              { title: "Scientific Writing and Research Methods *****", credits: "3(2-1)" },
+              { title: "Biostatistics *****", credits: "3(2-1)" },
+              { title: "Supervised Clinical Practice – II: Microbiology", credits: "3(0-3)" },
+              { title: "Internship", credits: "3(0-3)" }
+            ]
+          },
+          {
+            name: "Semester 7",
+            totalCredits: 15,
+            courses: [
+              { title: "Immunology & Serology", credits: "3(2-1)" },
+              { title: "Blood Bank & Transfusion Medicine", credits: "3(2-1)" },
+              { title: "Bioinformatics *****", credits: "3(2-1)" },
+              { title: "Biomarkers in Disease Diagnosis", credits: "3(2-1)" },
+              { title: "Supervised Clinical Practice – III: Hematology", credits: "3(0-3)" }
+            ]
+          },
+          {
+            name: "Semester 8",
+            totalCredits: 17,
+            courses: [
+              { title: "Artificial Intelligence in Health Care *****", credits: "3(3-0)" },
+              { title: "Clinical Lab Management", credits: "2(2-0)" },
+              { title: "Cytology and Histotechniques", credits: "3(2-1)" },
+              { title: "Health Biotechnology", credits: "3(2-1)" },
+              { title: "Supervised Clinical Practice – IV: Immunology and Serology", credits: "3(0-3)" },
+              { title: "Capstone Project", credits: "3(0-3)" }
+            ]
+          }
+        ]
       }
     ]
   },
@@ -724,6 +858,69 @@ export const departmentPages: DepartmentPage[] = [
               { title: "Internship / Research Project / Optional course", credits: "3(2,1)" },
               { title: "Pharmacognosy", credits: "3(2,1)" },
               { title: "Plant tissue & Cell culture", credits: "3(2,1)" },
+            ]
+          }
+        ]
+      },
+      {
+        name: "MS Botany",
+        description: "Duration: 2 Years (4 Regular Semesters)\nCredit Hours: 30 Credit Hours (Course work: 24 Credit hours / 8 courses, Research requirement: 6 Credit hours)\n\nThe MS Botany program at Kohsar University Murree equips graduates with advanced knowledge, research expertise, and critical thinking skills in plant sciences. The program emphasizes scientific innovation and independent research to address challenges in plant science, biodiversity conservation, sustainable agriculture, and environmental sustainability.",
+        eligibility: [
+          "An undergraduate degree (Involving 16 years of education) in the field of Botany or Plant Sciences.",
+          "Candidates having undergraduate degrees (involving 16 years of education) in any discipline of Biological, Pharmaceutical, Food, Agricultural, Medical, Allied Health and Chemical Sciences other than but relevant to the field of Botany or Plant Sciences are also eligible for admission in MS in Botany subject to relevancy & completion of deficiency courses up-to 12 credit hours to be determined by the offering department.",
+          "GRE/HAT General/equivalent test with 50% score OR university admission test with a minimum 60% score will be required to qualify for admission to MS/M.Phil."
+        ],
+        objectives: [
+          "Critically analyze and synthesize advanced concepts and current research in various fields of botany, including plant physiology, taxonomy, molecular biology, and ecology.",
+          "Apply sophisticated experimental techniques and methodologies to conduct independent research and solve complex problems in botanical science.",
+          "Demonstrate the ability to effectively communicate scientific findings and theoretical concepts in botany to both specialized and general audiences.",
+          "Evaluate and implement conservation strategies and biotechnological applications to address global challenges related to plant biodiversity, agriculture and sustainability."
+        ],
+        scheme: [
+          {
+            name: "Core Courses (3 Courses, 09 Credit Hours)",
+            totalCredits: 9,
+            courses: [
+              { title: "Advanced Analytical Tools in Botany", credits: "3(1-2)" },
+              { title: "Recent Trends in Botany", credits: "3(3-0)" },
+              { title: "Research Methodology & Scientific Writing", credits: "3(3-0)" }
+            ]
+          },
+          {
+            name: "Elective Courses (Choose 5 Courses / 15 Credit Hours)",
+            totalCredits: 15,
+            courses: [
+              { title: "BOT-704: Advances in Plant Taxonomy", credits: 3 },
+              { title: "BOT-705: Advanced Phycology", credits: 3 },
+              { title: "BOT-706: Biodiversity and Conservation", credits: 3 },
+              { title: "BOT-707: Fungal Biotechnology", credits: 3 },
+              { title: "BOT-708: Medicinal and Aromatic Plants", credits: 3 },
+              { title: "BOT-709: Advanced Methods in Molecular Biology", credits: 3 },
+              { title: "BOT-710: Proteomics and Genomics", credits: 3 },
+              { title: "BOT-711: Research Techniques and Instrumentation", credits: 3 },
+              { title: "BOT-712: Advanced Plant Physiology", credits: 3 },
+              { title: "BOT-713: Applied Ethnobotany", credits: 3 },
+              { title: "BOT-714: Biofuel Technology", credits: 3 },
+              { title: "BOT-715: Plant–Microbe Interaction", credits: 3 },
+              { title: "BOT-716: Biotechnology for Sustainable Development", credits: 3 },
+              { title: "BOT-717: Advances in Environmental Biology", credits: 3 },
+              { title: "BOT-718: Advances in Plant Anatomy", credits: 3 },
+              { title: "BOT-719: Advanced Concepts in Plant Breeding", credits: 3 },
+              { title: "BOT-720: Recombinant DNA Technology", credits: 3 },
+              { title: "BOT-721: Methods in Plant Cell, Tissue and Organ Culture", credits: 3 },
+              { title: "BOT-722: Taxonomy of Gymnosperms", credits: 3 },
+              { title: "BOT-723: Plant Reproductive Biology", credits: 3 },
+              { title: "BOT-724: Toxicology", credits: 3 },
+              { title: "BOT-725: Advances in Molecular Biology", credits: 3 },
+              { title: "BOT-726: Nanobiotechnology", credits: 3 },
+              { title: "BOT-727: Phytoremediation", credits: 3 }
+            ]
+          },
+          {
+            name: "Research (Thesis MS/M.Phil)",
+            totalCredits: 6,
+            courses: [
+              { title: "BOT-728: Thesis (MS/M.Phil.)", credits: "6(0–6)" }
             ]
           }
         ]
