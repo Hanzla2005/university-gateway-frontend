@@ -19,9 +19,12 @@ const ApplicationPortal = () => {
               <h2 className="text-4xl md:text-5xl font-serif text-primary leading-tight mb-6">
                 Ready to Apply?
               </h2>
-              <p className="text-lg text-gray-600 leading-relaxed font-light mb-8 max-w-2xl mx-auto">
+              <p className="text-lg text-gray-600 leading-relaxed font-light mb-6 max-w-2xl mx-auto">
                 Click the button below to access our online application portal and start your admission process for the <strong className="font-semibold text-primary">Fall 2026</strong> session.
               </p>
+              <div className="inline-block bg-red-100 text-red-700 font-semibold px-6 py-3 rounded-full text-base md:text-lg mb-8 border border-red-200 shadow-sm">
+                The last date for BS & MS admissions has been extended to <span className="font-bold">21 September 2026</span>
+              </div>
               <div>
                 <a 
                   href="https://admissions.kum.edu.pk/application/index.php" 

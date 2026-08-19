@@ -36,6 +36,11 @@ const AdmissionsPopup = () => {
             <DialogDescription className="text-center pt-1.5 sm:pt-3 text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed max-w-2xl mx-auto">
               Kohsar University Murree officially announces the commencement of admissions for the 2026 session. Join our prestigious institution and shape your future.
             </DialogDescription>
+            <div className="text-center mt-3">
+              <span className="inline-block bg-red-100 text-red-700 text-xs sm:text-sm font-semibold px-4 py-1.5 rounded-full border border-red-200">
+                Last date for BS & MS admissions extended to <span className="font-bold">21 September 2026</span>
+              </span>
+            </div>
           </DialogHeader>
 
           <div className="flex flex-col items-center justify-center gap-3 sm:gap-4 py-2 sm:py-4 md:py-6">

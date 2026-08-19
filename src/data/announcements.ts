@@ -7,6 +7,8 @@ import img16 from "@/assets/announcements/16.png";
 import img17 from "@/assets/announcements/17.png";
 import img18 from "@/assets/announcements/18.png";
 import img19 from "@/assets/announcements/19.png";
+import img20 from "@/assets/announcements/20.png";
+import img21 from "@/assets/announcements/21.png";
 import img5 from "@/assets/announcements/5.png";
 import img6 from "@/assets/announcements/6.png";
 import img7 from "@/assets/announcements/7.jpeg";
@@ -25,6 +27,36 @@ export interface Announcement {
 }
 
 export const announcements: Announcement[] = [
+  {
+    id: "22",
+    slug: "last-date-of-admissions-extended-to-21-september-2026",
+    title: "Last Date of BS & MS Admissions Extended to 21 September 2026",
+    date: "August 17, 2026",
+    tag: "News",
+    image: img21,
+    excerpt: "The last date of BS & MS admissions for various degree programs at Kohsar University Murree has been extended to 21 September 2026.",
+    content: "Kohsar University Murree announces that the last date for submission of admission applications for various undergraduate (BS) and postgraduate (MS) degree programs has been extended to 21 September 2026. Interested candidates can apply online through the official admissions portal before the extended deadline.",
+  },
+  {
+    id: "21",
+    slug: "mou-kohsar-university-murree-university-of-sao-paulo-brazil",
+    title: "Kohsar University Murree Strengthened Global Academic Engagement through MoU with University of São Paulo, Brazil",
+    date: "August 12, 2026",
+    tag: "News",
+    image: img21,
+    excerpt: "Kohsar University Murree has further strengthened its international academic presence by signing a Memorandum of Understanding (MoU) with the University of São Paulo (USP), Brazil.",
+    content: "Kohsar University Murree has further strengthened its international academic presence by signing a Memorandum of Understanding (MoU) with the University of São Paulo (USP), Brazil, one of the country’s leading public research universities. The MoU was signed online by Vice Chancellor, Kohsar University Murree, Prof. Dr. Rafia Mumtaz (Pride of Performance) and Prof. Euclydes Marega Junior of the University of São Paulo.\n\nThe partnership will facilitate joint research initiatives, faculty and student exchanges, shared academic courses, scholarly publications, knowledge sharing, and international research opportunities. The two institutions also explored the potential for jointly funded research projects through FAPESP, the research funding agency of São Paulo State.\n\nSpeaking on the occasion, Prof. Dr. Rafia Mumtaz (Pride of Performance) highlighted Kohsar University strengths in tourism and hospitality management, forestry, environmental sciences, food science and technology, and emerging technologies, identifying these fields as promising areas for future academic and research collaboration. Prof. Euclydes Marega Junior welcomed the partnership and emphasized the opportunities it presents for joint research, student mobility, faculty interaction, and academic exchange between Brazil and Pakistan.",
+  },
+  {
+    id: "20",
+    slug: "oric-kohsar-university-murree-first-ever-psf-project-recommended-for-funding",
+    title: "ORIC, Kohsar University Murree's First-Ever Project Recommended for Funding by Pakistan Science Foundation",
+    date: "August 10, 2026",
+    tag: "Achievement",
+    image: img20,
+    excerpt: "ORIC, Kohsar University Murree, extends heartfelt congratulations to Dr. Sumaira Maqsood (PI) and Dr. Aftab Ahmad (Co-PI) on having Kohsar University Murree's first-ever project submitted to Pakistan Science Foundation (PSF) recommended for funding.",
+    content: "🌟 Heartiest Congratulations on a Remarkable Achievement! 🌟\n\nORIC, Kohsar University Murree, extends heartfelt congratulations to Dr. Sumaira Maqsood, Principal Investigator (PI) and Dr. Aftab Ahmad (Co-PI) on the remarkable achievement of having Kohsar University Murree’s first-ever project submitted to the Pakistan Science Foundation (PSF) recommended for funding.\n\nThis is indeed a big milestone and a proud moment for Kohsar University Murree, reflecting Dr. Sumaira Maqsood and Dr. Aftab Ahamd dedication, research potential, and commitment to promoting quality research at the University.\n\nWe wish them continued success and many more achievements in the field of research and innovation. 🌸🎉\n\nA proud achievement for Kohsar University Murree!",
+  },
   {
     id: "17",
     slug: "hec-review-team-visited-kohsar-university-murree",

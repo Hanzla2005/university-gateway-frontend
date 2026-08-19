@@ -2,7 +2,7 @@ import { useParams, Link, Navigate } from "react-router-dom";
 import { useState } from "react";
 import {
   ChevronDown, ChevronRight, ChevronLeft, Eye, Target, BookOpen, Users,
-  GraduationCap, Palette, Info, CheckCircle, Calendar, Mail, X, Images, FileText
+  GraduationCap, Palette, Info, CheckCircle, Calendar, Mail, X, Images, FileText, Quote
 } from "lucide-react";
 import PageHeader from "@/components/PageHeader";
 import Footer from "@/components/Footer";
@@ -16,6 +16,32 @@ const SectionHeading = ({ icon: Icon, title }: { icon: React.ElementType; title:
     <h2 className="text-2xl font-bold tracking-tight text-slate-800">{title}</h2>
   </div>
 );
+
+const renderDesignation = (designation: string) => {
+  const pipeParts = designation.split("|").map((p) => p.trim());
+  const mainRole = pipeParts[0];
+  const secondaryRoles = pipeParts.slice(1);
+
+  return (
+    <div className="space-y-1.5 mt-2.5">
+      <p className="text-xs font-bold text-slate-800 uppercase tracking-wider leading-snug">
+        {mainRole}
+      </p>
+      {secondaryRoles.length > 0 && (
+        <div className="flex flex-wrap justify-center gap-1.5 pt-1">
+          {secondaryRoles.map((role, idx) => (
+            <span
+              key={idx}
+              className="inline-block bg-primary/10 text-primary text-[10px] sm:text-[11px] font-semibold px-2.5 py-0.5 rounded-full border border-primary/20"
+            >
+              {role}
+            </span>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+};
 
 const DepartmentDetail = () => {
   const { id } = useParams<{ id: string }>();
@@ -40,8 +66,8 @@ const DepartmentDetail = () => {
 
   const getHodTitle = (designation: string) => {
     const lower = designation.toLowerCase();
+    if (lower.includes("in charge") || lower.includes("in-charge")) return "Message from the In Charge Faculty";
     if (lower.includes("chairperson")) return "Chairperson's Message";
-    if (lower.includes("in charge") || lower.includes("in-charge")) return "In-Charge's Message";
     if (lower.includes("director")) return "Director's Message";
     return "HOD's Message";
   };
@@ -114,49 +140,115 @@ const DepartmentDetail = () => {
         ) : (
           <div className="container-main px-4 sm:px-6 lg:px-8 py-14 space-y-16">
 
-            {/* ── HOD MESSAGE ─────────────────────────────────────── */}
+            {/* ── SLOGAN / TAGLINE BANNER ───────────────────────────── */}
+            {department.slogan && (
+              <div className="bg-gradient-to-r from-primary/10 via-primary/5 to-white border-l-4 border-primary p-6 rounded-r-xl shadow-sm flex items-center justify-between gap-4">
+                <div>
+                  <span className="text-[10px] uppercase font-bold tracking-widest text-primary/70 block mb-1">Department Tagline</span>
+                  <div className="text-primary font-serif italic text-xl md:text-2xl font-semibold">
+                    “{department.slogan}”
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* ── HOD / LEADERSHIP MESSAGE ───────────────────────── */}
             {department.hodMessage && hod && (
-              <section className="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden">
-                <div className="grid md:grid-cols-12">
-                  {/* Image side */}
-                  <div className="md:col-span-4 bg-slate-50/50 flex flex-col items-center justify-center p-8 border-r border-gray-100">
-                    <div className="w-48 h-60 rounded-lg overflow-hidden border-4 border-white shadow-md">
-                      {hod.image ? (
-                        <img src={hod.image} alt={hod.name} className="w-full h-full object-cover" />
-                      ) : (
-                        <div className="w-full h-full bg-primary/5 flex items-center justify-center text-primary text-5xl font-serif">
-                          {hod.name.charAt(0)}
-                        </div>
-                      )}
-                    </div>
-                    <div className="mt-6 text-center">
-                      <h3 className="text-xl font-bold text-slate-900 leading-tight">{hod.name}</h3>
-                      <p className="text-xs text-primary font-bold uppercase tracking-widest mt-1">{hod.designation}</p>
-                      {hod.email && (
-                        <a href={`mailto:${hod.email}`} className="mt-3 flex items-center justify-center gap-2 text-xs text-slate-500 hover:text-primary transition-colors">
-                          <Mail className="h-3 w-3" />
-                          {hod.email}
-                        </a>
-                      )}
+              <section className="bg-white rounded-2xl border border-slate-200/80 shadow-md overflow-hidden p-6 sm:p-8 lg:p-10">
+                <div className="grid md:grid-cols-12 gap-8 lg:gap-12 items-start">
+                  
+                  {/* Left Profile Side (Sticky on Desktop) */}
+                  <div className="md:col-span-4 lg:col-span-4 self-start md:sticky md:top-24">
+                    <div className="bg-slate-50/80 rounded-2xl p-6 border border-slate-100/80 text-center flex flex-col items-center shadow-inner">
+                      <div className="w-44 sm:w-48 aspect-[4/5] rounded-xl overflow-hidden border-4 border-white shadow-md ring-1 ring-slate-200 shrink-0">
+                        {hod.image ? (
+                          <img
+                            src={hod.image}
+                            alt={hod.name}
+                            className="w-full h-full object-cover object-top"
+                          />
+                        ) : (
+                          <div className="w-full h-full bg-primary/5 flex items-center justify-center text-primary text-5xl font-serif">
+                            {hod.name.charAt(0)}
+                          </div>
+                        )}
+                      </div>
+                      <div className="mt-5 w-full">
+                        <h3 className="text-xl font-bold font-serif text-slate-900 leading-tight">
+                          {hod.name}
+                        </h3>
+                        {renderDesignation(hod.designation)}
+                        {hod.email && (
+                          <a
+                            href={`mailto:${hod.email}`}
+                            className="mt-4 inline-flex items-center justify-center gap-2 text-xs font-medium text-slate-600 hover:text-primary bg-white hover:bg-slate-100 px-3 py-1.5 rounded-lg border border-slate-200 transition-colors w-full"
+                          >
+                            <Mail className="h-3.5 w-3.5 text-primary" />
+                            {hod.email}
+                          </a>
+                        )}
+                      </div>
                     </div>
                   </div>
 
-                  {/* Message side */}
-                  <div className="md:col-span-8 p-10 lg:p-14 bg-white flex flex-col justify-center relative">
-                    <div className="flex items-center gap-2 mb-8">
-                      <div className="h-0.5 w-10 bg-primary/20" />
-                      <span className="text-[11px] font-bold text-primary uppercase tracking-[0.2em]">
-                        {getHodTitle(hod.designation)}
-                      </span>
+                  {/* Right Message Side */}
+                  <div className="md:col-span-8 lg:col-span-8 flex flex-col justify-between">
+                    <div>
+                      {/* Header Badge */}
+                      <div className="flex items-center gap-3 border-b border-slate-100 pb-5 mb-6">
+                        <div className="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center font-bold shrink-0">
+                          <Quote className="h-5 w-5" />
+                        </div>
+                        <div>
+                          <span className="text-[11px] font-bold text-primary uppercase tracking-[0.2em] block">
+                            Leadership Message
+                          </span>
+                          <h2 className="text-xl sm:text-2xl font-serif font-bold text-slate-900">
+                            {getHodTitle(hod.designation)}
+                          </h2>
+                        </div>
+                      </div>
+
+                      {/* Paragraphs */}
+                      <div className="space-y-4 text-slate-700 leading-relaxed font-sans text-[15px] sm:text-[16px]">
+                        {department.hodMessage.split("\n\n").map((para, idx) => {
+                          if (idx === 0) {
+                            return (
+                              <div
+                                key={idx}
+                                className="bg-primary/5 border-l-4 border-primary p-5 rounded-r-xl text-slate-800 font-medium text-[16px] sm:text-[17px] leading-relaxed shadow-sm mb-5"
+                              >
+                                {para}
+                              </div>
+                            );
+                          }
+                          return (
+                            <p key={idx} className="text-justify leading-[1.8]">
+                              {para}
+                            </p>
+                          );
+                        })}
+                      </div>
                     </div>
-                    <div className="relative">
-                      <span className="absolute -top-6 -left-4 text-7xl text-slate-100 font-serif leading-none select-none">“</span>
-                      <blockquote className="text-[17px] lg:text-[19px] text-slate-700 leading-relaxed italic relative z-10 font-serif">
-                        {department.hodMessage}
-                      </blockquote>
-                      <span className="absolute -bottom-12 -right-4 text-7xl text-slate-100 font-serif leading-none select-none">”</span>
+
+                    {/* Official Signature Stamp */}
+                    <div className="mt-8 pt-6 border-t border-slate-100 flex items-center justify-between flex-wrap gap-4">
+                      <div>
+                        <h4 className="font-serif font-bold text-slate-900 text-lg">
+                          {hod.name}
+                        </h4>
+                        <p className="text-xs text-primary font-semibold">
+                          Kohsar University Murree
+                        </p>
+                      </div>
+                      <div className="text-right">
+                        <span className="inline-block px-3 py-1 bg-slate-100 text-slate-600 text-xs font-semibold rounded-full uppercase tracking-wider">
+                          Official Statement
+                        </span>
+                      </div>
                     </div>
                   </div>
+
                 </div>
               </section>
             )}
@@ -300,7 +392,7 @@ const DepartmentDetail = () => {
                             <img
                               src={member.image}
                               alt={member.name}
-                              className="w-full h-full object-contain transition-transform duration-500 group-hover/card:scale-105"
+                              className="w-full h-full object-cover object-top transition-transform duration-500 group-hover/card:scale-105"
                             />
                           ) : (
                             <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center text-primary font-serif text-3xl">

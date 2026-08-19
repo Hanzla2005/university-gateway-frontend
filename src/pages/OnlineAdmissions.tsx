@@ -18,7 +18,7 @@ const OnlineAdmissions = () => {
       description: "View the official admission advertisement for Spring 2026."
     },
     {
-      title: "Apply for BS Programs (Click Here)",
+      title: "Apply for BS & MS Programs (Click Here)",
       href: "/application-portal",
       isExternal: false,
       icon: ExternalLink,
@@ -64,9 +64,9 @@ const OnlineAdmissions = () => {
           {/* Header Section */}
           <div className="text-center bg-white p-8 rounded-lg shadow-md border border-gray-200 mb-12">
             <h1 className="text-3xl md:text-4xl font-serif text-primary mb-3">Admissions Spring 2026</h1>
-            <p className="text-xl md:text-2xl text-gray-700 font-light mb-4">BS Admissions Open (Morning and Evening Programs)</p>
+            <p className="text-xl md:text-2xl text-gray-700 font-light mb-4">BS & MS Admissions Open (Morning and Evening Programs)</p>
             <div className="inline-block bg-red-100 text-red-700 font-semibold px-6 py-3 rounded-full text-lg">
-              Last Date for BS Admission: <span className="font-bold">10 March 2026</span>
+              The last date for BS & MS admissions has been extended to <span className="font-bold">21 September 2026</span>
             </div>
           </div>
 

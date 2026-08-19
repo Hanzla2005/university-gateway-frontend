@@ -71,6 +71,7 @@ import csRehan from "@/assets/departments/CS/faculty/rehan.png";
 import csFaran from "@/assets/departments/CS/faculty/faran.png";
 import csAsma from "@/assets/departments/CS/faculty/asma.png";
 import csHussain from "@/assets/departments/CS/faculty/husssain.png";
+import csSehrish from "@/assets/departments/CS/faculty/sehrishBatool.png";
 
 import agriShahida from "@/assets/departments/AgricultureAndEnvironmentalScience/faculty/shahida.png";
 import agriSumaira from "@/assets/departments/AgricultureAndEnvironmentalScience/faculty/sumaira.png";
@@ -102,6 +103,7 @@ import massCommPdf from "@/assets/departments/massCoummincation/Ist BOS Media.pd
 import malikSaddamImg from "@/assets/departments/chemistry/faculty/malikSaddam.png";
 import shaheedUllahImg from "@/assets/departments/chemistry/faculty/shaheedUllah.png";
 import summeUllahImg from "@/assets/departments/chemistry/faculty/summeUllah.png";
+import abdusSamadImg from "@/assets/departments/English/abdusSamad.jpg";
 
 import chemAct1 from "@/assets/departments/chemistry/activities/1.png";
 import chemAct2 from "@/assets/departments/chemistry/activities/2.png";
@@ -152,6 +154,7 @@ export interface DepartmentPage {
   id: string;
   name: string;
   shortName: string;
+  slogan?: string;
   overview?: string;
   aimsAndObjectives?: string[];
   aimsAndObjectivesOverview?: string;
@@ -744,7 +747,7 @@ export const departmentPages: DepartmentPage[] = [
         image: botanyIlyas,
       },
       {
-        name: "Riffat Batool",
+        name: "Dr Riffat Batool",
         designation: "Assistant Professor",
         email: "r.batool@kum.edu.pk",
         image: botanyJaveria,
@@ -1022,44 +1025,46 @@ export const departmentPages: DepartmentPage[] = [
   },
   {
     id: "english",
-    name: "Department of English",
+    name: "Department of English Language & Literature",
     shortName: "English",
-    overview: "The Department of English of Kohsar University Murree was started in 2020 at BS Block, Jhika Gali Campus. Initially the department had 5 regular members of faculty to run the undergraduate Program (BS English 04-Year Programme). Currently the Department is running BS English (Language and Literature) Programme. The Department of English is going to launch MS/M.Phil English (Literature/Linguistics) in near future as well.",
-    vision: "The Department of English seeks to foster knowledge and a love of Literature and of Language in our students. Department will teach students to speak, read, and write effectively. It will encourage students to think deeply and to reflect on what they have learned.",
-    mission: "The Department of English strengthens the students of liberal education by developing a deepened understanding of language and literacy, the value of critical reading and effective writing, and the richness of literature, past and present.",
-    hodMessage: "Welcome to the Department of English Language & Literature. We are dedicated to academic excellence, blending classical literary knowledge with modern linguistics and digital trends. Aligned with HEC’s 2025 policy, we offer a comprehensive BS English program and are soon launching MPhil and PhD tracks. Our goal is to prepare critical thinkers and ethical leaders, ready to navigate the 21st century one critical word at a time.",
+    slogan: "Inspiring Excellence through Language and Literature",
+    overview: "The Department of English Language & Literature at Kohsar University Murree was established in Spring 2021 with a commitment to academic excellence, critical inquiry, and intellectual growth. Since its inception, the department has aimed to provide a strong foundation in both English linguistics and literary studies, aligning its academic offerings with contemporary national and global standards.\n\nToday, the department stands as a dynamic center for advanced study, research, and creative expression—dedicated to exploring the rich interplay between language, literature, and society. We provide a rigorous, supportive, and intellectually stimulating environment where students develop the critical, creative, and communicative competencies essential for success in a globalized world.\n\nThe department has successfully produced two graduating batches, a testament to the quality of our academic programmes and the dedication of our faculty and students. Moreover, the Department of English has emerged as one of the biggest and most popular departments in the university among prospective new students who seek admission each year—a recognition of our reputation for excellence and the growing demand for English studies in the region.\n\nRooted in the rich traditions of English literary studies and contemporary linguistic science, we have crafted a curriculum that is both comprehensive and forward-looking. Fully aligned with the HEC Undergraduate Policy 2025, our programmes blend foundational knowledge with cutting-edge interdisciplinary perspectives. Students engage with key areas such as linguistics, phonetics and phonology, morphology, literary history, textual analysis, and academic writing—courses designed to develop analytical abilities, linguistic competence, and critical engagement with a wide range of texts and contexts.\n\nSpecial emphasis is placed on understanding language as a dynamic system connected with society, culture, and cognition, while also fostering an appreciation of literary traditions across historical periods. Our faculty are active scholars and dedicated mentors who guide students through classical drama, postcolonial theory, psycholinguistics, digital humanities, and beyond.\n\nCurrently, the department offers the BS English (4-year) programme.\n\nDespite being a relatively young department, we are steadily emerging as a vibrant academic unit dedicated to quality teaching, innovation, research skills, effective communication, academic integrity, and the holistic development of our students—preparing them for diverse professional fields including education, research, media, and public service. At the heart of our mission is the cultivation of globally competent graduates who contribute meaningfully to knowledge, culture, and society.",
+    vision: "To be a leading center for excellence in English Literature and Linguistics, empowering students with critical, creative, and research skills to meet local and global challenges.",
+    mission: "The Department of English language and literature is dedicated to quality education, innovative research, and community engagement, fostering globally competent graduates who contribute to knowledge, culture, and society.",
+    hodMessage: "Welcome to the Department of English Language & Literature at Kohsar University Murree.\n\nIt is both an honor and a privilege to lead a department that is deeply committed to academic excellence, intellectual curiosity, and the holistic development of our students.\n\nIn today’s rapidly changing world—where communication, technology, and knowledge systems are continuously evolving—the study of English has never been more significant. Our department is dedicated to equipping students with the skills and competencies required to meet the challenges of the modern era.\n\nAt present, we offer the BS English (4-year) programme, fully aligned with the Higher Education Commission (HEC) Undergraduate Policy 2025.\n\nOur curriculum is both comprehensive and contemporary, blending classical literary knowledge with modern developments in linguistics, discourse analysis, and communication studies. We have moved beyond traditional boundaries to integrate essential contemporary knowledge, including a compulsory course on Artificial Intelligence along with foundational studies in the Holy Quran, ensuring our graduates are not only literate and critical thinkers but also ethically grounded and technologically adept.\n\nRecognizing the growing role of technology in education, the department encourages the integration of digital learning tools, research‑based approaches, and emerging trends such as AI‑assisted language learning. Our hallmark is flexibility and depth: whether you choose to specialize in Linguistics, immerse yourself in Literature, or pursue a broad‑based BS English degree, you will be guided by a dedicated faculty through a programme that emphasizes research, practical application, and community engagement. The mandatory capstone project and supervised internship ensure that you graduate not just with a degree, but with demonstrable skills and a portfolio of real‑world experience.\n\nAs Chairperson, I am committed to fostering an environment of academic integrity, inclusivity, and intellectual curiosity. We strive to prepare our students as confident communicators, responsible citizens, and future leaders in their respective fields.\n\nI invite you to join us in this journey of learning, exploration, and growth—where we are truly “Inspiring Excellence through Language and Literature”. Together, we will navigate the complexities of the 21st century, one critical word at a time.",
     faculty: [
       {
         id: "abdus-samad",
         name: "Dr. Abdus Samad Baloch",
-        designation: "Associate Professor & Chairperson | In-Charge Faculty of Management, Humanities and Social Sciences",
+        designation: "Associate Professor & Chairperson, Department of English Language & Literature | In-Charge, Faculty of Management, Humanities and Social Sciences",
+        image: abdusSamadImg,
         education: [
-          "Doctorate in Applied Linguistics, University of Exeter, UK",
-          "MPhil in Applied Linguistics and TESOL, University of Leicester, UK",
-          "Master’s in English Language and Literature, University of Peshawar"
+          "Doctorate in Applied Linguistics, University of Exeter, UK (Ranked 9th in the UK)",
+          "MPhil in Applied Linguistics and TESOL (with distinction), University of Leicester, UK (2010)",
+          "Master’s in English Language and Literature, University of Peshawar (2004)"
         ],
-        bio: "Dr. Abdus Samad Baloch is an expert in Applied Linguistics with over 18 years of university teaching experience. A triple gold medalist and recipient of international travel grants, he has served as a keynote speaker abroad and is an active member of HEC committees."
+        bio: "Dr. Abdus Samad Baloch is Associate Professor and Chairperson of the Department of English Language & Literature at Kohsar University Murree, also serving as In-Charge of the Faculty of Management, Humanities and Social Sciences. He earned his Master’s degree in English Language and Literature from the University of Peshawar in 2004 and was awarded a scholarship for higher studies in 2007. He went on to complete his MPhil in Applied Linguistics and TESOL with distinction from the University of Leicester, UK, in 2010, followed by a Doctorate in Applied Linguistics from the University of Exeter, UK, in 2014—an institution ranked 9th in the United Kingdom. Throughout his academic career, he has won three gold medals. With over 18 years of university-level teaching experience, he has presented research papers at both national and international conferences and has published a number of research papers in his field. He has also won international travel grants and delivered research presentations as a keynote speaker abroad. He is an active member of several bodies and committees of the Higher Education Commission (HEC) and various other universities."
       },
       {
         id: "mudassir-ullah",
         name: "Mr. Mudassir Ullah Khan",
-        designation: "Lecturer, Department of English",
+        designation: "Lecturer, Department of English Language & Literature",
         education: [
           "PhD Scholar, Muslim Youth University, Islamabad",
-          "MPhil English Literature and Linguistics, Gomal University",
-          "BS English Literature and Linguistics, Gomal University"
+          "MPhil in English Literature and Linguistics (with distinction), Gomal University, D.I. Khan",
+          "BS in English Literature and Linguistics (with distinction), Gomal University, D.I. Khan"
         ],
-        bio: "Mudassir Ullah Khan is an expert in essay writing and advanced composition. A distinction holder in both BS and MPhil, his research in postcolonial literature and linguistics is published in prestigious international journals."
+        bio: "Mudassir Ullah Khan is a Lecturer in the Department of English at Kohsar University Murree, where he brings a distinguished academic record and a deep commitment to linguistic and literary scholarship. Having earned both his BS and MPhil in English Literature and Linguistics with distinction from Gomal University, D.I. Khan, he is currently further specializing his expertise as a PhD scholar at Muslim Youth University, Islamabad. He is widely recognized as an expert in the field of essay writing and advanced composition, dedicated to refining the rhetorical and analytical skills of his students. His scholarly contributions include numerous research papers published in prestigious national and international journals, reflecting his active engagement with contemporary academic discourse. Through his teaching and research, he continues to contribute significantly to the academic excellence of Kohsar University Murree, fostering a rigorous environment for the study of English and postcolonial literature."
       },
       {
         id: "zil-e-huma",
         name: "Ms. Zil-e-Huma",
-        designation: "Lecturer, Department of English",
+        designation: "Lecturer, Department of English Language & Literature",
         education: [
-          "MS English Linguistics and Literature, Air University, Islamabad",
-          "BS (Hons.) English Literature and Linguistics"
+          "MS in English Linguistics and Literature, Air University, Islamabad",
+          "BS (Hons.) in English Literature and Linguistics"
         ],
-        bio: "Zil-e-Huma specializes in discourse analysis, sociolinguistics, and corpus linguistics. With over six years of higher education experience, she is dedicated to fostering intellectually engaging environments for language and communication studies."
+        bio: "Zil-e-Huma is a Lecturer in the Department of English at Kohsar University Murree. She holds an MS in English Linguistics and Literature from Air University, Islamabad, and a BS (Hons.) in English Literature and Linguistics, reflecting a strong academic foundation. With over six years of experience in higher education, she has served in diverse academic roles, including full-time, visiting, and digital teaching positions. Her academic expertise lies in linguistics, particularly discourse analysis, sociolinguistics, and corpus linguistics. She has authored several research papers in these areas, contributing to ongoing scholarly discussions on language and communication in social contexts. Committed to effective pedagogy, she focuses on developing students’ writing, analytical, and communication skills, fostering a rigorous and intellectually engaging learning environment."
       }
     ],
     programs: [
@@ -1168,78 +1173,6 @@ export const departmentPages: DepartmentPage[] = [
               { title: "Literary Theory and Practice (ENG408)", credits: 3 },
               { title: "Stylistics (ENG409)", credits: 3 },
               { title: "Corpus Linguistics (ENG410)", credits: 3 }
-            ]
-          }
-        ]
-      },
-      {
-        name: "MPhil English (Literature)",
-        description: "The MPhil English (Literature) program offers advanced study in literary and cultural research. Note: Only four courses are to be offered in each semester. However, list of courses may be extended according to availability of intellectual and human resources at the institution.",
-        majors: [
-          {
-            name: "Elective Subjects for MPhil English Literature",
-            description: "1. Contemporary Postcolonial Studies (ELIT509)\n2. War Literature (ELIT510)\n3. Literature and Globalization (ELIT502)\n4. Literature and Environment (ELIT5011)\n5. Literature and Film Studies (ELIT507)\n6. Women’s Writings (ELIT513)\n7. Postmodern Fiction (ELIT514)\n8. Transnational Poetry (ELIT515)\n9. Digital Humanities (ELIT516)"
-          }
-        ],
-        scheme: [
-          {
-            name: "Semester 1",
-            totalCredits: 12,
-            courses: [
-              { title: "Advanced Literary-Cultural Research Methodology (ELIT501)", credits: 3 },
-              { title: "Literature and Globalization (ELIT502)", credits: 3 },
-              { title: "Shakespearean Studies (ELIT503)", credits: 3 },
-              { title: "Contemporary Postcolonial Studies (ELIT504)", credits: 3 }
-            ]
-          },
-          {
-            name: "Semester 2",
-            totalCredits: 12,
-            courses: [
-              { title: "Critical Theories (ELIT505)", credits: 3 },
-              { title: "World Literature in Translation (ELIT506)", credits: 3 },
-              { title: "Literature and Film Studies (ELIT507)", credits: 3 },
-              { title: "Diasporic Literatures (ELIT508)", credits: 3 }
-            ]
-          }
-        ]
-      },
-      {
-        name: "MS/MPhil (Linguistics)",
-        description: "The MS/MPhil (Linguistics) programme offers specialization in Linguistics. The course is designed in such a way that the students’ needs regarding linguistics are met.\n\nDuration: 2 years\nEligibility:\n• MA English, BS English (16 years or 4-year education after intermediate).\n• MA English with minimum 45% marks, BS English with minimum 2.5 CGPA on 4.00 scale or as per HEC criteria.\n\nStructure:\n• Total credit hours: 30\n• Course work credit hours: 24\n• Research work credit hours: 06\n• Total semesters: 04",
-        scheme: [
-          {
-            name: "Semester 1",
-            totalCredits: 12,
-            courses: [
-              { title: "Advanced Research Methodology (ELING501)", credits: 3 },
-              { title: "Applied Grammar and Syntax (ELING502)", credits: 3 },
-              { title: "Discourse Studies (ELING503)", credits: 3 },
-              { title: "Advanced Stylistics (ELING504)", credits: 3 }
-            ]
-          },
-          {
-            name: "Semester 2",
-            totalCredits: 12,
-            courses: [
-              { title: "Linguistic Theories (ELING505)", credits: 3 },
-              { title: "Language Power and Identity (ELING506)", credits: 3 },
-              { title: "Translation Studies (ELING507)", credits: 3 },
-              { title: "Latest Trends in Linguistics (ENG508)", credits: 3 }
-            ]
-          },
-          {
-            name: "Year II, Semester III",
-            totalCredits: 6,
-            courses: [
-              { title: "Research Thesis (ENG 509)", credits: 6 }
-            ]
-          },
-          {
-            name: "Year II, Semester IV",
-            totalCredits: 6,
-            courses: [
-              { title: "Research Thesis (ENG 509)", credits: 6 }
             ]
           }
         ]
@@ -1419,6 +1352,7 @@ export const departmentPages: DepartmentPage[] = [
       {
         name: "Sehrish Batool",
         designation: "Lecturer",
+        image: csSehrish
       }
     ],
     programs: [

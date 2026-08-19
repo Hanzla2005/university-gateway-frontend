@@ -46,7 +46,7 @@ const AnnouncementDetail = () => {
                 <img src={announcement.image} alt={announcement.title} className="w-full h-full object-contain" width={1200} height={675} />
               </div>
 
-              <div className="prose prose-lg max-w-none text-foreground/90 leading-relaxed">
+              <div className="prose prose-lg max-w-none text-foreground/90 leading-relaxed whitespace-pre-line">
                 <p>{announcement.content}</p>
               </div>
             </article>
