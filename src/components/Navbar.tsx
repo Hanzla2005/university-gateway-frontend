@@ -44,25 +44,26 @@ import qecDlPgpr6a from "@/assets/QEC/Downloads/PGPR-6-A.pdf";
 import qecDlSarTemplate from "@/assets/QEC/Downloads/SAR Template.pdf";
 
 // QEC Policies
-import qecPolGraduate from "@/assets/QEC/QEC Policies/HEC Graduate-Policy.pdf";
-import qecPolPlagiarism from "@/assets/QEC/QEC Policies/HEC Plagiarism-Policy.pdf";
-import qecPolUndergrad from "@/assets/QEC/QEC Policies/HEC Undergraduate-Policy.pdf";
+import kumQualityPolicyPdf from "@/assets/QEC/KUM Quality Policy.pdf";
 import qecPolPsg2023 from "@/assets/QEC/QEC Policies/QEC PSG-2023 ver1.0....pdf";
 
+// QEC IQC
+import qecIqcPdf from "@/assets/QEC/KUM QEC IQC.pdf";
+
 // QEC RIPE
-import qecRipeCompliance from "@/assets/QEC/RIPE/Compliance Report RIPE-2025.pdf";
-import qecRipeIper from "@/assets/QEC/RIPE/IPER-2025.pdf";
-import qecRipeIp2025 from "@/assets/QEC/RIPE/RIPE Implementaion Plan-2025.pdf";
+import qecRipeComplianceReport from "@/assets/QEC/RIPE/RIPE Compliance Reports (2025-26).pdf";
+import qecRipeVisitReport from "@/assets/QEC/RIPE/RIPE Compliance Visit Report (2025-26).pdf";
+import qecRipePlan from "@/assets/QEC/RIPE/RIPE Implementaion Plan (2025-26).pdf";
 
 // QEC PGPR
-import qecPgprIp from "@/assets/QEC/PGPR/Implementation Plans GPR.pdf";
-import qecPgprComp from "@/assets/QEC/PGPR/Compliance Reports.pdf";
+import qecPgprComp2425 from "@/assets/QEC/PGPR/2024-25/GPR Compliance Reports (2024-25).pdf";
+import qecPgprPlan2425 from "@/assets/QEC/PGPR/2024-25/GPR Implementation Plans (2024-25).pdf";
+import qecPgprComp2526 from "@/assets/QEC/PGPR/2025-26/GPR Compliance Reports (2025-26).pdf";
 
 // QEC PREE
-import qecPreeIp from "@/assets/QEC/PREE/PREE Implementation Plans.pdf";
-import qecPreeSar from "@/assets/QEC/PREE/SARs (2025-26).pdf";
-import qecPreeComp from "@/assets/QEC/PREE/Compliance Reports.pdf";
-import qecPreeExec from "@/assets/QEC/PREE/Executive Summaries.pdf";
+import qecPreeComp2425 from "@/assets/QEC/PREE/2024-25/PREE Complaince Report (2024-25).pdf";
+import qecPreePlan2425 from "@/assets/QEC/PREE/2024-25/PREE Implementation Plan (2024-25).pdf";
+import qecPreePlan2526 from "@/assets/QEC/PREE/2025-26/PREE Implementation Plans (2025-26).pdf";
 
 const topBarLinks = [
   { label: "Vice Chancellor", path: "/vice-chancellor" },
@@ -274,9 +275,7 @@ const mainNavItems = [
         path: "#qec-policy",
         icon: ShieldCheck,
         nested: [
-          { label: "HEC Graduate Policy", path: "/qec-pol-grad", isExternal: true },
-          { label: "HEC Plagiarism Policy", path: "/qec-pol-plag", isExternal: true },
-          { label: "HEC Undergraduate Policy", path: "/qec-pol-ug", isExternal: true },
+          { label: "KUM Quality Policy", path: "/qec-pol-kum", isExternal: true },
           { label: "QEC PSG-2023", path: "/qec-pol-psg", isExternal: true },
         ]
       },
@@ -285,9 +284,9 @@ const mainNavItems = [
         path: "#qec-ripe",
         icon: FileText,
         nested: [
-          { label: "Compliance Report RIPE-2025", path: "/qec-ripe-comp", isExternal: true },
-          { label: "IPER-2025", path: "/qec-ripe-iper", isExternal: true },
-          { label: "RIPE Implementation Plan-2025", path: "/qec-ripe-ip", isExternal: true },
+          { label: "RIPE Compliance Reports (2025-26)", path: "/qec-ripe-comp", isExternal: true },
+          { label: "RIPE Compliance Visit Report (2025-26)", path: "/qec-ripe-visit", isExternal: true },
+          { label: "RIPE Implementation Plan (2025-26)", path: "/qec-ripe-ip", isExternal: true },
         ]
       },
       { 
@@ -295,8 +294,21 @@ const mainNavItems = [
         path: "#qec-pgpr", 
         icon: FileStack,
         nested: [
-          { label: "Implementation Plans GPR", path: "/qec-pgpr-ip", isExternal: true },
-          { label: "Compliance Reports", path: "/qec-pgpr-comp", isExternal: true },
+          {
+            label: "2024-25",
+            path: "#qec-pgpr-2024-25",
+            nested: [
+              { label: "GPR Compliance Reports (2024-25)", path: "/qec-pgpr-comp-24-25", isExternal: true },
+              { label: "GPR Implementation Plans (2024-25)", path: "/qec-pgpr-ip-24-25", isExternal: true },
+            ]
+          },
+          {
+            label: "2025-26",
+            path: "#qec-pgpr-2025-26",
+            nested: [
+              { label: "GPR Compliance Reports (2025-26)", path: "/qec-pgpr-comp-25-26", isExternal: true },
+            ]
+          },
         ]
       },
       { 
@@ -304,10 +316,29 @@ const mainNavItems = [
         path: "#qec-pree", 
         icon: ClipboardCheck,
         nested: [
-          { label: "PREE Implementation Plans", path: "/qec-pree-ip", isExternal: true },
-          { label: "SARs (2025-26)", path: "/qec-pree-sar", isExternal: true },
-          { label: "Compliance Reports", path: "/qec-pree-comp", isExternal: true },
-          { label: "Executive Summaries", path: "/qec-pree-exec", isExternal: true },
+          {
+            label: "2024-25",
+            path: "#qec-pree-2024-25",
+            nested: [
+              { label: "PREE Compliance Report (2024-25)", path: "/qec-pree-comp-24-25", isExternal: true },
+              { label: "PREE Implementation Plan (2024-25)", path: "/qec-pree-ip-24-25", isExternal: true },
+            ]
+          },
+          {
+            label: "2025-26",
+            path: "#qec-pree-2025-26",
+            nested: [
+              { label: "PREE Implementation Plans (2025-26)", path: "/qec-pree-ip-25-26", isExternal: true },
+            ]
+          },
+        ]
+      },
+      {
+        label: "IQC",
+        path: "#qec-iqc",
+        icon: Users,
+        nested: [
+          { label: "Institution Quality Circle", path: "/qec-iqc", isExternal: true },
         ]
       },
     ]
@@ -321,8 +352,10 @@ const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openSubmenu, setOpenSubmenu] = useState<string | null>(null);
   const [openNestedSubmenu, setOpenNestedSubmenu] = useState<string | null>(null);
+  const [openDeepNestedSubmenu, setOpenDeepNestedSubmenu] = useState<string | null>(null);
   const [hoveredDropdown, setHoveredDropdown] = useState<string | null>(null);
   const [hoveredNestedItem, setHoveredNestedItem] = useState<string | null>(null);
+  const [hoveredDeepNestedItem, setHoveredDeepNestedItem] = useState<string | null>(null);
   const location = useLocation();
   const isHomePage = location.pathname === "/";
 
@@ -336,6 +369,7 @@ const Navbar = () => {
     setMobileOpen(false);
     setOpenSubmenu(null);
     setOpenNestedSubmenu(null);
+    setOpenDeepNestedSubmenu(null);
   }, [location.pathname]);
 
   const navClasses = "shadow-lg bg-primary";
@@ -350,6 +384,7 @@ const Navbar = () => {
     }
     if (pdfPath === "/university-act") window.open(universityActPdf, "_blank");
     else if (pdfPath === "/oric-ar-2025") window.open(oricAr2025, "_blank");
+    else if (pdfPath === "/qec-iqc") window.open(qecIqcPdf, "_blank");
   };
 
   const handleNestedPdfClick = (pdfPath: string) => {
@@ -384,22 +419,22 @@ const Navbar = () => {
     else if (pdfPath === "/qec-dl-pgpr6a") window.open(qecDlPgpr6a, "_blank");
     else if (pdfPath === "/qec-dl-sar") window.open(qecDlSarTemplate, "_blank");
     // QEC Policies
-    else if (pdfPath === "/qec-pol-grad") window.open(qecPolGraduate, "_blank");
-    else if (pdfPath === "/qec-pol-plag") window.open(qecPolPlagiarism, "_blank");
-    else if (pdfPath === "/qec-pol-ug") window.open(qecPolUndergrad, "_blank");
+    else if (pdfPath === "/qec-pol-kum") window.open(kumQualityPolicyPdf, "_blank");
     else if (pdfPath === "/qec-pol-psg") window.open(qecPolPsg2023, "_blank");
     // QEC RIPE
-    else if (pdfPath === "/qec-ripe-comp") window.open(qecRipeCompliance, "_blank");
-    else if (pdfPath === "/qec-ripe-iper") window.open(qecRipeIper, "_blank");
-    else if (pdfPath === "/qec-ripe-ip") window.open(qecRipeIp2025, "_blank");
+    else if (pdfPath === "/qec-ripe-comp") window.open(qecRipeComplianceReport, "_blank");
+    else if (pdfPath === "/qec-ripe-visit") window.open(qecRipeVisitReport, "_blank");
+    else if (pdfPath === "/qec-ripe-ip") window.open(qecRipePlan, "_blank");
     // QEC PGPR
-    else if (pdfPath === "/qec-pgpr-ip") window.open(qecPgprIp, "_blank");
-    else if (pdfPath === "/qec-pgpr-comp") window.open(qecPgprComp, "_blank");
+    else if (pdfPath === "/qec-pgpr-comp-24-25") window.open(qecPgprComp2425, "_blank");
+    else if (pdfPath === "/qec-pgpr-ip-24-25") window.open(qecPgprPlan2425, "_blank");
+    else if (pdfPath === "/qec-pgpr-comp-25-26") window.open(qecPgprComp2526, "_blank");
     // QEC PREE
-    else if (pdfPath === "/qec-pree-ip") window.open(qecPreeIp, "_blank");
-    else if (pdfPath === "/qec-pree-sar") window.open(qecPreeSar, "_blank");
-    else if (pdfPath === "/qec-pree-comp") window.open(qecPreeComp, "_blank");
-    else if (pdfPath === "/qec-pree-exec") window.open(qecPreeExec, "_blank");
+    else if (pdfPath === "/qec-pree-comp-24-25") window.open(qecPreeComp2425, "_blank");
+    else if (pdfPath === "/qec-pree-ip-24-25") window.open(qecPreePlan2425, "_blank");
+    else if (pdfPath === "/qec-pree-ip-25-26") window.open(qecPreePlan2526, "_blank");
+    // QEC IQC
+    else if (pdfPath === "/qec-iqc") window.open(qecIqcPdf, "_blank");
   };
 
   return (
@@ -505,11 +540,32 @@ const Navbar = () => {
                                 initial={{ opacity: 0, x: -10 }}
                                 animate={{ opacity: 1, x: 0 }}
                                 transition={{ duration: 0.15 }}
-                                className="absolute left-full top-0 ml-0 w-64 bg-white border border-border shadow-xl"
+                                className="absolute left-full top-0 ml-0 w-80 bg-white border border-border shadow-xl max-h-[85vh] overflow-y-auto"
                               >
                                 <div className="py-2">
-                                  {subitem.nested!.map((nestedItem) => (
-                                    nestedItem.isExternal ? (
+                                  {subitem.nested!.map((nestedItem, idx) => {
+                                    const hasDeepNested = (nestedItem as any).nested && (nestedItem as any).nested.length > 0;
+                                    if (hasDeepNested) {
+                                      return (
+                                        <div key={nestedItem.path || idx} className={idx > 0 ? "mt-2 pt-2 border-t border-border/40" : ""}>
+                                          <div className="px-4 py-1.5 text-xs font-bold text-accent uppercase tracking-wider bg-primary/5">
+                                            {nestedItem.label}
+                                          </div>
+                                          <div className="py-1">
+                                            {(nestedItem as any).nested.map((deepItem: any) => (
+                                              <button
+                                                key={deepItem.path}
+                                                onClick={() => handleNestedPdfClick(deepItem.path)}
+                                                className="w-full text-left block px-5 py-2 text-sm text-foreground hover:text-accent hover:bg-primary/5 transition-colors"
+                                              >
+                                                {deepItem.label}
+                                              </button>
+                                            ))}
+                                          </div>
+                                        </div>
+                                      );
+                                    }
+                                    return nestedItem.isExternal ? (
                                       <button
                                         key={nestedItem.path}
                                         onClick={() => handleNestedPdfClick(nestedItem.path)}
@@ -525,8 +581,8 @@ const Navbar = () => {
                                       >
                                         {nestedItem.label}
                                       </Link>
-                                    )
-                                  ))}
+                                    );
+                                  })}
                                 </div>
                               </motion.div>
                             )}
@@ -628,8 +684,27 @@ const Navbar = () => {
                                         transition={{ duration: 0.15 }}
                                         className="bg-primary-foreground/5 overflow-hidden pl-4"
                                       >
-                                        {subitem.nested!.map((nestedItem) => (
-                                          nestedItem.isExternal ? (
+                                        {subitem.nested!.map((nestedItem, idx) => {
+                                          const hasDeepNested = (nestedItem as any).nested && (nestedItem as any).nested.length > 0;
+                                          if (hasDeepNested) {
+                                            return (
+                                              <div key={nestedItem.path || idx} className="py-1">
+                                                <div className="px-8 py-1 text-xs font-bold text-accent uppercase tracking-wider opacity-80">
+                                                  {nestedItem.label}
+                                                </div>
+                                                {(nestedItem as any).nested.map((deepItem: any) => (
+                                                  <button
+                                                    key={deepItem.path}
+                                                    onClick={() => handleNestedPdfClick(deepItem.path)}
+                                                    className="w-full text-left block px-10 py-2 text-sm text-primary-foreground/75 hover:text-accent hover:bg-primary-foreground/10 transition-colors"
+                                                  >
+                                                    {deepItem.label}
+                                                  </button>
+                                                ))}
+                                              </div>
+                                            );
+                                          }
+                                          return nestedItem.isExternal ? (
                                             <button
                                               key={nestedItem.path}
                                               onClick={() => handleNestedPdfClick(nestedItem.path)}
@@ -645,8 +720,8 @@ const Navbar = () => {
                                             >
                                               {nestedItem.label}
                                             </Link>
-                                          )
-                                        ))}
+                                          );
+                                        })}
                                       </motion.div>
                                     )}
                                   </AnimatePresence>
