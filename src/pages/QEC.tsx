@@ -125,11 +125,11 @@ const qaEventsOrganization = [
 
 const graduatePrograms = [
   { sr: 1, title: "MS (Food Sciences & Technology)", status: "Issued" },
-  { sr: 2, title: "MS (Microbiology)", status: "Dossier submitted" },
-  { sr: 3, title: "MS (Chemistry)", status: "Dossier submitted" },
-  { sr: 4, title: "MS (Biotechnology)", status: "Dossier submitted" },
-  { sr: 5, title: "MS (Botany)", status: "Dossier Prepared" },
-  { sr: 6, title: "MS (Physics)", status: "Dossier Prepared" },
+  { sr: 2, title: "MS (Microbiology)", status: "Issued" },
+  { sr: 3, title: "MS (Chemistry)", status: "Issued" },
+  { sr: 4, title: "MS (Biotechnology)", status: "Issued" },
+  { sr: 5, title: "MS (Botany)", status: "Issued" },
+  { sr: 6, title: "MS (Physics)", status: "Case Submitted" },
 ];
 
 const QEC = () => {
