@@ -269,7 +269,7 @@ const mainNavItems = [
       },
       {
         label: "RIPE",
-        path: "/qec#qec-ripe",
+        path: "/qec-ripe",
         icon: FileText,
         nested: [
           { label: "RIPE Compliance Reports (2025-26)", path: "/qec-ripe-comp", isExternal: true },
@@ -279,12 +279,12 @@ const mainNavItems = [
       },
       { 
         label: "PGPR", 
-        path: "/qec#qec-pgpr", 
+        path: "/qec-pgpr", 
         icon: FileStack,
         nested: [
           {
             label: "2024-25",
-            path: "#qec-pgpr-2024-25",
+            path: "/qec-pgpr",
             nested: [
               { label: "GPR Compliance Reports (2024-25)", path: "/qec-pgpr-comp-24-25", isExternal: true },
               { label: "GPR Implementation Plans (2024-25)", path: "/qec-pgpr-ip-24-25", isExternal: true },
@@ -292,7 +292,7 @@ const mainNavItems = [
           },
           {
             label: "2025-26",
-            path: "#qec-pgpr-2025-26",
+            path: "/qec-pgpr",
             nested: [
               { label: "GPR Compliance Reports (2025-26)", path: "/qec-pgpr-comp-25-26", isExternal: true },
             ]
@@ -301,12 +301,12 @@ const mainNavItems = [
       },
       { 
         label: "PREE", 
-        path: "/qec#qec-pree", 
+        path: "/qec-pree", 
         icon: ClipboardCheck,
         nested: [
           {
             label: "2024-25",
-            path: "#qec-pree-2024-25",
+            path: "/qec-pree",
             nested: [
               { label: "PREE Compliance Report (2024-25)", path: "/qec-pree-comp-24-25", isExternal: true },
               { label: "PREE Implementation Plan (2024-25)", path: "/qec-pree-ip-24-25", isExternal: true },
@@ -314,7 +314,7 @@ const mainNavItems = [
           },
           {
             label: "2025-26",
-            path: "#qec-pree-2025-26",
+            path: "/qec-pree",
             nested: [
               { label: "PREE Implementation Plans (2025-26)", path: "/qec-pree-ip-25-26", isExternal: true },
             ]

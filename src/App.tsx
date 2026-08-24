@@ -64,6 +64,9 @@ import IntermediateAdmission from "./pages/IntermediateAdmission";
 import ORIC from "./pages/ORIC";
 import ORICSteeringCommittee from "./pages/ORICSteeringCommittee";
 import QEC from "./pages/QEC";
+import RIPE from "./pages/RIPE";
+import PGPR from "./pages/PGPR";
+import PREE from "./pages/PREE";
 import RDProjects from "./pages/RDProjects";
 import ResearchPublications from "./pages/ResearchPublications";
 
@@ -91,9 +94,12 @@ const App = () => (
 
             {/* QEC Routes */}
             <Route path="/qec" element={<QEC />} />
-            <Route path="/qec-pree" element={<Navigate to="/qec#qec-pree" replace />} />
-            <Route path="/qec-ripe" element={<Navigate to="/qec#qec-ripe" replace />} />
-            <Route path="/qec-pgpr" element={<Navigate to="/qec#qec-pgpr" replace />} />
+            <Route path="/qec-ripe" element={<RIPE />} />
+            <Route path="/ripe" element={<RIPE />} />
+            <Route path="/qec-pgpr" element={<PGPR />} />
+            <Route path="/pgpr" element={<PGPR />} />
+            <Route path="/qec-pree" element={<PREE />} />
+            <Route path="/pree" element={<PREE />} />
             <Route path="/rd-projects" element={<RDProjects />} />
             <Route path="/research-publications" element={<ResearchPublications />} />
 
