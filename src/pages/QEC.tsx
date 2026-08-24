@@ -12,7 +12,10 @@ import {
   Globe,
   Lightbulb,
   Trophy,
-  FileText
+  FileText,
+  FileStack,
+  ClipboardCheck,
+  Download
 } from "lucide-react";
 
 // Team Images
@@ -26,6 +29,19 @@ import sadamImg from "@/assets/QEC/QEC Team/sadamHussain.png";
 // Intro Images
 import intro1 from "@/assets/QEC/Introduction/1.png";
 import intro2 from "@/assets/QEC/Introduction/2.png";
+
+// QEC Documents
+import qecRipeComplianceReport from "@/assets/QEC/RIPE/RIPE Compliance Reports (2025-26).pdf";
+import qecRipeVisitReport from "@/assets/QEC/RIPE/RIPE Compliance Visit Report (2025-26).pdf";
+import qecRipePlan from "@/assets/QEC/RIPE/RIPE Implementaion Plan (2025-26).pdf";
+
+import qecPgprComp2425 from "@/assets/QEC/PGPR/2024-25/GPR Compliance Reports (2024-25).pdf";
+import qecPgprPlan2425 from "@/assets/QEC/PGPR/2024-25/GPR Implementation Plans (2024-25).pdf";
+import qecPgprComp2526 from "@/assets/QEC/PGPR/2025-26/GPR Compliance Reports (2025-26).pdf";
+
+import qecPreeComp2425 from "@/assets/QEC/PREE/2024-25/PREE Complaince Report (2024-25).pdf";
+import qecPreePlan2425 from "@/assets/QEC/PREE/2024-25/PREE Implementation Plan (2024-25).pdf";
+import qecPreePlan2526 from "@/assets/QEC/PREE/2025-26/PREE Implementation Plans (2025-26).pdf";
 
 const teamMembers = [
   {
@@ -391,6 +407,333 @@ const QEC = () => {
                 ))}
               </tbody>
             </table>
+          </div>
+        </section>
+
+        {/* RIPE Section */}
+        <section id="qec-ripe" className="scroll-mt-28 space-y-6">
+          <div className="border-b border-gray-200 pb-4">
+            <div className="flex items-center gap-3">
+              <div className="p-2.5 rounded-lg bg-primary/10 text-primary">
+                <FileText className="h-6 w-6" />
+              </div>
+              <div>
+                <h2 className="text-3xl font-serif text-primary">
+                  Review of Institutional Performance & Enhancement (RIPE)
+                </h2>
+                <p className="text-sm text-gray-500 font-medium mt-1">
+                  Institutional quality assurance framework assessing governance, academic performance, and continuous enhancement standards.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              {
+                title: "RIPE Compliance Reports",
+                session: "2025-26",
+                desc: "Institutional action taken and compliance evaluation report across academic and administrative departments.",
+                file: qecRipeComplianceReport,
+              },
+              {
+                title: "RIPE Compliance Visit Report",
+                session: "2025-26",
+                desc: "External/internal evaluation visit observations, findings, and departmental audit metrics.",
+                file: qecRipeVisitReport,
+              },
+              {
+                title: "RIPE Implementation Plan",
+                session: "2025-26",
+                desc: "Roadmap for execution of recommendations, timelines, and departmental responsibilities.",
+                file: qecRipePlan,
+              },
+            ].map((item, idx) => (
+              <div
+                key={idx}
+                className="bg-white border border-gray-200 rounded-xl p-6 flex flex-col justify-between shadow-sm hover:shadow-md hover:border-primary/40 transition-all group"
+              >
+                <div className="space-y-3">
+                  <div className="flex justify-between items-start">
+                    <span className="px-2.5 py-0.5 rounded-full text-[11px] font-bold uppercase tracking-wider bg-primary/10 text-primary">
+                      Session {item.session}
+                    </span>
+                    <FileText className="h-5 w-5 text-gray-400 group-hover:text-accent transition-colors" />
+                  </div>
+                  <h3 className="text-lg font-bold text-gray-900 leading-snug group-hover:text-primary transition-colors">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm text-gray-600 leading-relaxed">
+                    {item.desc}
+                  </p>
+                </div>
+                <div className="pt-6 mt-4 border-t border-gray-100">
+                  <a
+                    href={item.file}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-accent transition-colors"
+                  >
+                    <Download className="h-4 w-4" />
+                    <span>View / Download Document</span>
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* PGPR Section */}
+        <section id="qec-pgpr" className="scroll-mt-28 space-y-6">
+          <div className="border-b border-gray-200 pb-4">
+            <div className="flex items-center gap-3">
+              <div className="p-2.5 rounded-lg bg-primary/10 text-primary">
+                <FileStack className="h-6 w-6" />
+              </div>
+              <div>
+                <h2 className="text-3xl font-serif text-primary">
+                  Postgraduate Program Review (PGPR / GPR)
+                </h2>
+                <p className="text-sm text-gray-500 font-medium mt-1">
+                  Rigorous quality review process for graduate degree programs (MS/MPhil/PhD) ensuring HEC compliance and research standards.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="space-y-8">
+            {/* 2024-25 */}
+            <div className="space-y-4">
+              <div className="flex items-center gap-2">
+                <span className="px-3 py-1 rounded bg-accent/15 text-accent-foreground font-bold text-xs uppercase tracking-wider">
+                  Academic Cycle 2024-25
+                </span>
+              </div>
+              <div className="grid md:grid-cols-2 gap-6">
+                {[
+                  {
+                    title: "GPR Compliance Reports",
+                    session: "2024-25",
+                    desc: "Comprehensive compliance and action-taken reports for postgraduate degree programs evaluated in cycle 2024-25.",
+                    file: qecPgprComp2425,
+                  },
+                  {
+                    title: "GPR Implementation Plans",
+                    session: "2024-25",
+                    desc: "Structured implementation blueprints addressing postgraduate program review recommendations and milestones.",
+                    file: qecPgprPlan2425,
+                  },
+                ].map((item, idx) => (
+                  <div
+                    key={idx}
+                    className="bg-white border border-gray-200 rounded-xl p-6 flex flex-col justify-between shadow-sm hover:shadow-md hover:border-primary/40 transition-all group"
+                  >
+                    <div className="space-y-3">
+                      <div className="flex justify-between items-start">
+                        <span className="px-2.5 py-0.5 rounded-full text-[11px] font-bold uppercase tracking-wider bg-gray-100 text-gray-700">
+                          {item.session}
+                        </span>
+                        <FileStack className="h-5 w-5 text-gray-400 group-hover:text-accent transition-colors" />
+                      </div>
+                      <h3 className="text-lg font-bold text-gray-900 leading-snug group-hover:text-primary transition-colors">
+                        {item.title}
+                      </h3>
+                      <p className="text-sm text-gray-600 leading-relaxed">
+                        {item.desc}
+                      </p>
+                    </div>
+                    <div className="pt-6 mt-4 border-t border-gray-100">
+                      <a
+                        href={item.file}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-accent transition-colors"
+                      >
+                        <Download className="h-4 w-4" />
+                        <span>View / Download Document</span>
+                      </a>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* 2025-26 */}
+            <div className="space-y-4">
+              <div className="flex items-center gap-2">
+                <span className="px-3 py-1 rounded bg-primary/10 text-primary font-bold text-xs uppercase tracking-wider">
+                  Academic Cycle 2025-26
+                </span>
+              </div>
+              <div className="grid md:grid-cols-2 gap-6">
+                {[
+                  {
+                    title: "GPR Compliance Reports",
+                    session: "2025-26",
+                    desc: "Updated compliance reviews and program dossier evaluation reports for graduate academic programs.",
+                    file: qecPgprComp2526,
+                  },
+                ].map((item, idx) => (
+                  <div
+                    key={idx}
+                    className="bg-white border border-gray-200 rounded-xl p-6 flex flex-col justify-between shadow-sm hover:shadow-md hover:border-primary/40 transition-all group"
+                  >
+                    <div className="space-y-3">
+                      <div className="flex justify-between items-start">
+                        <span className="px-2.5 py-0.5 rounded-full text-[11px] font-bold uppercase tracking-wider bg-gray-100 text-gray-700">
+                          {item.session}
+                        </span>
+                        <FileStack className="h-5 w-5 text-gray-400 group-hover:text-accent transition-colors" />
+                      </div>
+                      <h3 className="text-lg font-bold text-gray-900 leading-snug group-hover:text-primary transition-colors">
+                        {item.title}
+                      </h3>
+                      <p className="text-sm text-gray-600 leading-relaxed">
+                        {item.desc}
+                      </p>
+                    </div>
+                    <div className="pt-6 mt-4 border-t border-gray-100">
+                      <a
+                        href={item.file}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-accent transition-colors"
+                      >
+                        <Download className="h-4 w-4" />
+                        <span>View / Download Document</span>
+                      </a>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* PREE Section */}
+        <section id="qec-pree" className="scroll-mt-28 space-y-6">
+          <div className="border-b border-gray-200 pb-4">
+            <div className="flex items-center gap-3">
+              <div className="p-2.5 rounded-lg bg-primary/10 text-primary">
+                <ClipboardCheck className="h-6 w-6" />
+              </div>
+              <div>
+                <h2 className="text-3xl font-serif text-primary">
+                  Programme Review for Effectiveness & Enhancement (PREE)
+                </h2>
+                <p className="text-sm text-gray-500 font-medium mt-1">
+                  Outcome-based education (OBE) evaluation mechanism utilizing Self-Assessment Reports (SARs) and Program Teams to elevate academic delivery.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="space-y-8">
+            {/* 2024-25 */}
+            <div className="space-y-4">
+              <div className="flex items-center gap-2">
+                <span className="px-3 py-1 rounded bg-accent/15 text-accent-foreground font-bold text-xs uppercase tracking-wider">
+                  Academic Cycle 2024-25
+                </span>
+              </div>
+              <div className="grid md:grid-cols-2 gap-6">
+                {[
+                  {
+                    title: "PREE Compliance Report",
+                    session: "2024-25",
+                    desc: "Evaluation and compliance verification report submitted following program team assessments and internal quality audits.",
+                    file: qecPreeComp2425,
+                  },
+                  {
+                    title: "PREE Implementation Plan",
+                    session: "2024-25",
+                    desc: "Departmental implementation plan detailing corrective actions and curriculum improvements from cycle 2024-25.",
+                    file: qecPreePlan2425,
+                  },
+                ].map((item, idx) => (
+                  <div
+                    key={idx}
+                    className="bg-white border border-gray-200 rounded-xl p-6 flex flex-col justify-between shadow-sm hover:shadow-md hover:border-primary/40 transition-all group"
+                  >
+                    <div className="space-y-3">
+                      <div className="flex justify-between items-start">
+                        <span className="px-2.5 py-0.5 rounded-full text-[11px] font-bold uppercase tracking-wider bg-gray-100 text-gray-700">
+                          {item.session}
+                        </span>
+                        <ClipboardCheck className="h-5 w-5 text-gray-400 group-hover:text-accent transition-colors" />
+                      </div>
+                      <h3 className="text-lg font-bold text-gray-900 leading-snug group-hover:text-primary transition-colors">
+                        {item.title}
+                      </h3>
+                      <p className="text-sm text-gray-600 leading-relaxed">
+                        {item.desc}
+                      </p>
+                    </div>
+                    <div className="pt-6 mt-4 border-t border-gray-100">
+                      <a
+                        href={item.file}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-accent transition-colors"
+                      >
+                        <Download className="h-4 w-4" />
+                        <span>View / Download Document</span>
+                      </a>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* 2025-26 */}
+            <div className="space-y-4">
+              <div className="flex items-center gap-2">
+                <span className="px-3 py-1 rounded bg-primary/10 text-primary font-bold text-xs uppercase tracking-wider">
+                  Academic Cycle 2025-26
+                </span>
+              </div>
+              <div className="grid md:grid-cols-2 gap-6">
+                {[
+                  {
+                    title: "PREE Implementation Plans",
+                    session: "2025-26",
+                    desc: "Consolidated implementation plans and executive summaries for 1st, 2nd, and 3rd cycles of PREE (2025-26).",
+                    file: qecPreePlan2526,
+                  },
+                ].map((item, idx) => (
+                  <div
+                    key={idx}
+                    className="bg-white border border-gray-200 rounded-xl p-6 flex flex-col justify-between shadow-sm hover:shadow-md hover:border-primary/40 transition-all group"
+                  >
+                    <div className="space-y-3">
+                      <div className="flex justify-between items-start">
+                        <span className="px-2.5 py-0.5 rounded-full text-[11px] font-bold uppercase tracking-wider bg-gray-100 text-gray-700">
+                          {item.session}
+                        </span>
+                        <ClipboardCheck className="h-5 w-5 text-gray-400 group-hover:text-accent transition-colors" />
+                      </div>
+                      <h3 className="text-lg font-bold text-gray-900 leading-snug group-hover:text-primary transition-colors">
+                        {item.title}
+                      </h3>
+                      <p className="text-sm text-gray-600 leading-relaxed">
+                        {item.desc}
+                      </p>
+                    </div>
+                    <div className="pt-6 mt-4 border-t border-gray-100">
+                      <a
+                        href={item.file}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-accent transition-colors"
+                      >
+                        <Download className="h-4 w-4" />
+                        <span>View / Download Document</span>
+                      </a>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </section>
 

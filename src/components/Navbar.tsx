@@ -35,12 +35,6 @@ import oricKpSop from "@/assets/ORIC Website/KUM Policies/KUM Proposal SOPs.pdf"
 import oricKpPolicy2021 from "@/assets/ORIC Website/KUM Policies/ORICs Policy 2021.pdf";
 
 // QEC Downloads
-import qecDlPgpr01 from "@/assets/QEC/Downloads/PGPR-01 - Program Summary.pdf";
-import qecDlPgpr02 from "@/assets/QEC/Downloads/PGPR-02 - Program Detailed Information.pdf";
-import qecDlPgpr03 from "@/assets/QEC/Downloads/PGPR-03 - Program Faculty Information (MS-MPhil-Equivalent).pdf";
-import qecDlPgpr04 from "@/assets/QEC/Downloads/PGPR-04 - Program Faculty Information (PhD).pdf";
-import qecDlPgpr05 from "@/assets/QEC/Downloads/PGPR-05 - Student Information (MS-MPhil-Equivalent).pdf";
-import qecDlPgpr6a from "@/assets/QEC/Downloads/PGPR-6-A.pdf";
 import qecDlSarTemplate from "@/assets/QEC/Downloads/SAR Template.pdf";
 
 // QEC Policies
@@ -261,12 +255,6 @@ const mainNavItems = [
         path: "#qec-downloads",
         icon: Download,
         nested: [
-          { label: "PGPR-01 - Program Summary", path: "/qec-dl-pgpr01", isExternal: true },
-          { label: "PGPR-02 - Program Detailed Info", path: "/qec-dl-pgpr02", isExternal: true },
-          { label: "PGPR-03 - Faculty Info (MS/MPhil)", path: "/qec-dl-pgpr03", isExternal: true },
-          { label: "PGPR-04 - Faculty Info (PhD)", path: "/qec-dl-pgpr04", isExternal: true },
-          { label: "PGPR-05 - Student Info", path: "/qec-dl-pgpr05", isExternal: true },
-          { label: "PGPR-6-A", path: "/qec-dl-pgpr6a", isExternal: true },
           { label: "SAR Template", path: "/qec-dl-sar", isExternal: true },
         ]
       },
@@ -281,7 +269,7 @@ const mainNavItems = [
       },
       {
         label: "RIPE",
-        path: "#qec-ripe",
+        path: "/qec#qec-ripe",
         icon: FileText,
         nested: [
           { label: "RIPE Compliance Reports (2025-26)", path: "/qec-ripe-comp", isExternal: true },
@@ -291,7 +279,7 @@ const mainNavItems = [
       },
       { 
         label: "PGPR", 
-        path: "#qec-pgpr", 
+        path: "/qec#qec-pgpr", 
         icon: FileStack,
         nested: [
           {
@@ -313,7 +301,7 @@ const mainNavItems = [
       },
       { 
         label: "PREE", 
-        path: "#qec-pree", 
+        path: "/qec#qec-pree", 
         icon: ClipboardCheck,
         nested: [
           {
@@ -411,12 +399,6 @@ const Navbar = () => {
     else if (pdfPath === "/oric-kp-sop") window.open(oricKpSop, "_blank");
     else if (pdfPath === "/oric-kp-policy-2021") window.open(oricKpPolicy2021, "_blank");
     // QEC Downloads
-    else if (pdfPath === "/qec-dl-pgpr01") window.open(qecDlPgpr01, "_blank");
-    else if (pdfPath === "/qec-dl-pgpr02") window.open(qecDlPgpr02, "_blank");
-    else if (pdfPath === "/qec-dl-pgpr03") window.open(qecDlPgpr03, "_blank");
-    else if (pdfPath === "/qec-dl-pgpr04") window.open(qecDlPgpr04, "_blank");
-    else if (pdfPath === "/qec-dl-pgpr05") window.open(qecDlPgpr05, "_blank");
-    else if (pdfPath === "/qec-dl-pgpr6a") window.open(qecDlPgpr6a, "_blank");
     else if (pdfPath === "/qec-dl-sar") window.open(qecDlSarTemplate, "_blank");
     // QEC Policies
     else if (pdfPath === "/qec-pol-kum") window.open(kumQualityPolicyPdf, "_blank");

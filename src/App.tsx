@@ -88,7 +88,12 @@ const App = () => (
             {/* ORIC Routes */}
             <Route path="/oric" element={<ORIC />} />
             <Route path="/oric-steering-committee" element={<ORICSteeringCommittee />} />
+
+            {/* QEC Routes */}
             <Route path="/qec" element={<QEC />} />
+            <Route path="/qec-pree" element={<Navigate to="/qec#qec-pree" replace />} />
+            <Route path="/qec-ripe" element={<Navigate to="/qec#qec-ripe" replace />} />
+            <Route path="/qec-pgpr" element={<Navigate to="/qec#qec-pgpr" replace />} />
             <Route path="/rd-projects" element={<RDProjects />} />
             <Route path="/research-publications" element={<ResearchPublications />} />
 
