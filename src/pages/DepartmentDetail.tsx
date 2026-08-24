@@ -65,10 +65,11 @@ const DepartmentDetail = () => {
   });
 
   const getHodTitle = (designation: string) => {
+    if ((department as any).hodTitle) return (department as any).hodTitle;
     const lower = designation.toLowerCase();
-    if (lower.includes("in charge") || lower.includes("in-charge")) return "Message from the In Charge Faculty";
-    if (lower.includes("chairperson")) return "Chairperson's Message";
+    if (lower.includes("chairman") || lower.includes("chairperson")) return "Chairman's Message";
     if (lower.includes("director")) return "Director's Message";
+    if (lower.includes("in charge") || lower.includes("in-charge")) return "Message from the In-Charge";
     return "HOD's Message";
   };
 
