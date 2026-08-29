@@ -1,23 +1,30 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageHeader from "@/components/PageHeader";
-import { FileText, Download, Eye } from "lucide-react";
-import advertisementPdf from "@/assets/pdfs/KUM Statutory Positions Advertisement.pdf";
-import applicationFormPdf from "@/assets/pdfs/Administrative postions application form for  KUM Statutory Posiitons.pdf";
-import applicantsDetailsPdf from "@/assets/pdfs/Detail of Applicants Applied Against Advertisement No. 01 2026.pdf";
+import { FileText, Download, Eye, ExternalLink } from "lucide-react";
+import jobsAdvertisementImg from "@/assets/pdfs/jobs-advertisement.png";
+import teachingFormDocx from "@/assets/pdfs/TEACHING POSTIONS APPLICATION FORM FOR KUM .docx";
+import teachingFormPdf from "@/assets/pdfs/TEACHING POSTIONS APPLICATION FORM FOR KUM .pdf";
 
-const jobListings = [
+interface JobItem {
+	title: string;
+	file: string;
+	type: "pdf" | "docx";
+	badge?: string;
+}
+
+const jobListings: JobItem[] = [
 	{
-		title: "SITUATIONS VACANT (Advertisement No. 01/2026)",
-		pdf: advertisementPdf,
+		title: "TEACHING POSTIONS APPLICATION FORM FOR KUM .pdf",
+		file: teachingFormPdf,
+		type: "pdf",
+		badge: "PDF Document",
 	},
 	{
-		title: "APPLICATION FORM FOR STATUTORY POSITIONS",
-		pdf: applicationFormPdf,
-	},
-	{
-		title: "Details of Applicants (Advertisement No. 01/2026)",
-		pdf: applicantsDetailsPdf,
+		title: "TEACHING POSTIONS APPLICATION FORM FOR KUM .docx",
+		file: teachingFormDocx,
+		type: "docx",
+		badge: "Word Document",
 	},
 ];
 
@@ -37,79 +44,157 @@ const Jobs = () => {
 				<div className="container-main px-4 sm:px-6 lg:px-8 py-14">
 					<div className="mb-10">
 						<p className="text-muted-foreground text-lg leading-relaxed max-w-3xl">
-							Kohsar University Murree is looking for talented and dedicated
-							individuals to join our team. Below are the current job openings
-							and opportunities available at our university. You can view the
-							detailed advertisement and download the application forms below.
+							Kohsar University Murree invites applications from qualified, dynamic, and dedicated
+							individuals for teaching positions. Review the official advertisement below and download
+							the relevant application form in PDF or Word (.docx) format.
 						</p>
 					</div>
 
-					{jobListings.length > 0 ? (
-						<div className="grid md:grid-cols-2 gap-8">
-							{jobListings.map((job) => (
-								<div
-									key={job.title}
-									className="group bg-card border border-border rounded-xl overflow-hidden hover:shadow-xl hover:border-primary/20 transition-all duration-300"
+					{/* Job Advertisement Image Section */}
+					<div className="mb-14 bg-card border border-border shadow-md">
+						<div className="p-4 sm:p-5 border-b border-border bg-primary/5 flex flex-wrap items-center justify-between gap-4">
+							<div>
+								<span className="text-xs font-bold uppercase tracking-wider text-accent bg-accent/10 px-3 py-1">
+									Official Advertisement
+								</span>
+								<h2 className="text-lg sm:text-xl font-serif text-foreground mt-1.5 font-bold">
+									Job Vacancies & Teaching Positions
+								</h2>
+							</div>
+							<div className="flex items-center gap-2.5">
+								<button
+									onClick={() => handlePdfView(jobsAdvertisementImg)}
+									className="inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-primary text-primary-foreground text-xs sm:text-sm font-medium hover:bg-primary/90 transition-colors"
 								>
-									<div className="p-8">
-										<div className="flex items-start gap-5 mb-8">
-											<div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-												<FileText className="h-7 w-7 text-primary" />
-											</div>
-											<h3 className="text-xl font-bold text-foreground leading-tight pt-1">
-												{job.title}
-											</h3>
-										</div>
-										<div className="flex flex-col sm:flex-row gap-4">
-											<button
-												onClick={() => handlePdfView(job.pdf)}
-												className="flex-1 inline-flex items-center justify-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors font-semibold shadow-sm"
-											>
-												<Eye className="h-4 w-4" />
-												View PDF
-											</button>
-											<a
-												href={job.pdf}
-												download
-												className="flex-1 inline-flex items-center justify-center gap-2 px-6 py-3 border-2 border-primary/20 text-primary rounded-lg hover:bg-primary/5 hover:border-primary transition-all font-semibold"
-											>
-												<Download className="h-4 w-4" />
-												Download
-											</a>
-										</div>
-									</div>
-								</div>
-							))}
-						</div>
-					) : (
-						<div className="bg-muted/30 border border-dashed border-muted-foreground/20 rounded-xl p-12 text-center">
-							<FileText className="h-12 w-12 text-muted-foreground/40 mx-auto mb-4" />
-							<h3 className="text-xl font-medium text-foreground mb-2">No Active Openings</h3>
-							<p className="text-muted-foreground">
-								New advertisements will be uploaded soon. Please check back later for exciting career opportunities at Kohsar University Murree.
-							</p>
-						</div>
-					)}
-
-					{jobListings.length > 0 && (
-						<div className="mt-16 bg-primary/5 border border-primary/20 rounded-2xl p-8 md:p-10">
-							<h2 className="text-2xl font-serif text-foreground mb-6 flex items-center gap-3">
-								<span className="w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-sm font-sans">!</span>
-								How to Apply
-							</h2>
-							<div className="max-w-4xl">
-								<p className="text-muted-foreground text-lg leading-relaxed mb-8">
-									Follow these steps to submit your application for the statutory positions:
-								</p>
-								<ol className="space-y-6 text-muted-foreground list-decimal list-inside text-lg">
-									<li className="pl-2">Download and carefully read the <a href={advertisementPdf} download className="font-semibold text-primary hover:underline">Detailed Advertisement</a></li>
-									<li className="pl-2">Download the <a href={applicationFormPdf} download className="font-semibold text-primary hover:underline">Application Form</a> relevant to your position</li>
-									<li className="pl-2">Fill out the form completely and attach all required documents</li>
-									<li className="pl-2">Submit your application through the specified channels mentioned in the advertisement</li>
-								</ol>
+									<ExternalLink className="h-3.5 w-3.5" />
+									View Full Size
+								</button>
+								<a
+									href={jobsAdvertisementImg}
+									download="jobs-advertisement.png"
+									className="inline-flex items-center gap-1.5 px-3.5 py-1.5 border border-primary/30 text-primary text-xs sm:text-sm font-medium hover:bg-primary/5 transition-colors"
+								>
+									<Download className="h-3.5 w-3.5" />
+									Download
+								</a>
 							</div>
 						</div>
-					)}
+						<div className="p-4 sm:p-6 bg-muted/10 flex flex-col items-center">
+							<div className="w-full max-w-2xl max-h-[480px] overflow-y-auto border border-border bg-white shadow-sm">
+								<img
+									src={jobsAdvertisementImg}
+									alt="Kohsar University Murree Job Advertisement"
+									className="w-full h-auto cursor-pointer hover:opacity-95 transition-opacity block"
+									onClick={() => handlePdfView(jobsAdvertisementImg)}
+								/>
+							</div>
+							<p className="text-xs text-muted-foreground mt-2.5 flex items-center gap-1.5">
+								<Eye className="h-3.5 w-3.5 text-accent" />
+								<span>Click the image or &quot;View Full Size&quot; to open the high-resolution advertisement in a new tab.</span>
+							</p>
+						</div>
+					</div>
+
+					{/* Application Forms Section */}
+					<div className="mb-14">
+						<div className="mb-6">
+							<span className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
+								Downloads
+							</span>
+							<h2 className="text-2xl font-serif text-foreground font-bold mt-1">
+								Application Forms
+							</h2>
+						</div>
+
+						<div className="grid md:grid-cols-2 gap-8">
+							{jobListings.map((job) => {
+								const isDocx = job.type === "docx";
+								return (
+									<div
+										key={job.title}
+										className="bg-card border border-border overflow-hidden hover:shadow-lg hover:border-primary/30 transition-all flex flex-col justify-between"
+									>
+										<div className="p-6 sm:p-8">
+											<div className="flex items-center justify-between mb-4">
+												<span
+													className={`text-xs font-bold uppercase tracking-wider px-3 py-1 ${
+														isDocx
+															? "bg-blue-100 text-blue-800 dark:bg-blue-950 dark:text-blue-300"
+															: "bg-red-100 text-red-800 dark:bg-red-950 dark:text-red-300"
+													}`}
+												>
+													{job.badge || (isDocx ? "DOCX Form" : "PDF Document")}
+												</span>
+											</div>
+											<div className="flex items-start gap-4 mb-8">
+												<div
+													className={`w-12 h-12 flex items-center justify-center flex-shrink-0 ${
+														isDocx
+															? "bg-blue-50 text-blue-600 dark:bg-blue-950/50 dark:text-blue-400"
+															: "bg-primary/10 text-primary"
+													}`}
+												>
+													<FileText className="h-6 w-6" />
+												</div>
+												<h3 className="text-lg sm:text-xl font-bold text-foreground leading-snug pt-1 break-words">
+													{job.title}
+												</h3>
+											</div>
+											<div className="flex flex-col sm:flex-row gap-3 pt-2">
+												{isDocx ? (
+													<a
+														href={job.file}
+														download={job.title}
+														className="flex-1 inline-flex items-center justify-center gap-2 px-5 py-3 bg-primary text-primary-foreground hover:bg-primary/90 transition-colors font-medium text-sm text-center"
+													>
+														<Download className="h-4 w-4" />
+														Download Form (.docx)
+													</a>
+												) : (
+													<>
+														<button
+															onClick={() => handlePdfView(job.file)}
+															className="flex-1 inline-flex items-center justify-center gap-2 px-5 py-3 bg-primary text-primary-foreground hover:bg-primary/90 transition-colors font-medium text-sm"
+														>
+															<Eye className="h-4 w-4" />
+															View PDF
+														</button>
+														<a
+															href={job.file}
+															download
+															className="flex-1 inline-flex items-center justify-center gap-2 px-5 py-3 border border-border text-foreground hover:bg-muted transition-colors font-medium text-sm text-center"
+														>
+															<Download className="h-4 w-4" />
+															Download
+														</a>
+													</>
+												)}
+											</div>
+										</div>
+									</div>
+								);
+							})}
+						</div>
+					</div>
+
+					{/* How to Apply Section */}
+					<div className="bg-primary/5 border border-primary/20 p-6 sm:p-8 md:p-10">
+						<h2 className="text-2xl font-serif text-foreground mb-6 flex items-center gap-3">
+							<span className="w-8 h-8 bg-primary text-primary-foreground flex items-center justify-center text-sm font-sans font-bold">!</span>
+							How to Apply
+						</h2>
+						<div className="max-w-4xl">
+							<p className="text-muted-foreground text-base sm:text-lg leading-relaxed mb-6">
+								Follow these steps to submit your application for teaching positions at Kohsar University Murree:
+							</p>
+							<ol className="space-y-4 text-muted-foreground list-decimal list-inside text-base sm:text-lg">
+								<li className="pl-2">Carefully read the <button onClick={() => handlePdfView(jobsAdvertisementImg)} className="font-semibold text-primary hover:underline">Official Advertisement</button> above for eligibility criteria and requirements.</li>
+								<li className="pl-2">Download the <a href={teachingFormPdf} download className="font-semibold text-primary hover:underline">Teaching Positions Form (PDF)</a> or <a href={teachingFormDocx} download="TEACHING POSTIONS APPLICATION FORM FOR KUM .docx" className="font-semibold text-primary hover:underline">Teaching Positions Form (DOCX)</a>.</li>
+								<li className="pl-2">Fill out the application form completely, attach all attested educational certificates, experience letters, and other required documents.</li>
+								<li className="pl-2">Submit your application packet to the Registrar Office before the deadline mentioned in the advertisement.</li>
+							</ol>
+						</div>
+					</div>
 				</div>
 			</div>
 			<Footer />
@@ -118,3 +203,5 @@ const Jobs = () => {
 };
 
 export default Jobs;
+
+

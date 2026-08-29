@@ -6,6 +6,8 @@ import logo from "@/assets/logo.png";
 import universityActPdf from "@/assets/pdfs/KOHSAR-UNIVERSITY-ACT.pdf";
 import circularSpringPdf from "@/assets/pdfs/Circular-Regarding-spring-semester.pdf";
 import alumniFormPdf from "@/assets/pdfs/Alumni Registration from.pdf";
+import teachingFormDocx from "@/assets/pdfs/TEACHING POSTIONS APPLICATION FORM FOR KUM .docx";
+import teachingFormPdf from "@/assets/pdfs/TEACHING POSTIONS APPLICATION FORM FOR KUM .pdf";
 
 // ORIC PDFs - Downloads
 import oricDlHjrs21_22 from "@/assets/ORIC Website/Downloads/HJRS  2021-22.pdf";
@@ -65,7 +67,22 @@ const topBarLinks = [
   { label: "Guest House", path: "/guest-house" },
   { label: "Library", path: "/library" },
   { label: "Downloads", path: "/downloads" },
-  { label: "Jobs", path: "/jobs" },
+  {
+    label: "Jobs",
+    path: "/jobs",
+    dropdown: [
+      {
+        label: "TEACHING POSTIONS APPLICATION FORM FOR KUM .docx",
+        file: teachingFormDocx,
+        type: "docx",
+      },
+      {
+        label: "TEACHING POSTIONS APPLICATION FORM FOR KUM .pdf",
+        file: teachingFormPdf,
+        type: "pdf",
+      },
+    ],
+  },
   { label: "Alumni", path: alumniFormPdf, isExternal: true },
   { label: "Convocation", path: "https://docs.google.com/forms/d/e/1FAIpQLSdGaBUzTNJIW1xwpp5VfvMMdnFSU0z98oU95DlU26D3xvYv6A/viewform", isExternal: true },
 ];
@@ -182,6 +199,10 @@ const mainNavItems = [
         label: "Jobs",
         path: "/jobs",
         icon: Briefcase,
+        nested: [
+          { label: "TEACHING POSTIONS APPLICATION FORM FOR KUM .docx", path: "/jobs-teaching-docx", isExternal: true },
+          { label: "TEACHING POSTIONS APPLICATION FORM FOR KUM .pdf", path: "/jobs-teaching-pdf", isExternal: true },
+        ],
       },
     ]
   },
@@ -344,6 +365,8 @@ const Navbar = () => {
   const [hoveredDropdown, setHoveredDropdown] = useState<string | null>(null);
   const [hoveredNestedItem, setHoveredNestedItem] = useState<string | null>(null);
   const [hoveredDeepNestedItem, setHoveredDeepNestedItem] = useState<string | null>(null);
+  const [hoveredTopBar, setHoveredTopBar] = useState<string | null>(null);
+  const [openMobileTopJobs, setOpenMobileTopJobs] = useState(false);
   const location = useLocation();
   const isHomePage = location.pathname === "/";
 
@@ -358,6 +381,8 @@ const Navbar = () => {
     setOpenSubmenu(null);
     setOpenNestedSubmenu(null);
     setOpenDeepNestedSubmenu(null);
+    setHoveredTopBar(null);
+    setOpenMobileTopJobs(false);
   }, [location.pathname]);
 
   const navClasses = "shadow-lg bg-primary";
@@ -377,6 +402,16 @@ const Navbar = () => {
 
   const handleNestedPdfClick = (pdfPath: string) => {
     if (pdfPath === "/circular-spring-semester") window.open(circularSpringPdf, "_blank");
+    // Jobs forms
+    else if (pdfPath === "/jobs-teaching-docx") {
+      const link = document.createElement("a");
+      link.href = teachingFormDocx;
+      link.download = "TEACHING POSTIONS APPLICATION FORM FOR KUM .docx";
+      link.click();
+    }
+    else if (pdfPath === "/jobs-teaching-pdf") {
+      window.open(teachingFormPdf, "_blank");
+    }
     // ORIC Downloads
     else if (pdfPath === "/oric-dl-hjrs-21-22") window.open(oricDlHjrs21_22, "_blank");
     else if (pdfPath === "/oric-dl-hjrs-20-21") window.open(oricDlHjrs20_21, "_blank");
@@ -429,24 +464,94 @@ const Navbar = () => {
             <span className="font-serif text-lg hidden sm:inline">Kohsar University Murree</span>
           </Link>
           <div className="hidden md:flex items-center gap-1">
-            {topBarLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                onClick={(e) => {
-                  if (link.isExternal) {
-                    e.preventDefault();
-                    window.open(link.path, "_blank");
-                  }
-                }}
-                className="text-sm text-primary-foreground/70 px-2 py-1 transition-colors hover:text-accent"
-              >
-                {link.label}
-              </Link>
-            ))}
-            {/* <button className="ml-2 w-8 h-8 rounded-full bg-accent text-accent-foreground flex items-center justify-center hover:brightness-110 transition">
-              <Search className="h-4 w-4" />
-            </button> */}
+            {topBarLinks.map((link) => {
+              if (link.dropdown) {
+                return (
+                  <div
+                    key={link.label}
+                    className="relative py-2"
+                    onMouseEnter={() => setHoveredTopBar(link.label)}
+                    onMouseLeave={() => setHoveredTopBar(null)}
+                  >
+                    <Link
+                      to={link.path}
+                      className={`text-sm px-2.5 py-1 rounded transition-colors flex items-center gap-1 font-medium ${
+                        hoveredTopBar === link.label
+                          ? "text-accent bg-primary-foreground/10"
+                          : "text-primary-foreground/75 hover:text-accent"
+                      }`}
+                    >
+                      {link.label}
+                      <ChevronDown
+                        className={`h-3.5 w-3.5 transition-transform duration-200 ${
+                          hoveredTopBar === link.label ? "rotate-180" : ""
+                        }`}
+                      />
+                    </Link>
+
+                    {hoveredTopBar === link.label && (
+                      <motion.div
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: 10 }}
+                        transition={{ duration: 0.15 }}
+                        className="absolute right-0 top-full mt-0 w-max min-w-[360px] max-w-[520px] bg-white border border-border shadow-xl z-50 py-2"
+                      >
+                        {link.dropdown.map((subItem) => {
+                          if (subItem.type === "pdf") {
+                            return (
+                              <button
+                                key={subItem.label}
+                                onClick={() => {
+                                  window.open(subItem.file, "_blank");
+                                  setHoveredTopBar(null);
+                                }}
+                                className="w-full text-left px-4 py-2.5 flex items-center gap-3 hover:bg-primary/5 transition-colors group"
+                              >
+                                <FileText className="h-4 w-4 text-primary flex-shrink-0" />
+                                <span className="text-base text-foreground group-hover:text-accent transition-colors">
+                                  {subItem.label}
+                                </span>
+                              </button>
+                            );
+                          }
+                          return (
+                            <a
+                              key={subItem.label}
+                              href={subItem.file}
+                              download="TEACHING POSTIONS APPLICATION FORM FOR KUM .docx"
+                              onClick={() => setHoveredTopBar(null)}
+                              className="w-full text-left px-4 py-2.5 flex items-center gap-3 hover:bg-primary/5 transition-colors group"
+                            >
+                              <FileText className="h-4 w-4 text-primary flex-shrink-0" />
+                              <span className="text-base text-foreground group-hover:text-accent transition-colors">
+                                {subItem.label}
+                              </span>
+                            </a>
+                          );
+                        })}
+                      </motion.div>
+                    )}
+                  </div>
+                );
+              }
+
+              return (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  onClick={(e) => {
+                    if (link.isExternal) {
+                      e.preventDefault();
+                      window.open(link.path, "_blank");
+                    }
+                  }}
+                  className="text-sm text-primary-foreground/70 px-2 py-1 transition-colors hover:text-accent font-medium"
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
           </div>
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
@@ -592,22 +697,70 @@ const Navbar = () => {
           >
             <div className="px-4 pb-4 space-y-1 pt-2">
               {/* Top bar links on mobile */}
-              <div className="flex flex-wrap gap-2 pb-3 border-b border-primary-foreground/10 mb-2">
-                {topBarLinks.map((link) => (
-                  <Link
-                    key={link.path}
-                    to={link.path}
-                    onClick={(e) => {
-                      if (link.isExternal) {
-                        e.preventDefault();
-                        window.open(link.path, "_blank");
-                      }
-                    }}
-                    className="text-sm text-primary-foreground/60 px-2 py-1 transition-colors hover:text-accent"
-                  >
-                    {link.label}
-                  </Link>
-                ))}
+              <div className="pb-3 border-b border-primary-foreground/10 mb-2 space-y-2">
+                <div className="flex flex-wrap gap-2">
+                  {topBarLinks.map((link) => {
+                    if (link.dropdown) {
+                      return (
+                        <button
+                          key={link.label}
+                          onClick={() => setOpenMobileTopJobs(!openMobileTopJobs)}
+                          className="text-sm text-primary-foreground/80 px-2.5 py-1 rounded bg-primary-foreground/10 hover:bg-primary-foreground/20 transition-colors flex items-center gap-1 hover:text-accent font-medium"
+                        >
+                          <span>{link.label}</span>
+                          <ChevronDown className={`h-3.5 w-3.5 transition-transform ${openMobileTopJobs ? "rotate-180" : ""}`} />
+                        </button>
+                      );
+                    }
+                    return (
+                      <Link
+                        key={link.path}
+                        to={link.path}
+                        onClick={(e) => {
+                          if (link.isExternal) {
+                            e.preventDefault();
+                            window.open(link.path, "_blank");
+                          }
+                        }}
+                        className="text-sm text-primary-foreground/60 px-2 py-1 transition-colors hover:text-accent"
+                      >
+                        {link.label}
+                      </Link>
+                    );
+                  })}
+                </div>
+
+                <AnimatePresence>
+                  {openMobileTopJobs && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      className="bg-primary-foreground/5 py-1 border-t border-b border-primary-foreground/15 overflow-hidden"
+                    >
+                      <button
+                        onClick={() => {
+                          window.open(teachingFormPdf, "_blank");
+                          setMobileOpen(false);
+                        }}
+                        className="w-full text-left px-4 py-2 text-xs text-primary-foreground/85 hover:bg-primary-foreground/10 hover:text-accent transition-colors flex items-center gap-2"
+                      >
+                        <FileText className="h-4 w-4 flex-shrink-0" />
+                        <span className="break-words">TEACHING POSTIONS APPLICATION FORM FOR KUM .pdf</span>
+                      </button>
+
+                      <a
+                        href={teachingFormDocx}
+                        download="TEACHING POSTIONS APPLICATION FORM FOR KUM .docx"
+                        onClick={() => setMobileOpen(false)}
+                        className="w-full text-left px-4 py-2 text-xs text-primary-foreground/85 hover:bg-primary-foreground/10 hover:text-accent transition-colors flex items-center gap-2"
+                      >
+                        <FileText className="h-4 w-4 flex-shrink-0" />
+                        <span className="break-words">TEACHING POSTIONS APPLICATION FORM FOR KUM .docx</span>
+                      </a>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
 
               {mainNavItems.map((item) => (
