@@ -60,7 +60,7 @@ const TeachingPositions = () => {
 								<GraduationCap className="h-5 w-5" />
 							</div>
 							<h1 className="text-2xl sm:text-3xl font-serif font-bold text-foreground">
-								Faculty & Teaching Positions
+								Teaching Positions
 							</h1>
 						</div>
 						<p className="text-muted-foreground text-base sm:text-lg leading-relaxed max-w-3xl">
@@ -140,22 +140,20 @@ const TeachingPositions = () => {
 										<div className="p-6 sm:p-8">
 											<div className="flex items-center justify-between mb-4">
 												<span
-													className={`text-xs font-bold uppercase tracking-wider px-3 py-1 ${
-														isDocx
+													className={`text-xs font-bold uppercase tracking-wider px-3 py-1 ${isDocx
 															? "bg-blue-100 text-blue-800 dark:bg-blue-950 dark:text-blue-300"
 															: "bg-red-100 text-red-800 dark:bg-red-950 dark:text-red-300"
-													}`}
+														}`}
 												>
 													{job.badge || (isDocx ? "DOCX Form" : "PDF Document")}
 												</span>
 											</div>
 											<div className="flex items-start gap-4 mb-8">
 												<div
-													className={`w-12 h-12 flex items-center justify-center flex-shrink-0 ${
-														isDocx
+													className={`w-12 h-12 flex items-center justify-center flex-shrink-0 ${isDocx
 															? "bg-blue-50 text-blue-600 dark:bg-blue-950/50 dark:text-blue-400"
 															: "bg-primary/10 text-primary"
-													}`}
+														}`}
 												>
 													<FileText className="h-6 w-6" />
 												</div>
@@ -197,19 +195,6 @@ const TeachingPositions = () => {
 									</div>
 								);
 							})}
-						</div>
-					</div>
-
-					{/* Application Instructions */}
-					<div className="bg-primary/5 border border-primary/20 p-6 sm:p-8 md:p-10">
-						<h2 className="text-2xl font-serif text-foreground mb-4 flex items-center gap-3">
-							<span className="w-8 h-8 bg-primary text-primary-foreground flex items-center justify-center text-sm font-sans font-bold">!</span>
-							Application Form for Teaching Positions
-						</h2>
-						<div className="max-w-4xl">
-							<p className="text-muted-foreground text-base sm:text-lg leading-relaxed">
-								Please click the Download button to download the application form and complete the form carefully. After filling in all the required information, submit your application as per the instructions provided in the advertisement.
-							</p>
 						</div>
 					</div>
 				</div>
