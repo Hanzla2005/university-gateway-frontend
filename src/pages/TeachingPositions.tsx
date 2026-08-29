@@ -80,8 +80,26 @@ const TeachingPositions = () => {
 								<h2 className="text-lg sm:text-xl font-serif text-foreground mt-1.5 font-bold">
 									Job Vacancies & Teaching Positions
 								</h2>
+								<a
+									href="https://epaper.dailyk2.com/isl/2026-08-29/page3"
+									target="_blank"
+									rel="noopener noreferrer"
+									className="inline-flex items-center gap-1.5 text-xs sm:text-sm text-primary hover:underline mt-1 font-medium"
+								>
+									<ExternalLink className="h-3.5 w-3.5" />
+									Source: Daily K2 E-Paper (29 August, 2026 - Page 3)
+								</a>
 							</div>
 							<div className="flex items-center gap-2.5">
+								<a
+									href="https://epaper.dailyk2.com/isl/2026-08-29/page3"
+									target="_blank"
+									rel="noopener noreferrer"
+									className="inline-flex items-center gap-1.5 px-3.5 py-1.5 border border-border bg-background text-foreground text-xs sm:text-sm font-medium hover:bg-muted transition-colors"
+								>
+									<ExternalLink className="h-3.5 w-3.5" />
+									E-Paper Link
+								</a>
 								<button
 									onClick={() => handlePdfView(jobsAdvertisementImg)}
 									className="inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-primary text-primary-foreground text-xs sm:text-sm font-medium hover:bg-primary/90 transition-colors"
@@ -108,10 +126,21 @@ const TeachingPositions = () => {
 									onClick={() => handlePdfView(jobsAdvertisementImg)}
 								/>
 							</div>
-							<p className="text-xs text-muted-foreground mt-2.5 flex items-center gap-1.5">
-								<Eye className="h-3.5 w-3.5 text-accent" />
-								<span>Click the image or &quot;View Full Size&quot; to open the high-resolution advertisement in a new tab.</span>
-							</p>
+							<div className="flex flex-col sm:flex-row items-center justify-between w-full max-w-2xl mt-3 gap-2 text-xs text-muted-foreground">
+								<p className="flex items-center gap-1.5">
+									<Eye className="h-3.5 w-3.5 text-accent" />
+									<span>Click the image or &quot;View Full Size&quot; to open the high-resolution advertisement.</span>
+								</p>
+								<a
+									href="https://epaper.dailyk2.com/isl/2026-08-29/page3"
+									target="_blank"
+									rel="noopener noreferrer"
+									className="text-primary hover:underline inline-flex items-center gap-1 font-medium"
+								>
+									<span>Daily K2 E-Paper Page</span>
+									<ExternalLink className="h-3 w-3" />
+								</a>
+							</div>
 						</div>
 					</div>
 
