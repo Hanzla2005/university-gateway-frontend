@@ -49,6 +49,7 @@ import PolicySexualHarassment from "./pages/PolicySexualHarassment";
 import PolicyDrugTobacco from "./pages/PolicyDrugTobacco";
 import PolicyProtectionHarassment from "./pages/PolicyProtectionHarassment";
 import Jobs from "./pages/Jobs";
+import TeachingPositions from "./pages/TeachingPositions";
 import OnlineAdmissions from "./pages/OnlineAdmissions";
 import MeritLists from "./pages/MeritLists";
 import GuestHouse from "./pages/GuestHouse";
@@ -156,6 +157,7 @@ const App = () => (
 
             {/* Jobs Routes */}
             <Route path="/jobs" element={<Jobs />} />
+            <Route path="/jobs/teaching-positions" element={<TeachingPositions />} />
 
             {/* Other Routes */}
             <Route path="/institutions" element={<Institutions />} />

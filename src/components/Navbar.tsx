@@ -72,14 +72,8 @@ const topBarLinks = [
     path: "/jobs",
     dropdown: [
       {
-        label: "TEACHING POSTIONS APPLICATION FORM FOR KUM .docx",
-        file: teachingFormDocx,
-        type: "docx",
-      },
-      {
-        label: "TEACHING POSTIONS APPLICATION FORM FOR KUM .pdf",
-        file: teachingFormPdf,
-        type: "pdf",
+        label: "Teaching Positions",
+        path: "/jobs/teaching-positions",
       },
     ],
   },
@@ -200,8 +194,7 @@ const mainNavItems = [
         path: "/jobs",
         icon: Briefcase,
         nested: [
-          { label: "TEACHING POSTIONS APPLICATION FORM FOR KUM .docx", path: "/jobs-teaching-docx", isExternal: true },
-          { label: "TEACHING POSTIONS APPLICATION FORM FOR KUM .pdf", path: "/jobs-teaching-pdf", isExternal: true },
+          { label: "Teaching Positions", path: "/jobs/teaching-positions" },
         ],
       },
     ]
@@ -495,41 +488,21 @@ const Navbar = () => {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: 10 }}
                         transition={{ duration: 0.15 }}
-                        className="absolute right-0 top-full mt-0 w-max min-w-[360px] max-w-[520px] bg-white border border-border shadow-xl z-50 py-2"
+                        className="absolute right-0 top-full mt-0 w-max min-w-[200px] bg-white border border-border shadow-xl z-50 py-2"
                       >
-                        {link.dropdown.map((subItem) => {
-                          if (subItem.type === "pdf") {
-                            return (
-                              <button
-                                key={subItem.label}
-                                onClick={() => {
-                                  window.open(subItem.file, "_blank");
-                                  setHoveredTopBar(null);
-                                }}
-                                className="w-full text-left px-4 py-2.5 flex items-center gap-3 hover:bg-primary/5 transition-colors group"
-                              >
-                                <FileText className="h-4 w-4 text-primary flex-shrink-0" />
-                                <span className="text-base text-foreground group-hover:text-accent transition-colors">
-                                  {subItem.label}
-                                </span>
-                              </button>
-                            );
-                          }
-                          return (
-                            <a
-                              key={subItem.label}
-                              href={subItem.file}
-                              download="TEACHING POSTIONS APPLICATION FORM FOR KUM .docx"
-                              onClick={() => setHoveredTopBar(null)}
-                              className="w-full text-left px-4 py-2.5 flex items-center gap-3 hover:bg-primary/5 transition-colors group"
-                            >
-                              <FileText className="h-4 w-4 text-primary flex-shrink-0" />
-                              <span className="text-base text-foreground group-hover:text-accent transition-colors">
-                                {subItem.label}
-                              </span>
-                            </a>
-                          );
-                        })}
+                        {link.dropdown.map((subItem) => (
+                          <Link
+                            key={subItem.label}
+                            to={subItem.path}
+                            onClick={() => setHoveredTopBar(null)}
+                            className="w-full text-left px-4 py-2.5 flex items-center gap-3 hover:bg-primary/5 transition-colors group"
+                          >
+                            <GraduationCap className="h-4 w-4 text-primary flex-shrink-0" />
+                            <span className="text-base text-foreground group-hover:text-accent transition-colors">
+                              {subItem.label}
+                            </span>
+                          </Link>
+                        ))}
                       </motion.div>
                     )}
                   </div>
@@ -738,26 +711,14 @@ const Navbar = () => {
                       exit={{ height: 0, opacity: 0 }}
                       className="bg-primary-foreground/5 py-1 border-t border-b border-primary-foreground/15 overflow-hidden"
                     >
-                      <button
-                        onClick={() => {
-                          window.open(teachingFormPdf, "_blank");
-                          setMobileOpen(false);
-                        }}
-                        className="w-full text-left px-4 py-2 text-xs text-primary-foreground/85 hover:bg-primary-foreground/10 hover:text-accent transition-colors flex items-center gap-2"
-                      >
-                        <FileText className="h-4 w-4 flex-shrink-0" />
-                        <span className="break-words">TEACHING POSTIONS APPLICATION FORM FOR KUM .pdf</span>
-                      </button>
-
-                      <a
-                        href={teachingFormDocx}
-                        download="TEACHING POSTIONS APPLICATION FORM FOR KUM .docx"
+                      <Link
+                        to="/jobs/teaching-positions"
                         onClick={() => setMobileOpen(false)}
                         className="w-full text-left px-4 py-2 text-xs text-primary-foreground/85 hover:bg-primary-foreground/10 hover:text-accent transition-colors flex items-center gap-2"
                       >
-                        <FileText className="h-4 w-4 flex-shrink-0" />
-                        <span className="break-words">TEACHING POSTIONS APPLICATION FORM FOR KUM .docx</span>
-                      </a>
+                        <GraduationCap className="h-4 w-4 flex-shrink-0" />
+                        <span>Teaching Positions</span>
+                      </Link>
                     </motion.div>
                   )}
                 </AnimatePresence>
