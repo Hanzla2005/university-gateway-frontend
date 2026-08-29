@@ -27,6 +27,17 @@ const jobCategories: JobCategory[] = [
 		status: "Applications Open",
 		statusType: "active",
 	},
+	{
+		id: "non-teaching-positions",
+		title: "Non Teaching 1 to 16",
+		subtitle: "Staff Opportunities (BPS 01 - 16)",
+		description:
+			"Explore non-teaching career opportunities from BPS 1 to 16 at Kohsar University Murree. View the official advertisement and download the application form.",
+		path: "/jobs/non-teaching-positions",
+		icon: Briefcase,
+		status: "Applications Open",
+		statusType: "active",
+	},
 ];
 
 const Jobs = () => {
