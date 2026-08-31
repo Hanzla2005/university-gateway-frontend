@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageHeader from "@/components/PageHeader";
-import vcImg from "@/assets/home/vc.png";
+import vcImg from "@/assets/home/vc.jpeg";
 
 const ViceChancellor = () => {
   return (

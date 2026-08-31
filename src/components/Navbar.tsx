@@ -79,6 +79,10 @@ const topBarLinks = [
         label: "Non Teaching 1 to 16",
         path: "/jobs/non-teaching-positions",
       },
+      {
+        label: "Administrative Positions",
+        path: "/jobs/administrative-positions",
+      },
     ],
   },
   { label: "Alumni", path: alumniFormPdf, isExternal: true },
@@ -200,6 +204,7 @@ const mainNavItems = [
         nested: [
           { label: "Teaching Positions", path: "/jobs/teaching-positions" },
           { label: "Non Teaching 1 to 16", path: "/jobs/non-teaching-positions" },
+          { label: "Administrative Positions", path: "/jobs/administrative-positions" },
         ],
       },
     ]
@@ -731,6 +736,14 @@ const Navbar = () => {
                       >
                         <Briefcase className="h-4 w-4 flex-shrink-0" />
                         <span>Non Teaching 1 to 16</span>
+                      </Link>
+                      <Link
+                        to="/jobs/administrative-positions"
+                        onClick={() => setMobileOpen(false)}
+                        className="w-full text-left px-4 py-2 text-xs text-primary-foreground/85 hover:bg-primary-foreground/10 hover:text-accent transition-colors flex items-center gap-2"
+                      >
+                        <Building2 className="h-4 w-4 flex-shrink-0" />
+                        <span>Administrative Positions</span>
                       </Link>
                     </motion.div>
                   )}

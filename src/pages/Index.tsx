@@ -12,7 +12,7 @@ import departmentImages from "@/data/departmentImages";
 import heroBg from "@/assets/home/bg1.png";
 
 import chancellorImg from "@/assets/home/chancellor.png";
-import vcImg from "@/assets/home/vc.png";
+import vcImg from "@/assets/home/vc.jpeg";
 import proVcImg from "@/assets/home/proVC.png";
 import graduationImg from "@/assets/graduation.jpg";
 import { topStories } from "@/data/stories";

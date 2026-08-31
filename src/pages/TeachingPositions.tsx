@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 import PageHeader from "@/components/PageHeader";
 import { FileText, Download, Eye, ExternalLink, ArrowLeft, GraduationCap } from "lucide-react";
 import { Link } from "react-router-dom";
-import jobsAdvertisementImg from "@/assets/pdfs/jobs-advertisement.png";
+import teachingPositionsAddPdf from "@/assets/pdfs/Teaching Positions_Add.pdf";
 import teachingFormDocx from "@/assets/pdfs/TEACHING POSTIONS APPLICATION FORM FOR KUM .docx";
 import teachingFormPdf from "@/assets/pdfs/TEACHING POSTIONS APPLICATION FORM FOR KUM .pdf";
 
@@ -70,7 +70,7 @@ const TeachingPositions = () => {
 						</p>
 					</div>
 
-					{/* Job Advertisement Image Section */}
+					{/* Job Advertisement PDF Section */}
 					<div className="mb-14 bg-card border border-border shadow-md">
 						<div className="p-4 sm:p-5 border-b border-border bg-primary/5 flex flex-wrap items-center justify-between gap-4">
 							<div>
@@ -80,67 +80,37 @@ const TeachingPositions = () => {
 								<h2 className="text-lg sm:text-xl font-serif text-foreground mt-1.5 font-bold">
 									Job Vacancies & Teaching Positions
 								</h2>
-								<a
-									href="https://epaper.dailyk2.com/isl/2026-08-29/page3"
-									target="_blank"
-									rel="noopener noreferrer"
-									className="inline-flex items-center gap-1.5 text-xs sm:text-sm text-primary hover:underline mt-1 font-medium"
-								>
-									<ExternalLink className="h-3.5 w-3.5" />
-									Source: Daily K2 E-Paper (29 August, 2026 - Page 3)
-								</a>
 							</div>
 							<div className="flex items-center gap-2.5">
-								<a
-									href="https://epaper.dailyk2.com/isl/2026-08-29/page3"
-									target="_blank"
-									rel="noopener noreferrer"
-									className="inline-flex items-center gap-1.5 px-3.5 py-1.5 border border-border bg-background text-foreground text-xs sm:text-sm font-medium hover:bg-muted transition-colors"
-								>
-									<ExternalLink className="h-3.5 w-3.5" />
-									E-Paper Link
-								</a>
 								<button
-									onClick={() => handlePdfView(jobsAdvertisementImg)}
+									onClick={() => handlePdfView(teachingPositionsAddPdf)}
 									className="inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-primary text-primary-foreground text-xs sm:text-sm font-medium hover:bg-primary/90 transition-colors"
 								>
 									<ExternalLink className="h-3.5 w-3.5" />
 									View Full Size
 								</button>
 								<a
-									href={jobsAdvertisementImg}
-									download="jobs-advertisement.png"
+									href={teachingPositionsAddPdf}
+									download="Teaching Positions_Add.pdf"
 									className="inline-flex items-center gap-1.5 px-3.5 py-1.5 border border-primary/30 text-primary text-xs sm:text-sm font-medium hover:bg-primary/5 transition-colors"
 								>
 									<Download className="h-3.5 w-3.5" />
-									Download
+									Download PDF
 								</a>
 							</div>
 						</div>
 						<div className="p-4 sm:p-6 bg-muted/10 flex flex-col items-center">
-							<div className="w-full max-w-2xl max-h-[480px] overflow-y-auto border border-border bg-white shadow-sm">
-								<img
-									src={jobsAdvertisementImg}
-									alt="Kohsar University Murree Job Advertisement"
-									className="w-full h-auto cursor-pointer hover:opacity-95 transition-opacity block"
-									onClick={() => handlePdfView(jobsAdvertisementImg)}
+							<div className="w-full h-[650px] sm:h-[750px] md:h-[850px] border border-border bg-white shadow-sm overflow-hidden">
+								<iframe
+									src={`${teachingPositionsAddPdf}#view=FitH`}
+									title="Teaching Positions Advertisement"
+									className="w-full h-full border-0"
 								/>
 							</div>
-							<div className="flex flex-col sm:flex-row items-center justify-between w-full max-w-2xl mt-3 gap-2 text-xs text-muted-foreground">
-								<p className="flex items-center gap-1.5">
-									<Eye className="h-3.5 w-3.5 text-accent" />
-									<span>Click the image or &quot;View Full Size&quot; to open the high-resolution advertisement.</span>
-								</p>
-								<a
-									href="https://epaper.dailyk2.com/isl/2026-08-29/page3"
-									target="_blank"
-									rel="noopener noreferrer"
-									className="text-primary hover:underline inline-flex items-center gap-1 font-medium"
-								>
-									<span>Daily K2 E-Paper Page</span>
-									<ExternalLink className="h-3 w-3" />
-								</a>
-							</div>
+							<p className="text-xs text-muted-foreground mt-2.5 flex items-center gap-1.5">
+								<Eye className="h-3.5 w-3.5 text-accent" />
+								<span>Use the PDF viewer controls to zoom or scroll, or click &quot;View Full Size&quot; to open in a new tab.</span>
+							</p>
 						</div>
 					</div>
 

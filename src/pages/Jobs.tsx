@@ -1,7 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageHeader from "@/components/PageHeader";
-import { GraduationCap, ArrowRight, Briefcase } from "lucide-react";
+import { GraduationCap, ArrowRight, Briefcase, Building2 } from "lucide-react";
 import { Link } from "react-router-dom";
 
 interface JobCategory {
@@ -38,6 +38,17 @@ const jobCategories: JobCategory[] = [
 		status: "Applications Open",
 		statusType: "active",
 	},
+	{
+		id: "administrative-positions",
+		title: "Administrative Positions",
+		subtitle: "Statutory & Administrative Positions",
+		description:
+			"Explore administrative and statutory career opportunities at Kohsar University Murree. View the official advertisement and download the revised application form in PDF or Word (.docx) format.",
+		path: "/jobs/administrative-positions",
+		icon: Building2,
+		status: "Applications Open",
+		statusType: "active",
+	},
 ];
 
 const Jobs = () => {
@@ -65,7 +76,7 @@ const Jobs = () => {
 					</div>
 
 					{/* Job Categories List */}
-					<div className="grid md:grid-cols-2 gap-8 mb-14">
+					<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-14">
 						{jobCategories.map((category) => {
 							const Icon = category.icon;
 							return (

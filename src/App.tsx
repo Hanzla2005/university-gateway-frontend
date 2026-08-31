@@ -51,6 +51,7 @@ import PolicyProtectionHarassment from "./pages/PolicyProtectionHarassment";
 import Jobs from "./pages/Jobs";
 import TeachingPositions from "./pages/TeachingPositions";
 import NonTeachingPositions from "./pages/NonTeachingPositions";
+import AdministrativePositions from "./pages/AdministrativePositions";
 import OnlineAdmissions from "./pages/OnlineAdmissions";
 import MeritLists from "./pages/MeritLists";
 import GuestHouse from "./pages/GuestHouse";
@@ -161,6 +162,8 @@ const App = () => (
             <Route path="/jobs/teaching-positions" element={<TeachingPositions />} />
             <Route path="/jobs/non-teaching-positions" element={<NonTeachingPositions />} />
             <Route path="/jobs/non-teaching-1-to-16" element={<NonTeachingPositions />} />
+            <Route path="/jobs/administrative-positions" element={<AdministrativePositions />} />
+            <Route path="/jobs/administrative-statutory-positions" element={<AdministrativePositions />} />
 
             {/* Other Routes */}
             <Route path="/institutions" element={<Institutions />} />
