@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 import PageHeader from "@/components/PageHeader";
 import { FileText, Download, Eye, ExternalLink, ArrowLeft, Building2 } from "lucide-react";
 import { Link } from "react-router-dom";
-import adminPositionsImage from "@/assets/pdfs/administrative-positions.jpeg";
+import adminPositionsAddPdf from "@/assets/pdfs/2508202606202017533503_260827_170836.pdf";
 import adminFormDocx from "@/assets/pdfs/Revised Administrative postions application form for  KUM Statutory Posiitons.docx";
 import adminFormPdf from "@/assets/pdfs/Revised Administrative postions application form for  KUM Statutory Posiitons.pdf";
 
@@ -70,7 +70,7 @@ const AdministrativePositions = () => {
 						</p>
 					</div>
 
-					{/* Job Advertisement Image Section */}
+					{/* Job Advertisement PDF Section */}
 					<div className="mb-14 bg-card border border-border shadow-md">
 						<div className="p-4 sm:p-5 border-b border-border bg-primary/5 flex flex-wrap items-center justify-between gap-4">
 							<div>
@@ -83,34 +83,33 @@ const AdministrativePositions = () => {
 							</div>
 							<div className="flex items-center gap-2.5">
 								<button
-									onClick={() => handleFileView(adminPositionsImage)}
+									onClick={() => handleFileView(adminPositionsAddPdf)}
 									className="inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-primary text-primary-foreground text-xs sm:text-sm font-medium hover:bg-primary/90 transition-colors"
 								>
 									<ExternalLink className="h-3.5 w-3.5" />
 									View Full Size
 								</button>
 								<a
-									href={adminPositionsImage}
-									download="administrative-positions.jpeg"
+									href={adminPositionsAddPdf}
+									download="2508202606202017533503_260827_170836.pdf"
 									className="inline-flex items-center gap-1.5 px-3.5 py-1.5 border border-primary/30 text-primary text-xs sm:text-sm font-medium hover:bg-primary/5 transition-colors"
 								>
 									<Download className="h-3.5 w-3.5" />
-									Download Image
+									Download PDF
 								</a>
 							</div>
 						</div>
 						<div className="p-4 sm:p-6 bg-muted/10 flex flex-col items-center">
-							<div className="w-full max-w-4xl border border-border bg-white shadow-sm overflow-hidden flex justify-center p-2 sm:p-4">
-								<img
-									src={adminPositionsImage}
-									alt="Administrative and Statutory Positions Advertisement"
-									className="w-full h-auto max-h-[900px] object-contain cursor-pointer hover:opacity-95 transition-opacity"
-									onClick={() => handleFileView(adminPositionsImage)}
+							<div className="w-full h-[650px] sm:h-[750px] md:h-[850px] border border-border bg-white shadow-sm overflow-hidden">
+								<iframe
+									src={`${adminPositionsAddPdf}#view=FitH`}
+									title="Administrative Positions Advertisement PDF"
+									className="w-full h-full border-0"
 								/>
 							</div>
 							<p className="text-xs text-muted-foreground mt-2.5 flex items-center gap-1.5">
 								<Eye className="h-3.5 w-3.5 text-accent" />
-								<span>Click the advertisement image or &quot;View Full Size&quot; to open the high-resolution advertisement in a new tab.</span>
+								<span>Use the PDF viewer controls to zoom or scroll, or click &quot;View Full Size&quot; to open in a new tab.</span>
 							</p>
 						</div>
 					</div>
