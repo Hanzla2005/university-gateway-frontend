@@ -1,10 +1,20 @@
 import { motion } from "framer-motion";
 import admissionBanner2 from "@/assets/admissionBanner-2.png";
 import admissionBanner from "@/assets/admissionBanner.png";
+import Footer from "@/components/Footer";
+import { Phone, PhoneCall } from "lucide-react";
+
+const helplines = [
+  { number: "(051) 9269171", tel: "+92519269171", label: "Line 1" },
+  { number: "(051) 9269172", tel: "+92519269172", label: "Line 2" },
+  { number: "(051) 9269174", tel: "+92519269174", label: "Line 3" },
+  { number: "(051) 9269270", tel: "+92519269270", label: "Line 4" },
+  { number: "(051) 9265195", tel: "+92519265195", label: "Line 5" },
+];
 
 const IntermediateAdmission = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background flex flex-col justify-between">
       <div className="container-main py-12 px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -65,10 +75,42 @@ const IntermediateAdmission = () => {
                   </li>
                 </ul>
               </div>
+
+              {/* Admission Helplines Card */}
+              <div className="mt-8 bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                <div className="bg-primary px-6 py-3 text-white flex items-center gap-3">
+                  <PhoneCall className="w-5 h-5 text-accent shrink-0" />
+                  <div>
+                    <h4 className="font-serif font-semibold text-white">Admission Desk Inquiries</h4>
+                    <p className="text-xs text-primary-foreground/80">For queries and assistance regarding intermediate admissions:</p>
+                  </div>
+                </div>
+                <div className="p-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">
+                    {helplines.map((item, idx) => (
+                      <a
+                        key={idx}
+                        href={`tel:${item.tel}`}
+                        className="flex flex-col items-center justify-center p-3 rounded-lg border border-gray-200 bg-gray-50/70 hover:bg-primary/5 hover:border-primary/50 transition-all text-center group"
+                      >
+                        <span className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground group-hover:text-primary mb-0.5">
+                          {item.label}
+                        </span>
+                        <span className="font-bold text-primary text-xs sm:text-sm group-hover:underline flex items-center gap-1">
+                          <Phone className="w-3 h-3 text-accent" />
+                          {item.number}
+                        </span>
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
             </div>
           </div>
         </motion.div>
       </div>
+      <Footer />
     </div>
   );
 };

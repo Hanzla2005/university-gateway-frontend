@@ -6,7 +6,15 @@ import admissionAdPdf from "@/assets/pdfs/Admission-Spring-2026-KUM.pdf";
 import revisedAdmissionRulesPdf from "@/assets/pdfs/Revised-Admission-Rules-and-Regulations2023.pdf";
 import feeStructurePdf from "@/assets/pdfs/BS-Total-8-Semester-Fee-Detail.pdf";
 import intermediateCircularPdf from "@/assets/pdfs/WhatsApp-Image-2025-07-30-at-11.33.57-AM.pdf";
-import { ArrowRight, FileText, ExternalLink, DollarSign, BookOpen, Award, GraduationCap } from "lucide-react";
+import { ArrowRight, FileText, ExternalLink, DollarSign, BookOpen, Award, GraduationCap, Phone, PhoneCall } from "lucide-react";
+
+const helplines = [
+  { number: "(051) 9269171", tel: "+92519269171", label: "Line 1" },
+  { number: "(051) 9269172", tel: "+92519269172", label: "Line 2" },
+  { number: "(051) 9269174", tel: "+92519269174", label: "Line 3" },
+  { number: "(051) 9269270", tel: "+92519269270", label: "Line 4" },
+  { number: "(051) 9265195", tel: "+92519265195", label: "Line 5" },
+];
 
 const OnlineAdmissions = () => {
   const admissionLinks = [
@@ -103,6 +111,42 @@ const OnlineAdmissions = () => {
               );
             })}
           </div>
+
+          {/* Admission Desk Helplines Section */}
+          <div className="mt-12 bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden">
+            <div className="bg-primary px-6 py-4 text-white flex items-center gap-3">
+              <PhoneCall className="w-6 h-6 text-accent shrink-0" />
+              <div>
+                <h2 className="text-xl font-serif font-bold text-white">Admission Desk Helplines</h2>
+                <p className="text-xs sm:text-sm text-primary-foreground/80">For queries, guidance, and assistance regarding the admission process</p>
+              </div>
+            </div>
+            
+            <div className="p-6 md:p-8">
+              <p className="text-gray-600 mb-6 text-sm md:text-base">
+                Prospective students and parents can contact our dedicated admission desk on the following telephone numbers during official working hours:
+              </p>
+              
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                {helplines.map((item, idx) => (
+                  <a
+                    key={idx}
+                    href={`tel:${item.tel}`}
+                    className="flex flex-col items-center justify-center p-4 rounded-lg border border-gray-200 bg-gray-50/70 hover:bg-primary/5 hover:border-primary/50 hover:shadow-sm transition-all group text-center"
+                  >
+                    <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground group-hover:text-primary mb-1">
+                      {item.label}
+                    </span>
+                    <span className="font-bold text-primary text-base group-hover:underline flex items-center gap-1.5">
+                      <Phone className="w-3.5 h-3.5 text-accent" />
+                      {item.number}
+                    </span>
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+
         </div>
       </main>
       

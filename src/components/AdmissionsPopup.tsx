@@ -112,7 +112,24 @@ const AdmissionsPopup = () => {
             </div>
           </div>
 
-          <DialogFooter className="flex-row sm:justify-center gap-2 sm:gap-3 mt-3 sm:mt-4">
+          <div className="bg-gray-50 border border-gray-100 rounded-xl p-3 my-2 text-center">
+            <p className="text-xs font-semibold text-primary mb-1.5 flex items-center justify-center gap-1.5">
+              Admission Helplines:
+            </p>
+            <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-xs text-gray-700">
+              <a href="tel:+92519269171" className="hover:text-primary hover:underline font-medium">(051) 9269171</a>
+              <span className="text-gray-300">|</span>
+              <a href="tel:+92519269172" className="hover:text-primary hover:underline font-medium">(051) 9269172</a>
+              <span className="text-gray-300">|</span>
+              <a href="tel:+92519269174" className="hover:text-primary hover:underline font-medium">(051) 9269174</a>
+              <span className="text-gray-300">|</span>
+              <a href="tel:+92519269270" className="hover:text-primary hover:underline font-medium">(051) 9269270</a>
+              <span className="text-gray-300">|</span>
+              <a href="tel:+92519265195" className="hover:text-primary hover:underline font-medium">(051) 9265195</a>
+            </div>
+          </div>
+
+          <DialogFooter className="flex-row sm:justify-center gap-2 sm:gap-3 mt-2 sm:mt-3">
             <Button variant="outline" onClick={() => setIsOpen(false)} className="flex-1 sm:flex-none sm:w-32 border-gray-200 text-gray-500 hover:text-gray-900 hover:bg-gray-100 hover:border-gray-300 transition-all h-10 sm:h-12 text-xs sm:text-sm md:text-base">
               Maybe Later
             </Button>

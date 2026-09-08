@@ -1,8 +1,16 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageHeader from "@/components/PageHeader";
-import { ExternalLink, FileText, Download } from "lucide-react";
+import { ExternalLink, FileText, Download, Phone, PhoneCall } from "lucide-react";
 import AdmissionNoticePDF from "@/assets/pdfs/Admission Notice.pdf";
+
+const helplines = [
+  { number: "(051) 9269171", tel: "+92519269171", label: "Line 1" },
+  { number: "(051) 9269172", tel: "+92519269172", label: "Line 2" },
+  { number: "(051) 9269174", tel: "+92519269174", label: "Line 3" },
+  { number: "(051) 9269270", tel: "+92519269270", label: "Line 4" },
+  { number: "(051) 9265195", tel: "+92519265195", label: "Line 5" },
+];
 
 const ApplicationPortal = () => {
   return (
@@ -35,6 +43,36 @@ const ApplicationPortal = () => {
                   Go to Application Portal
                   <ExternalLink className="w-5 h-5" />
                 </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Admission Helplines Card */}
+          <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+            <div className="bg-primary/5 px-6 py-4 border-b border-gray-200 flex items-center gap-3">
+              <PhoneCall className="w-5 h-5 text-primary shrink-0" />
+              <div>
+                <h3 className="text-lg font-serif font-semibold text-primary">Admission Desk Helplines</h3>
+                <p className="text-xs sm:text-sm text-gray-500">Need help during the application process? Contact our admission team directly:</p>
+              </div>
+            </div>
+            <div className="p-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">
+                {helplines.map((item, idx) => (
+                  <a
+                    key={idx}
+                    href={`tel:${item.tel}`}
+                    className="flex flex-col items-center justify-center p-3.5 rounded-lg border border-gray-200 bg-gray-50/70 hover:bg-primary/5 hover:border-primary/50 transition-all text-center group"
+                  >
+                    <span className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground group-hover:text-primary mb-1">
+                      {item.label}
+                    </span>
+                    <span className="font-bold text-primary text-sm group-hover:underline flex items-center gap-1">
+                      <Phone className="w-3.5 h-3.5 text-accent" />
+                      {item.number}
+                    </span>
+                  </a>
+                ))}
               </div>
             </div>
           </div>
