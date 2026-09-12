@@ -8,7 +8,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
       <Navbar />
-      <main className={isHome ? "" : "pt-[6.5rem]"}>{children}</main>
+      <main className="pt-12 lg:pt-[6.5rem]">{children}</main>
     </>
   );
 };

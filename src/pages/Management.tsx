@@ -8,7 +8,6 @@ const managementData = [
     office: "Registrar Office",
     staff: [
       { designation: "Registrar", name: "-", email: "-", phone: "-" },
-      { designation: "Additional Registrar", name: "Dr. Talat Mehmood", email: "Additionalregistrar@kum.edu.pk", phone: "0300-9852130" },
       { designation: "Deputy Registrar HR", name: "Dr. Muhammad Saffder Hussain", email: "DRHR@kum.edu.pk", phone: "0333-6394250" },
       { designation: "Deputy Registrar EST", name: "Dr Muhammad Qasim", email: "mqasim@kum.edu.pk", phone: "0334-7826271" },
       { designation: "Assistant Registrar", name: "-", email: "-", phone: "-" },
@@ -88,11 +87,11 @@ const Management = () => {
     <div className="min-h-screen flex flex-col bg-slate-50">
       <Navbar />
       <PageHeader title="University Management" />
-      
+
       <main className="flex-1 py-16">
         <div className="container-main px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto space-y-12">
-            
+
             {managementData.map((section, idx) => (
               <section key={idx} className="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
                 <div className="bg-primary px-6 py-4">
@@ -149,7 +148,7 @@ const Management = () => {
           </div>
         </div>
       </main>
-      
+
       <Footer />
     </div>
   );

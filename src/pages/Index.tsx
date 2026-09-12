@@ -45,13 +45,21 @@ const Index = () => {
     <div className="min-h-screen">
       <AdmissionsPopup />
 
-      {/* Hero - Single full image, navbar overlays on top */}
-      <section className="relative h-screen overflow-hidden">
-        <img src={heroBg} alt="Kohsar University Murree Campus" className="w-full h-full object-cover" width={1920} height={1080} />
+      {/* Hero - Full banner image constrained on desktop and natural height on mobile */}
+      <section className="relative w-full h-auto lg:h-[calc(100dvh-6.5rem)] bg-white flex flex-col justify-between overflow-hidden">
+        <div className="flex-1 min-h-0 w-full flex items-center justify-center p-0 bg-white">
+          <img
+            src={heroBg}
+            alt="Kohsar University Murree Campus"
+            className="w-full h-auto lg:h-full lg:max-h-full object-contain"
+            width={1600}
+            height={900}
+          />
+        </div>
 
         {/* Welcome banner at bottom */}
-        <div className="absolute bottom-0 left-0 right-0 z-10 bg-primary/90 backdrop-blur-sm">
-          <div className="container-main px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-center gap-2">
+        <div className="flex-shrink-0 bg-primary/95 border-t border-primary-foreground/10 z-10">
+          <div className="container-main px-4 sm:px-6 lg:px-8 py-2.5 flex items-center justify-center gap-2">
             <button
               onClick={() => {
                 const storiesSection = document.getElementById("stories");
@@ -59,11 +67,11 @@ const Index = () => {
                   storiesSection.scrollIntoView({ behavior: "smooth" });
                 }
               }}
-              className="text-primary-foreground font-serif text-xl"
+              className="text-primary-foreground font-serif text-base sm:text-lg inline-flex items-center gap-2 hover:text-accent transition-colors"
             >
-              Welcome to Kohsar University Murree
+              <span>Welcome to Kohsar University Murree</span>
+              <ChevronDown className="h-4 w-4 text-accent animate-bounce" />
             </button>
-            <ChevronDown className="h-5 w-5 text-accent animate-bounce" />
           </div>
         </div>
       </section>
