@@ -72,15 +72,15 @@ const topBarLinks = [
     path: "/jobs",
     dropdown: [
       {
-        label: "Teaching Positions",
+        label: "Teaching Positions List",
         path: "/jobs/teaching-positions",
       },
       {
-        label: "Non Teaching 1 to 16",
+        label: "Non Teaching 1 to 16 List",
         path: "/jobs/non-teaching-positions",
       },
       {
-        label: "Administrative Positions",
+        label: "Administrative Positions List",
         path: "/jobs/administrative-positions",
       },
     ],
@@ -202,9 +202,9 @@ const mainNavItems = [
         path: "/jobs",
         icon: Briefcase,
         nested: [
-          { label: "Teaching Positions", path: "/jobs/teaching-positions" },
-          { label: "Non Teaching 1 to 16", path: "/jobs/non-teaching-positions" },
-          { label: "Administrative Positions", path: "/jobs/administrative-positions" },
+          { label: "Teaching Positions List", path: "/jobs/teaching-positions" },
+          { label: "Non Teaching 1 to 16 List", path: "/jobs/non-teaching-positions" },
+          { label: "Administrative Positions List", path: "/jobs/administrative-positions" },
         ],
       },
     ]
@@ -301,9 +301,9 @@ const mainNavItems = [
           { label: "RIPE Implementation Plan (2025-26)", path: "/qec-ripe-ip", isExternal: true },
         ]
       },
-      { 
-        label: "PGPR", 
-        path: "/qec-pgpr", 
+      {
+        label: "PGPR",
+        path: "/qec-pgpr",
         icon: FileStack,
         nested: [
           {
@@ -323,9 +323,9 @@ const mainNavItems = [
           },
         ]
       },
-      { 
-        label: "PREE", 
-        path: "/qec-pree", 
+      {
+        label: "PREE",
+        path: "/qec-pree",
         icon: ClipboardCheck,
         nested: [
           {
@@ -478,17 +478,15 @@ const Navbar = () => {
                   >
                     <Link
                       to={link.path}
-                      className={`text-sm px-2.5 py-1 rounded transition-colors flex items-center gap-1 font-medium ${
-                        hoveredTopBar === link.label
-                          ? "text-accent bg-primary-foreground/10"
-                          : "text-primary-foreground/75 hover:text-accent"
-                      }`}
+                      className={`text-sm px-2.5 py-1 rounded transition-colors flex items-center gap-1 font-medium ${hoveredTopBar === link.label
+                        ? "text-accent bg-primary-foreground/10"
+                        : "text-primary-foreground/75 hover:text-accent"
+                        }`}
                     >
                       {link.label}
                       <ChevronDown
-                        className={`h-3.5 w-3.5 transition-transform duration-200 ${
-                          hoveredTopBar === link.label ? "rotate-180" : ""
-                        }`}
+                        className={`h-3.5 w-3.5 transition-transform duration-200 ${hoveredTopBar === link.label ? "rotate-180" : ""
+                          }`}
                       />
                     </Link>
 
@@ -727,7 +725,7 @@ const Navbar = () => {
                         className="w-full text-left px-4 py-2 text-xs text-primary-foreground/85 hover:bg-primary-foreground/10 hover:text-accent transition-colors flex items-center gap-2"
                       >
                         <GraduationCap className="h-4 w-4 flex-shrink-0" />
-                        <span>Teaching Positions</span>
+                        <span>Teaching Positions List</span>
                       </Link>
                       <Link
                         to="/jobs/non-teaching-positions"
@@ -735,7 +733,7 @@ const Navbar = () => {
                         className="w-full text-left px-4 py-2 text-xs text-primary-foreground/85 hover:bg-primary-foreground/10 hover:text-accent transition-colors flex items-center gap-2"
                       >
                         <Briefcase className="h-4 w-4 flex-shrink-0" />
-                        <span>Non Teaching 1 to 16</span>
+                        <span>Non Teaching 1 to 16 List</span>
                       </Link>
                       <Link
                         to="/jobs/administrative-positions"
@@ -743,7 +741,7 @@ const Navbar = () => {
                         className="w-full text-left px-4 py-2 text-xs text-primary-foreground/85 hover:bg-primary-foreground/10 hover:text-accent transition-colors flex items-center gap-2"
                       >
                         <Building2 className="h-4 w-4 flex-shrink-0" />
-                        <span>Administrative Positions</span>
+                        <span>Administrative Positions List</span>
                       </Link>
                     </motion.div>
                   )}

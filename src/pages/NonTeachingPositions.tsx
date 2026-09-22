@@ -1,25 +1,32 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageHeader from "@/components/PageHeader";
-import { FileText, Download, Eye, ExternalLink, ArrowLeft, Briefcase } from "lucide-react";
+import { FileText, Download, Eye, ArrowLeft, Briefcase } from "lucide-react";
 import { Link } from "react-router-dom";
-import nonTeachingPositionsAddPdf from "@/assets/pdfs/BPS-16 and Below_Add.pdf";
-import nonTeachingFormPdf from "@/assets/pdfs/Kohsar University Murree Job Application Form         1 to 16.pdf";
 
-interface FormItem {
+// Admin 16 and Below folder PDFs
+import pdf_cctv from "@/assets/pdfs/Admin 16 and Below/CCTV Technician , BS-11.pdf";
+import pdf_computer_op from "@/assets/pdfs/Admin 16 and Below/Computer Operator (BS-15).pdf";
+import pdf_cook from "@/assets/pdfs/Admin 16 and Below/Cook, BS-05.pdf";
+import pdf_hostel_warden from "@/assets/pdfs/Admin 16 and Below/Hostel Warden (BS-14).pdf";
+import pdf_junior_clerk from "@/assets/pdfs/Admin 16 and Below/Junior Clerk , BS-11.pdf";
+import pdf_pa from "@/assets/pdfs/Admin 16 and Below/Personal Assistant (BS-16).pdf";
+import pdf_storekeeper from "@/assets/pdfs/Admin 16 and Below/Senior Storekeeper (BS-14).pdf";
+
+interface PositionItem {
 	title: string;
 	file: string;
-	type: "pdf" | "docx";
-	badge?: string;
+	grade: string;
 }
 
-const formListings: FormItem[] = [
-	{
-		title: "Kohsar University Murree Job Application Form 1 to 16.pdf",
-		file: nonTeachingFormPdf,
-		type: "pdf",
-		badge: "PDF Document",
-	},
+const positions: PositionItem[] = [
+	{ title: "Personal Assistant", file: pdf_pa, grade: "BS-16" },
+	{ title: "Computer Operator", file: pdf_computer_op, grade: "BS-15" },
+	{ title: "Hostel Warden", file: pdf_hostel_warden, grade: "BS-14" },
+	{ title: "Senior Storekeeper", file: pdf_storekeeper, grade: "BS-14" },
+	{ title: "CCTV Technician", file: pdf_cctv, grade: "BS-11" },
+	{ title: "Junior Clerk", file: pdf_junior_clerk, grade: "BS-11" },
+	{ title: "Cook", file: pdf_cook, grade: "BS-05" },
 ];
 
 const NonTeachingPositions = () => {
@@ -43,7 +50,7 @@ const NonTeachingPositions = () => {
 							className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
 						>
 							<ArrowLeft className="h-4 w-4" />
-							Back to All Jobs & Career Opportunities
+							Back to All Jobs &amp; Career Opportunities
 						</Link>
 					</div>
 
@@ -58,112 +65,61 @@ const NonTeachingPositions = () => {
 						</div>
 						<p className="text-muted-foreground text-base sm:text-lg leading-relaxed max-w-3xl">
 							Kohsar University Murree invites applications from qualified, dynamic, and dedicated
-							individuals for various non-teaching staff positions (BPS 01 to 16). Please review the official advertisement below and
-							download the application form to apply.
+							individuals for the following non-teaching staff positions (BPS 01 to 16). Click on any
+							position to view or download the detailed requirements.
 						</p>
 					</div>
 
-					{/* Job Advertisement PDF Section */}
-					<div className="mb-14 bg-card border border-border shadow-md">
-						<div className="p-4 sm:p-5 border-b border-border bg-primary/5 flex flex-wrap items-center justify-between gap-4">
-							<div>
-								<span className="text-xs font-bold uppercase tracking-wider text-accent bg-accent/10 px-3 py-1">
-									Official Advertisement
-								</span>
-								<h2 className="text-lg sm:text-xl font-serif text-foreground mt-1.5 font-bold">
-									Job Vacancies & Non-Teaching Positions (BPS 1 to 16)
-								</h2>
-							</div>
-							<div className="flex items-center gap-2.5">
-								<button
-									onClick={() => handlePdfView(nonTeachingPositionsAddPdf)}
-									className="inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-primary text-primary-foreground text-xs sm:text-sm font-medium hover:bg-primary/90 transition-colors"
-								>
-									<ExternalLink className="h-3.5 w-3.5" />
-									View Full Size
-								</button>
-								<a
-									href={nonTeachingPositionsAddPdf}
-									download="BPS-16 and Below_Add.pdf"
-									className="inline-flex items-center gap-1.5 px-3.5 py-1.5 border border-primary/30 text-primary text-xs sm:text-sm font-medium hover:bg-primary/5 transition-colors"
-								>
-									<Download className="h-3.5 w-3.5" />
-									Download PDF
-								</a>
-							</div>
-						</div>
-						<div className="p-4 sm:p-6 bg-muted/10 flex flex-col items-center">
-							<div className="w-full h-[650px] sm:h-[750px] md:h-[850px] border border-border bg-white shadow-sm overflow-hidden">
-								<iframe
-									src={`${nonTeachingPositionsAddPdf}#view=FitH`}
-									title="Non-Teaching Positions (BPS 1 to 16) Advertisement PDF"
-									className="w-full h-full border-0"
-								/>
-							</div>
-							<p className="text-xs text-muted-foreground mt-2.5 flex items-center gap-1.5">
-								<Eye className="h-3.5 w-3.5 text-accent" />
-								<span>Use the PDF viewer controls to zoom or scroll, or click &quot;View Full Size&quot; to open in a new tab.</span>
-							</p>
-						</div>
+					{/* Summary */}
+					<div className="mb-8 flex items-center gap-3">
+						<span className="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded bg-orange-100 text-orange-800 dark:bg-orange-950 dark:text-orange-300">
+							Non-Teaching Staff
+						</span>
+						<div className="flex-1 h-px bg-border" />
+						<span className="text-sm text-muted-foreground">{positions.length} positions available</span>
 					</div>
 
-					{/* Application Forms Section */}
-					<div className="mb-14">
-						<div className="mb-6">
-							<span className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
-								Downloads
-							</span>
-							<h2 className="text-2xl font-serif text-foreground font-bold mt-1">
-								Application Form for Non-Teaching Positions (1 to 16)
-							</h2>
-							<p className="text-muted-foreground text-base sm:text-lg leading-relaxed mt-3 max-w-3xl">
-								Please click the Download button to download the application form and complete the form carefully. After filling in all the required information, submit your application as per the instructions provided in the advertisement.
-							</p>
-						</div>
-
-						<div className="grid md:grid-cols-2 gap-8">
-							{formListings.map((job) => {
-								return (
-									<div
-										key={job.title}
-										className="bg-card border border-border overflow-hidden hover:shadow-lg hover:border-primary/30 transition-all flex flex-col justify-between"
-									>
-										<div className="p-6 sm:p-8">
-											<div className="flex items-center justify-between mb-4">
-												<span className="text-xs font-bold uppercase tracking-wider px-3 py-1 bg-red-100 text-red-800 dark:bg-red-950 dark:text-red-300">
-													{job.badge || "PDF Document"}
-												</span>
-											</div>
-											<div className="flex items-start gap-4 mb-8">
-												<div className="w-12 h-12 flex items-center justify-center flex-shrink-0 bg-primary/10 text-primary">
-													<FileText className="h-6 w-6" />
-												</div>
-												<h3 className="text-lg sm:text-xl font-bold text-foreground leading-snug pt-1 break-words">
-													{job.title}
-												</h3>
-											</div>
-											<div className="flex flex-col sm:flex-row gap-3 pt-2">
-												<button
-													onClick={() => handlePdfView(job.file)}
-													className="flex-1 inline-flex items-center justify-center gap-2 px-5 py-3 bg-primary text-primary-foreground hover:bg-primary/90 transition-colors font-medium text-sm"
-												>
-													<Eye className="h-4 w-4" />
-													View PDF
-												</button>
-												<a
-													href={job.file}
-													download="Kohsar University Murree Job Application Form 1 to 16.pdf"
-													className="flex-1 inline-flex items-center justify-center gap-2 px-5 py-3 border border-border text-foreground hover:bg-muted transition-colors font-medium text-sm text-center"
-												>
-													<Download className="h-4 w-4" />
-													Download
-												</a>
-											</div>
+					{/* Positions List */}
+					<div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-14">
+						{positions.map((pos) => (
+							<div
+								key={pos.title}
+								className="bg-card border border-border hover:border-primary/40 hover:shadow-md transition-all duration-200 flex flex-col"
+							>
+								<div className="p-5 flex-1">
+									<div className="flex items-start gap-3">
+										<div className="w-10 h-10 bg-primary/10 text-primary flex items-center justify-center flex-shrink-0 mt-0.5">
+											<FileText className="h-5 w-5" />
+										</div>
+										<div className="flex-1 min-w-0">
+											<h3 className="text-sm font-semibold text-foreground leading-snug">
+												{pos.title}
+											</h3>
+											<span className="inline-block mt-1.5 text-xs font-bold px-2 py-0.5 rounded bg-orange-100 text-orange-800 dark:bg-orange-950 dark:text-orange-300">
+												{pos.grade}
+											</span>
 										</div>
 									</div>
-								);
-							})}
-						</div>
+								</div>
+								<div className="px-5 pb-5 flex gap-2">
+									<button
+										onClick={() => handlePdfView(pos.file)}
+										className="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2 bg-primary text-primary-foreground hover:bg-primary/90 transition-colors text-xs font-medium"
+									>
+										<Eye className="h-3.5 w-3.5" />
+										View
+									</button>
+									<a
+										href={pos.file}
+										download
+										className="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2 border border-border text-foreground hover:bg-muted transition-colors text-xs font-medium text-center"
+									>
+										<Download className="h-3.5 w-3.5" />
+										Download
+									</a>
+								</div>
+							</div>
+						))}
 					</div>
 				</div>
 			</div>
