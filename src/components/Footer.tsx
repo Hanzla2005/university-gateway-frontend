@@ -9,7 +9,7 @@ const importantLinks = [
   { label: "Guest House", path: "/guest-house", icon: Building2 },
   { label: "Downloads", path: "/downloads", icon: FileText },
   { label: "Policies", path: "/policies", icon: FileText },
-  { label: "Jobs", path: "/jobs", icon: Briefcase },
+  { label: "Jobs", path: "/jobs/teaching-positions", icon: Briefcase },
   { label: "Societies", path: "/societies", icon: Users },
 ];
 

@@ -48,7 +48,6 @@ import PolicyAct2010 from "./pages/PolicyAct2010";
 import PolicySexualHarassment from "./pages/PolicySexualHarassment";
 import PolicyDrugTobacco from "./pages/PolicyDrugTobacco";
 import PolicyProtectionHarassment from "./pages/PolicyProtectionHarassment";
-import Jobs from "./pages/Jobs";
 import TeachingPositions from "./pages/TeachingPositions";
 import NonTeachingPositions from "./pages/NonTeachingPositions";
 import AdministrativePositions from "./pages/AdministrativePositions";
@@ -158,7 +157,7 @@ const App = () => (
             <Route path="/policy-protection-harassment" element={<PolicyProtectionHarassment />} />
 
             {/* Jobs Routes */}
-            <Route path="/jobs" element={<Jobs />} />
+            <Route path="/jobs" element={<Navigate to="/jobs/teaching-positions" replace />} />
             <Route path="/jobs/teaching-positions" element={<TeachingPositions />} />
             <Route path="/jobs/non-teaching-positions" element={<NonTeachingPositions />} />
             <Route path="/jobs/non-teaching-1-to-16" element={<NonTeachingPositions />} />

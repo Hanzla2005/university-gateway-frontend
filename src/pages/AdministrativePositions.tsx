@@ -1,8 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageHeader from "@/components/PageHeader";
-import { FileText, Download, Eye, ArrowLeft, Building2 } from "lucide-react";
-import { Link } from "react-router-dom";
+import { FileText, Download, Eye, Building2 } from "lucide-react";
 
 // Admin 17 & above folder PDFs
 import pdf_add_registrar from "@/assets/pdfs/Admin 17 & above/Additional Registrar (BS-19).pdf";
@@ -63,16 +62,6 @@ const AdministrativePositions = () => {
 			/>
 			<div className="flex-1">
 				<div className="container-main px-4 sm:px-6 lg:px-8 py-12">
-					{/* Back Link */}
-					<div className="mb-8">
-						<Link
-							to="/jobs"
-							className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
-						>
-							<ArrowLeft className="h-4 w-4" />
-							Back to All Jobs &amp; Career Opportunities
-						</Link>
-					</div>
 
 					<div className="mb-10">
 						<div className="flex items-center gap-3 mb-3">
@@ -80,7 +69,7 @@ const AdministrativePositions = () => {
 								<Building2 className="h-5 w-5" />
 							</div>
 							<h1 className="text-2xl sm:text-3xl font-serif font-bold text-foreground">
-								Administrative &amp; Statutory Positions
+								Administrative &amp; Statutory Lists
 							</h1>
 						</div>
 						<p className="text-muted-foreground text-base sm:text-lg leading-relaxed max-w-3xl">

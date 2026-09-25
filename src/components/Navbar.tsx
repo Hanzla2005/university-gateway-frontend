@@ -8,6 +8,8 @@ import circularSpringPdf from "@/assets/pdfs/Circular-Regarding-spring-semester.
 import alumniFormPdf from "@/assets/pdfs/Alumni Registration from.pdf";
 import teachingFormDocx from "@/assets/pdfs/TEACHING POSTIONS APPLICATION FORM FOR KUM .docx";
 import teachingFormPdf from "@/assets/pdfs/TEACHING POSTIONS APPLICATION FORM FOR KUM .pdf";
+import visitingAdPdf from "@/assets/pdfs/Visiting Ad/Visistaing Ad.pdf";
+import dplAdvertisementPdf from "@/assets/pdfs/DPL Advertisement/DPL Advertisment.pdf";
 
 // ORIC PDFs - Downloads
 import oricDlHjrs21_22 from "@/assets/ORIC Website/Downloads/HJRS  2021-22.pdf";
@@ -69,19 +71,34 @@ const topBarLinks = [
   { label: "Downloads", path: "/downloads" },
   {
     label: "Jobs",
-    path: "/jobs",
+    path: "#",
     dropdown: [
       {
         label: "Teaching Positions List",
         path: "/jobs/teaching-positions",
+        icon: GraduationCap,
       },
       {
         label: "Non Teaching 1 to 16 List",
         path: "/jobs/non-teaching-positions",
+        icon: Briefcase,
       },
       {
         label: "Administrative Positions List",
         path: "/jobs/administrative-positions",
+        icon: Building2,
+      },
+      {
+        label: "Visiting Ad",
+        path: visitingAdPdf,
+        icon: FileText,
+        isExternal: true,
+      },
+      {
+        label: "DPL Advertisement",
+        path: dplAdvertisementPdf,
+        icon: FileText,
+        isExternal: true,
       },
     ],
   },
@@ -199,12 +216,14 @@ const mainNavItems = [
       },
       {
         label: "Jobs",
-        path: "/jobs",
+        path: "#jobs",
         icon: Briefcase,
         nested: [
           { label: "Teaching Positions List", path: "/jobs/teaching-positions" },
           { label: "Non Teaching 1 to 16 List", path: "/jobs/non-teaching-positions" },
           { label: "Administrative Positions List", path: "/jobs/administrative-positions" },
+          { label: "Visiting Ad", path: "/jobs-visiting-ad", isExternal: true },
+          { label: "DPL Advertisement", path: "/jobs-dpl-advertisement", isExternal: true },
         ],
       },
     ]
@@ -415,6 +434,12 @@ const Navbar = () => {
     else if (pdfPath === "/jobs-teaching-pdf") {
       window.open(teachingFormPdf, "_blank");
     }
+    else if (pdfPath === "/jobs-visiting-ad") {
+      window.open(visitingAdPdf, "_blank");
+    }
+    else if (pdfPath === "/jobs-dpl-advertisement") {
+      window.open(dplAdvertisementPdf, "_blank");
+    }
     // ORIC Downloads
     else if (pdfPath === "/oric-dl-hjrs-21-22") window.open(oricDlHjrs21_22, "_blank");
     else if (pdfPath === "/oric-dl-hjrs-20-21") window.open(oricDlHjrs20_21, "_blank");
@@ -476,9 +501,9 @@ const Navbar = () => {
                     onMouseEnter={() => setHoveredTopBar(link.label)}
                     onMouseLeave={() => setHoveredTopBar(null)}
                   >
-                    <Link
-                      to={link.path}
-                      className={`text-sm px-2.5 py-1 rounded transition-colors flex items-center gap-1 font-medium ${hoveredTopBar === link.label
+                    <button
+                      type="button"
+                      className={`text-sm px-2.5 py-1 rounded transition-colors flex items-center gap-1 font-medium cursor-pointer ${hoveredTopBar === link.label
                         ? "text-accent bg-primary-foreground/10"
                         : "text-primary-foreground/75 hover:text-accent"
                         }`}
@@ -488,7 +513,7 @@ const Navbar = () => {
                         className={`h-3.5 w-3.5 transition-transform duration-200 ${hoveredTopBar === link.label ? "rotate-180" : ""
                           }`}
                       />
-                    </Link>
+                    </button>
 
                     {hoveredTopBar === link.label && (
                       <motion.div
@@ -498,19 +523,36 @@ const Navbar = () => {
                         transition={{ duration: 0.15 }}
                         className="absolute right-0 top-full mt-0 w-max min-w-[200px] bg-white border border-border shadow-xl z-50 py-2"
                       >
-                        {link.dropdown.map((subItem) => (
-                          <Link
-                            key={subItem.label}
-                            to={subItem.path}
-                            onClick={() => setHoveredTopBar(null)}
-                            className="w-full text-left px-4 py-2.5 flex items-center gap-3 hover:bg-primary/5 transition-colors group"
-                          >
-                            <GraduationCap className="h-4 w-4 text-primary flex-shrink-0" />
-                            <span className="text-base text-foreground group-hover:text-accent transition-colors">
-                              {subItem.label}
-                            </span>
-                          </Link>
-                        ))}
+                        {link.dropdown.map((subItem) => {
+                          const Icon = (subItem as any).icon || GraduationCap;
+                          return subItem.isExternal ? (
+                            <a
+                              key={subItem.label}
+                              href={subItem.path}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              onClick={() => setHoveredTopBar(null)}
+                              className="w-full text-left px-4 py-2.5 flex items-center gap-3 hover:bg-primary/5 transition-colors group"
+                            >
+                              <Icon className="h-4 w-4 text-primary flex-shrink-0" />
+                              <span className="text-base text-foreground group-hover:text-accent transition-colors">
+                                {subItem.label}
+                              </span>
+                            </a>
+                          ) : (
+                            <Link
+                              key={subItem.label}
+                              to={subItem.path}
+                              onClick={() => setHoveredTopBar(null)}
+                              className="w-full text-left px-4 py-2.5 flex items-center gap-3 hover:bg-primary/5 transition-colors group"
+                            >
+                              <Icon className="h-4 w-4 text-primary flex-shrink-0" />
+                              <span className="text-base text-foreground group-hover:text-accent transition-colors">
+                                {subItem.label}
+                              </span>
+                            </Link>
+                          );
+                        })}
                       </motion.div>
                     )}
                   </div>
@@ -594,14 +636,23 @@ const Navbar = () => {
                             onMouseEnter={() => hasNested && setHoveredNestedItem(subitem.path)}
                             onMouseLeave={() => setHoveredNestedItem(null)}
                           >
-                            <Link
-                              to={subitem.path}
-                              className="px-4 py-2.5 flex items-center gap-3 hover:bg-primary/5 transition-colors group"
-                            >
-                              <Icon className="h-4 w-4 text-primary flex-shrink-0" />
-                              <span className="text-base text-foreground group-hover:text-accent transition-colors flex-1">{subitem.label}</span>
-                              {hasNested && <ChevronDown className="h-3.5 w-3.5 text-muted-foreground -rotate-90" />}
-                            </Link>
+                            {hasNested ? (
+                              <div
+                                className="px-4 py-2.5 flex items-center gap-3 hover:bg-primary/5 transition-colors group cursor-pointer"
+                              >
+                                <Icon className="h-4 w-4 text-primary flex-shrink-0" />
+                                <span className="text-base text-foreground group-hover:text-accent transition-colors flex-1">{subitem.label}</span>
+                                <ChevronDown className="h-3.5 w-3.5 text-muted-foreground -rotate-90" />
+                              </div>
+                            ) : (
+                              <Link
+                                to={subitem.path}
+                                className="px-4 py-2.5 flex items-center gap-3 hover:bg-primary/5 transition-colors group"
+                              >
+                                <Icon className="h-4 w-4 text-primary flex-shrink-0" />
+                                <span className="text-base text-foreground group-hover:text-accent transition-colors flex-1">{subitem.label}</span>
+                              </Link>
+                            )}
 
                             {hasNested && hoveredNestedItem === subitem.path && (
                               <motion.div
@@ -743,6 +794,26 @@ const Navbar = () => {
                         <Building2 className="h-4 w-4 flex-shrink-0" />
                         <span>Administrative Positions List</span>
                       </Link>
+                      <button
+                        onClick={() => {
+                          setMobileOpen(false);
+                          window.open(visitingAdPdf, "_blank");
+                        }}
+                        className="w-full text-left px-4 py-2 text-xs text-primary-foreground/85 hover:bg-primary-foreground/10 hover:text-accent transition-colors flex items-center gap-2"
+                      >
+                        <FileText className="h-4 w-4 flex-shrink-0" />
+                        <span>Visiting Ad</span>
+                      </button>
+                      <button
+                        onClick={() => {
+                          setMobileOpen(false);
+                          window.open(dplAdvertisementPdf, "_blank");
+                        }}
+                        className="w-full text-left px-4 py-2 text-xs text-primary-foreground/85 hover:bg-primary-foreground/10 hover:text-accent transition-colors flex items-center gap-2"
+                      >
+                        <FileText className="h-4 w-4 flex-shrink-0" />
+                        <span>DPL Advertisement</span>
+                      </button>
                     </motion.div>
                   )}
                 </AnimatePresence>

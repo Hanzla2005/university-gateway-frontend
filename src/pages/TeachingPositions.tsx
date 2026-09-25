@@ -1,8 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageHeader from "@/components/PageHeader";
-import { FileText, Download, Eye, ArrowLeft, GraduationCap } from "lucide-react";
-import { Link } from "react-router-dom";
+import { FileText, Download, Eye, GraduationCap } from "lucide-react";
 
 // Teaching folder PDFs
 import pdf_asst_biotech from "@/assets/pdfs/Teaching/Assiatant Professor,  Biotechnology  (BS-19).pdf";
@@ -92,16 +91,6 @@ const TeachingPositions = () => {
 			/>
 			<div className="flex-1">
 				<div className="container-main px-4 sm:px-6 lg:px-8 py-12">
-					{/* Back Link */}
-					<div className="mb-8">
-						<Link
-							to="/jobs"
-							className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
-						>
-							<ArrowLeft className="h-4 w-4" />
-							Back to All Jobs &amp; Career Opportunities
-						</Link>
-					</div>
 
 					<div className="mb-10">
 						<div className="flex items-center gap-3 mb-3">
