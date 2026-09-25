@@ -93,19 +93,14 @@ const TeachingPositions = () => {
 				<div className="container-main px-4 sm:px-6 lg:px-8 py-12">
 
 					<div className="mb-10">
-						<div className="flex items-center gap-3 mb-3">
+						<div className="flex items-center gap-3">
 							<div className="w-10 h-10 bg-primary/10 text-primary flex items-center justify-center">
 								<GraduationCap className="h-5 w-5" />
 							</div>
 							<h1 className="text-2xl sm:text-3xl font-serif font-bold text-foreground">
-								Teaching Positions
+								Teaching Positions &amp; List
 							</h1>
 						</div>
-						<p className="text-muted-foreground text-base sm:text-lg leading-relaxed max-w-3xl">
-							Kohsar University Murree invites applications from qualified, dynamic, and dedicated
-							individuals for the following faculty positions. Click on any position to view or download
-							the detailed requirements.
-						</p>
 					</div>
 
 					{/* Summary Stats */}

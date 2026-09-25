@@ -44,19 +44,14 @@ const NonTeachingPositions = () => {
 				<div className="container-main px-4 sm:px-6 lg:px-8 py-12">
 
 					<div className="mb-10">
-						<div className="flex items-center gap-3 mb-3">
+						<div className="flex items-center gap-3">
 							<div className="w-10 h-10 bg-primary/10 text-primary flex items-center justify-center">
 								<Briefcase className="h-5 w-5" />
 							</div>
 							<h1 className="text-2xl sm:text-3xl font-serif font-bold text-foreground">
-								Non Teaching Positions (BPS 1 to 16)
+								Non Teaching Positions &amp; List (BPS 1 to 16)
 							</h1>
 						</div>
-						<p className="text-muted-foreground text-base sm:text-lg leading-relaxed max-w-3xl">
-							Kohsar University Murree invites applications from qualified, dynamic, and dedicated
-							individuals for the following non-teaching staff positions (BPS 01 to 16). Click on any
-							position to view or download the detailed requirements.
-						</p>
 					</div>
 
 					{/* Summary */}
