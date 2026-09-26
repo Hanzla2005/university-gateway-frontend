@@ -8,15 +8,10 @@ import {
   Eye, 
   Search, 
   GraduationCap, 
-  CheckCircle2, 
   Calendar, 
   Building2, 
-  Phone, 
-  PhoneCall, 
   FileStack, 
-  ExternalLink, 
-  Clock, 
-  AlertCircle,
+  ExternalLink,
   BookOpen
 } from "lucide-react";
 import { 
@@ -48,7 +43,6 @@ interface MeritListItem {
   department: string;
   faculty: string;
   category: "Applied Sciences" | "Management Sciences" | "Social Sciences & Humanities";
-  session: string;
   term: string;
   file: string;
   downloadFileName: string;
@@ -63,7 +57,6 @@ const meritListData: MeritListItem[] = [
     department: "Department of Biotechnology",
     faculty: "Faculty of Applied Sciences & Computing",
     category: "Applied Sciences",
-    session: "Morning / Regular",
     term: "Fall 2026",
     file: pdfBiotech,
     downloadFileName: "1. BS Biotechnology Merit List Fall 2026.pdf",
@@ -76,7 +69,6 @@ const meritListData: MeritListItem[] = [
     department: "Department of Botany",
     faculty: "Faculty of Applied Sciences & Computing",
     category: "Applied Sciences",
-    session: "Morning / Regular",
     term: "Fall 2026",
     file: pdfBotany,
     downloadFileName: "2. BS Botany Merit List Fall 2026.pdf",
@@ -89,7 +81,6 @@ const meritListData: MeritListItem[] = [
     department: "Department of Chemistry",
     faculty: "Faculty of Applied Sciences & Computing",
     category: "Applied Sciences",
-    session: "Morning / Regular",
     term: "Fall 2026",
     file: pdfChemistry,
     downloadFileName: "3. BS Chemistry Merit List Fall 2026.pdf",
@@ -102,7 +93,6 @@ const meritListData: MeritListItem[] = [
     department: "Department of English",
     faculty: "Faculty of Arts & Humanities",
     category: "Social Sciences & Humanities",
-    session: "Morning / Regular",
     term: "Fall 2026",
     file: pdfEnglish,
     downloadFileName: "4. BS English Merit List Fall 2026.pdf",
@@ -115,7 +105,6 @@ const meritListData: MeritListItem[] = [
     department: "Department of Food Science & Technology",
     faculty: "Faculty of Applied Sciences & Computing",
     category: "Applied Sciences",
-    session: "Morning / Regular",
     term: "Fall 2026",
     file: pdfFST,
     downloadFileName: "5. BS FST Merit List Fall 2026.pdf",
@@ -128,7 +117,6 @@ const meritListData: MeritListItem[] = [
     department: "Department of Allied Health Sciences",
     faculty: "Faculty of Applied Sciences & Computing",
     category: "Applied Sciences",
-    session: "Morning / Regular",
     term: "Fall 2026",
     file: pdfMLT,
     downloadFileName: "6. BS MLT Merit List Fall 2026.pdf",
@@ -141,7 +129,6 @@ const meritListData: MeritListItem[] = [
     department: "Department of Tourism & Hospitality",
     faculty: "Faculty of Management Sciences",
     category: "Management Sciences",
-    session: "Morning / Regular",
     term: "Fall 2026",
     file: pdfTourism,
     downloadFileName: "7. BS Tourisim & Hospitality Management Merit List Fall 2026.pdf",
@@ -154,7 +141,6 @@ const meritListData: MeritListItem[] = [
     department: "Department of Microbiology",
     faculty: "Faculty of Applied Sciences & Computing",
     category: "Applied Sciences",
-    session: "Morning / Regular",
     term: "Fall 2026",
     file: pdfMicrobiology,
     downloadFileName: "8. BS Microbiology Merit List Fall 2026.pdf",
@@ -167,7 +153,6 @@ const meritListData: MeritListItem[] = [
     department: "Department of Sociology",
     faculty: "Faculty of Arts & Humanities",
     category: "Social Sciences & Humanities",
-    session: "Morning / Regular",
     term: "Fall 2026",
     file: pdfSociology,
     downloadFileName: "9. BS Sociology Merit List Fall 2026.pdf",
@@ -180,7 +165,6 @@ const meritListData: MeritListItem[] = [
     department: "Department of Management Sciences",
     faculty: "Faculty of Management Sciences",
     category: "Management Sciences",
-    session: "Morning / Regular",
     term: "Fall 2026",
     file: pdfBBA,
     downloadFileName: "Bba merit list fall-26.pdf",
@@ -193,7 +177,6 @@ const meritListData: MeritListItem[] = [
     department: "Department of Physics",
     faculty: "Faculty of Applied Sciences & Computing",
     category: "Applied Sciences",
-    session: "Morning / Regular",
     term: "Fall 2026",
     file: pdfPhysics,
     downloadFileName: "Physics MERIT LIST.pdf",
@@ -205,14 +188,6 @@ const categoryBadgeStyle: Record<string, string> = {
   "Management Sciences": "bg-emerald-50 text-emerald-700 border-emerald-200 dark:bg-emerald-950/40 dark:text-emerald-300 dark:border-emerald-800",
   "Social Sciences & Humanities": "bg-purple-50 text-purple-700 border-purple-200 dark:bg-purple-950/40 dark:text-purple-300 dark:border-purple-800",
 };
-
-const helplines = [
-  { number: "(051) 9269171", tel: "+92519269171", label: "Line 1" },
-  { number: "(051) 9269172", tel: "+92519269172", label: "Line 2" },
-  { number: "(051) 9269174", tel: "+92519269174", label: "Line 3" },
-  { number: "(051) 9269270", tel: "+92519269270", label: "Line 4" },
-  { number: "(051) 9265195", tel: "+92519265195", label: "Line 5" },
-];
 
 const MeritLists = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -246,69 +221,11 @@ const MeritLists = () => {
           { label: "Admissions", path: "/online-admissions" }, 
           { label: "Merit Lists" }
         ]}
-        subtitle="Official 1st Merit Lists for Undergraduate (BS & BBA) Degree Programs — Fall 2026"
+        subtitle="Merit Lists of BS & Undergraduate Programs — Kohsar University Murree"
       />
 
       <main className="container-main px-4 sm:px-6 lg:px-8 py-10 md:py-14 flex-1">
         
-        {/* Important Notice & Instructions Banner */}
-        <div className="bg-gradient-to-r from-primary/10 via-primary/5 to-accent/10 rounded-2xl p-6 md:p-8 border border-primary/20 mb-10 shadow-sm">
-          <div className="flex flex-col md:flex-row md:items-start justify-between gap-6">
-            <div className="space-y-3">
-              <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary text-white text-xs font-semibold rounded-full uppercase tracking-wider">
-                <AlertCircle className="w-3.5 h-3.5" />
-                Fall 2026 Admission Notice
-              </div>
-              <h2 className="text-2xl sm:text-3xl font-serif font-bold text-foreground">
-                1st Merit Lists (BS Programs) Announced
-              </h2>
-              <p className="text-sm md:text-base text-muted-foreground max-w-3xl leading-relaxed">
-                Candidates whose names appear in the merit lists are advised to deposit their admission dues and verify their original educational documents at the Kohsar University Murree Admissions Office within the due date to confirm their admission.
-              </p>
-            </div>
-            
-            <div className="bg-white dark:bg-card border border-border p-4 rounded-xl shadow-xs shrink-0 flex flex-col gap-2 min-w-[220px]">
-              <div className="flex items-center gap-2 text-xs font-semibold text-muted-foreground uppercase tracking-wide">
-                <Clock className="w-4 h-4 text-primary" />
-                Session Status
-              </div>
-              <div className="text-lg font-bold text-primary">Fall 2026 Session</div>
-              <div className="text-xs text-muted-foreground flex items-center gap-1.5">
-                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
-                11 Departmental Lists Available
-              </div>
-            </div>
-          </div>
-
-          {/* Quick instructions steps */}
-          <div className="grid sm:grid-cols-3 gap-4 mt-6 pt-6 border-t border-primary/15">
-            <div className="flex items-start gap-3 bg-white/70 dark:bg-card/70 p-3.5 rounded-lg border border-primary/10">
-              <span className="w-6 h-6 rounded-full bg-primary text-white text-xs font-bold flex items-center justify-center shrink-0">
-                1
-              </span>
-              <p className="text-xs sm:text-sm text-foreground">
-                <strong>Find your program</strong> below and click <em>View PDF</em> or <em>Download</em> to check your merit status.
-              </p>
-            </div>
-            <div className="flex items-start gap-3 bg-white/70 dark:bg-card/70 p-3.5 rounded-lg border border-primary/10">
-              <span className="w-6 h-6 rounded-full bg-primary text-white text-xs font-bold flex items-center justify-center shrink-0">
-                2
-              </span>
-              <p className="text-xs sm:text-sm text-foreground">
-                <strong>Collect fee challan</strong> from the admission desk or designated bank branch upon document verification.
-              </p>
-            </div>
-            <div className="flex items-start gap-3 bg-white/70 dark:bg-card/70 p-3.5 rounded-lg border border-primary/10">
-              <span className="w-6 h-6 rounded-full bg-primary text-white text-xs font-bold flex items-center justify-center shrink-0">
-                3
-              </span>
-              <p className="text-xs sm:text-sm text-foreground">
-                <strong>Submit paid challan copy</strong> and required testimonials before deadline to secure admission.
-              </p>
-            </div>
-          </div>
-        </div>
-
         {/* Search & Category Filter Section */}
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
           
@@ -334,7 +251,7 @@ const MeritLists = () => {
             <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
             <input
               type="text"
-              placeholder="Search by degree or department..."
+              placeholder="Search by program or department..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full pl-10 pr-4 py-2.5 bg-white dark:bg-card border border-border rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all placeholder:text-muted-foreground/70"
@@ -352,7 +269,7 @@ const MeritLists = () => {
 
         {/* Merit List Cards Grid */}
         {filteredLists.length > 0 ? (
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             {filteredLists.map((item) => (
               <div
                 key={item.id}
@@ -450,88 +367,6 @@ const MeritLists = () => {
             </button>
           </div>
         )}
-
-        {/* Required Documents & Instructions Section */}
-        <div className="bg-white dark:bg-card rounded-2xl border border-border shadow-xs p-6 md:p-8 mb-12">
-          <div className="flex items-center gap-3 mb-6 pb-4 border-b border-border">
-            <div className="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
-              <FileText className="w-5 h-5" />
-            </div>
-            <div>
-              <h3 className="text-xl font-serif font-bold text-foreground">
-                Instructions for Selected Candidates
-              </h3>
-              <p className="text-xs sm:text-sm text-muted-foreground">
-                Requirements and document verification process for securing your admission
-              </p>
-            </div>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-6 text-sm">
-            <div className="space-y-4">
-              <h4 className="font-semibold text-foreground flex items-center gap-2 text-base">
-                <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-                Original Documents Checklist
-              </h4>
-              <ul className="space-y-2 text-muted-foreground text-xs sm:text-sm pl-6 list-disc">
-                <li>Original SSC / Matric Certificate &amp; Detailed Marks Certificate (DMC) with 3 photocopies.</li>
-                <li>Original HSSC / Intermediate / FA / F.Sc / ICS / I.Com Certificate &amp; DMC with 3 photocopies.</li>
-                <li>Original CNIC or Form-B copy along with Father/Guardian's CNIC copy.</li>
-                <li>Original Domicile Certificate with 2 attested photocopies.</li>
-                <li>04 recent passport-size photographs with blue background.</li>
-                <li>Affidavit / Undertaking on stamp paper as per university specimen (if applicable).</li>
-              </ul>
-            </div>
-
-            <div className="space-y-4">
-              <h4 className="font-semibold text-foreground flex items-center gap-2 text-base">
-                <AlertCircle className="w-4 h-4 text-primary" />
-                Admission Confirmation Guidelines
-              </h4>
-              <ul className="space-y-2 text-muted-foreground text-xs sm:text-sm pl-6 list-disc">
-                <li>Admissions are granted provisionally subject to verification of testimonials and eligibility.</li>
-                <li>If a candidate fails to deposit the prescribed dues within the stipulated time, their seat will be offered to next candidate on waiting list.</li>
-                <li>Candidates who provided incorrect or fabricated information will have their admission cancelled immediately.</li>
-                <li>Fee challan can be collected from Kohsar University Murree Admission Office during working hours (9:00 AM - 4:00 PM).</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        {/* Admission Helplines Section */}
-        <div className="bg-white dark:bg-card rounded-2xl shadow-sm border border-border overflow-hidden">
-          <div className="bg-primary px-6 py-4 text-white flex items-center gap-3">
-            <PhoneCall className="w-6 h-6 text-accent shrink-0" />
-            <div>
-              <h3 className="text-lg sm:text-xl font-serif font-bold text-white">
-                Admission Desk &amp; Merit List Helplines
-              </h3>
-              <p className="text-xs sm:text-sm text-primary-foreground/80">
-                Have questions about your merit status, documents, or fee submission? Contact our admissions office:
-              </p>
-            </div>
-          </div>
-          
-          <div className="p-6 md:p-8">
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3.5">
-              {helplines.map((item, idx) => (
-                <a
-                  key={idx}
-                  href={`tel:${item.tel}`}
-                  className="flex flex-col items-center justify-center p-4 rounded-xl border border-border bg-slate-50/60 dark:bg-slate-900/40 hover:bg-primary/5 hover:border-primary/50 transition-all text-center group"
-                >
-                  <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground group-hover:text-primary mb-1">
-                    {item.label}
-                  </span>
-                  <span className="font-bold text-primary text-sm sm:text-base group-hover:underline flex items-center gap-1.5">
-                    <Phone className="w-3.5 h-3.5 text-accent" />
-                    {item.number}
-                  </span>
-                </a>
-              ))}
-            </div>
-          </div>
-        </div>
 
       </main>
 
