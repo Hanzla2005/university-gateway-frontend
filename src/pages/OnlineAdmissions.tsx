@@ -6,7 +6,7 @@ import admissionAdPdf from "@/assets/pdfs/Admission-Spring-2026-KUM.pdf";
 import revisedAdmissionRulesPdf from "@/assets/pdfs/Revised-Admission-Rules-and-Regulations2023.pdf";
 import feeStructurePdf from "@/assets/pdfs/BS-Total-8-Semester-Fee-Detail.pdf";
 import intermediateCircularPdf from "@/assets/pdfs/WhatsApp-Image-2025-07-30-at-11.33.57-AM.pdf";
-import { ArrowRight, FileText, ExternalLink, DollarSign, BookOpen, Award, GraduationCap, Phone, PhoneCall } from "lucide-react";
+import { ArrowRight, FileText, ExternalLink, DollarSign, BookOpen, Award, GraduationCap, Phone, PhoneCall, FileStack } from "lucide-react";
 
 const helplines = [
   { number: "(051) 9269171", tel: "+92519269171", label: "Line 1" },
@@ -18,6 +18,13 @@ const helplines = [
 
 const OnlineAdmissions = () => {
   const admissionLinks = [
+    {
+      title: "Admission Merit Lists",
+      href: "/merit-lists",
+      isExternal: false,
+      icon: FileStack,
+      description: "View official Fall 2026 merit lists for all BS & undergraduate programs."
+    },
     {
       title: "Advertisement",
       href: admissionAdPdf,
