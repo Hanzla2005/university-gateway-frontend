@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, ChevronDown, FileText, BookOpen, Users, Building2, GraduationCap, Briefcase, FileStack, Users2, Search, Download, ShieldCheck, Trophy, Handshake, Rocket, ClipboardCheck } from "lucide-react";
+import { Menu, X, ChevronDown, FileText, BookOpen, Users, Building2, GraduationCap, Briefcase, FileStack, Search, Download, ShieldCheck, Trophy, Handshake, Rocket, ClipboardCheck } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import logo from "@/assets/logo.png";
 import universityActPdf from "@/assets/pdfs/KOHSAR-UNIVERSITY-ACT.pdf";
@@ -119,10 +119,8 @@ const mainNavItems = [
   },
   {
     label: "ADMISSIONS",
-    path: "/online-admissions",
+    path: "/merit-lists",
     submenu: [
-      { label: "Online Admissions", path: "/application-portal", icon: Users2 },
-      { label: "Intermediate Admission", path: "/intermediate-admission", icon: BookOpen },
       { label: "Scholarships", path: "/scholarships", icon: GraduationCap },
       { label: "Merit Lists", path: "/merit-lists", icon: FileStack },
     ]

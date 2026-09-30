@@ -5,7 +5,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
 import Footer from "@/components/Footer";
-import AdmissionsPopup from "@/components/AdmissionsPopup";
 import AnnouncementsSlider from "@/components/AnnouncementsSlider";
 import { departmentPages } from "@/data/departmentPages";
 import departmentImages from "@/data/departmentImages";
@@ -43,8 +42,6 @@ const Index = () => {
 
   return (
     <div className="min-h-screen">
-      <AdmissionsPopup />
-
       {/* Hero - Full banner image constrained on desktop and natural height on mobile */}
       <section className="relative w-full h-auto lg:h-[calc(100dvh-6.5rem)] bg-white flex flex-col justify-between overflow-hidden">
         <div className="flex-1 min-h-0 w-full flex items-center justify-center p-0 bg-white">

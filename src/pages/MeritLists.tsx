@@ -218,7 +218,6 @@ const MeritLists = () => {
         title="Admission Merit Lists" 
         breadcrumbs={[
           { label: "Home", path: "/" }, 
-          { label: "Admissions", path: "/online-admissions" }, 
           { label: "Merit Lists" }
         ]}
         subtitle="Merit Lists of BS & Undergraduate Programs — Kohsar University Murree"

@@ -4,7 +4,7 @@ import logo from "@/assets/logo.png";
 
 const importantLinks = [
   { label: "Scholarships", path: "/scholarships", icon: GraduationCap },
-  { label: "Admissions", path: "/online-admissions", icon: BookOpen },
+  { label: "Merit Lists", path: "/merit-lists", icon: FileText },
   { label: "Campus & Student Affairs", path: "/campus-student-affairs", icon: Users },
   { label: "Guest House", path: "/guest-house", icon: Building2 },
   { label: "Downloads", path: "/downloads", icon: FileText },
@@ -25,7 +25,7 @@ const inFocusLinks = [
 const quickLinks = [
   { label: "Library", path: "/library" },
   { label: "Downloads", path: "/downloads" },
-  { label: "Merit Lists", path: "/merit-lists" },
+  { label: "Academics", path: "/academics" },
   { label: "Anti-Harassment Policy", path: "/policy-sexual-harassment" },
   { label: "Conferences", path: "/conferences" },
   { label: "Gallery", path: "/gallery" },
