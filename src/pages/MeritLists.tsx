@@ -22,11 +22,12 @@ import {
   DialogDescription 
 } from "@/components/ui/dialog";
 
-// Import all 11 Merit List PDFs from src/assets/pdfs/Merit Lists
+// Import all 12 Merit List PDFs from src/assets/pdfs/Merit Lists
 import pdfBiotech from "@/assets/pdfs/Merit Lists/1. BS Biotechnology Merit List Fall 2026.pdf";
 import pdfBotany from "@/assets/pdfs/Merit Lists/2. BS Botany  Merit List Fall 2026.pdf";
 import pdfChemistry from "@/assets/pdfs/Merit Lists/3. BS Chemistry Merit List Fall 2026.pdf";
 import pdfEnglish from "@/assets/pdfs/Merit Lists/4. BS English Merit List Fall 2026.pdf";
+import pdfEnglishSecond from "@/assets/pdfs/Merit Lists/BS English Second Merit List.pdf";
 import pdfFST from "@/assets/pdfs/Merit Lists/5. BS FST Merit List Fall 2026.pdf";
 import pdfMLT from "@/assets/pdfs/Merit Lists/6. BS MLT Merit List Fall 2026.pdf";
 import pdfTourism from "@/assets/pdfs/Merit Lists/7. BS Tourisim & Hospitality Management Merit List Fall 2026.pdf";
@@ -44,6 +45,7 @@ interface MeritListItem {
   faculty: string;
   category: "Applied Sciences" | "Management Sciences" | "Social Sciences & Humanities";
   term: string;
+  listRound?: string;
   file: string;
   downloadFileName: string;
 }
@@ -58,6 +60,7 @@ const meritListData: MeritListItem[] = [
     faculty: "Faculty of Applied Sciences & Computing",
     category: "Applied Sciences",
     term: "Fall 2026",
+    listRound: "1st Merit List",
     file: pdfBiotech,
     downloadFileName: "1. BS Biotechnology Merit List Fall 2026.pdf",
   },
@@ -70,6 +73,7 @@ const meritListData: MeritListItem[] = [
     faculty: "Faculty of Applied Sciences & Computing",
     category: "Applied Sciences",
     term: "Fall 2026",
+    listRound: "1st Merit List",
     file: pdfBotany,
     downloadFileName: "2. BS Botany Merit List Fall 2026.pdf",
   },
@@ -82,102 +86,124 @@ const meritListData: MeritListItem[] = [
     faculty: "Faculty of Applied Sciences & Computing",
     category: "Applied Sciences",
     term: "Fall 2026",
+    listRound: "1st Merit List",
     file: pdfChemistry,
     downloadFileName: "3. BS Chemistry Merit List Fall 2026.pdf",
   },
   {
     id: "english",
     listNo: 4,
-    title: "BS English",
+    title: "BS English (1st Merit List)",
     degreeName: "Bachelor of Science in English (Language & Literature)",
     department: "Department of English",
     faculty: "Faculty of Arts & Humanities",
     category: "Social Sciences & Humanities",
     term: "Fall 2026",
+    listRound: "1st Merit List",
     file: pdfEnglish,
     downloadFileName: "4. BS English Merit List Fall 2026.pdf",
   },
   {
-    id: "fst",
+    id: "english-2nd",
     listNo: 5,
+    title: "BS English (2nd Merit List)",
+    degreeName: "Bachelor of Science in English (Language & Literature)",
+    department: "Department of English",
+    faculty: "Faculty of Arts & Humanities",
+    category: "Social Sciences & Humanities",
+    term: "Fall 2026",
+    listRound: "2nd Merit List",
+    file: pdfEnglishSecond,
+    downloadFileName: "BS English Second Merit List.pdf",
+  },
+  {
+    id: "fst",
+    listNo: 6,
     title: "BS Food Science & Technology (FST)",
     degreeName: "Bachelor of Science in Food Science & Technology",
     department: "Department of Food Science & Technology",
     faculty: "Faculty of Applied Sciences & Computing",
     category: "Applied Sciences",
     term: "Fall 2026",
+    listRound: "1st Merit List",
     file: pdfFST,
     downloadFileName: "5. BS FST Merit List Fall 2026.pdf",
   },
   {
     id: "mlt",
-    listNo: 6,
+    listNo: 7,
     title: "BS Medical Laboratory Technology (MLT)",
     degreeName: "Bachelor of Science in Medical Laboratory Technology",
     department: "Department of Allied Health Sciences",
     faculty: "Faculty of Applied Sciences & Computing",
     category: "Applied Sciences",
     term: "Fall 2026",
+    listRound: "1st Merit List",
     file: pdfMLT,
     downloadFileName: "6. BS MLT Merit List Fall 2026.pdf",
   },
   {
     id: "tourism",
-    listNo: 7,
+    listNo: 8,
     title: "BS Tourism & Hospitality Management",
     degreeName: "Bachelor of Science in Tourism & Hospitality Management",
     department: "Department of Tourism & Hospitality",
     faculty: "Faculty of Management Sciences",
     category: "Management Sciences",
     term: "Fall 2026",
+    listRound: "1st Merit List",
     file: pdfTourism,
     downloadFileName: "7. BS Tourisim & Hospitality Management Merit List Fall 2026.pdf",
   },
   {
     id: "microbiology",
-    listNo: 8,
+    listNo: 9,
     title: "BS Microbiology",
     degreeName: "Bachelor of Science in Microbiology",
     department: "Department of Microbiology",
     faculty: "Faculty of Applied Sciences & Computing",
     category: "Applied Sciences",
     term: "Fall 2026",
+    listRound: "1st Merit List",
     file: pdfMicrobiology,
     downloadFileName: "8. BS Microbiology Merit List Fall 2026.pdf",
   },
   {
     id: "sociology",
-    listNo: 9,
+    listNo: 10,
     title: "BS Sociology",
     degreeName: "Bachelor of Science in Sociology",
     department: "Department of Sociology",
     faculty: "Faculty of Arts & Humanities",
     category: "Social Sciences & Humanities",
     term: "Fall 2026",
+    listRound: "1st Merit List",
     file: pdfSociology,
     downloadFileName: "9. BS Sociology Merit List Fall 2026.pdf",
   },
   {
     id: "bba",
-    listNo: 10,
+    listNo: 11,
     title: "Bachelor of Business Administration (BBA)",
     degreeName: "BBA (Bachelor of Business Administration)",
     department: "Department of Management Sciences",
     faculty: "Faculty of Management Sciences",
     category: "Management Sciences",
     term: "Fall 2026",
+    listRound: "1st Merit List",
     file: pdfBBA,
     downloadFileName: "Bba merit list fall-26.pdf",
   },
   {
     id: "physics",
-    listNo: 11,
+    listNo: 12,
     title: "BS Physics",
     degreeName: "Bachelor of Science in Physics",
     department: "Department of Physics",
     faculty: "Faculty of Applied Sciences & Computing",
     category: "Applied Sciences",
     term: "Fall 2026",
+    listRound: "1st Merit List",
     file: pdfPhysics,
     downloadFileName: "Physics MERIT LIST.pdf",
   },
@@ -202,7 +228,8 @@ const MeritLists = () => {
         item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
         item.degreeName.toLowerCase().includes(searchQuery.toLowerCase()) ||
         item.department.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        item.faculty.toLowerCase().includes(searchQuery.toLowerCase());
+        item.faculty.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        (item.listRound && item.listRound.toLowerCase().includes(searchQuery.toLowerCase()));
       
       const matchesCategory = selectedCategory === "All" || item.category === selectedCategory;
 
@@ -281,10 +308,21 @@ const MeritLists = () => {
                     <span className={`text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-md border ${categoryBadgeStyle[item.category]}`}>
                       {item.category}
                     </span>
-                    <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-muted-foreground bg-slate-100 dark:bg-slate-800/80 px-2 py-0.5 rounded">
-                      <Calendar className="w-3 h-3 text-primary" />
-                      {item.term}
-                    </span>
+                    <div className="flex items-center gap-1.5">
+                      {item.listRound && (
+                        <span className={`text-[11px] font-semibold px-2 py-0.5 rounded border ${
+                          item.listRound.includes("2nd") 
+                            ? "bg-amber-50 text-amber-800 border-amber-300 dark:bg-amber-950/50 dark:text-amber-300 dark:border-amber-700" 
+                            : "bg-slate-100 dark:bg-slate-800/80 text-muted-foreground border-transparent"
+                        }`}>
+                          {item.listRound}
+                        </span>
+                      )}
+                      <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-muted-foreground bg-slate-100 dark:bg-slate-800/80 px-2 py-0.5 rounded">
+                        <Calendar className="w-3 h-3 text-primary" />
+                        {item.term}
+                      </span>
+                    </div>
                   </div>
 
                   {/* Program Title */}
