@@ -277,7 +277,7 @@ const mainNavItems = [
       { label: "Landmark Achievements", path: "/oric", icon: Trophy },
       { label: "Collaborations", path: "/mous", icon: Handshake },
       {
-        label: "KUM ORIC Steering Committee",
+        label: "KUM ORIC SC",
         path: "/oric-steering-committee",
         icon: Users,
         nested: [
