@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, ChevronDown, FileText, BookOpen, Users, Building2, GraduationCap, Briefcase, FileStack, Search, Download, ShieldCheck, Trophy, Handshake, Rocket, ClipboardCheck } from "lucide-react";
+import { Menu, X, ChevronDown, FileText, BookOpen, Users, Building2, GraduationCap, Briefcase, FileStack, Search, Download, ShieldCheck, Trophy, Handshake, Rocket, ClipboardCheck, Award } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import logo from "@/assets/logo.png";
 import universityActPdf from "@/assets/pdfs/KOHSAR-UNIVERSITY-ACT.pdf";
@@ -37,6 +37,9 @@ import oricKpHjrs23_24 from "@/assets/ORIC Website/KUM Policies/HJRS 2023-24.pdf
 import oricKpMou from "@/assets/ORIC Website/KUM Policies/KUM MOU Policy.pdf";
 import oricKpSop from "@/assets/ORIC Website/KUM Policies/KUM Proposal SOPs.pdf";
 import oricKpPolicy2021 from "@/assets/ORIC Website/KUM Policies/ORICs Policy 2021.pdf";
+
+// ORIC PDFs - R&D Funding Agencies Repository
+import oricRdFundingPdf from "@/assets/ORIC Website/R&D Funding Agencies Repository.pdf";
 
 // QEC Downloads
 import qecDlSarTemplate from "@/assets/QEC/Downloads/SAR Template.pdf";
@@ -121,8 +124,9 @@ const mainNavItems = [
     label: "ADMISSIONS",
     path: "/merit-lists",
     submenu: [
-      { label: "Scholarships", path: "/scholarships", icon: GraduationCap },
-      { label: "Merit Lists", path: "/merit-lists", icon: FileStack },
+      { label: "BS Merit Lists", path: "/merit-lists", icon: GraduationCap },
+      { label: "MS Merit Lists", path: "/ms-merit-lists", icon: Award },
+      { label: "Scholarships", path: "/scholarships", icon: FileStack },
     ]
   },
   {
@@ -284,6 +288,7 @@ const mainNavItems = [
       },
       { label: "R&D Projects", path: "/rd-projects", icon: Rocket },
       { label: "Research Publications", path: "/research-publications", icon: BookOpen },
+      { label: "R&D Funding Agencies Repository", path: "/oric-rd-funding", icon: FileText, isExternal: true },
     ]
   },
   {
@@ -417,6 +422,7 @@ const Navbar = () => {
     }
     if (pdfPath === "/university-act") window.open(universityActPdf, "_blank");
     else if (pdfPath === "/oric-ar-2025") window.open(oricAr2025, "_blank");
+    else if (pdfPath === "/oric-rd-funding") window.open(oricRdFundingPdf, "_blank");
     else if (pdfPath === "/qec-iqc") window.open(qecIqcPdf, "_blank");
   };
 

@@ -52,6 +52,7 @@ import TeachingPositions from "./pages/TeachingPositions";
 import NonTeachingPositions from "./pages/NonTeachingPositions";
 import AdministrativePositions from "./pages/AdministrativePositions";
 import MeritLists from "./pages/MeritLists";
+import MSMeritLists from "./pages/MSMeritLists";
 import GuestHouse from "./pages/GuestHouse";
 import Downloads from "./pages/Downloads";
 import Library from "./pages/Library";
@@ -166,6 +167,8 @@ const App = () => (
             <Route path="/announcements" element={<Announcements />} />
             <Route path="/announcements/:slug" element={<AnnouncementDetail />} />
             <Route path="/merit-lists" element={<MeritLists />} />
+            <Route path="/bs-merit-lists" element={<MeritLists />} />
+            <Route path="/ms-merit-lists" element={<MSMeritLists />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </Layout>

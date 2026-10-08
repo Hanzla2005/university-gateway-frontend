@@ -8,14 +8,17 @@ import {
   Download, 
   Eye, 
   Search, 
-  GraduationCap, 
+  Award, 
   Calendar, 
   Building2, 
   FileStack, 
   ExternalLink,
   BookOpen,
   ArrowRight,
-  Award
+  GraduationCap,
+  ZoomIn,
+  ZoomOut,
+  RotateCcw
 } from "lucide-react";
 import { 
   Dialog, 
@@ -25,21 +28,14 @@ import {
   DialogDescription 
 } from "@/components/ui/dialog";
 
-// Import all 12 BS Merit List PDFs from src/assets/pdfs/Merit Lists
-import pdfBiotech from "@/assets/pdfs/Merit Lists/1. BS Biotechnology Merit List Fall 2026.pdf";
-import pdfBotany from "@/assets/pdfs/Merit Lists/2. BS Botany  Merit List Fall 2026.pdf";
-import pdfChemistry from "@/assets/pdfs/Merit Lists/3. BS Chemistry Merit List Fall 2026.pdf";
-import pdfEnglish from "@/assets/pdfs/Merit Lists/4. BS English Merit List Fall 2026.pdf";
-import pdfEnglishSecond from "@/assets/pdfs/Merit Lists/BS English Second Merit List.pdf";
-import pdfFST from "@/assets/pdfs/Merit Lists/5. BS FST Merit List Fall 2026.pdf";
-import pdfMLT from "@/assets/pdfs/Merit Lists/6. BS MLT Merit List Fall 2026.pdf";
-import pdfTourism from "@/assets/pdfs/Merit Lists/7. BS Tourisim & Hospitality Management Merit List Fall 2026.pdf";
-import pdfMicrobiology from "@/assets/pdfs/Merit Lists/8. BS Microbiology Merit List Fall 2026.pdf";
-import pdfSociology from "@/assets/pdfs/Merit Lists/9. BS Sociology Merit List Fall 2026.pdf";
-import pdfBBA from "@/assets/pdfs/Merit Lists/Bba merit list fall-26.pdf";
-import pdfPhysics from "@/assets/pdfs/Merit Lists/Physics MERIT LIST.pdf";
+// Import MS Merit List Images from src/assets/pdfs/Merit Lists
+import imgMsBiotech from "@/assets/pdfs/Merit Lists/WhatsApp Image 2026-10-06 at 16.00.12 (2).jpeg";
+import imgMsBotany from "@/assets/pdfs/Merit Lists/WhatsApp Image 2026-10-06 at 16.00.12.jpeg";
+import imgMsChemistry from "@/assets/pdfs/Merit Lists/WhatsApp Image 2026-10-06 at 16.00.12 (1).jpeg";
+import imgMsFST from "@/assets/pdfs/Merit Lists/WhatsApp Image 2026-10-06 at 16.00.11.jpeg";
+import imgMsMicrobiology from "@/assets/pdfs/Merit Lists/WhatsApp Image 2026-10-06 at 16.00.13.jpeg";
 
-export interface BSMeritListItem {
+export interface MSMeritListItem {
   id: string;
   listNo: number;
   title: string;
@@ -53,162 +49,71 @@ export interface BSMeritListItem {
   downloadFileName: string;
 }
 
-const bsMeritListData: BSMeritListItem[] = [
+const msMeritListData: MSMeritListItem[] = [
   {
-    id: "biotech",
+    id: "ms-biotech",
     listNo: 1,
-    title: "BS Biotechnology",
-    degreeName: "Bachelor of Science in Biotechnology",
+    title: "MS Biotechnology",
+    degreeName: "Master of Science in Biotechnology",
     department: "Department of Biotechnology",
     faculty: "Faculty of Applied Sciences & Computing",
     category: "Applied Sciences",
     term: "Fall 2026",
     listRound: "1st Merit List",
-    file: pdfBiotech,
-    downloadFileName: "1. BS Biotechnology Merit List Fall 2026.pdf",
+    file: imgMsBiotech,
+    downloadFileName: "MS Biotechnology 1st Merit List Fall 2026.jpeg",
   },
   {
-    id: "botany",
+    id: "ms-botany",
     listNo: 2,
-    title: "BS Botany",
-    degreeName: "Bachelor of Science in Botany",
+    title: "MS / MPhil Botany",
+    degreeName: "Master of Science / MPhil in Botany",
     department: "Department of Botany",
     faculty: "Faculty of Applied Sciences & Computing",
     category: "Applied Sciences",
     term: "Fall 2026",
     listRound: "1st Merit List",
-    file: pdfBotany,
-    downloadFileName: "2. BS Botany Merit List Fall 2026.pdf",
+    file: imgMsBotany,
+    downloadFileName: "MS Botany 1st Merit List Fall 2026.jpeg",
   },
   {
-    id: "chemistry",
+    id: "ms-chemistry",
     listNo: 3,
-    title: "BS Chemistry",
-    degreeName: "Bachelor of Science in Chemistry",
+    title: "MS Chemistry",
+    degreeName: "Master of Science in Chemistry",
     department: "Department of Chemistry",
     faculty: "Faculty of Applied Sciences & Computing",
     category: "Applied Sciences",
     term: "Fall 2026",
     listRound: "1st Merit List",
-    file: pdfChemistry,
-    downloadFileName: "3. BS Chemistry Merit List Fall 2026.pdf",
+    file: imgMsChemistry,
+    downloadFileName: "MS Chemistry 1st Merit List Fall 2026.jpeg",
   },
   {
-    id: "english",
+    id: "ms-fst",
     listNo: 4,
-    title: "BS English (1st Merit List)",
-    degreeName: "Bachelor of Science in English (Language & Literature)",
-    department: "Department of English",
-    faculty: "Faculty of Arts & Humanities",
-    category: "Social Sciences & Humanities",
-    term: "Fall 2026",
-    listRound: "1st Merit List",
-    file: pdfEnglish,
-    downloadFileName: "4. BS English Merit List Fall 2026.pdf",
-  },
-  {
-    id: "english-2nd",
-    listNo: 5,
-    title: "BS English (2nd Merit List)",
-    degreeName: "Bachelor of Science in English (Language & Literature)",
-    department: "Department of English",
-    faculty: "Faculty of Arts & Humanities",
-    category: "Social Sciences & Humanities",
-    term: "Fall 2026",
-    listRound: "2nd Merit List",
-    file: pdfEnglishSecond,
-    downloadFileName: "BS English Second Merit List.pdf",
-  },
-  {
-    id: "fst",
-    listNo: 6,
-    title: "BS Food Science & Technology (FST)",
-    degreeName: "Bachelor of Science in Food Science & Technology",
+    title: "MS Food Science & Technology (FST)",
+    degreeName: "Master of Science in Food Science and Technology",
     department: "Department of Food Science & Technology",
     faculty: "Faculty of Applied Sciences & Computing",
     category: "Applied Sciences",
     term: "Fall 2026",
     listRound: "1st Merit List",
-    file: pdfFST,
-    downloadFileName: "5. BS FST Merit List Fall 2026.pdf",
+    file: imgMsFST,
+    downloadFileName: "MS Food Science and Technology 1st Merit List Fall 2026.jpeg",
   },
   {
-    id: "mlt",
-    listNo: 7,
-    title: "BS Medical Laboratory Technology (MLT)",
-    degreeName: "Bachelor of Science in Medical Laboratory Technology",
-    department: "Department of Allied Health Sciences",
-    faculty: "Faculty of Applied Sciences & Computing",
-    category: "Applied Sciences",
-    term: "Fall 2026",
-    listRound: "1st Merit List",
-    file: pdfMLT,
-    downloadFileName: "6. BS MLT Merit List Fall 2026.pdf",
-  },
-  {
-    id: "tourism",
-    listNo: 8,
-    title: "BS Tourism & Hospitality Management",
-    degreeName: "Bachelor of Science in Tourism & Hospitality Management",
-    department: "Department of Tourism & Hospitality",
-    faculty: "Faculty of Management Sciences",
-    category: "Management Sciences",
-    term: "Fall 2026",
-    listRound: "1st Merit List",
-    file: pdfTourism,
-    downloadFileName: "7. BS Tourisim & Hospitality Management Merit List Fall 2026.pdf",
-  },
-  {
-    id: "microbiology",
-    listNo: 9,
-    title: "BS Microbiology",
-    degreeName: "Bachelor of Science in Microbiology",
+    id: "ms-microbiology",
+    listNo: 5,
+    title: "MS Microbiology",
+    degreeName: "Master of Science in Microbiology",
     department: "Department of Microbiology",
     faculty: "Faculty of Applied Sciences & Computing",
     category: "Applied Sciences",
     term: "Fall 2026",
     listRound: "1st Merit List",
-    file: pdfMicrobiology,
-    downloadFileName: "8. BS Microbiology Merit List Fall 2026.pdf",
-  },
-  {
-    id: "sociology",
-    listNo: 10,
-    title: "BS Sociology",
-    degreeName: "Bachelor of Science in Sociology",
-    department: "Department of Sociology",
-    faculty: "Faculty of Arts & Humanities",
-    category: "Social Sciences & Humanities",
-    term: "Fall 2026",
-    listRound: "1st Merit List",
-    file: pdfSociology,
-    downloadFileName: "9. BS Sociology Merit List Fall 2026.pdf",
-  },
-  {
-    id: "bba",
-    listNo: 11,
-    title: "Bachelor of Business Administration (BBA)",
-    degreeName: "BBA (Bachelor of Business Administration)",
-    department: "Department of Management Sciences",
-    faculty: "Faculty of Management Sciences",
-    category: "Management Sciences",
-    term: "Fall 2026",
-    listRound: "1st Merit List",
-    file: pdfBBA,
-    downloadFileName: "Bba merit list fall-26.pdf",
-  },
-  {
-    id: "physics",
-    listNo: 12,
-    title: "BS Physics",
-    degreeName: "Bachelor of Science in Physics",
-    department: "Department of Physics",
-    faculty: "Faculty of Applied Sciences & Computing",
-    category: "Applied Sciences",
-    term: "Fall 2026",
-    listRound: "1st Merit List",
-    file: pdfPhysics,
-    downloadFileName: "Physics MERIT LIST.pdf",
+    file: imgMsMicrobiology,
+    downloadFileName: "MS Microbiology 1st Merit List Fall 2026.jpeg",
   },
 ];
 
@@ -218,15 +123,16 @@ const categoryBadgeStyle: Record<string, string> = {
   "Social Sciences & Humanities": "bg-purple-50 text-purple-700 border-purple-200 dark:bg-purple-950/40 dark:text-purple-300 dark:border-purple-800",
 };
 
-const MeritLists = () => {
+const MSMeritLists = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
-  const [previewItem, setPreviewItem] = useState<BSMeritListItem | null>(null);
+  const [previewItem, setPreviewItem] = useState<MSMeritListItem | null>(null);
+  const [imageZoom, setImageZoom] = useState<number>(1);
 
-  const categories = ["All", "Applied Sciences", "Management Sciences", "Social Sciences & Humanities"];
+  const categories = ["All", "Applied Sciences"];
 
   const filteredLists = useMemo(() => {
-    return bsMeritListData.filter((item) => {
+    return msMeritListData.filter((item) => {
       const q = searchQuery.toLowerCase().trim();
       const matchesSearch = 
         !q ||
@@ -247,41 +153,42 @@ const MeritLists = () => {
       <Navbar />
       
       <PageHeader 
-        title="BS Admission Merit Lists" 
+        title="MS Admission Merit Lists" 
         breadcrumbs={[
           { label: "Home", path: "/" }, 
-          { label: "BS Merit Lists" }
+          { label: "Merit Lists", path: "/merit-lists" },
+          { label: "MS Merit Lists" }
         ]}
-        subtitle="Fall 2026 Merit Lists for Undergraduate (BS) Programs — Kohsar University Murree"
+        subtitle="Fall 2026 Merit Lists for Postgraduate (MS / MPhil) Programs — Kohsar University Murree"
       />
 
       <main className="container-main px-4 sm:px-6 lg:px-8 py-10 md:py-14 flex-1">
         
-        {/* Navigation Banner Between BS and MS */}
+        {/* Navigation Banner Between MS and BS */}
         <div className="mb-8 p-5 sm:p-6 rounded-2xl bg-white dark:bg-card border border-border/80 shadow-xs flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
           <div className="flex items-center gap-3.5">
             <div className="w-12 h-12 rounded-2xl bg-primary/10 text-primary flex items-center justify-center shrink-0">
-              <GraduationCap className="w-6 h-6" />
+              <Award className="w-6 h-6" />
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <h2 className="text-lg font-bold text-foreground">Undergraduate (BS) Merit Lists</h2>
+                <h2 className="text-lg font-bold text-foreground">Postgraduate (MS / MPhil) Merit Lists</h2>
                 <span className="text-xs font-semibold px-2 py-0.5 rounded-md bg-emerald-50 text-emerald-700 border border-emerald-200 dark:bg-emerald-950/40 dark:text-emerald-300">
                   Fall 2026
                 </span>
               </div>
               <p className="text-xs sm:text-sm text-muted-foreground mt-0.5">
-                Official 1st & 2nd merit lists announced for Kohsar University Murree undergraduate programs.
+                Official 1st merit lists announced for Kohsar University Murree Master of Science (MS) programs.
               </p>
             </div>
           </div>
 
           <Link
-            to="/ms-merit-lists"
+            to="/merit-lists"
             className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-100 hover:bg-primary/10 text-foreground hover:text-primary border border-border/80 text-xs sm:text-sm font-semibold transition-all duration-200 group self-stretch md:self-auto justify-center shrink-0"
           >
-            <Award className="w-4 h-4 text-primary" />
-            <span>Looking for MS Merit Lists?</span>
+            <GraduationCap className="w-4 h-4 text-primary" />
+            <span>Looking for BS Merit Lists?</span>
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
           </Link>
         </div>
@@ -301,7 +208,7 @@ const MeritLists = () => {
                     : "bg-white dark:bg-card text-muted-foreground border-border hover:border-primary/40 hover:text-foreground"
                 }`}
               >
-                {cat === "All" ? `All Programs (${bsMeritListData.length})` : cat}
+                {cat === "All" ? `All Programs (${msMeritListData.length})` : cat}
               </button>
             ))}
           </div>
@@ -311,7 +218,7 @@ const MeritLists = () => {
             <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
             <input
               type="text"
-              placeholder="Search by program or department..."
+              placeholder="Search by MS program or department..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full pl-10 pr-4 py-2.5 bg-white dark:bg-card border border-border rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all placeholder:text-muted-foreground/70"
@@ -339,16 +246,12 @@ const MeritLists = () => {
                 <div className="p-6">
                   {/* Top Badges */}
                   <div className="flex items-center justify-between gap-2 mb-4">
-                    <span className={`text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-md border ${categoryBadgeStyle[item.category]}`}>
+                    <span className={`text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-md border ${categoryBadgeStyle[item.category] || "bg-slate-100 text-slate-700"}`}>
                       {item.category}
                     </span>
                     <div className="flex items-center gap-1.5">
                       {item.listRound && (
-                        <span className={`text-[11px] font-semibold px-2 py-0.5 rounded border ${
-                          item.listRound.includes("2nd") 
-                            ? "bg-amber-50 text-amber-800 border-amber-300 dark:bg-amber-950/50 dark:text-amber-300 dark:border-amber-700" 
-                            : "bg-slate-100 dark:bg-slate-800/80 text-muted-foreground border-transparent"
-                        }`}>
+                        <span className="text-[11px] font-semibold px-2 py-0.5 rounded border bg-slate-100 dark:bg-slate-800/80 text-muted-foreground border-transparent">
                           {item.listRound}
                         </span>
                       )}
@@ -362,7 +265,7 @@ const MeritLists = () => {
                   {/* Program Title */}
                   <div className="flex items-start gap-3.5 mb-3">
                     <div className="w-11 h-11 rounded-xl bg-primary/10 group-hover:bg-primary text-primary group-hover:text-white flex items-center justify-center shrink-0 transition-colors duration-300 mt-0.5">
-                      <GraduationCap className="w-6 h-6" />
+                      <Award className="w-6 h-6" />
                     </div>
                     <div>
                       <h3 className="font-serif font-bold text-lg text-foreground group-hover:text-primary transition-colors leading-tight">
@@ -390,11 +293,14 @@ const MeritLists = () => {
                 {/* Card Footer Actions */}
                 <div className="p-4 bg-slate-50/80 dark:bg-slate-900/40 border-t border-border/70 flex items-center gap-2">
                   <button
-                    onClick={() => setPreviewItem(item)}
+                    onClick={() => {
+                      setImageZoom(1);
+                      setPreviewItem(item);
+                    }}
                     className="flex-1 inline-flex items-center justify-center gap-1.5 px-3.5 py-2.5 rounded-xl bg-primary/10 hover:bg-primary text-primary hover:text-white font-medium text-xs sm:text-sm transition-all duration-200"
                   >
                     <Eye className="w-4 h-4" />
-                    <span>View PDF</span>
+                    <span>View List</span>
                   </button>
 
                   <a
@@ -423,9 +329,9 @@ const MeritLists = () => {
         ) : (
           <div className="bg-white dark:bg-card border border-border rounded-2xl p-12 text-center my-8">
             <FileStack className="w-12 h-12 text-muted-foreground/50 mx-auto mb-4" />
-            <h3 className="text-lg font-bold text-foreground mb-1">No BS Merit Lists Found</h3>
+            <h3 className="text-lg font-bold text-foreground mb-1">No MS Merit Lists Found</h3>
             <p className="text-sm text-muted-foreground mb-4">
-              No undergraduate programs match your search term "{searchQuery}". Please try another keyword or clear the filter.
+              No postgraduate programs match your search term "{searchQuery}". Please try another keyword or clear the filter.
             </p>
             <button
               onClick={() => {
@@ -441,7 +347,7 @@ const MeritLists = () => {
 
       </main>
 
-      {/* PDF Preview Modal */}
+      {/* Image Preview Modal */}
       <Dialog open={!!previewItem} onOpenChange={(open) => !open && setPreviewItem(null)}>
         <DialogContent className="max-w-[95vw] sm:max-w-4xl md:max-w-5xl lg:max-w-6xl w-full h-[90vh] flex flex-col p-0 overflow-hidden bg-white dark:bg-card rounded-2xl">
           <DialogHeader className="px-6 py-4 border-b border-border flex flex-row items-center justify-between">
@@ -449,7 +355,7 @@ const MeritLists = () => {
               <DialogTitle className="text-lg sm:text-xl font-serif text-primary flex items-center gap-2">
                 <span>{previewItem?.title}</span>
                 <span className="text-xs font-semibold px-2 py-0.5 rounded bg-primary/10 text-primary">
-                  BS Merit List
+                  MS Merit List
                 </span>
               </DialogTitle>
               <DialogDescription className="text-xs text-muted-foreground mt-0.5">
@@ -458,6 +364,33 @@ const MeritLists = () => {
             </div>
             {previewItem && (
               <div className="flex items-center gap-2 mr-6">
+                <div className="hidden sm:flex items-center gap-1 bg-slate-100 dark:bg-slate-800 p-1 rounded-lg border border-border mr-2">
+                  <button
+                    onClick={() => setImageZoom(prev => Math.min(prev + 0.25, 3))}
+                    className="p-1 rounded hover:bg-white dark:hover:bg-card text-muted-foreground hover:text-foreground transition-colors"
+                    title="Zoom In"
+                  >
+                    <ZoomIn className="w-3.5 h-3.5" />
+                  </button>
+                  <span className="text-[11px] font-mono font-medium px-1 text-muted-foreground">
+                    {Math.round(imageZoom * 100)}%
+                  </span>
+                  <button
+                    onClick={() => setImageZoom(prev => Math.max(prev - 0.25, 0.5))}
+                    className="p-1 rounded hover:bg-white dark:hover:bg-card text-muted-foreground hover:text-foreground transition-colors"
+                    title="Zoom Out"
+                  >
+                    <ZoomOut className="w-3.5 h-3.5" />
+                  </button>
+                  <button
+                    onClick={() => setImageZoom(1)}
+                    className="p-1 rounded hover:bg-white dark:hover:bg-card text-muted-foreground hover:text-foreground transition-colors"
+                    title="Reset Zoom"
+                  >
+                    <RotateCcw className="w-3.5 h-3.5" />
+                  </button>
+                </div>
+
                 <a
                   href={previewItem.file}
                   download={previewItem.downloadFileName}
@@ -479,13 +412,16 @@ const MeritLists = () => {
             )}
           </DialogHeader>
 
-          <div className="flex-1 w-full bg-slate-100 dark:bg-slate-900 p-2 sm:p-4">
+          <div className="flex-1 w-full bg-slate-900/90 dark:bg-slate-950 p-2 sm:p-4 overflow-auto flex items-center justify-center">
             {previewItem && (
-              <iframe
-                src={`${previewItem.file}#view=FitH`}
-                title={`${previewItem.title} Merit List PDF`}
-                className="w-full h-full rounded-lg border border-border bg-white"
-              />
+              <div className="w-full h-full flex items-center justify-center overflow-auto p-4">
+                <img
+                  src={previewItem.file}
+                  alt={`${previewItem.title} Merit List`}
+                  style={{ transform: `scale(${imageZoom})`, transformOrigin: "center center" }}
+                  className="max-h-full max-w-full object-contain rounded-lg shadow-2xl transition-transform duration-200"
+                />
+              </div>
             )}
           </div>
         </DialogContent>
@@ -496,4 +432,4 @@ const MeritLists = () => {
   );
 };
 
-export default MeritLists;
+export default MSMeritLists;

@@ -1,16 +1,16 @@
 import { Link } from "react-router-dom";
-import { Facebook, Linkedin, Youtube, Instagram, GraduationCap, BookOpen, Users, Building2, FileText, Briefcase, Phone, MapPin, ExternalLink } from "lucide-react";
+import { Facebook, Linkedin, Youtube, Instagram, GraduationCap, BookOpen, Users, Building2, FileText, Briefcase, Phone, MapPin, ExternalLink, Award } from "lucide-react";
 import logo from "@/assets/logo.png";
 
 const importantLinks = [
+  { label: "BS Merit Lists", path: "/merit-lists", icon: GraduationCap },
+  { label: "MS Merit Lists", path: "/ms-merit-lists", icon: Award },
   { label: "Scholarships", path: "/scholarships", icon: GraduationCap },
-  { label: "Merit Lists", path: "/merit-lists", icon: FileText },
   { label: "Campus & Student Affairs", path: "/campus-student-affairs", icon: Users },
   { label: "Guest House", path: "/guest-house", icon: Building2 },
   { label: "Downloads", path: "/downloads", icon: FileText },
   { label: "Policies", path: "/policies", icon: FileText },
   { label: "Jobs", path: "/jobs/teaching-positions", icon: Briefcase },
-  { label: "Societies", path: "/societies", icon: Users },
 ];
 
 const inFocusLinks = [
