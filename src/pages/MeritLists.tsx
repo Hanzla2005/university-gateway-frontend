@@ -25,7 +25,7 @@ import {
   DialogDescription 
 } from "@/components/ui/dialog";
 
-// Import all 12 BS Merit List PDFs from src/assets/pdfs/Merit Lists
+// Import all 13 BS Merit List PDFs from src/assets/pdfs/Merit Lists
 import pdfBiotech from "@/assets/pdfs/Merit Lists/1. BS Biotechnology Merit List Fall 2026.pdf";
 import pdfBotany from "@/assets/pdfs/Merit Lists/2. BS Botany  Merit List Fall 2026.pdf";
 import pdfChemistry from "@/assets/pdfs/Merit Lists/3. BS Chemistry Merit List Fall 2026.pdf";
@@ -37,6 +37,7 @@ import pdfTourism from "@/assets/pdfs/Merit Lists/7. BS Tourisim & Hospitality M
 import pdfMicrobiology from "@/assets/pdfs/Merit Lists/8. BS Microbiology Merit List Fall 2026.pdf";
 import pdfSociology from "@/assets/pdfs/Merit Lists/9. BS Sociology Merit List Fall 2026.pdf";
 import pdfBBA from "@/assets/pdfs/Merit Lists/Bba merit list fall-26.pdf";
+import pdfBBASecond from "@/assets/pdfs/Merit Lists/Second Merit List BBA FALL 2026.pdf";
 import pdfPhysics from "@/assets/pdfs/Merit Lists/Physics MERIT LIST.pdf";
 
 export interface BSMeritListItem {
@@ -187,7 +188,7 @@ const bsMeritListData: BSMeritListItem[] = [
   {
     id: "bba",
     listNo: 11,
-    title: "Bachelor of Business Administration (BBA)",
+    title: "Bachelor of Business Administration (BBA) (1st Merit List)",
     degreeName: "BBA (Bachelor of Business Administration)",
     department: "Department of Management Sciences",
     faculty: "Faculty of Management Sciences",
@@ -198,8 +199,21 @@ const bsMeritListData: BSMeritListItem[] = [
     downloadFileName: "Bba merit list fall-26.pdf",
   },
   {
-    id: "physics",
+    id: "bba-2nd",
     listNo: 12,
+    title: "Bachelor of Business Administration (BBA) (2nd Merit List)",
+    degreeName: "BBA (Bachelor of Business Administration)",
+    department: "Department of Management Sciences",
+    faculty: "Faculty of Management Sciences",
+    category: "Management Sciences",
+    term: "Fall 2026",
+    listRound: "2nd Merit List",
+    file: pdfBBASecond,
+    downloadFileName: "Second Merit List BBA FALL 2026.pdf",
+  },
+  {
+    id: "physics",
+    listNo: 13,
     title: "BS Physics",
     degreeName: "Bachelor of Science in Physics",
     department: "Department of Physics",
