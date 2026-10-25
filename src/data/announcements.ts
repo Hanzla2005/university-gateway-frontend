@@ -9,8 +9,8 @@ import img18 from "@/assets/announcements/18.png";
 import img19 from "@/assets/announcements/19.png";
 import img20 from "@/assets/announcements/20.png";
 import img21 from "@/assets/announcements/21.png";
+import img22 from "@/assets/announcements/22.png";
 import img5 from "@/assets/announcements/5.png";
-import img6 from "@/assets/announcements/6.png";
 import img7 from "@/assets/announcements/7.jpeg";
 import img8 from "@/assets/announcements/8.jpeg";
 import img9 from "@/assets/announcements/9.jpeg";
@@ -27,6 +27,16 @@ export interface Announcement {
 }
 
 export const announcements: Announcement[] = [
+  {
+    id: "23",
+    slug: "chief-minister-punjab-it-internship-opportunities",
+    title: "Chief Minister Punjab Initiative: IT Internship Opportunities",
+    date: "October 24, 2026",
+    tag: "News",
+    image: img22,
+    excerpt: "The Chief Minister Punjab has announced 4000+ IT Internship Opportunities with leading IT companies across Punjab, providing a monthly stipend of 50,000 PKR for 4 months.",
+    content: "A Chief Minister Punjab Initiative has been announced, offering exceptional IT Internship Opportunities with Leading IT Companies Across Punjab. With over 4000+ positions available for interns, this program is designed to empower young professionals and provide them with hands-on experience in the tech industry.\n\n**Available Fields for Interns:**\n• Digital & Social Media Marketing\n• Web Development\n• SEO Expert\n• AI Expert\n• Graphic Designer\n• Business Development\n• And Many More Positions\n\n**Program Details:**\n• **Monthly Stipend:** 50,000 PKR (Subject to monthly performance and an HEC verified degree)\n• **Internship Duration:** 4 Months\n\n**Eligibility Criteria:**\n• IT / CS or Relevant Degree\n• Degree completed within the last 4 years\n• Valid CNIC (Computerized National Identity Card)\n• Punjab Domicile\n\nInterested candidates can apply now at cmitinterns.punjab.gov.pk.\n\n**For More Information:**\n• **Helpline:** 042-99000000\n• **Email:** info@cmitinterns.punjab.gov.pk",
+  },
   {
     id: "22",
     slug: "last-date-of-admissions-extended-to-21-september-2026",
@@ -176,16 +186,6 @@ export const announcements: Announcement[] = [
     image: img8,
     excerpt: "Professor. Dr. Rafia Mumtaz, Vice Chancellor of Kohsar University Murree, paid a distinguished visit to Allah Walay Trust to explore potential avenues of collaboration.",
     content: "Professor. Dr. Rafia Mumtaz, Vice Chancellor of Kohsar University Murree, paid a distinguished visit to Allah Walay Trust (AWF) on the invitation of Mr. Khalid Mahmood Head Youth Programs AWF to explore potential avenues of collaboration between Allah Walay Trust and Kohsar University Murree. During the visit, comprehensive discussions were held regarding future partnerships focused on students’ educational initiatives, and community engagement programs. Mr. Khalid Mahmood emphasized the significance of strengthening educational opportunities for deserving students and expressed his keen interest in organizing community-oriented educational activities in collaboration with Kohsar University Murree. Addressing the students and participants, Professor Dr. Rafia Mumtaz shared her inspiring life journey, reflecting on the challenges, experiences, and achievements that shaped her professional career and ultimately led her to the esteemed position of Vice Chancellor. Her insightful and motivational address encouraged students to remain steadfast in pursuing their goals, overcome challenges with determination and resilience, and contribute positively to society through education, leadership, and community service. The visit concluded on a positive and encouraging note, with both institutions expressing a mutual commitment to fostering educational development, empowering youth through and promoting meaningful community engagement through collaborative initiatives between Allah Walay Trust and Kohsar University Murree",
-  },
-  {
-    id: "6",
-    slug: "chief-minister-punjab-it-internship-opportunities",
-    title: "Chief Minister Punjab Initiative: IT Internship Opportunities",
-    date: "May 8, 2026",
-    tag: "News",
-    image: img6,
-    excerpt: "The Chief Minister Punjab has launched an initiative offering 2400+ IT Internship Opportunities with leading IT companies across Punjab, providing a monthly stipend of 50,000 PKR.",
-    content: "A Chief Minister Punjab Initiative has been announced, offering exceptional Internship Opportunities with Leading IT Companies Across Punjab. With over 2400+ positions available, this program is designed to empower young professionals and provide them with hands-on experience in the tech industry.\n\nAvailable fields include 3D Animation & Graphics, Laravel/PHP Development, Software Development, DevOps Engineering, Salesforce Administration, Product Management, and many more.\n\nSelected interns will receive a Monthly Stipend of 50,000 PKR (subject to monthly performance and an HEC verified degree) for a maximum internship duration of 5 months.\n\nEligibility Criteria:\n• IT / CS or Relevant Degree\n• Degree completed within the last 4 years\n• Valid CNIC (Computerized National Identity Card)\n• Punjab Domicile\n\nInterested candidates can apply now at cmitinterns.punjab.gov.pk. For more information, contact 042-99000000 Ext: (1925, 1908, 1207) or email info@cmitinterns.punjab.gov.pk.",
   },
   {
     id: "5",

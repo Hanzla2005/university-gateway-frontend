@@ -1,7 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageHeader from "@/components/PageHeader";
-import { Award, Users, DollarSign, BookOpen, Calendar, FileText, CheckCircle2 } from "lucide-react";
+import { Award, Users, DollarSign, BookOpen, Calendar, FileText, CheckCircle2, Sparkles, GraduationCap, ExternalLink } from "lucide-react";
 import scholarshipBanner from "@/assets/scholarship/banner.png";
 
 const Scholarships = () => {
@@ -132,69 +132,158 @@ const Scholarships = () => {
         </section>
 
         {/* HONHAAR Scholarship Announcement */}
-        <section className="bg-gradient-to-r from-primary/10 via-blue-50 to-primary/10 border border-primary/20 rounded-lg p-8">
-          <div className="flex items-center gap-3 mb-4">
-            <Award className="h-8 w-8 text-primary" />
-            <h2 className="text-2xl font-serif text-foreground">HONHAAR Undergraduate Scholarship Program 2025</h2>
+        <section className="bg-gradient-to-br from-primary/10 via-background to-accent/10 border border-primary/20 rounded-xl p-6 sm:p-8 md:p-10 shadow-sm relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-72 h-72 bg-primary/5 rounded-full blur-3xl -z-10 pointer-events-none" />
+          
+          {/* Badges */}
+          <div className="flex flex-wrap items-center gap-2.5 mb-3">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-primary text-white tracking-wide shadow-sm">
+              <Sparkles className="h-3.5 w-3.5" /> Government of Punjab Initiative
+            </span>
+            <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-semibold bg-accent/20 text-accent-foreground border border-accent/30">
+              50,000 Scholarships
+            </span>
           </div>
-          <p className="text-muted-foreground leading-relaxed mb-6">
-            We are pleased to announce that applications are now open for the <strong className="text-foreground">HONHAAR Scholarships – Undergraduate Program for the Winter Semester 2024-2025</strong>. These scholarships aim to support talented and deserving students who meet the following eligibility criteria:
+
+          <div className="flex items-start gap-3.5 mb-3">
+            <Award className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
+            <div>
+              <h2 className="text-2xl sm:text-3xl font-serif text-foreground font-bold tracking-tight">
+                CM Punjab Honhaar Undergraduate Scholarship Program 2026
+              </h2>
+              <p className="text-primary font-medium mt-1 text-sm sm:text-base flex items-center gap-1.5">
+                <Sparkles className="h-4 w-4 text-amber-500" /> A Brighter Future Starts with Education!
+              </p>
+            </div>
+          </div>
+
+          <p className="text-muted-foreground leading-relaxed text-base mb-8 max-w-4xl">
+            The Government of Punjab has announced the <strong className="text-foreground">CM Honhaar Undergraduate Scholarship Program 2026</strong>, offering <strong className="text-foreground">50,000 merit-based scholarships</strong> to deserving students to pursue undergraduate education at selected universities and colleges across Punjab.
           </p>
 
-          <div className="space-y-4">
-            <div>
-              <div className="flex items-center gap-2 mb-3">
-                <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0" />
-                <h3 className="text-lg font-semibold text-foreground">Eligibility Criteria:</h3>
-              </div>
-              <ul className="space-y-2 text-muted-foreground">
-                <li className="flex gap-3">
-                  <span className="text-primary font-bold flex-shrink-0">•</span>
-                  <span>Must have a domicile from any district in Punjab.</span>
-                </li>
-                <li className="flex gap-3">
-                  <span className="text-primary font-bold flex-shrink-0">•</span>
-                  <span>Must not be older than 22 years of age as of the closing date.</span>
-                </li>
-                <li className="flex gap-3">
-                  <span className="text-primary font-bold flex-shrink-0">•</span>
-                  <span>Family monthly income should be less than Rs 300,000 (Affidavit required – <a href="#" className="text-primary hover:underline">Download Sample Affidavit</a>).</span>
-                </li>
-                <li className="flex gap-3">
-                  <span className="text-primary font-bold flex-shrink-0">•</span>
-                  <span>Must be enrolled in selected disciplines at selected universities/colleges for the Fall 2024 session.</span>
-                </li>
-                <li className="flex gap-3">
-                  <span className="text-primary font-bold flex-shrink-0">•</span>
-                  <span>Minimum marks in FSc./Intermediate:</span>
-                </li>
-              </ul>
-              <div className="ml-6 mt-2 space-y-1 text-muted-foreground">
-                <p>• Public Sector Universities: &gt;75% for Sciences and &gt;70% for Arts and Social Sciences.</p>
+          <div className="grid md:grid-cols-2 gap-6 mb-8">
+            {/* Key Eligibility Criteria */}
+            <div className="bg-card/90 backdrop-blur-sm border border-border/80 rounded-xl p-5 sm:p-6 shadow-sm flex flex-col justify-between">
+              <div>
+                <div className="flex items-center gap-2.5 mb-4 pb-3 border-b border-border/60">
+                  <CheckCircle2 className="h-5 w-5 text-emerald-600 flex-shrink-0" />
+                  <h3 className="text-lg font-serif font-bold text-foreground">Key Eligibility Criteria</h3>
+                </div>
+
+                <ul className="space-y-3.5 text-sm text-muted-foreground">
+                  <li className="flex items-start gap-2.5">
+                    <CheckCircle2 className="h-4 w-4 text-emerald-600 flex-shrink-0 mt-0.5" />
+                    <span><strong className="text-foreground">No age limit</strong></span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <CheckCircle2 className="h-4 w-4 text-emerald-600 flex-shrink-0 mt-0.5" />
+                    <span><strong className="text-foreground">Punjab domicile required</strong> (from any district in Punjab)</span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <CheckCircle2 className="h-4 w-4 text-emerald-600 flex-shrink-0 mt-0.5" />
+                    <span>Monthly family income below <strong className="text-foreground">Rs. 350,000</strong></span>
+                  </li>
+                  
+                  {/* 1st Semester */}
+                  <li className="bg-muted/60 rounded-lg p-3.5 border border-border/60">
+                    <p className="font-semibold text-foreground text-xs uppercase tracking-wide mb-1.5 flex items-center gap-1.5">
+                      <GraduationCap className="h-4 w-4 text-primary" /> 1st Semester (Fall 2026)
+                    </p>
+                    <div className="space-y-1 text-xs text-muted-foreground ml-5">
+                      <p>• <strong className="text-foreground">Science:</strong> Minimum 70% marks in Intermediate</p>
+                      <p>• <strong className="text-foreground">Arts:</strong> Minimum 65% marks in Intermediate</p>
+                    </div>
+                  </li>
+
+                  {/* 3rd Semester onward */}
+                  <li className="bg-muted/60 rounded-lg p-3.5 border border-border/60">
+                    <p className="font-semibold text-foreground text-xs uppercase tracking-wide mb-1.5 flex items-center gap-1.5">
+                      <GraduationCap className="h-4 w-4 text-primary" /> Students from 3rd Semester Onward
+                    </p>
+                    <div className="space-y-1 text-xs text-muted-foreground ml-5">
+                      <p>• <strong className="text-foreground">Sciences:</strong> Minimum 70% CGPA / academic eligibility as specified</p>
+                      <p>• <strong className="text-foreground">Social Sciences/Arts:</strong> Minimum 65% CGPA / academic eligibility as specified</p>
+                    </div>
+                  </li>
+                </ul>
               </div>
             </div>
 
-            <div className="bg-white rounded p-4 border border-primary/10">
-              <div className="flex items-center gap-2 mb-2">
-                <Calendar className="h-5 w-5 text-primary" />
-                <p className="text-foreground font-semibold">Application Deadline:</p>
-              </div>
-              <p className="text-muted-foreground mb-4">
-                The deadline for submitting online applications is <strong className="text-foreground">October 15, 2024</strong>.
-              </p>
-              <a 
-                href="https://honhaarscholarship.punjabhec.gov.pk/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="inline-block bg-primary text-white px-6 py-2 rounded hover:bg-primary/90 transition-colors font-medium"
-              >
-                Apply Now →
-              </a>
-            </div>
+            {/* Scholarship Benefits */}
+            <div className="bg-card/90 backdrop-blur-sm border border-border/80 rounded-xl p-5 sm:p-6 shadow-sm flex flex-col justify-between">
+              <div>
+                <div className="flex items-center gap-2.5 mb-4 pb-3 border-b border-border/60">
+                  <Award className="h-5 w-5 text-primary flex-shrink-0" />
+                  <h3 className="text-lg font-serif font-bold text-foreground">Scholarship Benefits</h3>
+                </div>
 
-            <p className="text-sm text-muted-foreground italic mt-4 flex items-start gap-2">
-              <FileText className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
-              <span><strong>Note:</strong> This opportunity is available exclusively for 1st-semester undergraduate students. Kindly ensure this information is disseminated widely among eligible candidates.</span>
+                <div className="space-y-3.5">
+                  <div className="flex items-start gap-3 p-3.5 rounded-lg bg-primary/5 border border-primary/10">
+                    <div className="p-2 rounded bg-primary/10 text-primary flex-shrink-0">
+                      <BookOpen className="h-5 w-5" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-foreground text-sm">Tuition Fee Coverage</h4>
+                      <p className="text-xs text-muted-foreground mt-0.5">
+                        Complete tuition fee coverage under the Government of Punjab scheme.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-3 p-3.5 rounded-lg bg-primary/5 border border-primary/10">
+                    <div className="p-2 rounded bg-primary/10 text-primary flex-shrink-0">
+                      <Award className="h-5 w-5" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-foreground text-sm">Merit-Based Selection</h4>
+                      <p className="text-xs text-muted-foreground mt-0.5">
+                        100% fair and transparent merit-based selection across eligible students.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-3 p-3.5 rounded-lg bg-primary/5 border border-primary/10">
+                    <div className="p-2 rounded bg-primary/10 text-primary flex-shrink-0">
+                      <GraduationCap className="h-5 w-5" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-foreground text-sm">Full Program Duration</h4>
+                      <p className="text-xs text-muted-foreground mt-0.5">
+                        Scholarship duration spans according to the undergraduate degree program (4–5 years).
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Deadline & Apply Box */}
+              <div className="mt-6 pt-4 border-t border-border/60 bg-primary/5 rounded-lg p-4">
+                <div className="flex items-center justify-between flex-wrap gap-3">
+                  <div>
+                    <div className="flex items-center gap-1.5 text-xs font-semibold text-muted-foreground uppercase tracking-wide">
+                      <Calendar className="h-4 w-4 text-primary" /> Last Date to Apply
+                    </div>
+                    <p className="text-lg font-serif font-bold text-foreground mt-0.5">November 9, 2026</p>
+                  </div>
+                  <a
+                    href="https://honhaarscholarship.punjabhec.gov.pk/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-5 py-2.5 rounded-lg hover:bg-primary/90 transition-all font-semibold text-sm shadow-sm"
+                  >
+                    <span>Apply Online</span>
+                    <ExternalLink className="h-4 w-4" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Callout Notice */}
+          <div className="p-4 rounded-lg bg-amber-500/10 border border-amber-500/20 text-foreground text-sm flex items-start gap-3">
+            <span className="text-lg flex-shrink-0">📢</span>
+            <p className="leading-relaxed">
+              <strong className="text-amber-700 dark:text-amber-400">Don't miss this opportunity!</strong> Eligible students are encouraged to apply before the deadline (<strong>November 9, 2026</strong>) and share this information with friends.
             </p>
           </div>
         </section>

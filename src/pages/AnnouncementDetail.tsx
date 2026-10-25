@@ -1,8 +1,49 @@
 import { useParams, Link } from "react-router-dom";
-import { Calendar, ArrowLeft } from "lucide-react";
+import { Calendar, ArrowLeft, ExternalLink } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { announcements } from "@/data/announcements";
+
+const renderFormattedText = (text: string) => {
+  const parts = text.split(/(\*\*[^*]+\*\*|https?:\/\/[^\s]+|[a-zA-Z0-9.-]+\.punjab\.gov\.pk[^\s]*)/g);
+  return parts.map((part, index) => {
+    if (!part) return null;
+    if (part.startsWith("**") && part.endsWith("**")) {
+      return (
+        <strong key={index} className="font-bold text-foreground">
+          {part.slice(2, -2)}
+        </strong>
+      );
+    }
+    if (part.startsWith("http://") || part.startsWith("https://")) {
+      return (
+        <a
+          key={index}
+          href={part}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-primary font-medium hover:underline inline-flex items-center gap-1"
+        >
+          {part}
+        </a>
+      );
+    }
+    if (part.endsWith(".punjab.gov.pk")) {
+      return (
+        <a
+          key={index}
+          href={`https://${part}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-primary font-medium hover:underline inline-flex items-center gap-1"
+        >
+          {part}
+        </a>
+      );
+    }
+    return part;
+  });
+};
 
 const AnnouncementDetail = () => {
   const { slug } = useParams();
@@ -46,9 +87,83 @@ const AnnouncementDetail = () => {
                 <img src={announcement.image} alt={announcement.title} className="w-full h-full object-contain" width={1200} height={675} />
               </div>
 
-              <div className="prose prose-lg max-w-none text-foreground/90 leading-relaxed whitespace-pre-line">
-                <p>{announcement.content}</p>
+              <div className="prose prose-lg max-w-none text-foreground/90 leading-relaxed">
+                {announcement.content.split(/\n\n+/).map((block, bIdx) => {
+                  const lines = block.split("\n").map((l) => l.trim()).filter(Boolean);
+                  if (lines.length === 0) return null;
+
+                  const firstLine = lines[0];
+                  // Section Heading detection: ends with colon and short, or bolded with **, or emoji header
+                  const isHeading =
+                    (firstLine.startsWith("**") && firstLine.endsWith("**")) ||
+                    (firstLine.endsWith(":") && !firstLine.startsWith("•") && !firstLine.startsWith("-") && firstLine.length < 60) ||
+                    (firstLine.startsWith("🌟") && firstLine.endsWith("🌟"));
+
+                  if (isHeading) {
+                    const cleanHeading = firstLine.replace(/^\*\*|\*\*$/g, "");
+                    const listLines = lines.slice(1);
+                    return (
+                      <div key={bIdx} className="my-6">
+                        <h3 className="text-xl sm:text-2xl font-serif font-bold text-foreground mb-3 tracking-tight">
+                          {renderFormattedText(cleanHeading)}
+                        </h3>
+                        {listLines.length > 0 && (
+                          <ul className="space-y-2 ml-1">
+                            {listLines.map((line, lIdx) => {
+                              const isBullet = line.startsWith("•") || line.startsWith("-");
+                              const cleanLine = isBullet ? line.replace(/^[•-]\s*/, "") : line;
+                              return (
+                                <li key={lIdx} className="flex items-start gap-2.5 text-foreground/90">
+                                  {isBullet && <span className="text-primary font-bold mt-0.5 text-base">•</span>}
+                                  <span className="leading-relaxed">{renderFormattedText(cleanLine)}</span>
+                                </li>
+                              );
+                            })}
+                          </ul>
+                        )}
+                      </div>
+                    );
+                  }
+
+                  const isBulletList = lines.every((l) => l.startsWith("•") || l.startsWith("-"));
+                  if (isBulletList) {
+                    return (
+                      <ul key={bIdx} className="space-y-2 my-4 ml-1">
+                        {lines.map((line, lIdx) => (
+                          <li key={lIdx} className="flex items-start gap-2.5 text-foreground/90">
+                            <span className="text-primary font-bold mt-0.5 text-base">•</span>
+                            <span className="leading-relaxed">{renderFormattedText(line.replace(/^[•-]\s*/, ""))}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    );
+                  }
+
+                  return (
+                    <p key={bIdx} className="my-4 text-foreground/90 leading-relaxed text-base sm:text-lg whitespace-pre-line">
+                      {renderFormattedText(block)}
+                    </p>
+                  );
+                })}
               </div>
+
+              {announcement.content.includes("cmitinterns.punjab.gov.pk") && (
+                <div className="mt-10 p-6 bg-primary/5 border border-primary/20 rounded-xl flex flex-wrap items-center justify-between gap-4">
+                  <div>
+                    <h3 className="font-serif font-bold text-foreground text-lg mb-1">Official Application Portal</h3>
+                    <p className="text-sm text-muted-foreground">Submit your application for the Chief Minister Punjab IT Internship Program directly online.</p>
+                  </div>
+                  <a
+                    href="https://cmitinterns.punjab.gov.pk"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-2.5 rounded-lg hover:bg-primary/90 transition-all font-semibold text-sm shadow-sm"
+                  >
+                    <span>Apply at cmitinterns.punjab.gov.pk</span>
+                    <ExternalLink className="h-4 w-4" />
+                  </a>
+                </div>
+              )}
             </article>
           </div>
         </div>
