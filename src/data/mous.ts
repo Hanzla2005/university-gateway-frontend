@@ -10,74 +10,89 @@ export interface MOU {
 }
 
 export const mouData: MOU[] = [
-  // 2026
+  // 2026 - 02 International & 03 National Collaborations
   {
     id: "2026-1",
-    partner: "Software Productivity Strategits, Inc (SPS)",
+    partner: "Harbin Engineering University (HEU), China",
     scope: [
-      "Knowledge Exchange and Faculty Development",
-      "Joint Research Projects",
-      "Capacity Development and Impact Training of students and Faculty in AWS, Google Cloud, IBM etc.",
-      "Intrenships and Placements",
-      "Joint Commercialization and Intellectuap Property Development",
-      "Establishment of SPS-SpinnLabs Innovation Center"
+      "Joint development of research projects",
+      "Exchange of faculty members and researchers",
+      "Student exchange opportunities",
+      "Exchange of academic information and publications",
+      "Development of shared courses and subjects"
     ],
-    duration: "03 Years",
-    type: "IT and Software Organization",
-    dominion: "National",
-    date: "17-Apr-2026",
+    duration: "05 Years",
+    type: "Academia-Higher Education Institute",
+    dominion: "International",
+    date: "15-Oct-2026",
     year: "2026"
   },
   {
     id: "2026-2",
-    partner: "Techsol Space (SMC) Pvt Ltd",
+    partner: "Pakistan Institute of Development Economics (PIDE)",
     scope: [
       "Knowledge Exchange",
+      "Academic Staff exchange",
       "Joint Research Projects",
-      "Capacity Development and Impact Training",
-      "Intrenships and Placements",
-      "Joint Usage of Research Facilities",
-      "Curriculum Design",
-      "Commercialization",
-      "Incubation and Startups"
+      "Joint Publications",
+      "Capacity Development",
+      "Curriculum Development",
+      "Faculty & Student Exchange"
     ],
     duration: "03 Years",
-    type: "IT and Software Organization",
+    type: "Academia-Higher Education Institute",
     dominion: "National",
-    date: "7-Apr-2026",
+    date: "30-Sep-2026",
     year: "2026"
   },
   {
     id: "2026-3",
-    partner: "HBL & Investment Banking",
+    partner: "CyberVision International and National Vocational and Technical Training Commission (NAVTTC)",
     scope: [
-      "Around 200 Student Internships",
-      "Research and Development",
-      "Capacity Development",
-      "Funding of 10 million PKR through CSR with Agha Khan Foundation"
+      "Huawei Cloud Certification & Skills Development",
+      "Technical Training & Capacity Building",
+      "Trainee Registration, Assessment & Certification",
+      "Employability & Placement Support",
+      "Industry Outreach, Awareness & Programme Implementation"
     ],
-    duration: "05 Years",
-    type: "Management & Corporate Industry",
+    duration: "1.5 Years",
+    type: "IT and Software Organization",
     dominion: "National",
-    date: "31-Mar-2026",
+    date: "2-Sep-2026",
     year: "2026"
   },
   {
     id: "2026-4",
-    partner: "THQ Hospital Murree",
+    partner: "Universidade de São Paulo, Brazil",
     scope: [
-      "Knowledge Exchange",
-      "Joint Research Projects & Publications",
-      "Capacity Development and Impact Training",
-      "Intrenships and Placements",
-      "Faculty & staff Exchange",
-      "Joint Usage of Research Facilities",
-      "Provision of Medical Data for Research"
+      "Joint development of research projects",
+      "Exchange of faculty members and researchers",
+      "Student exchange opportunities",
+      "Exchange of academic information and publications",
+      "Development of shared courses and subjects",
+      "Joint organization of scientific and cultural events",
+      "Exchange of technical and administrative staff"
     ],
     duration: "05 Years",
-    type: "Health Sector",
+    type: "Academia-Higher Education Institute",
+    dominion: "International",
+    date: "4-Aug-2026",
+    year: "2026"
+  },
+  {
+    id: "2026-5",
+    partner: "Pakistan Software Export Board (PSEB)",
+    scope: [
+      "Establishment and operation of the National Co-Working Space Program (NCSP) Center",
+      "Mentorship initiatives for startups and freelancers",
+      "Training programs and boot camps for freelancers",
+      "Support and facilitation for IT startups and the IT industry",
+      "Marketing, networking, and industry linkages through visits of IT leaders, trainers, and officials"
+    ],
+    duration: "05 Years",
+    type: "IT and Software Organization",
     dominion: "National",
-    date: "23-Feb-2026",
+    date: "30-Jun-2026",
     year: "2026"
   },
   // 2025
