@@ -106,7 +106,7 @@ const topBarLinks = [
     ],
   },
   { label: "Alumni", path: alumniFormPdf, isExternal: true },
-  { label: "Convocation", path: "https://docs.google.com/forms/d/e/1FAIpQLSdGaBUzTNJIW1xwpp5VfvMMdnFSU0z98oU95DlU26D3xvYv6A/viewform", isExternal: true },
+  { label: "Convocation", path: "https://docs.google.com/forms/d/1ZNz8LhdilFUOCXjr3wb6AYlOirfnqlf2ElZIdVUhiF4/preview", isExternal: true },
 ];
 
 const mainNavItems = [
